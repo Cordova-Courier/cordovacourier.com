@@ -1,0 +1,7 @@
+# robots.txt for Cordova Courier Global
+User-agent: *
+Disallow: /images/
+Disallow: /misc/
+Allow: /
+
+Sitemap: https://beta.cordovacourier.com/sitemap.xml
