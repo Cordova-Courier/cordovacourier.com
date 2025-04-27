@@ -91,6 +91,7 @@ html, body {
 .contact-info a:hover {
   text-decoration: underline;
 }
+
 /* Language Selector */
 .language-selector {
   position: absolute;
