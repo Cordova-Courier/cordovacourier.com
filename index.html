@@ -150,6 +150,55 @@ window.addEventListener('load', function() {
   }
 });
 </script>
+  
+<!-- QUICK ACTION BUTTONS SECTION -->
+<section class="quick-actions">
+  <div class="button-container">
+    <a href="/tracking" class="quick-button">📦 Track Shipment</a>
+    <a href="/customer-portal" class="quick-button">🔑 Customer Portal</a>
+    <a href="#contact" class="quick-button">📝 Request a Quote</a>
+  </div>
+</section>
+
+<style>
+.quick-actions {
+  background-color: #f7f7f7;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.quick-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #003366; /* Deep blue */
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quick-button:hover {
+  background-color: #002244; /* Darker blue hover */
+  transform: translateY(-4px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+</style>
+
 
 </body>
 </html>
