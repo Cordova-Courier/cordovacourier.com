@@ -221,6 +221,54 @@ html, body {
   line-height: 1.5;
 }
 
+/* ABOUT CORDOVA COURIER SECTION */
+.about-courier {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-courier h2 {
+  font-size: 2.8rem;
+  color: #003366;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.about-list li {
+  font-size: 1.1rem;
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-courier h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-content {
+    font-size: 1rem;
+  }
+
+  .about-list li {
+    font-size: 1rem;
+  }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .services-container {
