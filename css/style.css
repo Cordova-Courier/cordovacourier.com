@@ -1,4 +1,11 @@
-/* Reset and Base Styles */
+/* ============================================
+   Cordova Courier Website - style.css
+   Author: Vincent Cordova
+   ============================================ */
+
+/* ==========================
+   1. RESET AND BASE STYLES
+========================== */
 html, body {
   margin: 0;
   padding: 0;
@@ -7,7 +14,9 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* HERO SECTION */
+/* ==========================
+   2. HERO SECTION
+========================== */
 .hero {
   position: relative;
   width: 100%;
@@ -41,7 +50,7 @@ html, body {
   z-index: 2;
 }
 
-/* Header Top Info (Language + Dispatch) */
+/* Header Top Info (Language Selector + Dispatch Info) */
 .header-top-info {
   position: absolute;
   top: 20px;
@@ -50,7 +59,6 @@ html, body {
   z-index: 2;
 }
 
-/* Language Selector */
 .language-selector select {
   padding: 5px 10px;
   border-radius: 5px;
@@ -59,14 +67,13 @@ html, body {
   background-color: #ffffff;
   color: #333;
   cursor: pointer;
-  margin-bottom: 10px; /* Space between language and phone */
+  margin-bottom: 10px;
 }
 
 .language-selector select:hover {
   background-color: #f0f0f0;
 }
 
-/* Dispatch Contact Info */
 .contact-info {
   text-align: right;
 }
@@ -92,7 +99,7 @@ html, body {
   text-decoration: underline;
 }
 
-/* HERO CONTENT */
+/* Hero Content (Headline + Button) */
 .hero-content {
   position: absolute;
   top: 50%;
@@ -144,7 +151,9 @@ html, body {
   60% { transform: translateX(-50%) translateY(-4px); }
 }
 
-/* QUICK ACTION BUTTONS SECTION */
+/* ==========================
+   3. QUICK ACTIONS SECTION
+========================== */
 .quick-actions {
   background-color: #f7f7f7;
   padding: 40px 20px;
@@ -161,7 +170,7 @@ html, body {
 .quick-button {
   display: inline-block;
   padding: 15px 30px;
-  background-color: #003366; /* Deep blue */
+  background-color: #003366; /* Deep Blue */
   color: white;
   font-size: 1.2rem;
   border-radius: 8px;
@@ -174,7 +183,9 @@ html, body {
   transform: translateY(-4px);
 }
 
-/* OUR CORE SERVICES SECTION */
+/* ==========================
+   4. CORE SERVICES SECTION
+========================== */
 .core-services {
   background-color: #ffffff;
   padding: 60px 20px;
@@ -221,7 +232,9 @@ html, body {
   line-height: 1.5;
 }
 
-/* ABOUT CORDOVA COURIER SECTION */
+/* ==========================
+   5. ABOUT CORDOVA COURIER SECTION
+========================== */
 .about-courier {
   background-color: #f7f7f7;
   padding: 60px 20px;
@@ -251,7 +264,7 @@ html, body {
 }
 
 .about-card {
-  background-color: #003366; /* Deep blue */
+  background-color: #003366;
   color: white;
   flex: 1 1 250px;
   max-width: 300px;
@@ -276,47 +289,11 @@ html, body {
   line-height: 1.5;
 }
 
-/* Mobile Responsiveness */
+/* ==========================
+   6. MOBILE RESPONSIVENESS
+========================== */
 @media (max-width: 768px) {
-  .about-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .about-courier h2 {
-    font-size: 2.2rem;
-  }
-
-  .about-content {
-    font-size: 1rem;
-  }
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .about-courier h2 {
-    font-size: 2.2rem;
-  }
-
-  .about-content {
-    font-size: 1rem;
-  }
-
-  .about-list li {
-    font-size: 1rem;
-  }
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .services-container {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* MOBILE RESPONSIVENESS (Unified) */
-@media (max-width: 768px) {
+  /* Hero Top Info */
   .header-top-info {
     top: 70px;
     right: 20px;
@@ -334,8 +311,38 @@ html, body {
     font-size: 1rem;
   }
 
+  /* Hero Content */
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Quick Actions */
   .button-container {
     flex-direction: column;
     gap: 15px;
+  }
+
+  /* Core Services */
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* About Section */
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-courier h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-content {
+    font-size: 1rem;
+  }
+
+  .about-list li {
+    font-size: 1rem;
   }
 }
