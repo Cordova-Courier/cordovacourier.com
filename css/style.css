@@ -289,6 +289,70 @@ html, body {
   line-height: 1.5;
 }
 
+/* CONTACT CORDOVA COURIER SECTION */
+.contact-courier {
+  background-color: #003366; /* Deep Blue */
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+.contact-courier h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.contact-details a {
+  color: #ff6600; /* Bright Cordova Orange */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 30px;
+  background-color: #ff6600;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #e05500;
+  transform: translateY(-4px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-courier h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-details {
+    font-size: 1rem;
+  }
+
+  .contact-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
