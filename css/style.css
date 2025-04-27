@@ -336,8 +336,12 @@ html, body {
   transform: translateY(-4px);
 }
 
-/* Mobile Responsiveness */
+
+/* ==========================
+   6. MOBILE RESPONSIVENESS
+========================== */
 @media (max-width: 768px) {
+  /* Contact Section */
   .contact-courier h2 {
     font-size: 2.2rem;
   }
@@ -350,13 +354,7 @@ html, body {
     font-size: 1rem;
     padding: 12px 24px;
   }
-}
 
-
-/* ==========================
-   6. MOBILE RESPONSIVENESS
-========================== */
-@media (max-width: 768px) {
   /* Hero Top Info */
   .header-top-info {
     top: 70px;
