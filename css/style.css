@@ -382,8 +382,8 @@ html, body {
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
+  /* Contact Section */
   .contact-courier h2 {
     font-size: 2.2rem;
   }
@@ -404,7 +404,7 @@ html, body {
     font-size: 1rem;
     padding: 12px 24px;
   }
-   
+
   /* Hero Content */
   .hero-content h1 {
     font-size: 2.2rem;
@@ -440,8 +440,7 @@ html, body {
     font-size: 1rem;
   }
 
-   /* Mobile Responsiveness */
-@media (max-width: 768px) {
+  /* Footer */
   .site-footer {
     font-size: 0.85rem;
   }
