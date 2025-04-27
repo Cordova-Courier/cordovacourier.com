@@ -291,20 +291,28 @@ html, body {
 
 /* CONTACT CORDOVA COURIER SECTION */
 .contact-courier {
-  background-color: #003366; /* Deep Blue */
+  background-color: #f7f7f7; /* Light Gray */
   padding: 60px 20px;
   text-align: center;
-  color: white;
 }
 
 .contact-courier h2 {
   font-size: 2.8rem;
+  color: #003366;
   margin-bottom: 30px;
 }
 
-.contact-details {
+.contact-card {
+  background-color: #003366; /* Deep Blue Card */
+  color: white;
   max-width: 600px;
   margin: 0 auto;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.contact-details {
   font-size: 1.2rem;
   line-height: 1.8;
 }
@@ -336,14 +344,17 @@ html, body {
   transform: translateY(-4px);
 }
 
-
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-  /* Contact Section */
   .contact-courier h2 {
     font-size: 2.2rem;
+  }
+
+  .contact-card {
+    padding: 30px 20px;
   }
 
   .contact-details {
