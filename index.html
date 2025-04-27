@@ -1,202 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cordova Courier | Delivering Excellence</title>
-
-  <style>
-    /* Reset page */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth; /* Smooth scrolling */
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      background: black;
-    }
-
-    .background-video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: -1;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding-top: 30vh;
-      text-shadow: 0 0 10px rgba(0,0,0,0.8);
-      font-size: 2.5rem;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2rem;
-      color: white;
-      animation: bounce 2s infinite;
-      text-decoration: none;
-    }
-
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-      40% { transform: translateX(-50%) translateY(-10px); }
-      60% { transform: translateX(-50%) translateY(-5px); }
-    }
-
-    /* Main Sections */
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    #services {
-      background: white;
-    }
-
-    #about {
-      background: #f7f7f7;
-    }
-
-    #contact {
-      background: white;
-    }
-
-    footer {
-      padding: 20px;
-      background: #003366; /* Dark blue */
-      color: white;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-
-    /* Services cards */
-    .services-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .service-box {
-      flex: 1 1 250px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      max-width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
-      transform: translateY(50px);
-    }
-
-    .service-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    .service-box.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.6s ease-out;
-    }
-  </style>
-</head>
-
 <body>
 
-<!-- Hero Section -->
+<!-- Hero Section (video + animated text) -->
 <section class="hero">
   <video autoplay muted loop playsinline class="background-video">
-    <source src="CordovaCourierVanWithBella.mp4" type="video/mp4">
+    <source src="Cordova Courier Van With Bella.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
   <div class="overlay"></div>
   <div class="hero-text">
     <h1 id="changing-text">Cordova Courier – Delivery Excellence</h1>
   </div>
-  <a href="#services" class="scroll-down">↓</a>
 </section>
 
-<!-- Main Content -->
+<!-- Main Homepage Content Starts Here -->
 <section id="services">
-  <h2 style="font-size: 2.5rem; color: #003366;">Our Services</h2>
-  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #333;">
-    Cordova Courier delivers professional courier services across California and beyond. Same-day, medical, freight, and airport recovery solutions.
-  </p>
-
-  <div class="services-container">
-    <div class="service-box">
-      <h3 style="color: #ff6600;">Same-Day Courier</h3>
-      <p>Fast and reliable deliveries within the same day for businesses and individuals.</p>
-    </div>
-    <div class="service-box">
-      <h3 style="color: #ff6600;">Medical Deliveries</h3>
-      <p>HIPAA-compliant, secure medical courier services for labs, clinics, and hospitals.</p>
-    </div>
-    <div class="service-box">
-      <h3 style="color: #ff6600;">Freight & Bulk</h3>
-      <p>Large freight transport for bulk orders and time-sensitive shipments.</p>
-    </div>
-    <div class="service-box">
-      <h3 style="color: #ff6600;">Airport Recovery</h3>
-      <p>Pickup and delivery from major cargo airports like SFO, OAK, SMF, and SJC.</p>
-    </div>
-  </div>
+  <h2>Our Services</h2>
+  <p>We offer same-day courier, freight delivery, airport recovery, medical delivery, and more!</p>
 </section>
 
 <section id="about">
-  <h2 style="font-size: 2.5rem; color: #003366;">About Cordova Courier</h2>
-  <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem; color: #333;">
-    At Cordova Courier, we're committed to excellence with every delivery. Our dedicated team ensures your shipments arrive safely and on time — backed by 24/7 service and a passion for reliability.
-  </p>
+  <h2>About Cordova Courier</h2>
+  <p>Delivering Excellence, One Mile at a Time.</p>
 </section>
 
 <section id="contact">
-  <h2 style="font-size: 2.5rem; color: #003366;">Get In Touch</h2>
-  <p style="font-size: 1.2rem; color: #333;">Ready to ship with Cordova Courier? Call or email us anytime!</p>
-  <p style="font-size: 1.5rem; color: #ff6600;">📞 (209) 880-9624 &nbsp;&nbsp; | &nbsp;&nbsp; 📧 dispatch@cordovacourier.com</p>
+  <h2>Contact Us</h2>
+  <p>📞 (209) 880-9624 | 📧 dispatch@cordovacourier.com</p>
 </section>
 
 <footer>
   <p>© 2025 Cordova Courier LLC. All Rights Reserved.</p>
 </footer>
 
-<!-- Animated Text -->
+<!-- Text Animation Script -->
 <script>
 const texts = [
   "Cordova Courier – Delivery Excellence",
@@ -216,24 +52,4 @@ setInterval(() => {
 }, 4000);
 </script>
 
-<!-- Fade-In on Scroll Script -->
-<script>
-const serviceBoxes = document.querySelectorAll('.service-box');
-
-function checkVisibility() {
-  const triggerBottom = window.innerHeight * 0.9;
-
-  serviceBoxes.forEach(box => {
-    const boxTop = box.getBoundingClientRect().top;
-    if (boxTop < triggerBottom) {
-      box.classList.add('visible');
-    }
-  });
-}
-
-window.addEventListener('scroll', checkVisibility);
-window.addEventListener('load', checkVisibility);
-</script>
-
 </body>
-</html>
