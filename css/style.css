@@ -358,8 +358,8 @@ html, body {
 
 /* FOOTER SECTION */
 .site-footer {
-  background-color: #003366; /* Deep Blue */
-  color: white;
+  background-color: #f7f7f7; /* Light Gray Background */
+  color: #003366; /* Deep Blue Text */
   padding: 30px 20px;
   text-align: center;
   font-size: 0.95rem;
