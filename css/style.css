@@ -41,13 +41,34 @@ html, body {
   z-index: 2;
 }
 
-/* 24/7 Contact Info */
-.contact-info {
+/* Header Top Info (Language + Dispatch) */
+.header-top-info {
   position: absolute;
   top: 20px;
   right: 20px;
   text-align: right;
   z-index: 2;
+}
+
+/* Language Selector */
+.language-selector select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 10px; /* Space between language and phone */
+}
+
+.language-selector select:hover {
+  background-color: #f0f0f0;
+}
+
+/* Dispatch Contact Info */
+.contact-info {
+  text-align: right;
 }
 
 .contact-item {
@@ -71,47 +92,20 @@ html, body {
   text-decoration: underline;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-  .contact-info {
+  .header-top-info {
+    top: 70px;
+    right: 20px;
+  }
+
+  .language-selector select {
     font-size: 0.9rem;
   }
 
   .contact-info a {
     font-size: 1rem;
   }
-}
-
-.contact-info a {
-  color: white;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* Language Selector */
-.language-selector {
-  position: absolute;
-  top: 20px;
-  right: 250px; /* Adjust position depending on how wide your Dispatch Info is */
-  z-index: 2;
-}
-
-.language-selector select {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #333;
-  cursor: pointer;
-}
-
-.language-selector select:hover {
-  background-color: #f0f0f0;
 }
 
 /* Mobile Adjustments */
