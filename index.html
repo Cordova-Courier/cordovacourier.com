@@ -1,20 +1,34 @@
+<!-- HERO SECTION -->
 <section class="hero">
   <video autoplay muted loop playsinline class="background-video">
     <source src="CordovaCourierVanWithBella.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
   </video>
   <div class="overlay"></div>
-  <div class="hero-text">
+  <div class="hero-content">
     <h1 id="changing-text">Cordova Courier – Delivery Excellence</h1>
+    <a href="#contact" class="hero-button">Request a Quote</a>
   </div>
+  <a href="#services" class="scroll-down">↓</a>
 </section>
 
 <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background: black;
 }
 
 .background-video {
@@ -36,22 +50,61 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Soft dark overlay */
+  background: rgba(0,0,0,0.4);
   z-index: -1;
 }
 
-.hero-text {
+.hero-content {
   position: relative;
   z-index: 1;
-  color: white;
   text-align: center;
-  padding-top: 30vh;
+  top: 30%;
+  transform: translateY(-30%);
+  color: white;
   text-shadow: 0 0 10px rgba(0,0,0,0.8);
-  font-size: 2.5rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem; /* Slightly bigger */
+  margin-bottom: 20px;
   transition: opacity 0.5s ease-in-out;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff6600;
+  color: white;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #e05500;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  animation: slow-bounce 3s infinite;
+  text-decoration: none;
+}
+
+@keyframes slow-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-8px); }
+  60% { transform: translateX(-50%) translateY(-4px); }
 }
 </style>
 
+<!-- Rotating Text Script -->
 <script>
 const texts = [
   "Cordova Courier – Delivery Excellence",
@@ -62,15 +115,11 @@ let count = 0;
 const changingText = document.getElementById('changing-text');
 
 setInterval(() => {
-  // Fade out
   changingText.style.opacity = 0;
-  
   setTimeout(() => {
-    // Change text
     count = (count + 1) % texts.length;
     changingText.textContent = texts[count];
-    // Fade in
     changingText.style.opacity = 1;
-  }, 500); // Wait 0.5s for fade out before changing text
-}, 4000); // Change text every 4 seconds
+  }, 500);
+}, 4000);
 </script>
