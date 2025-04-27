@@ -356,6 +356,29 @@ html, body {
   transform: translateY(-4px);
 }
 
+/* FOOTER SECTION */
+.site-footer {
+  background-color: #003366; /* Deep Blue */
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-content p {
+  margin: 8px 0;
+}
+
+.footer-content a {
+  color: #ff6600; /* Bright Orange Link */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
@@ -415,5 +438,11 @@ html, body {
 
   .about-list li {
     font-size: 1rem;
+  }
+
+   /* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .site-footer {
+    font-size: 0.85rem;
   }
 }
