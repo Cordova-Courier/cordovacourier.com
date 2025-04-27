@@ -299,7 +299,17 @@ html, body {
 .contact-courier h2 {
   font-size: 2.8rem;
   color: #003366;
+  margin-bottom: 20px;
+}
+
+/* Logo Centered Above Card */
+.contact-logo {
   margin-bottom: 30px;
+}
+
+.contact-logo img {
+  width: 140px;
+  height: auto;
 }
 
 .contact-card {
@@ -327,15 +337,17 @@ html, body {
   text-decoration: underline;
 }
 
+/* FIX: Force white text inside button */
 .contact-button {
   display: inline-block;
   margin-top: 30px;
   padding: 15px 30px;
   background-color: #ff6600;
-  color: white;
+  color: white !important; /* Force white text */
   font-size: 1.2rem;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -353,6 +365,10 @@ html, body {
     font-size: 2.2rem;
   }
 
+  .contact-logo img {
+    width: 120px;
+  }
+
   .contact-card {
     padding: 30px 20px;
   }
@@ -365,25 +381,7 @@ html, body {
     font-size: 1rem;
     padding: 12px 24px;
   }
-
-  /* Hero Top Info */
-  .header-top-info {
-    top: 70px;
-    right: 20px;
-  }
-
-  .language-selector select {
-    font-size: 0.9rem;
-  }
-
-  .contact-info {
-    font-size: 0.9rem;
-  }
-
-  .contact-info a {
-    font-size: 1rem;
-  }
-
+   
   /* Hero Content */
   .hero-content h1 {
     font-size: 2.2rem;
