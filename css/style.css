@@ -91,6 +91,35 @@ html, body {
 .contact-info a:hover {
   text-decoration: underline;
 }
+/* Language Selector */
+.language-selector {
+  position: absolute;
+  top: 20px;
+  right: 250px; /* Adjust position depending on how wide your Dispatch Info is */
+  z-index: 2;
+}
+
+.language-selector select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+}
+
+.language-selector select:hover {
+  background-color: #f0f0f0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .language-selector {
+    top: 70px; /* Move lower on mobile */
+    right: 20px;
+  }
+}
 
 /* HERO CONTENT */
 .hero-content {
