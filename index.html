@@ -123,3 +123,14 @@ setInterval(() => {
   }, 500);
 }, 4000);
 </script>
+<!-- Force background video to play after full page load -->
+<script>
+window.addEventListener('load', function() {
+  const video = document.querySelector('.background-video');
+  if (video) {
+    video.play().catch(error => {
+      console.log('Autoplay prevented:', error);
+    });
+  }
+});
+</script>
