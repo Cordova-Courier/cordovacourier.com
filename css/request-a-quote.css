@@ -16,10 +16,17 @@ body {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-/* Logo and Catchline */
+/* Logo, Language Selector, and Catchline */
 .logo-container {
   text-align: center;
   margin-bottom: 20px;
+}
+
+.logo-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .logo {
@@ -27,21 +34,29 @@ body {
   height: auto;
 }
 
+.language-selector-inside {
+  background-color: #007bff; /* Blue background */
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.language-selector-inside select {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.language-selector-inside select:focus {
+  outline: none;
+}
+
 .catchline {
   font-size: 18px;
   color: #003366;
   margin-top: 10px;
   font-weight: bold;
-}
-
-.language-selector {
-  display: flex;
-  justify-content: flex-end;
-  padding: 10px 20px 0 20px;
-}
-.language-selector select {
-  padding: 5px 10px;
-  font-size: 14px;
 }
 
 /* Form Titles */
@@ -74,6 +89,7 @@ input, select, textarea {
   box-sizing: border-box;
 }
 
+/* Help Section (Dispatch Contact Info) */
 .help-section {
   background-color: #f5f5f5;
   padding: 15px;
