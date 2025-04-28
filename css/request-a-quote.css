@@ -1,3 +1,4 @@
+/* General Body Style */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -5,6 +6,7 @@ body {
   background-color: #f9f9f9;
 }
 
+/* Form Container */
 .form-container {
   max-width: 800px;
   margin: 0 auto;
@@ -14,60 +16,7 @@ body {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #003366;
-}
-
-h2 {
-  margin-top: 30px;
-  color: #00509e;
-  font-size: 20px;
-}
-
-label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-  margin-top: 15px;
-}
-
-input, select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-button {
-  margin-top: 30px;
-  width: 100%;
-  background-color: #ff6600;
-  color: white;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #cc5200;
-}
-
-.dimensions-group {
-  display: flex;
-  gap: 10px;
-}
-
-.dimensions-group input {
-  flex: 1;
-}
-
-/* Logo and Catchline Styling */
+/* Logo and Catchline */
 .logo-container {
   text-align: center;
   margin-bottom: 20px;
@@ -85,19 +34,89 @@ button:hover {
   font-weight: bold;
 }
 
-/* Responsive Form Width */
-@media (min-width: 992px) {
-  .form-container {
-    max-width: 1100px;
-  }
+/* Form Titles */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #003366;
 }
 
-/* Group Dimensions Field */
+h2 {
+  margin-top: 30px;
+  color: #00509e;
+  font-size: 20px;
+}
+
+/* Labels and Inputs */
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Submit Button */
+button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #ff6600;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cc5200;
+}
+
+/* Grouped Dimensions (Length, Width, Height) */
 .dimensions-group {
   display: flex;
   gap: 10px;
+  margin-top: 5px;
 }
 
 .dimensions-group input {
   flex: 1;
+}
+
+/* Grouped Field Styling (Name, City/State/Zip, etc.) */
+.field-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.field-group > div {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Responsive Rules: Stack fields vertically on Mobile */
+@media (max-width: 767px) {
+  .field-group {
+    flex-direction: column;
+  }
+  .dimensions-group {
+    flex-direction: column;
+  }
+}
+
+/* Expand Form Wider on Desktop */
+@media (min-width: 992px) {
+  .form-container {
+    max-width: 1100px;
+  }
 }
