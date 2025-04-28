@@ -66,3 +66,38 @@ button:hover {
 .dimensions-group input {
   flex: 1;
 }
+
+/* Logo and Catchline Styling */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+}
+
+.catchline {
+  font-size: 18px;
+  color: #003366;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Responsive Form Width */
+@media (min-width: 992px) {
+  .form-container {
+    max-width: 1100px;
+  }
+}
+
+/* Group Dimensions Field */
+.dimensions-group {
+  display: flex;
+  gap: 10px;
+}
+
+.dimensions-group input {
+  flex: 1;
+}
