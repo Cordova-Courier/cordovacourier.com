@@ -34,6 +34,16 @@ body {
   font-weight: bold;
 }
 
+.language-selector {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px 0 20px;
+}
+.language-selector select {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
 /* Form Titles */
 h1 {
   text-align: center;
