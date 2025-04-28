@@ -83,141 +83,77 @@
       </div>
     </div>
 
-    <!-- Pickup Information -->
-    <h2>Pickup Information</h2>
+    <!-- Pickup Collection Window -->
+<h2>Pickup Collection Window</h2>
 
-    <label for="pickupBusinessName">Pickup Business Name*</label>
-    <input type="text" id="pickupBusinessName" name="pickupBusinessName" required>
-
-    <div class="field-group">
-      <div>
-        <label for="pickupFirstName">Pickup Contact First Name*</label>
-        <input type="text" id="pickupFirstName" name="pickupFirstName" required>
-      </div>
-      <div>
-        <label for="pickupLastName">Pickup Contact Last Name*</label>
-        <input type="text" id="pickupLastName" name="pickupLastName" required>
-      </div>
-    </div>
-
-    <label for="pickupStreet">Pickup Street Address*</label>
-    <input type="text" id="pickupStreet" name="pickupStreet" required>
-
-    <input type="hidden" id="pickupLat" name="pickupLat">
-    <input type="hidden" id="pickupLng" name="pickupLng">
-
-    <div class="field-group">
-      <div>
-        <label for="pickupCity">City*</label>
-        <input type="text" id="pickupCity" name="pickupCity" required>
-      </div>
-      <div>
-        <label for="pickupState">State/Province/Region*</label>
-        <input type="text" id="pickupState" name="pickupState" maxlength="2" required>
-      </div>
-      <div>
-        <label for="pickupZip">Zip/Postal Code*</label>
-        <input type="text" id="pickupZip" name="pickupZip" required>
-      </div>
-    </div>
-
-    <input type="hidden" id="pickupCountry" name="pickupCountry" value="USA">
-
-    <div class="field-group">
-      <div>
-        <label for="pickupPhone">Phone*</label>
-        <input type="tel" id="pickupPhone" name="pickupPhone" required>
-      </div>
-      <div>
-        <label for="pickupEmail">Email*</label>
-        <input type="email" id="pickupEmail" name="pickupEmail" required>
-      </div>
-    </div>
-
+<div class="field-group">
+  <div>
+    <label for="pickupEarliestDate">Earliest Pickup Date*</label>
+    <input type="date" id="pickupEarliestDate" name="pickupEarliestDate" required>
+  </div>
+  <div>
     <label for="pickupEarliestTime">Earliest Pickup Time*</label>
-    <input type="time" id="pickupEarliestTime" name="pickupEarliestTime" required>
+    <input type="time" id="pickupEarliestTime" name="pickupEarliestTime" value="08:00" required>
+  </div>
+</div>
 
+<div class="field-group">
+  <div>
+    <label for="pickupLatestDate">Latest Pickup Date*</label>
+    <input type="date" id="pickupLatestDate" name="pickupLatestDate" required>
+  </div>
+  <div>
     <label for="pickupLatestTime">Latest Pickup Time*</label>
-    <input type="time" id="pickupLatestTime" name="pickupLatestTime" required>
+    <input type="time" id="pickupLatestTime" name="pickupLatestTime" value="17:00" required>
+  </div>
+</div>
 
-    <label for="pickupTimeZone">Pickup Time Zone*</label>
-    <select id="pickupTimeZone" name="pickupTimeZone" required>
-      <option value="">-- Select Time Zone --</option>
-      <option value="Pacific Time (PT)">Pacific Time (PT)</option>
-      <option value="Mountain Time (MT)">Mountain Time (MT)</option>
-      <option value="Central Time (CT)">Central Time (CT)</option>
-      <option value="Eastern Time (ET)">Eastern Time (ET)</option>
-      <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
-      <option value="Mexico City Time">Mexico City Time</option>
-    </select>
+<label for="pickupTimeZone">Pickup Time Zone*</label>
+<select id="pickupTimeZone" name="pickupTimeZone" required>
+  <option value="">-- Select Time Zone --</option>
+  <option value="Pacific Time (PT)">Pacific Time (PT)</option>
+  <option value="Mountain Time (MT)">Mountain Time (MT)</option>
+  <option value="Central Time (CT)">Central Time (CT)</option>
+  <option value="Eastern Time (ET)">Eastern Time (ET)</option>
+  <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
+  <option value="Mexico City Time">Mexico City Time</option>
+</select>
 
-    <!-- Delivery Information -->
-    <h2>Delivery Information</h2>
+<!-- Delivery Window -->
+<h2>Delivery Window</h2>
 
-    <label for="deliveryBusinessName">Delivery Business Name*</label>
-    <input type="text" id="deliveryBusinessName" name="deliveryBusinessName" required>
-
-    <div class="field-group">
-      <div>
-        <label for="deliveryFirstName">Delivery Contact First Name*</label>
-        <input type="text" id="deliveryFirstName" name="deliveryFirstName" required>
-      </div>
-      <div>
-        <label for="deliveryLastName">Delivery Contact Last Name*</label>
-        <input type="text" id="deliveryLastName" name="deliveryLastName" required>
-      </div>
-    </div>
-
-    <label for="deliveryStreet">Delivery Street Address*</label>
-    <input type="text" id="deliveryStreet" name="deliveryStreet" required>
-
-    <input type="hidden" id="deliveryLat" name="deliveryLat">
-    <input type="hidden" id="deliveryLng" name="deliveryLng">
-
-    <div class="field-group">
-      <div>
-        <label for="deliveryCity">City*</label>
-        <input type="text" id="deliveryCity" name="deliveryCity" required>
-      </div>
-      <div>
-        <label for="deliveryState">State/Province/Region*</label>
-        <input type="text" id="deliveryState" name="deliveryState" maxlength="2" required>
-      </div>
-      <div>
-        <label for="deliveryZip">Zip/Postal Code*</label>
-        <input type="text" id="deliveryZip" name="deliveryZip" required>
-      </div>
-    </div>
-
-    <input type="hidden" id="deliveryCountry" name="deliveryCountry" value="USA">
-
-    <div class="field-group">
-      <div>
-        <label for="deliveryPhone">Phone*</label>
-        <input type="tel" id="deliveryPhone" name="deliveryPhone" required>
-      </div>
-      <div>
-        <label for="deliveryEmail">Email*</label>
-        <input type="email" id="deliveryEmail" name="deliveryEmail" required>
-      </div>
-    </div>
-
+<div class="field-group">
+  <div>
+    <label for="deliveryEarliestDate">Earliest Delivery Date*</label>
+    <input type="date" id="deliveryEarliestDate" name="deliveryEarliestDate" required>
+  </div>
+  <div>
     <label for="deliveryEarliestTime">Earliest Delivery Time*</label>
-    <input type="time" id="deliveryEarliestTime" name="deliveryEarliestTime" required>
+    <input type="time" id="deliveryEarliestTime" name="deliveryEarliestTime" value="08:00" required>
+  </div>
+</div>
 
+<div class="field-group">
+  <div>
+    <label for="deliveryLatestDate">Latest Delivery Date*</label>
+    <input type="date" id="deliveryLatestDate" name="deliveryLatestDate" required>
+  </div>
+  <div>
     <label for="deliveryLatestTime">Latest Delivery Time*</label>
-    <input type="time" id="deliveryLatestTime" name="deliveryLatestTime" required>
+    <input type="time" id="deliveryLatestTime" name="deliveryLatestTime" value="17:00" required>
+  </div>
+</div>
 
-    <label for="deliveryTimeZone">Delivery Time Zone*</label>
-    <select id="deliveryTimeZone" name="deliveryTimeZone" required>
-      <option value="">-- Select Time Zone --</option>
-      <option value="Pacific Time (PT)">Pacific Time (PT)</option>
-      <option value="Mountain Time (MT)">Mountain Time (MT)</option>
-      <option value="Central Time (CT)">Central Time (CT)</option>
-      <option value="Eastern Time (ET)">Eastern Time (ET)</option>
-      <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
-      <option value="Mexico City Time">Mexico City Time</option>
-    </select>
+<label for="deliveryTimeZone">Delivery Time Zone*</label>
+<select id="deliveryTimeZone" name="deliveryTimeZone" required>
+  <option value="">-- Select Time Zone --</option>
+  <option value="Pacific Time (PT)">Pacific Time (PT)</option>
+  <option value="Mountain Time (MT)">Mountain Time (MT)</option>
+  <option value="Central Time (CT)">Central Time (CT)</option>
+  <option value="Eastern Time (ET)">Eastern Time (ET)</option>
+  <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
+  <option value="Mexico City Time">Mexico City Time</option>
+</select>
 
     <!-- Package and Order Details -->
     <h2>Package / Order Details</h2>
