@@ -7,109 +7,314 @@
   <meta name="description" content="Request a delivery quote with Cordova Courier. Fill out the form and our dispatch team will get back to you promptly.">
   <link rel="stylesheet" href="/css/request-a-quote.css">
 
-  <!-- ✅ Google Maps API loaded ONCE inside <head> -->
+  <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPlkZs0JztcTWQLVaNc1ZOBPJvXxhLtz8&libraries=places"></script>
 </head>
 
 <body>
 
 <div class="form-container">
-  <!-- ✅ Your full logo, headline, and form goes here (already good) -->
-  <!-- ✅ All your form fields stay exactly how you built them -->
+  <!-- Logo and Catchline -->
+  <div class="logo-container">
+    <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="logo">
+    <p class="catchline">Delivering Excellence Nationwide – Because Every Mile Matters...</p>
+  </div>
 
-  <!-- Your form starts here -->
+  <h1>Request a Quote</h1>
+
+  <!-- Start of Form -->
   <form id="quoteForm" action="https://formspree.io/f/xqaqaoqz" method="POST">
-  
-  <!-- Honeypot -->
-  <input type="text" name="_gotcha" style="display:none">
 
-  <!-- Hidden Redirect to Thank You Page -->
-  <input type="hidden" name="_redirect" value="https://beta.cordovacourier.com/quote/thank-you.html">
+    <!-- Honeypot to prevent spam bots -->
+    <input type="text" name="_gotcha" style="display:none">
 
-  <!-- Your normal form fields here (First Name, Last Name, Company Name, etc.) -->
+    <!-- Redirect after successful submission -->
+    <input type="hidden" name="_redirect" value="https://beta.cordovacourier.com/quote/thank-you.html">
 
-  <button type="submit">Submit Request</button>
-</form>
+    <!-- Customer Information -->
+    <h2>Customer Information</h2>
 
+    <div class="field-group">
+      <div>
+        <label for="firstName">First Name*</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div>
+        <label for="lastName">Last Name*</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+    </div>
+
+    <label for="companyName">Company Name*</label>
+    <input type="text" id="companyName" name="companyName" required>
+
+    <label for="companyStreet">Company Street Address*</label>
+    <input type="text" id="companyStreet" name="companyStreet" required>
+
+    <!-- Company hidden fields -->
+    <input type="hidden" id="companyLat" name="companyLat">
+    <input type="hidden" id="companyLng" name="companyLng">
+
+    <div class="field-group">
+      <div>
+        <label for="companyCity">City*</label>
+        <input type="text" id="companyCity" name="companyCity" required>
+      </div>
+      <div>
+        <label for="companyState">State/Province/Region*</label>
+        <input type="text" id="companyState" name="companyState" maxlength="2" required>
+      </div>
+      <div>
+        <label for="companyZip">Zip/Postal Code*</label>
+        <input type="text" id="companyZip" name="companyZip" required>
+      </div>
+    </div>
+
+    <input type="hidden" id="companyCountry" name="companyCountry" value="USA">
+
+    <div class="field-group">
+      <div>
+        <label for="companyPhone">Phone*</label>
+        <input type="tel" id="companyPhone" name="companyPhone" required>
+      </div>
+      <div>
+        <label for="companyEmail">Email*</label>
+        <input type="email" id="companyEmail" name="companyEmail" required>
+      </div>
+    </div>
+
+    <!-- Pickup Information -->
+    <h2>Pickup Information</h2>
+
+    <label for="pickupBusinessName">Pickup Business Name*</label>
+    <input type="text" id="pickupBusinessName" name="pickupBusinessName" required>
+
+    <div class="field-group">
+      <div>
+        <label for="pickupFirstName">Pickup Contact First Name*</label>
+        <input type="text" id="pickupFirstName" name="pickupFirstName" required>
+      </div>
+      <div>
+        <label for="pickupLastName">Pickup Contact Last Name*</label>
+        <input type="text" id="pickupLastName" name="pickupLastName" required>
+      </div>
+    </div>
+
+    <label for="pickupStreet">Pickup Street Address*</label>
+    <input type="text" id="pickupStreet" name="pickupStreet" required>
+
+    <input type="hidden" id="pickupLat" name="pickupLat">
+    <input type="hidden" id="pickupLng" name="pickupLng">
+
+    <div class="field-group">
+      <div>
+        <label for="pickupCity">City*</label>
+        <input type="text" id="pickupCity" name="pickupCity" required>
+      </div>
+      <div>
+        <label for="pickupState">State/Province/Region*</label>
+        <input type="text" id="pickupState" name="pickupState" maxlength="2" required>
+      </div>
+      <div>
+        <label for="pickupZip">Zip/Postal Code*</label>
+        <input type="text" id="pickupZip" name="pickupZip" required>
+      </div>
+    </div>
+
+    <input type="hidden" id="pickupCountry" name="pickupCountry" value="USA">
+
+    <div class="field-group">
+      <div>
+        <label for="pickupPhone">Phone*</label>
+        <input type="tel" id="pickupPhone" name="pickupPhone" required>
+      </div>
+      <div>
+        <label for="pickupEmail">Email*</label>
+        <input type="email" id="pickupEmail" name="pickupEmail" required>
+      </div>
+    </div>
+
+    <label for="pickupEarliestTime">Earliest Pickup Time*</label>
+    <input type="time" id="pickupEarliestTime" name="pickupEarliestTime" required>
+
+    <label for="pickupLatestTime">Latest Pickup Time*</label>
+    <input type="time" id="pickupLatestTime" name="pickupLatestTime" required>
+
+    <label for="pickupTimeZone">Pickup Time Zone*</label>
+    <select id="pickupTimeZone" name="pickupTimeZone" required>
+      <option value="">-- Select Time Zone --</option>
+      <option value="Pacific Time (PT)">Pacific Time (PT)</option>
+      <option value="Mountain Time (MT)">Mountain Time (MT)</option>
+      <option value="Central Time (CT)">Central Time (CT)</option>
+      <option value="Eastern Time (ET)">Eastern Time (ET)</option>
+      <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
+      <option value="Mexico City Time">Mexico City Time</option>
+    </select>
+
+    <!-- Delivery Information -->
+    <h2>Delivery Information</h2>
+
+    <label for="deliveryBusinessName">Delivery Business Name*</label>
+    <input type="text" id="deliveryBusinessName" name="deliveryBusinessName" required>
+
+    <div class="field-group">
+      <div>
+        <label for="deliveryFirstName">Delivery Contact First Name*</label>
+        <input type="text" id="deliveryFirstName" name="deliveryFirstName" required>
+      </div>
+      <div>
+        <label for="deliveryLastName">Delivery Contact Last Name*</label>
+        <input type="text" id="deliveryLastName" name="deliveryLastName" required>
+      </div>
+    </div>
+
+    <label for="deliveryStreet">Delivery Street Address*</label>
+    <input type="text" id="deliveryStreet" name="deliveryStreet" required>
+
+    <input type="hidden" id="deliveryLat" name="deliveryLat">
+    <input type="hidden" id="deliveryLng" name="deliveryLng">
+
+    <div class="field-group">
+      <div>
+        <label for="deliveryCity">City*</label>
+        <input type="text" id="deliveryCity" name="deliveryCity" required>
+      </div>
+      <div>
+        <label for="deliveryState">State/Province/Region*</label>
+        <input type="text" id="deliveryState" name="deliveryState" maxlength="2" required>
+      </div>
+      <div>
+        <label for="deliveryZip">Zip/Postal Code*</label>
+        <input type="text" id="deliveryZip" name="deliveryZip" required>
+      </div>
+    </div>
+
+    <input type="hidden" id="deliveryCountry" name="deliveryCountry" value="USA">
+
+    <div class="field-group">
+      <div>
+        <label for="deliveryPhone">Phone*</label>
+        <input type="tel" id="deliveryPhone" name="deliveryPhone" required>
+      </div>
+      <div>
+        <label for="deliveryEmail">Email*</label>
+        <input type="email" id="deliveryEmail" name="deliveryEmail" required>
+      </div>
+    </div>
+
+    <label for="deliveryEarliestTime">Earliest Delivery Time*</label>
+    <input type="time" id="deliveryEarliestTime" name="deliveryEarliestTime" required>
+
+    <label for="deliveryLatestTime">Latest Delivery Time*</label>
+    <input type="time" id="deliveryLatestTime" name="deliveryLatestTime" required>
+
+    <label for="deliveryTimeZone">Delivery Time Zone*</label>
+    <select id="deliveryTimeZone" name="deliveryTimeZone" required>
+      <option value="">-- Select Time Zone --</option>
+      <option value="Pacific Time (PT)">Pacific Time (PT)</option>
+      <option value="Mountain Time (MT)">Mountain Time (MT)</option>
+      <option value="Central Time (CT)">Central Time (CT)</option>
+      <option value="Eastern Time (ET)">Eastern Time (ET)</option>
+      <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
+      <option value="Mexico City Time">Mexico City Time</option>
+    </select>
+
+    <!-- Package and Order Details -->
+    <h2>Package / Order Details</h2>
+
+    <label for="quantity">Quantity*</label>
+    <input type="number" id="quantity" name="quantity" required>
+
+    <label for="referenceNumber">Reference Number (Optional)</label>
+    <input type="text" id="referenceNumber" name="referenceNumber">
+
+    <label for="poNumber">Purchase Order (PO) Number (Optional)</label>
+    <input type="text" id="poNumber" name="poNumber">
+
+    <label for="packageType">Type of Package*</label>
+    <input type="text" id="packageType" name="packageType" required>
+
+    <label for="packageWeight">Weight (lbs or kg)*</label>
+    <input type="number" id="packageWeight" name="packageWeight" required>
+
+    <label>Dimensions (inches or cm)*</label>
+    <div class="dimensions-group">
+      <input type="number" id="length" name="length" placeholder="Length" required>
+      <input type="number" id="width" name="width" placeholder="Width" required>
+      <input type="number" id="height" name="height" placeholder="Height" required>
+    </div>
+
+    <label for="vehicleType">Vehicle Type Needed*</label>
+    <select id="vehicleType" name="vehicleType" required>
+      <option value="">-- Select Vehicle Type --</option>
+      <option value="Car">Car</option>
+      <option value="Mid-Sized">Mid-Sized</option>
+      <option value="Pickup Truck">Pickup Truck</option>
+      <option value="Cargo Van">Cargo Van</option>
+      <option value="Box Truck">Box Truck</option>
+      <option value="High Roof Sprinter Van">High Roof Sprinter Van</option>
+    </select>
+
+    <label for="deliverySpeed">Required Delivery Speed*</label>
+    <select id="deliverySpeed" name="deliverySpeed" required>
+      <option value="">-- Select Speed --</option>
+      <option value="Standard">Standard (Same-Day)</option>
+      <option value="Express">Express (2-4 Hours)</option>
+      <option value="Urgent">Urgent (Immediate)</option>
+    </select>
+
+    <button type="submit">Submit Request</button>
+
+  </form>
 </div>
 
-<!-- ✅ Place your custom JavaScript here at the bottom for faster page load -->
+<!-- JavaScript Autocomplete Script at the bottom -->
 <script>
   let pickupAutocomplete, deliveryAutocomplete, companyAutocomplete;
 
   function initAutocomplete() {
-    const options = {
-      types: ['geocode', 'establishment']
-    };
+    const options = { types: ['geocode', 'establishment'] };
 
     companyAutocomplete = new google.maps.places.Autocomplete(
-      document.getElementById('companyStreet'),
-      options
+      document.getElementById('companyStreet'), options
     );
-    companyAutocomplete.addListener('place_changed', function() {
-      fillInAddress(companyAutocomplete, 'company');
-    });
+    companyAutocomplete.addListener('place_changed', () => fillInAddress(companyAutocomplete, 'company'));
 
     pickupAutocomplete = new google.maps.places.Autocomplete(
-      document.getElementById('pickupStreet'),
-      options
+      document.getElementById('pickupStreet'), options
     );
-    pickupAutocomplete.addListener('place_changed', function() {
-      fillInAddress(pickupAutocomplete, 'pickup');
-    });
+    pickupAutocomplete.addListener('place_changed', () => fillInAddress(pickupAutocomplete, 'pickup'));
 
     deliveryAutocomplete = new google.maps.places.Autocomplete(
-      document.getElementById('deliveryStreet'),
-      options
+      document.getElementById('deliveryStreet'), options
     );
-    deliveryAutocomplete.addListener('place_changed', function() {
-      fillInAddress(deliveryAutocomplete, 'delivery');
-    });
+    deliveryAutocomplete.addListener('place_changed', () => fillInAddress(deliveryAutocomplete, 'delivery'));
   }
 
   function fillInAddress(autocomplete, prefix) {
     const place = autocomplete.getPlace();
     const components = {
-      street_number: '',
-      route: '',
-      locality: '',
-      administrative_area_level_1: '',
-      postal_code: '',
-      country: ''
+      street_number: '', route: '', locality: '', administrative_area_level_1: '', postal_code: '', country: ''
     };
 
     if (place.address_components) {
       place.address_components.forEach(component => {
         const types = component.types;
-        if (types.includes('street_number')) {
-          components.street_number = component.long_name;
-        }
-        if (types.includes('route')) {
-          components.route = component.long_name;
-        }
-        if (types.includes('locality')) {
-          components.locality = component.long_name;
-        }
-        if (types.includes('administrative_area_level_1')) {
-          components.administrative_area_level_1 = component.short_name;
-        }
-        if (types.includes('postal_code')) {
-          components.postal_code = component.long_name;
-        }
-        if (types.includes('country')) {
-          components.country = component.long_name;
-        }
+        if (types.includes('street_number')) components.street_number = component.long_name;
+        if (types.includes('route')) components.route = component.long_name;
+        if (types.includes('locality')) components.locality = component.long_name;
+        if (types.includes('administrative_area_level_1')) components.administrative_area_level_1 = component.short_name;
+        if (types.includes('postal_code')) components.postal_code = component.long_name;
+        if (types.includes('country')) components.country = component.long_name;
       });
     }
 
-    // Lock Company Name if available
     if (prefix === 'company' && place.name && document.getElementById('companyName').value.trim() === '') {
       document.getElementById('companyName').value = place.name;
     }
 
-    // Set Street Address
     const streetAddress = `${components.street_number} ${components.route}`.trim();
-    if (document.getElementById(prefix + 'Street') && streetAddress.trim() !== '') {
+    if (document.getElementById(prefix + 'Street')) {
       document.getElementById(prefix + 'Street').value = streetAddress;
     }
 
@@ -126,7 +331,6 @@
       document.getElementById(prefix + 'Country').value = components.country;
     }
 
-    // Set hidden Latitude and Longitude
     if (place.geometry) {
       if (document.getElementById(prefix + 'Lat')) {
         document.getElementById(prefix + 'Lat').value = place.geometry.location.lat();
