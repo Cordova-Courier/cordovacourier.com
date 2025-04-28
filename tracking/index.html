@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track Your Shipment | Cordova Courier</title>
+  <meta name="description" content="Track your shipment easily with Cordova Courier. Use your tracking number to view real-time delivery updates.">
+  
+  <!-- Main Site Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Page Specific Styles -->
+  <link rel="stylesheet" href="/css/tracking.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
+</head>
 
+<body>
+
+<!-- TRACKING FORM SECTION -->
+<section class="tracking-form-section">
+  <h1>Track Your Shipment</h1>
+  <p>Enter your Tracking Number below to get real-time delivery updates.</p>
+
+  <form name="trForm" method="post" action="https://www.ontime360.com/tracking/trackingresults.aspx" id="trForm" target="_blank">
+    <div class="tracking-form">
+      <input name="TrackingNumber" type="text" maxlength="50" id="TrackingNumber" placeholder="Enter Tracking Number" required>
+      <input type="submit" name="btnSubmit" value="Track Shipment" id="btnSubmit">
+    </div>
+    <div class="tracking-powered">
+      Powered by <a href="https://www.ontime360.com" target="_blank" rel="noopener noreferrer">OnTime 360 Courier Software</a>
+    </div>
+    <input type="hidden" name="accid" id="accid" value="M3UXLvzAV1bGHUjZFkFdi42dqdx7YfvdCZg1OYCibTkO0WaiYQaxJg==" />
+  </form>
+</section>
+
+<!-- FOOTER SECTION -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>📞 (209) 880-9881 | 📧 dispatch@cordovacourier.com</p>
+    <p>© 2025 Cordova Courier LLC. All Rights Reserved.</p>
+    <p><a href="/privacy-policy">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
