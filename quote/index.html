@@ -83,6 +83,58 @@
       </div>
     </div>
 
+<!-- Pickup Information -->
+<h2>Pickup Information</h2>
+
+<label for="pickupBusinessName">Pickup Business Name*</label>
+<input type="text" id="pickupBusinessName" name="pickupBusinessName" required>
+
+<div class="field-group">
+  <div>
+    <label for="pickupFirstName">Pickup Contact First Name*</label>
+    <input type="text" id="pickupFirstName" name="pickupFirstName" required>
+  </div>
+  <div>
+    <label for="pickupLastName">Pickup Contact Last Name*</label>
+    <input type="text" id="pickupLastName" name="pickupLastName" required>
+  </div>
+</div>
+
+<label for="pickupStreet">Pickup Street Address*</label>
+<input type="text" id="pickupStreet" name="pickupStreet" required>
+
+<!-- Pickup Hidden Fields -->
+<input type="hidden" id="pickupLat" name="pickupLat">
+<input type="hidden" id="pickupLng" name="pickupLng">
+
+<div class="field-group">
+  <div>
+    <label for="pickupCity">City*</label>
+    <input type="text" id="pickupCity" name="pickupCity" required>
+  </div>
+  <div>
+    <label for="pickupState">State/Province/Region*</label>
+    <input type="text" id="pickupState" name="pickupState" maxlength="2" required>
+  </div>
+  <div>
+    <label for="pickupZip">Zip/Postal Code*</label>
+    <input type="text" id="pickupZip" name="pickupZip" required>
+  </div>
+</div>
+
+<input type="hidden" id="pickupCountry" name="pickupCountry" value="USA">
+
+<div class="field-group">
+  <div>
+    <label for="pickupPhone">Phone*</label>
+    <input type="tel" id="pickupPhone" name="pickupPhone" required>
+  </div>
+  <div>
+    <label for="pickupEmail">Email*</label>
+    <input type="email" id="pickupEmail" name="pickupEmail" required>
+  </div>
+</div>
+    
     <!-- Pickup Collection Window -->
 <h2>Pickup Collection Window</h2>
 
@@ -119,6 +171,58 @@
   <option value="Mexico City Time">Mexico City Time</option>
 </select>
 
+<!-- Delivery Information -->
+<h2>Delivery Information</h2>
+
+<label for="deliveryBusinessName">Delivery Business Name*</label>
+<input type="text" id="deliveryBusinessName" name="deliveryBusinessName" required>
+
+<div class="field-group">
+  <div>
+    <label for="deliveryFirstName">Delivery Contact First Name*</label>
+    <input type="text" id="deliveryFirstName" name="deliveryFirstName" required>
+  </div>
+  <div>
+    <label for="deliveryLastName">Delivery Contact Last Name*</label>
+    <input type="text" id="deliveryLastName" name="deliveryLastName" required>
+  </div>
+</div>
+
+<label for="deliveryStreet">Delivery Street Address*</label>
+<input type="text" id="deliveryStreet" name="deliveryStreet" required>
+
+<!-- Delivery Hidden Fields -->
+<input type="hidden" id="deliveryLat" name="deliveryLat">
+<input type="hidden" id="deliveryLng" name="deliveryLng">
+
+<div class="field-group">
+  <div>
+    <label for="deliveryCity">City*</label>
+    <input type="text" id="deliveryCity" name="deliveryCity" required>
+  </div>
+  <div>
+    <label for="deliveryState">State/Province/Region*</label>
+    <input type="text" id="deliveryState" name="deliveryState" maxlength="2" required>
+  </div>
+  <div>
+    <label for="deliveryZip">Zip/Postal Code*</label>
+    <input type="text" id="deliveryZip" name="deliveryZip" required>
+  </div>
+</div>
+
+<input type="hidden" id="deliveryCountry" name="deliveryCountry" value="USA">
+
+<div class="field-group">
+  <div>
+    <label for="deliveryPhone">Phone*</label>
+    <input type="tel" id="deliveryPhone" name="deliveryPhone" required>
+  </div>
+  <div>
+    <label for="deliveryEmail">Email*</label>
+    <input type="email" id="deliveryEmail" name="deliveryEmail" required>
+  </div>
+</div>
+    
 <!-- Delivery Window -->
 <h2>Delivery Window</h2>
 
