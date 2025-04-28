@@ -14,32 +14,6 @@
 
   <!-- Favicon -->
   <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
-
-  <!-- Animation for Tracking Words -->
-  <style>
-    .tracking-title {
-      font-size: 3rem;
-      margin-bottom: 20px;
-      height: 70px;
-      overflow: hidden;
-      color: #003366;
-    }
-    .tracking-word {
-      display: inline-block;
-      animation: rotateWords 6s infinite;
-      font-weight: bold;
-    }
-    @keyframes rotateWords {
-      0%, 20% { transform: translateY(0%); }
-      33%, 53% { transform: translateY(-100%); }
-      66%, 86% { transform: translateY(-200%); }
-      100% { transform: translateY(0%); }
-    }
-    .tracking-word span {
-      display: block;
-      height: 70px;
-    }
-  </style>
 </head>
 
 <body>
@@ -83,6 +57,15 @@
     <p><a href="/privacy-policy">Privacy Policy</a></p>
   </div>
 </footer>
+
+<!-- Fade-in Word-by-Word Timing Script -->
+<script>
+// After all 3 words fade, show full headline
+setTimeout(() => {
+  document.querySelector('.tracking-title').innerHTML = 
+    '<span class="full-line">Track Your Shipment</span>';
+}, 5500); // After about 5.5 seconds
+</script>
 
 </body>
 </html>
