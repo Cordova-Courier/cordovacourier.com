@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPlkZs0JztcTWQLVaNc1ZOBPJvXxhLtz8&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPlkZs0JztcTWQLVaNc1ZOBPJvXxhLtz8&libraries=places"></script>
 <script>
   let pickupAutocomplete, deliveryAutocomplete, companyAutocomplete;
 
   function initAutocomplete() {
+    const options = {
+      types: ['geocode', 'establishment']  // 🆕 Allow addresses + business names
+    };
+
     // Company Address Autocomplete
     companyAutocomplete = new google.maps.places.Autocomplete(
       document.getElementById('companyStreet'),
-      { types: ['address'] }
+      options
     );
     companyAutocomplete.addListener('place_changed', function() {
       fillInAddress(companyAutocomplete, 'company');
@@ -17,7 +22,7 @@
     // Pickup Address Autocomplete
     pickupAutocomplete = new google.maps.places.Autocomplete(
       document.getElementById('pickupStreet'),
-      { types: ['address'] }
+      options
     );
     pickupAutocomplete.addListener('place_changed', function() {
       fillInAddress(pickupAutocomplete, 'pickup');
@@ -26,7 +31,7 @@
     // Delivery Address Autocomplete
     deliveryAutocomplete = new google.maps.places.Autocomplete(
       document.getElementById('deliveryStreet'),
-      { types: ['address'] }
+      options
     );
     deliveryAutocomplete.addListener('place_changed', function() {
       fillInAddress(deliveryAutocomplete, 'delivery');
@@ -68,7 +73,7 @@
       });
     }
 
-    // Fill city, state, zip, country
+    // Auto-fill fields
     if (document.getElementById(prefix + 'City')) {
       document.getElementById(prefix + 'City').value = components.locality;
     }
@@ -80,6 +85,11 @@
     }
     if (document.getElementById(prefix + 'Country')) {
       document.getElementById(prefix + 'Country').value = components.country;
+    }
+
+    // Special: Auto-fill Company Name if available (ONLY for 'company' prefix)
+    if (prefix === 'company' && place.name) {
+      document.getElementById('companyName').value = place.name;
     }
 
     // Fill hidden latitude and longitude fields
