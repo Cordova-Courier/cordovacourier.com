@@ -1,1 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Quote | Cordova Courier</title>
+  <meta name="description" content="Request a delivery quote with Cordova Courier. Fill out the form and our dispatch team will get back to you promptly.">
+  <link rel="stylesheet" href="/css/request-a-quote.css">
+</head>
+<body>
 
+<div class="form-container">
+  <h1>Request a Quote</h1>
+
+  <form id="quoteForm" action="YOUR_BACKEND_HANDLER" method="POST">
+
+    <!-- Customer Information -->
+    <h2>Customer Information</h2>
+
+    <label for="firstName">First Name*</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name*</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="companyName">Company Name*</label>
+    <input type="text" id="companyName" name="companyName" required>
+
+    <label for="companyStreet">Company Street Address*</label>
+    <input type="text" id="companyStreet" name="companyStreet" required>
+
+    <label for="companyCity">Company City*</label>
+    <input type="text" id="companyCity" name="companyCity" required>
+
+    <label for="companyState">Company State (2-Letter Code)*</label>
+    <input type="text" id="companyState" name="companyState" maxlength="2" required>
+
+    <label for="companyZip">Company Zip Code*</label>
+    <input type="text" id="companyZip" name="companyZip" required>
+
+    <input type="hidden" id="companyCountry" name="companyCountry" value="USA">
+
+    <label for="companyPhone">Company Contact Phone*</label>
+    <input type="tel" id="companyPhone" name="companyPhone" required>
+
+    <label for="companyEmail">Company Contact Email*</label>
+    <input type="email" id="companyEmail" name="companyEmail" required>
+
+    <!-- Pickup Information -->
+    <h2>Pickup Information</h2>
+
+    <label for="pickupBusinessName">Pickup Business Name*</label>
+    <input type="text" id="pickupBusinessName" name="pickupBusinessName" required>
+
+    <label for="pickupFirstName">Pickup Contact First Name*</label>
+    <input type="text" id="pickupFirstName" name="pickupFirstName" required>
+
+    <label for="pickupLastName">Pickup Contact Last Name*</label>
+    <input type="text" id="pickupLastName" name="pickupLastName" required>
+
+    <label for="pickupStreet">Pickup Street Address*</label>
+    <input type="text" id="pickupStreet" name="pickupStreet" required>
+
+    <label for="pickupCity">Pickup City*</label>
+    <input type="text" id="pickupCity" name="pickupCity" required>
+
+    <label for="pickupState">Pickup State (2-Letter Code)*</label>
+    <input type="text" id="pickupState" name="pickupState" maxlength="2" required>
+
+    <label for="pickupZip">Pickup Zip Code*</label>
+    <input type="text" id="pickupZip" name="pickupZip" required>
+
+    <input type="hidden" id="pickupCountry" name="pickupCountry" value="USA">
+
+    <label for="pickupPhone">Pickup Contact Phone*</label>
+    <input type="tel" id="pickupPhone" name="pickupPhone" required>
+
+    <label for="pickupEmail">Pickup Contact Email*</label>
+    <input type="email" id="pickupEmail" name="pickupEmail" required>
+
+    <!-- Delivery Information -->
+    <h2>Delivery Information</h2>
+
+    <label for="deliveryBusinessName">Delivery Business Name*</label>
+    <input type="text" id="deliveryBusinessName" name="deliveryBusinessName" required>
+
+    <label for="deliveryFirstName">Delivery Contact First Name*</label>
+    <input type="text" id="deliveryFirstName" name="deliveryFirstName" required>
+
+    <label for="deliveryLastName">Delivery Contact Last Name*</label>
+    <input type="text" id="deliveryLastName" name="deliveryLastName" required>
+
+    <label for="deliveryStreet">Delivery Street Address*</label>
+    <input type="text" id="deliveryStreet" name="deliveryStreet" required>
+
+    <label for="deliveryCity">Delivery City*</label>
+    <input type="text" id="deliveryCity" name="deliveryCity" required>
+
+    <label for="deliveryState">Delivery State (2-Letter Code)*</label>
+    <input type="text" id="deliveryState" name="deliveryState" maxlength="2" required>
+
+    <label for="deliveryZip">Delivery Zip Code*</label>
+    <input type="text" id="deliveryZip" name="deliveryZip" required>
+
+    <input type="hidden" id="deliveryCountry" name="deliveryCountry" value="USA">
+
+    <label for="deliveryPhone">Delivery Contact Phone*</label>
+    <input type="tel" id="deliveryPhone" name="deliveryPhone" required>
+
+    <label for="deliveryEmail">Delivery Contact Email*</label>
+    <input type="email" id="deliveryEmail" name="deliveryEmail" required>
+
+    <!-- Package and Order Details -->
+    <h2>Package / Order Details</h2>
+
+    <label for="quantity">Quantity*</label>
+    <input type="number" id="quantity" name="quantity" required>
+
+    <label for="referenceNumber">Reference Number (Optional)</label>
+    <input type="text" id="referenceNumber" name="referenceNumber">
+
+    <label for="poNumber">Purchase Order (PO) Number (Optional)</label>
+    <input type="text" id="poNumber" name="poNumber">
+
+    <label for="packageType">Type of Package*</label>
+    <input type="text" id="packageType" name="packageType" required>
+
+    <label for="sizeWeight">Approximate Size and Weight*</label>
+    <textarea id="sizeWeight" name="sizeWeight" rows="3" required></textarea>
+
+    <label for="vehicleType">Vehicle Type Needed*</label>
+    <select id="vehicleType" name="vehicleType" required>
+      <option value="">-- Select Vehicle Type --</option>
+      <option value="Car">Car</option>
+      <option value="Mid-Sized">Mid-Sized</option>
+      <option value="Pickup Truck">Pickup Truck</option>
+      <option value="Cargo Van">Cargo Van</option>
+      <option value="Box Truck">Box Truck</option>
+      <option value="High Roof Sprinter Van">High Roof Sprinter Van</option>
+    </select>
+
+    <label for="deliverySpeed">Required Delivery Speed*</label>
+    <select id="deliverySpeed" name="deliverySpeed" required>
+      <option value="">-- Select Speed --</option>
+      <option value="Standard">Standard (Same-Day)</option>
+      <option value="Express">Express (2-4 Hours)</option>
+      <option value="Urgent">Urgent (Immediate)</option>
+    </select>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</div>
+
+</body>
+</html>
