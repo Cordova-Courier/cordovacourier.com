@@ -39,41 +39,76 @@
   }
 
   function fillInAddress(autocomplete, prefix) {
-    const place = autocomplete.getPlace();
-    const components = {
-      street_number: '',
-      route: '',
-      locality: '',
-      administrative_area_level_1: '',
-      postal_code: '',
-      country: ''
-    };
+  const place = autocomplete.getPlace();
+  const components = {
+    street_number: '',
+    route: '',
+    locality: '',
+    administrative_area_level_1: '',
+    postal_code: '',
+    country: ''
+  };
 
-    if (place.address_components) {
-      place.address_components.forEach(component => {
-        const types = component.types;
-        if (types.includes('street_number')) {
-          components.street_number = component.long_name;
-        }
-        if (types.includes('route')) {
-          components.route = component.long_name;
-        }
-        if (types.includes('locality')) {
-          components.locality = component.long_name;
-        }
-        if (types.includes('administrative_area_level_1')) {
-          components.administrative_area_level_1 = component.short_name;
-        }
-        if (types.includes('postal_code')) {
-          components.postal_code = component.long_name;
-        }
-        if (types.includes('country')) {
-          components.country = component.long_name;
-        }
-      });
+  if (place.address_components) {
+    place.address_components.forEach(component => {
+      const types = component.types;
+      if (types.includes('street_number')) {
+        components.street_number = component.long_name;
+      }
+      if (types.includes('route')) {
+        components.route = component.long_name;
+      }
+      if (types.includes('locality')) {
+        components.locality = component.long_name;
+      }
+      if (types.includes('administrative_area_level_1')) {
+        components.administrative_area_level_1 = component.short_name;
+      }
+      if (types.includes('postal_code')) {
+        components.postal_code = component.long_name;
+      }
+      if (types.includes('country')) {
+        components.country = component.long_name;
+      }
+    });
+  }
+
+  // Special: Lock Company Name IMMEDIATELY if available
+  if (prefix === 'company' && place.name && document.getElementById('companyName').value.trim() === '') {
+    document.getElementById('companyName').value = place.name;
+  }
+
+  // Set Address
+  const streetAddress = `${components.street_number} ${components.route}`.trim();
+  if (document.getElementById(prefix + 'Street') && streetAddress.trim() !== '') {
+    document.getElementById(prefix + 'Street').value = streetAddress;
+  }
+
+  if (document.getElementById(prefix + 'City')) {
+    document.getElementById(prefix + 'City').value = components.locality;
+  }
+  if (document.getElementById(prefix + 'State')) {
+    document.getElementById(prefix + 'State').value = components.administrative_area_level_1;
+  }
+  if (document.getElementById(prefix + 'Zip')) {
+    document.getElementById(prefix + 'Zip').value = components.postal_code;
+  }
+  if (document.getElementById(prefix + 'Country')) {
+    document.getElementById(prefix + 'Country').value = components.country;
+  }
+
+  // Fill hidden latitude and longitude fields
+  if (place.geometry) {
+    if (document.getElementById(prefix + 'Lat')) {
+      document.getElementById(prefix + 'Lat').value = place.geometry.location.lat();
     }
+    if (document.getElementById(prefix + 'Lng')) {
+      document.getElementById(prefix + 'Lng').value = place.geometry.location.lng();
+    }
+  }
+}
 
-    // Auto-fill fields
+  // Auto-fill fields
     if (document.getElementById(prefix + 'City')) {
       document.getElementById(prefix + 'City').value = components.locality;
     }
