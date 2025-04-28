@@ -82,35 +82,49 @@
     width: 90%;
     font-size: 1rem;
   }
-  
 }
-/* --- TRACKING TITLE ANIMATION STYLES --- */
+
+/* --- TRACKING TITLE FADE-IN WORD BY WORD --- */
 .tracking-title {
   font-size: 3rem;
   margin-bottom: 20px;
-  overflow: hidden;
-  height: 70px;
   text-align: center;
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+  color: #003366;
 }
 
-.tracking-word {
+.word {
+  opacity: 0;
   display: inline-block;
-  white-space: nowrap;
-  animation: slideRight 9s infinite; /* Slower rotation */
-  transition: color 0.5s ease;
   font-weight: bold;
 }
 
-@keyframes slideRight {
-  0% { transform: translateX(100%); opacity: 0; }
-  10% { transform: translateX(0%); opacity: 1; }
-  30% { transform: translateX(0%); opacity: 1; }
-  40% { transform: translateX(-100%); opacity: 0; }
-  50% { transform: translateX(100%); opacity: 0; }
-  60% { transform: translateX(0%); opacity: 1; }
-  80% { transform: translateX(0%); opacity: 1; }
-  90% { transform: translateX(-100%); opacity: 0; }
-  100% { transform: translateX(100%); opacity: 0; }
+.word1 {
+  animation: fadeInWord 1s forwards;
+  animation-delay: 0.5s;
+}
+
+.word2 {
+  animation: fadeInWord 1s forwards;
+  animation-delay: 2s;
+}
+
+.word3 {
+  animation: fadeInWord 1s forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes fadeInWord {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Word Colors */
@@ -122,3 +136,9 @@
   color: #ff6600; /* Bright Orange */
 }
 
+/* Full Line Final Style */
+.full-line {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #003366;
+}
