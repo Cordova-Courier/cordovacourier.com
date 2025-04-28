@@ -19,8 +19,18 @@
 
   <!-- Your form starts here -->
   <form id="quoteForm" action="https://formspree.io/f/xqaqaoqz" method="POST">
-    <!-- Your full form HTML goes here exactly like you pasted -->
-  </form>
+  
+  <!-- Honeypot -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <!-- Hidden Redirect to Thank You Page -->
+  <input type="hidden" name="_redirect" value="https://beta.cordovacourier.com/quote/thank-you.html">
+
+  <!-- Your normal form fields here (First Name, Last Name, Company Name, etc.) -->
+
+  <button type="submit">Submit Request</button>
+</form>
+
 </div>
 
 <!-- ✅ Place your custom JavaScript here at the bottom for faster page load -->
@@ -129,9 +139,6 @@
 
   window.addEventListener('load', initAutocomplete);
 </script>
-
-  <!-- Honeypot Field to Prevent Bots -->
-<input type="text" name="_gotcha" style="display:none">
 
 </body>
 </html>
