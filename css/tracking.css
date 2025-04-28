@@ -1,0 +1,85 @@
+/* TRACKING FORM SECTION */
+.tracking-form-section {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+  color: #003366;
+}
+
+.tracking-form-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.tracking-form-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.tracking-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tracking-form input[type="text"] {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border: 2px solid #003366;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90%;
+}
+
+.tracking-form input[type="submit"] {
+  padding: 12px 30px;
+  background-color: #ff6600;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tracking-form input[type="submit"]:hover {
+  background-color: #e05500;
+  transform: translateY(-2px);
+}
+
+.tracking-powered {
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.tracking-powered a {
+  color: gray;
+  text-decoration: none;
+}
+
+.tracking-powered a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tracking-form-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .tracking-form-section p {
+    font-size: 1rem;
+  }
+
+  .tracking-form {
+    flex-direction: column;
+  }
+
+  .tracking-form input[type="text"],
+  .tracking-form input[type="submit"] {
+    width: 90%;
+    font-size: 1rem;
+  }
+}
