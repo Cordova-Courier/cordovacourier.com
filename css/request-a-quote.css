@@ -57,3 +57,12 @@ button {
 button:hover {
   background-color: #cc5200;
 }
+
+.dimensions-group {
+  display: flex;
+  gap: 10px;
+}
+
+.dimensions-group input {
+  flex: 1;
+}
