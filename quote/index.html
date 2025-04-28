@@ -1,5 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD0SsZALQJ3Z6cUgecb4AhsQXk9qpO9OQ&libraries=places"></script>
+<script>
+  let pickupAutocomplete, deliveryAutocomplete, companyAutocomplete;
+
+  function initAutocomplete() {
+    // Company Address Autocomplete
+    companyAutocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('companyStreet'),
+      { types: ['address'] }
+    );
+    companyAutocomplete.addListener('place_changed', function() {
+      fillInAddress(companyAutocomplete, 'company');
+    });
+
+    // Pickup Address Autocomplete
+    pickupAutocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('pickupStreet'),
+      { types: ['address'] }
+    );
+    pickupAutocomplete.addListener('place_changed', function() {
+      fillInAddress(pickupAutocomplete, 'pickup');
+    });
+
+    // Delivery Address Autocomplete
+    deliveryAutocomplete = new google.maps.places.Autocomplete(
+      document.getElementById('deliveryStreet'),
+      { types: ['address'] }
+    );
+    deliveryAutocomplete.addListener('place_changed', function() {
+      fillInAddress(deliveryAutocomplete, 'delivery');
+    });
+  }
+
+  function fillInAddress(autocomplete, prefix) {
+    const place = autocomplete.getPlace();
+    const components = {
+      street_number: '',
+      route: '',
+      locality: '',
+      administrative_area_level_1: '',
+      postal_code: '',
+      country: ''
+    };
+
+    if (place.address_components) {
+      place.address_components.forEach(component => {
+        const types = component.types;
+        if (types.includes('street_number')) {
+          components.street_number = component.long_name;
+        }
+        if (types.includes('route')) {
+          components.route = component.long_name;
+        }
+        if (types.includes('locality')) {
+          components.locality = component.long_name;
+        }
+        if (types.includes('administrative_area_level_1')) {
+          components.administrative_area_level_1 = component.short_name;
+        }
+        if (types.includes('postal_code')) {
+          components.postal_code = component.long_name;
+        }
+        if (types.includes('country')) {
+          components.country = component.long_name;
+        }
+      });
+    }
+
+    // Fill city, state, zip, country
+    if (document.getElementById(prefix + 'City')) {
+      document.getElementById(prefix + 'City').value = components.locality;
+    }
+    if (document.getElementById(prefix + 'State')) {
+      document.getElementById(prefix + 'State').value = components.administrative_area_level_1;
+    }
+    if (document.getElementById(prefix + 'Zip')) {
+      document.getElementById(prefix + 'Zip').value = components.postal_code;
+    }
+    if (document.getElementById(prefix + 'Country')) {
+      document.getElementById(prefix + 'Country').value = components.country;
+    }
+
+    // Fill hidden latitude and longitude fields
+    if (place.geometry) {
+      if (document.getElementById(prefix + 'Lat')) {
+        document.getElementById(prefix + 'Lat').value = place.geometry.location.lat();
+      }
+      if (document.getElementById(prefix + 'Lng')) {
+        document.getElementById(prefix + 'Lng').value = place.geometry.location.lng();
+      }
+    }
+  }
+
+  window.addEventListener('load', initAutocomplete);
+</script>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
