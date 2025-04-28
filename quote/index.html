@@ -137,17 +137,21 @@
     <label for="companyStreet">Company Street Address*</label>
     <input type="text" id="companyStreet" name="companyStreet" required>
 
+    <!-- Company Hidden Fields -->
+    <input type="hidden" id="companyLat" name="companyLat">
+    <input type="hidden" id="companyLng" name="companyLng">
+
     <div class="field-group">
       <div>
         <label for="companyCity">City*</label>
         <input type="text" id="companyCity" name="companyCity" required>
       </div>
       <div>
-        <label for="companyState">State*</label>
+        <label for="companyState">State/Province/Region*</label>
         <input type="text" id="companyState" name="companyState" maxlength="2" required>
       </div>
       <div>
-        <label for="companyZip">Zip Code*</label>
+        <label for="companyZip">Zip/Postal Code*</label>
         <input type="text" id="companyZip" name="companyZip" required>
       </div>
     </div>
@@ -185,17 +189,21 @@
     <label for="pickupStreet">Pickup Street Address*</label>
     <input type="text" id="pickupStreet" name="pickupStreet" required>
 
+    <!-- Pickup Hidden Fields -->
+    <input type="hidden" id="pickupLat" name="pickupLat">
+    <input type="hidden" id="pickupLng" name="pickupLng">
+
     <div class="field-group">
       <div>
         <label for="pickupCity">City*</label>
         <input type="text" id="pickupCity" name="pickupCity" required>
       </div>
       <div>
-        <label for="pickupState">State*</label>
+        <label for="pickupState">State/Province/Region*</label>
         <input type="text" id="pickupState" name="pickupState" maxlength="2" required>
       </div>
       <div>
-        <label for="pickupZip">Zip Code*</label>
+        <label for="pickupZip">Zip/Postal Code*</label>
         <input type="text" id="pickupZip" name="pickupZip" required>
       </div>
     </div>
@@ -226,6 +234,8 @@
       <option value="Mountain Time (MT)">Mountain Time (MT)</option>
       <option value="Central Time (CT)">Central Time (CT)</option>
       <option value="Eastern Time (ET)">Eastern Time (ET)</option>
+      <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
+      <option value="Mexico City Time">Mexico City Time</option>
     </select>
 
     <!-- Delivery Information -->
@@ -248,17 +258,21 @@
     <label for="deliveryStreet">Delivery Street Address*</label>
     <input type="text" id="deliveryStreet" name="deliveryStreet" required>
 
+    <!-- Delivery Hidden Fields -->
+    <input type="hidden" id="deliveryLat" name="deliveryLat">
+    <input type="hidden" id="deliveryLng" name="deliveryLng">
+
     <div class="field-group">
       <div>
         <label for="deliveryCity">City*</label>
         <input type="text" id="deliveryCity" name="deliveryCity" required>
       </div>
       <div>
-        <label for="deliveryState">State*</label>
+        <label for="deliveryState">State/Province/Region*</label>
         <input type="text" id="deliveryState" name="deliveryState" maxlength="2" required>
       </div>
       <div>
-        <label for="deliveryZip">Zip Code*</label>
+        <label for="deliveryZip">Zip/Postal Code*</label>
         <input type="text" id="deliveryZip" name="deliveryZip" required>
       </div>
     </div>
@@ -289,6 +303,8 @@
       <option value="Mountain Time (MT)">Mountain Time (MT)</option>
       <option value="Central Time (CT)">Central Time (CT)</option>
       <option value="Eastern Time (ET)">Eastern Time (ET)</option>
+      <option value="Atlantic Time (AT)">Atlantic Time (AT)</option>
+      <option value="Mexico City Time">Mexico City Time</option>
     </select>
 
     <!-- Package and Order Details -->
@@ -336,9 +352,8 @@
     </select>
 
     <button type="submit">Submit Request</button>
-  </form>
 
+  </form>
 </div>
 
 </body>
-</html>
