@@ -17,9 +17,14 @@ async function askCordovaAI() {
     });
 
     const data = await res.json();
-    resultDiv.innerHTML = `<div>${data.reply}</div>`;
 
+    if (data.reply) {
+      resultDiv.innerHTML = `<div>${data.reply}</div>`;
+    } else {
+      resultDiv.innerHTML = "<div>Sorry, I couldn't find an answer. Please try again.</div>";
+    }
   } catch (err) {
-    resultDiv.innerHTML = "<div>Error reaching Cordova AI. Try again later.</div>";
+    console.error('Error:', err);
+    resultDiv.innerHTML = "<div>Error reaching Cordova AI. Please try again later.</div>";
   }
 }
