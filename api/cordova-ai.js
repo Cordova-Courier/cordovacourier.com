@@ -5,6 +5,10 @@ export default async function handler(req, res) {
 
   const { question } = req.body;
 
+  if (!question) {
+    return res.status(400).json({ error: 'No question provided.' });
+  }
+
   try {
     const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -17,22 +21,27 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: "You are Cordova Courier's AI Assistant. Only answer questions about Cordova Courier's delivery services, airport cargo, same-day courier, and operations. Be concise. If you're unsure, say 'Please contact our dispatch team for clarification.'"
+            content: "You are Cordova Courier's AI Assistant. Only answer questions about Cordova Courier's delivery services, airport cargo, freight, same-day courier, and operations. If you are not sure, reply: 'Please contact our dispatch team for clarification.'"
           },
           { role: "user", content: question }
         ],
         temperature: 0.2,
-        max_tokens: 500
+        max_tokens: 400
       })
     });
 
     const data = await openaiRes.json();
-    const reply = data.choices?.[0]?.message?.content || "Sorry, I didn't understand that.";
 
-    return res.status(200).json({ reply });
+    if (!data.choices || data.choices.length === 0) {
+      return res.status(500).json({ error: 'No response from AI.' });
+    }
 
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    const aiReply = data.choices[0].message.content.trim();
+
+    return res.status(200).json({ reply: aiReply });
+
+  } catch (error) {
+    console.error('Error calling OpenAI:', error);
+    return res.status(500).json({ error: 'Failed to get response from Cordova AI.' });
   }
 }
