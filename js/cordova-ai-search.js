@@ -1,62 +1,30 @@
-// Cordova AI Search + Voice Script
-const pages = [
-  {
-    name: "SFO - San Francisco Courier Delivery Freight Cargo Services",
-    url: "/service-areas/north-america/usa/california/sfo-san-francisco-courier-delivery-freight-cargo-services"
-  },
-  {
-    name: "Fremont Courier Delivery Freight Cargo Services",
-    url: "/service-areas/north-america/usa/california/fremont-courier-delivery-freight-cargo-services"
-  },
-  {
-    name: "Mather Courier Delivery Freight Cargo Services",
-    url: "/service-areas/north-america/usa/california/mhr-mather-courier-delivery-freight-cargo-services"
-  },
-  {
-    name: "MHR - Mather Airport Cargo Delivery Services",
-    url: "/airports/mhr-mather-cargo-delivery-services"
-  },
-  {
-    name: "SMF - Sacramento International Airport Cargo Delivery Services",
-    url: "/airports/smf-sacramento-cargo-delivery-services"
-  }
-];
-
-function searchPages() {
-  const input = document.getElementById('aiSearchInput').value.toLowerCase();
+async function askCordovaAI() {
+  const input = document.getElementById('aiSearchInput').value.trim();
   const resultDiv = document.getElementById('searchResults');
 
   if (!input) {
-    resultDiv.innerHTML = "";
+    resultDiv.innerHTML = "<div>Please enter a question.</div>";
     return;
   }
 
-  const results = pages.filter(page => page.name.toLowerCase().includes(input));
+  resultDiv.innerHTML = "<div>Thinking... 🤔</div>";
 
-  if (results.length > 0) {
-    resultDiv.innerHTML = results
-      .map(page => `<div><a href="${page.url}">${page.name}</a></div>`)
-      .join('');
-  } else {
-    resultDiv.innerHTML = `<div>No direct match found. Try a nearby city or visit our <a href='/service-areas/north-america/usa/'>Service Areas</a>.</div>`;
+  try {
+    const res = await fetch('/api/cordova-ai', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: input })
+    });
+
+    const data = await res.json();
+
+    if (data.reply) {
+      resultDiv.innerHTML = `<div>${data.reply}</div>`;
+    } else {
+      resultDiv.innerHTML = "<div>Sorry, I couldn't find an answer. Please try again.</div>";
+    }
+  } catch (err) {
+    console.error('Error:', err);
+    resultDiv.innerHTML = "<div>Error reaching Cordova AI. Please try again later.</div>";
   }
-}
-
-function startVoiceSearch() {
-  const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-  recognition.lang = 'en-US';
-  recognition.interimResults = false;
-  recognition.maxAlternatives = 1;
-
-  recognition.onresult = function(event) {
-    const transcript = event.results[0][0].transcript;
-    document.getElementById('aiSearchInput').value = transcript;
-    searchPages();
-  };
-
-  recognition.onerror = function(event) {
-    alert('Voice search failed: ' + event.error);
-  };
-
-  recognition.start();
 }
