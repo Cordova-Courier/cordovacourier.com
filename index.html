@@ -235,13 +235,13 @@ window.addEventListener('load', function() {
   <script src="/js/cordova-ai-search.js"></script>
 
   <script>
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
+    document.documentElement.classList.remove('preload');
     setTimeout(() => {
       document.body.classList.add('loaded');
-    }, 100); // slight delay to smooth it out
+    }, 100);
   });
 </script>
-
 
 </body>
 </html>
