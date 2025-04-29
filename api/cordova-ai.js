@@ -41,7 +41,15 @@ export default async function handler(req, res) {
     return res.status(200).json({ reply: aiReply });
 
   } catch (error) {
-    console.error('Error calling OpenAI:', error);
-    return res.status(500).json({ error: 'Failed to get response from Cordova AI.' });
+  console.error('Error calling OpenAI:', error);
+
+  // 👇 Add this to log the full response if it exists
+  if (error.response) {
+    const errorBody = await error.response.text();
+    console.error('OpenAI Error Response:', errorBody);
+  }
+
+  return res.status(500).json({ error: 'Failed to get response from Cordova AI.' });
+}
   }
 }
