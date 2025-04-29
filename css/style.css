@@ -102,11 +102,14 @@ html, body {
 /* === PAGE FADE-IN ANIMATION === */
 body {
   opacity: 0;
-  transition: opacity 1.2s ease-in-out;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 0s linear 1.2s;
 }
 
 body.loaded {
   opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 /* Hero Content (Headline + Button) */
