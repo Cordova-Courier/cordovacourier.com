@@ -99,6 +99,16 @@ html, body {
   text-decoration: underline;
 }
 
+/* === PAGE FADE-IN ANIMATION === */
+body {
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
 /* Hero Content (Headline + Button) */
 .hero-content {
   position: absolute;
