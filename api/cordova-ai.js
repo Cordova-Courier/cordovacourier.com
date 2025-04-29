@@ -40,15 +40,14 @@ export default async function handler(req, res) {
 
     return res.status(200).json({ reply: aiReply });
 
-  } catch (error) {
+    } catch (error) {
     console.error('Error calling OpenAI:', error);
 
-    // Optional: attempt to log deeper OpenAI error (will usually just print to Vercel logs)
     try {
-      const body = await error?.response?.text?.();
-      if (body) console.error('OpenAI Error Response:', body);
-    } catch (innerError) {
-      console.error('Error reading error response:', innerError);
+      const responseText = await error?.response?.text?.();
+      console.error('OpenAI Error Response:', responseText);
+    } catch (readError) {
+      console.error('Could not read OpenAI error response:', readError);
     }
 
     return res.status(500).json({ error: 'Failed to get response from Cordova AI.' });
