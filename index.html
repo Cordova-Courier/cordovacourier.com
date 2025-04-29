@@ -227,9 +227,12 @@ window.addEventListener('load', function() {
 
   <script>
   window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 100); // slight delay to smooth it out
   });
 </script>
+
 
 </body>
 </html>
