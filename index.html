@@ -59,18 +59,22 @@
 </div>
 
   <!-- HERO CONTENT -->
-  <div class="hero-content">
-    <h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
-    <!-- Cordova AI Assistance Search Field with Voice Icon -->
-<section class="ai-search-container">
-  <div class="ai-search-box">
-    <input
-      type="text"
-      id="aiSearchInput"
-      placeholder="Have a question? Ask Cordova AI Assistance"
-      onkeyup="searchPages()" />
-    <button class="voice-button" onclick="startVoiceSearch()">🎤</button>
-  </div>
+<div class="hero-content">
+  <h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
+
+  <!-- Cordova AI Assistance Search Field -->
+  <section class="ai-search-container">
+    <div class="ai-search-box">
+      <input type="text" id="aiSearchInput" placeholder="Have a question? Ask Cordova AI Assistance" onkeyup="searchPages()" />
+      <button class="voice-button" onclick="startVoiceSearch()">🎤</button>
+    </div>
+  </section>
+
+  <!-- Search Results -->
+  <section id="searchResults"></section>
+
+  <a href="/quote/index.html" class="hero-button" target="_blank" rel="noopener noreferrer">Request a Quote</a>
+</div>
 </section>
     <a href="/quote/index.html" class="hero-button" target="_blank" rel="noopener noreferrer">
   Request a Quote
@@ -91,7 +95,8 @@
     <a href="/tracking" class="quick-button">📦 Track Shipment</a>
     <a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" class="quick-button" target="_blank" rel="noopener noreferrer">
   🔑 Customer Portal
-    <a href="/quote/index.html" class="quick-button" target="_blank" rel="noopener noreferrer">
+</a>
+<a href="/quote/index.html" class="quick-button" target="_blank" rel="noopener noreferrer">
   📝 Request a Quote
 </a>
 
