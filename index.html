@@ -67,17 +67,25 @@
 
   <!-- Cordova AI Assistance Search Field -->
   <section class="ai-search-container">
-    <div class="ai-search-box">
-      <input
-        type="text"
-        id="aiSearchInput"
-        placeholder="Have a question? Ask Cordova AI Assistance"
-        onkeyup="if(event.key === 'Enter') { askCordovaAI(); }" />
-    </div>
-  </section>
+  <div class="ai-search-box">
+    <input
+      type="text"
+      id="aiSearchInput"
+      placeholder="Have a question? Ask Cordova AI Assistance"
+      onkeyup="if(event.key === 'Enter'){ askCordovaAI(); }" />
+    <button onclick="askCordovaAI()" class="ai-submit">Ask</button>
+  </div>
 
-    <!-- Results Display Area -->
-     <section id="searchResults"></section>
+  <!-- Suggested FAQs -->
+  <div class="faq-buttons">
+    <button onclick="askCordovaAI('Do you deliver to Tracy, CA?')">Deliver to Tracy?</button>
+    <button onclick="askCordovaAI('Do you handle airport cargo?')">Airport Cargo?</button>
+    <button onclick="askCordovaAI('Do you offer medical courier services?')">Medical Courier?</button>
+  </div>
+</section>
+
+<section id="searchResults"></section>
+
 </div>
 
   <!-- 👇 SCROLL DOWN LINK SHOULD BE INSIDE HERO -->
