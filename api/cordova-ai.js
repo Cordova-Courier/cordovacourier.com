@@ -1,4 +1,4 @@
-import knowledge from '../../data/knowledge.json'; // adjust path if needed
+import knowledge from '../data/knowledge.json'; // ✅ Adjust path if needed
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -21,9 +21,9 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
         messages: [
-  {
-    role: "system",
-    content: `
+          {
+            role: "system",
+            content: `
 You are Cordova Courier's AI Assistant.
 
 Your job is to answer customer questions using only the facts provided below. If the requested information is not available, respond with: "Please contact our dispatch team for clarification 24/7 at (209) 880-9624."
@@ -39,14 +39,12 @@ Cordova Courier offers:
 - B2B support for legal, construction, healthcare, government, and warehouse-to-jobsite delivery
 
 If more structured reference is needed, use this knowledge data:\n${JSON.stringify(knowledge)}
-`
-  },
-  {
-    role: "user",
-    content: question
-  }
-]
-
+            `
+          },
+          {
+            role: "user",
+            content: question
+          }
         ],
         temperature: 0.2,
         max_tokens: 400
