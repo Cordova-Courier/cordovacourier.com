@@ -1,0 +1,40 @@
+{
+  "open_hours": "24/7 (open 24 hours a day, 7 days a week)",
+  "service_levels": {
+    "Standard": {
+      "description": "Same-day service, available 5 AM – 5 PM",
+      "priority": "Low"
+    },
+    "Express": {
+      "description": "Pickup within 2 hours, delivery within 4 hours",
+      "priority": "Medium"
+    },
+    "Rush": {
+      "description": "Immediate, high-priority delivery, available 24/7",
+      "priority": "High"
+    }
+  },
+  "medical_services": {
+    "compliance": "HIPAA-compliant",
+    "availability": "Available 24/7 for Express and Rush"
+  },
+  "freight": {
+    "vehicles": ["Sprinter vans", "Box trucks"]
+  },
+  "airports_served": ["SFO", "SMF", "OAK", "SJC", "SCK"],
+  "cities_served": [
+    "San Francisco",
+    "Modesto",
+    "Tracy",
+    "Manteca",
+    "Lathrop",
+    "Sacramento"
+  ],
+  "industries_supported": [
+    "Legal",
+    "Construction",
+    "Healthcare",
+    "Government",
+    "Warehouse-to-jobsite"
+  ]
+}
