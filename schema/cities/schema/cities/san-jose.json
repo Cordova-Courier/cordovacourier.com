@@ -1,0 +1,19 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Cordova Courier – San Jose Courier & Freight Services",
+  "url": "https://ai.cordovacourier.com",
+  "image": "https://beta.cordovacourier.com/images/branding/cordova-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Jose",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "San Jose, CA and surrounding 50-mile radius"
+  },
+  "telephone": "+1-209-880-9624",
+  "description": "Cordova Courier serves San Jose with express and rush courier services, HIPAA-compliant medical delivery, and cargo pickup from SJC."
+}
