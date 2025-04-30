@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  "name": "Cordova Courier - Medical Courier Services",
+  "url": "https://cordovacourier.com/services/medical",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "California",
+    "addressRegion": "CA",
+    "postalCode": "95336",
+    "addressCountry": "USA"
+  },
+  "availableService": {
+    "@type": "MedicalTest",
+    "name": "HIPAA-compliant Medical Courier Delivery",
+    "description": "Cordova Courier provides same-day, express, and rush courier services for medical specimens and lab work 24/7 across major California regions and nationwide."
+  }
+}
