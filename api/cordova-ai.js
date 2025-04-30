@@ -30,6 +30,12 @@ export default async function handler(req, res) {
       })
     });
 
+    if (!openaiRes.ok) {
+      const errorBody = await openaiRes.text();
+      console.error('OpenAI API Error:', errorBody);
+      return res.status(500).json({ error: 'OpenAI API error' });
+    }
+
     const data = await openaiRes.json();
 
     if (!data.choices || data.choices.length === 0) {
@@ -37,19 +43,10 @@ export default async function handler(req, res) {
     }
 
     const aiReply = data.choices[0].message.content.trim();
-
     return res.status(200).json({ reply: aiReply });
 
-    } catch (error) {
-    console.error('Error calling OpenAI:', error);
-
-    try {
-      const responseText = await error?.response?.text?.();
-      console.error('OpenAI Error Response:', responseText);
-    } catch (readError) {
-      console.error('Could not read OpenAI error response:', readError);
-    }
-
+  } catch (error) {
+    console.error('Unexpected Error Calling OpenAI:', error);
     return res.status(500).json({ error: 'Failed to get response from Cordova AI.' });
   }
 }
