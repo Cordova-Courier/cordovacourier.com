@@ -1,0 +1,17 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ParcelDelivery",
+  "provider": {
+    "@type": "Organization",
+    "name": "Cordova Courier"
+  },
+  "deliveryAddress": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Francisco International Airport",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "hasDeliveryMethod": "https://schema.org/CourierDelivery",
+  "trackingUrl": "https://ai.cordovacourier.com/tracking",
+  "description": "Cordova Courier provides secure pickup and delivery services from SFO Airport, including freight, medical, and urgent courier support."
+}
