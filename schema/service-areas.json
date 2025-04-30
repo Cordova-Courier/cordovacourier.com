@@ -1,1 +1,17 @@
-
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Courier and Delivery Services",
+  "provider": {
+    "@type": "Organization",
+    "name": "Cordova Courier"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Nationwide, including California, Arizona, Texas, Florida, and more"
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://ai.cordovacourier.com"
+  }
+}
