@@ -1,1 +1,19 @@
-
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Cordova Courier – San Francisco Courier & Cargo Services",
+  "url": "https://ai.cordovacourier.com",
+  "image": "https://beta.cordovacourier.com/images/branding/cordova-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "San Francisco",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "San Francisco, CA and surrounding 50-mile radius"
+  },
+  "telephone": "+1-209-880-9624",
+  "description": "Cordova Courier provides 24/7 same-day, medical, freight, and airport cargo delivery services in San Francisco and nearby areas including SFO."
+}
