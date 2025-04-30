@@ -1,1 +1,19 @@
-
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Cordova Courier",
+  "url": "https://cordovacourier.com",
+  "logo": "https://beta.cordovacourier.com/images/branding/cordova-logo.png",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100076275864228",
+    "https://www.linkedin.com/company/cordovacourier/",
+    "https://x.com/CordovaCourier",
+    "https://www.tiktok.com/@cordova.courier"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-209-880-9624",
+    "contactType": "Customer Service",
+    "availableLanguage": ["English", "Spanish"]
+  }
+}
