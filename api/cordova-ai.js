@@ -1,3 +1,5 @@
+import knowledge from '../../data/knowledge.json'; // adjust path if needed
+
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -19,11 +21,32 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         model: "gpt-3.5-turbo",
         messages: [
-          {
-            role: "system",
-            content: "You are Cordova Courier's AI Assistant. Only answer questions about Cordova Courier's delivery services, airport cargo, freight, same-day courier, and operations. If you are not sure, reply: 'Please contact our dispatch team for clarification.'"
-          },
-          { role: "user", content: question }
+  {
+    role: "system",
+    content: `
+You are Cordova Courier's AI Assistant.
+
+Your job is to answer customer questions using only the facts provided below. If the requested information is not available, respond with: "Please contact our dispatch team for clarification 24/7 at (209) 880-9624."
+
+Cordova Courier is open 24 hours a day, 7 days a week.
+
+Cordova Courier offers:
+- Same-day delivery services (Standard: 5 AM–5 PM, Express: pickup in 2 hours, Rush: urgent priority)
+- HIPAA-compliant medical courier services (24/7 for Express and Rush)
+- Freight and pallet delivery using Sprinter vans and box trucks
+- Airport cargo support from SFO, SMF, OAK, SJC, and SCK
+- Service across Modesto, Tracy, Manteca, Lathrop, Sacramento, San Francisco, and 50-mile radius per city
+- B2B support for legal, construction, healthcare, government, and warehouse-to-jobsite delivery
+
+If more structured reference is needed, use this knowledge data:\n${JSON.stringify(knowledge)}
+`
+  },
+  {
+    role: "user",
+    content: question
+  }
+]
+
         ],
         temperature: 0.2,
         max_tokens: 400
