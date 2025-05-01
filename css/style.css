@@ -550,8 +550,14 @@ html, body {
   /* ... other styles ... */
 }
 
-/* ✅ Separate Media Query — not nested */
+/* ==========================
+   6. MOBILE RESPONSIVENESS
+========================== */
 @media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
   .language-bar {
     font-size: 0.75rem;
     padding: 2px 10px;
@@ -560,7 +566,6 @@ html, body {
   .contact-info a[href^="mailto:"] {
     font-size: 0.9rem;
   }
-}
 
   /* Contact Section */
   .contact-courier h2 {
@@ -623,5 +628,4 @@ html, body {
   .site-footer {
     font-size: 0.85rem;
   }
-
-  }
+}
