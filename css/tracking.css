@@ -89,10 +89,10 @@
   font-size: 3rem;
   margin-bottom: 20px;
   text-align: center;
-  height: 70px;
   overflow: hidden;
   position: relative;
   color: #003366;
+  min-height: 70px; /* use min-height for initial spacing */
 }
 
 .word {
