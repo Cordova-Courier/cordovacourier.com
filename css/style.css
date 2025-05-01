@@ -2,6 +2,94 @@
    Cordova Courier Website - style.css
    Author: Vincent Cordova
    ============================================ */
+/* === Header Wrapper === */
+#site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.4s ease, box-shadow 0.3s ease;
+}
+
+/* === Initial Transparent State === */
+#site-header.transparent {
+  background-color: transparent;
+}
+
+/* === Scrolled State === */
+#site-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* === Navigation Container === */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === Logo Styles === */
+.logo-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6); /* Translucent white */
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Large logo (default) */
+.large-logo {
+  height: 64px;
+  display: block;
+}
+
+/* Small logo (hidden by default) */
+.small-logo {
+  height: 40px;
+  display: none;
+}
+
+/* On scroll, swap logos */
+#site-header.scrolled .large-logo {
+  display: none;
+}
+
+#site-header.scrolled .small-logo {
+  display: block;
+}
+
+/* === Nav Links === */
+.main-nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+/* Scroll state nav link color */
+#site-header.scrolled .main-nav a {
+  color: #003366; /* Deep blue */
+}
+
+/* Hover effect */
+.main-nav a:hover {
+  color: #ff6600; /* Cordova orange */
+}
+
+
+}
 
 /* ==========================
    1. RESET AND BASE STYLES
@@ -444,6 +532,12 @@ html, body {
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
+/* Responsive (optional placeholder for future mobile menu) */
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* We'll add mobile nav later */
+  }
+
 @media (max-width: 768px) {
   /* Contact Section */
   .contact-courier h2 {
