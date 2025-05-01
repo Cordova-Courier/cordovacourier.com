@@ -7,8 +7,10 @@
   <title>Cordova Courier - Courier & Delivery Services Nationwide</title>
   <meta name="description" content="Cordova Courier provides fast, reliable, and secure courier and delivery services nationwide, specializing in same-day delivery, medical courier services, freight, and airport cargo recovery.">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
 </head>
+
+  <script src="/js/schema-loader.js" defer></script>
 
 <body>
 
@@ -48,7 +50,7 @@
   <div class="contact-info">
     <div class="contact-item">
       <span class="contact-icon">📞</span>
-      <a href="tel:2098809881">(209) 880-9881</a>
+      <a href="tel:2098809881">(209) 880-9624</a>
     </div>
     <div class="contact-item">
       <span class="contact-icon">📧</span>
@@ -57,17 +59,40 @@
   </div>
 
 </div>
-
   <!-- HERO CONTENT -->
   <div class="hero-content">
-    <h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
-    <a href="/quote/index.html" class="hero-button" target="_blank" rel="noopener noreferrer">
-  Request a Quote
-</a>
+  <h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
 
+  <a href="/quote/index.html" class="hero-button" target="_blank" rel="noopener noreferrer">
+    Request a Quote
+  </a>
+
+  <!-- Cordova AI Assistance Search Field -->
+  <section class="ai-search-container">
+  <div class="ai-search-box">
+    <input
+      type="text"
+      id="aiSearchInput"
+      placeholder="Have a question? Ask Cordova AI Assistance"
+      onkeyup="if(event.key === 'Enter'){ askCordovaAI(); }" />
+    <button onclick="askCordovaAI()" class="ai-submit">Ask</button>
   </div>
 
+  <!-- Suggested FAQs -->
+  <div class="faq-buttons">
+    <button onclick="askCordovaAI('Do you deliver to Tracy, CA?')">Deliver to Tracy?</button>
+    <button onclick="askCordovaAI('Do you handle airport cargo?')">Airport Cargo?</button>
+    <button onclick="askCordovaAI('Do you offer medical courier services?')">Medical Courier?</button>
+  </div>
+</section>
+
+<section id="searchResults"></section>
+
+</div>
+
+  <!-- 👇 SCROLL DOWN LINK SHOULD BE INSIDE HERO -->
   <a href="#services" class="scroll-down">↓</a>
+
 </section>
 
 <!-- QUICK ACTION BUTTONS SECTION -->
@@ -76,7 +101,8 @@
     <a href="/tracking" class="quick-button">📦 Track Shipment</a>
     <a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" class="quick-button" target="_blank" rel="noopener noreferrer">
   🔑 Customer Portal
-    <a href="/quote/index.html" class="quick-button" target="_blank" rel="noopener noreferrer">
+</a>
+<a href="/quote/index.html" class="quick-button" target="_blank" rel="noopener noreferrer">
   📝 Request a Quote
 </a>
 
@@ -207,6 +233,8 @@ window.addEventListener('load', function() {
     <p><a href="/privacy-policy">Privacy Policy</a></p>
   </div>
 </footer>
+
+  <script src="/js/cordova-ai-search.js"></script>
 
 </body>
 </html>
