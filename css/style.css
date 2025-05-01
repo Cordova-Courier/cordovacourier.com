@@ -509,7 +509,7 @@ html, body {
 
   .contact-info a[href^="mailto:"],
   .contact-info a[href^="tel:"] {
-    font-size: 0.10rem;
+    font-size: 0.7rem;
     word-break: break-word;
   }
 }
