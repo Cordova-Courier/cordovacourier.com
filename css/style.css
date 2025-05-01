@@ -539,15 +539,6 @@ html, body {
     to { opacity: 1; transform: translateY(0); }
   }
 
-/* ==========================
-   6. MOBILE RESPONSIVENESS
-========================== */
-/* Responsive (optional placeholder for future mobile menu) */
-@media (max-width: 768px) {
-  .main-nav {
-    display: none;
-  }
-  /* ... other styles ... */
 }
 
 /* ==========================
