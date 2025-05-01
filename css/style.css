@@ -2,103 +2,6 @@
    Cordova Courier Website - style.css
    Author: Vincent Cordova
    ============================================ */
-.language-bar {
-  position: relative;
-  width: 100%;
-  z-index: 998;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 8px 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.language-selector select {
-  padding: 6px 12px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #333;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 1rem;
-}
-
-.contact-info a {
-  color: #003366;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* === Header Wrapper === */
-#site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 997;
-  transition: background-color 0.4s ease, box-shadow 0.3s ease;
-  background-color: transparent;
-}
-
-/* === Scrolled State === */
-#site-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* === Navigation Container === */
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* === Logo Styles === */
-.logo-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 64px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 6px;
-  transition: all 0.3s ease;
-}
-
-/* Nav Links */
-.main-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #ff6600;
-  transition: color 0.3s ease;
-}
-
-#site-header.scrolled .main-nav a {
-  color: #003366;
-}
-
-.main-nav a:hover {
-  color: #ff6600;
-}
 
 /* ==========================
    1. RESET AND BASE STYLES
@@ -154,32 +57,6 @@ html, body {
   right: 20px;
   text-align: right;
   z-index: 2;
-}
-
-.header-extras {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.header-extras select {
-  padding: 6px 12px;
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
-
-.header-extras .contact-info {
-  font-size: 0.95rem;
-  color: #003366;
-}
-
-.header-extras .contact-info a {
-  color: #003366;
-  text-decoration: none;
-}
-
-.header-extras .contact-info a:hover {
-  text-decoration: underline;
 }
 
 .language-selector select {
@@ -502,85 +379,10 @@ html, body {
   text-decoration: underline;
 }
 
-/* === Cordova AI Search Field Styles === */
-.ai-search-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    animation: fadeInSearch 1.5s ease-in-out;
-  }
-
-  .ai-search-box {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
-    padding: 10px;
-    width: 90%;
-    max-width: 600px;
-  }
-
-  #aiSearchInput {
-    flex: 1;
-    padding: 15px 20px;
-    font-size: 18px;
-    border: none;
-    background: transparent;
-    color: white;
-    outline: none;
-    text-align: center;
-  }
-
-  #aiSearchInput::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  .voice-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-
-  #searchResults {
-    text-align: center;
-    margin-top: 10px;
-    color: white;
-    font-size: 16px;
-  }
-
-  #searchResults div a {
-    display: inline-block;
-    margin: 5px 0;
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
-  @keyframes fadeInSearch {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
 @media (max-width: 768px) {
-  .main-nav {
-    display: none;
-  }
-
-  .language-bar {
-    font-size: 0.75rem;
-    padding: 2px 10px;
-  }
-
-  .contact-info a[href^="mailto:"] {
-    font-size: 0.9rem;
-  }
-
   /* Contact Section */
   .contact-courier h2 {
     font-size: 2.2rem;
