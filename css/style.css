@@ -57,6 +57,7 @@
 .small-logo {
   height: 40px;
   display: none;
+  padding: 5px; /* optional: adds spacing so it doesn’t feel squished */
 }
 
 /* On scroll, swap logos */
