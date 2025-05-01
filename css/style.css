@@ -6,21 +6,26 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 998; /* Just below the main nav */
-  background-color: rgba(255, 255, 255, 0.60); /* light translucent */
+  z-index: 998;
+  background-color: rgba(255, 255, 255, 0.8); /* more translucent */
   padding: 4px 20px;
   text-align: right;
   font-size: 0.9rem;
   font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
 
 /* === Header Wrapper === */
 #site-header {
   position: fixed;
-  top: 32px; /* adjust based on your language bar height */
+  top: 36px; /* below language bar */
   width: 100%;
   z-index: 999;
   transition: background-color 0.4s ease, box-shadow 0.3s ease;
+  background-color: transparent;
 }
 
 /* === Initial Transparent State === */
@@ -30,7 +35,7 @@
 
 /* === Scrolled State === */
 #site-header.scrolled {
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -45,16 +50,17 @@
 }
 
 /* === Logo Styles === */
-.logo-wrapper .logo {
-  height: auto;
-  max-height: 64px;
-  width: auto;
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo {
+  height: 64px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3); /* Translucent white */
-  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.5); /* more translucent white circle */
+  padding: 6px;
   transition: all 0.3s ease;
 }
 
@@ -86,7 +92,7 @@
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
-  color: white;
+  color: #ff6600;
   transition: color 0.3s ease;
 }
 
