@@ -1,3 +1,4 @@
+
 /* ============================================
    Cordova Courier Website - style.css
    Author: Vincent Cordova
@@ -7,7 +8,7 @@
   top: 0;
   width: 100%;
   z-index: 998;
-  background-color: rgba(255, 255, 255, 0.8); /* more translucent */
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 4px 20px;
   text-align: right;
   font-size: 0.9rem;
@@ -21,7 +22,7 @@
 /* === Header Wrapper === */
 #site-header {
   position: fixed;
-  top: 36px; /* below language bar */
+  top: 36px;
   width: 100%;
   z-index: 999;
   transition: background-color 0.4s ease, box-shadow 0.3s ease;
@@ -59,7 +60,7 @@
 .logo {
   height: 64px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5); /* more translucent white circle */
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 6px;
   transition: all 0.3s ease;
 }
@@ -74,7 +75,7 @@
 .small-logo {
   height: 40px;
   display: none;
-  padding: 5px; /* optional: adds spacing so it doesn’t feel squished */
+  padding: 5px;
 }
 
 /* On scroll, swap logos */
@@ -96,14 +97,12 @@
   transition: color 0.3s ease;
 }
 
-/* Scroll state nav link color */
 #site-header.scrolled .main-nav a {
-  color: #003366; /* Deep blue */
+  color: #003366;
 }
 
-/* Hover effect */
 .main-nav a:hover {
-  color: #ff6600; /* Cordova orange */
+  color: #ff6600;
 }
 
 /* ==========================
