@@ -506,4 +506,10 @@ html, body {
   .site-footer {
     font-size: 0.85rem;
   }
+
+  .contact-info a[href^="mailto:"],
+  .contact-info a[href^="tel:"] {
+    font-size: 0.10rem;
+    word-break: break-word;
+  }
 }
