@@ -161,6 +161,32 @@ html, body {
   z-index: 2;
 }
 
+.header-extras {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-extras select {
+  padding: 6px 12px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.header-extras .contact-info {
+  font-size: 0.95rem;
+  color: #003366;
+}
+
+.header-extras .contact-info a {
+  color: #003366;
+  text-decoration: none;
+}
+
+.header-extras .contact-info a:hover {
+  text-decoration: underline;
+}
+
 .language-selector select {
   padding: 5px 10px;
   border-radius: 5px;
