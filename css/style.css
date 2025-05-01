@@ -45,11 +45,10 @@
 }
 
 /* === Logo Styles === */
-.logo-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.logo-wrapper .logo {
+  height: auto;
+  max-height: 64px;
+  width: auto;
 }
 
 .logo {
