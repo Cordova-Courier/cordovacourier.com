@@ -65,31 +65,23 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .tracking-form-section h1 {
-    font-size: 2.2rem;
-  }
-
-  .tracking-form-section p {
-    font-size: 1rem;
-  }
-
   .tracking-form {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* centers both input and button */
   }
 
-  .tracking-form input[type="text"] {
-    width: 100%;
-    max-width: 90%;
+  .tracking-form input[type="text"],
+  .tracking-form input[type="submit"] {
+    width: 90%;         /* full-width feel but not edge-to-edge */
+    max-width: 400px;   /* prevent stretching on large phones */
     font-size: 1rem;
+    box-sizing: border-box; /* ensure padding doesn't exceed width */
   }
 
   .tracking-form input[type="submit"] {
-    width: 100%;
-    max-width: 90%;
-    font-size: 1rem;
+    margin-top: 12px;   /* spacing below input field */
     text-align: center;
-    margin-top: 10px;
+    display: block;
   }
 }
 
