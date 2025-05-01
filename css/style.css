@@ -379,6 +379,68 @@ html, body {
   text-decoration: underline;
 }
 
+/* === Cordova AI Search Field Styles === */
+.ai-search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    animation: fadeInSearch 1.5s ease-in-out;
+  }
+
+  .ai-search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  #aiSearchInput {
+    flex: 1;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    text-align: center;
+  }
+
+  #aiSearchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .voice-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+
+  #searchResults {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    font-size: 16px;
+  }
+
+  #searchResults div a {
+    display: inline-block;
+    margin: 5px 0;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  @keyframes fadeInSearch {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
 /* ==========================
    6. MOBILE RESPONSIVENESS
 ========================== */
