@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <script src="/js/header-scroll.js"></script>
-  <header id="site-header" class="transparent">
-  <div class="nav-container">
-    <!-- Logo -->
-    <a href="/" class="logo-wrapper">
-      <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="logo large-logo">
-      <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo Small" class="logo small-logo">
-    </a>
-
-    <!-- Navigation -->
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <a href="/tracking/">Tracking</a>
-      <a href="/about-us/">About</a>
-      <a href="/contact/">Contact</a>
-    </nav>
-  </div>
-</header>
-
 <head>
+  <!-- Head content starts here -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cordova Courier - Courier & Delivery Services Nationwide</title>
   <meta name="description" content="Cordova Courier provides fast, reliable, and secure courier and delivery services nationwide, specializing in same-day delivery, medical courier services, freight, and airport cargo recovery.">
   <link rel="stylesheet" href="/css/style.css">
-    <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
+  <script src="/js/schema-loader.js" defer></script>
 </head>
 
-  <script src="/js/schema-loader.js" defer></script>
+  <header id="site-header" class="transparent">...</header>
 
 <body>
 
+  <!-- ✅ HEADER GOES HERE (not above <head>) -->
+  <header id="site-header" class="transparent">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="/" class="logo-wrapper">
+        <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="logo large-logo">
+        <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo Small" class="logo small-logo">
+      </a>
+
+      <!-- Navigation -->
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/tracking/">Tracking</a>
+        <a href="/about-us/">About</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+  
 <!-- HERO SECTION -->
 <section class="hero">
   <video autoplay muted loop playsinline class="background-video">
