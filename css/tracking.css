@@ -112,7 +112,6 @@
   }
 }
 
-
 /* Word Colors */
 .blue-text {
   color: #003366; /* Deep Blue */
@@ -122,9 +121,31 @@
   color: #ff6600; /* Bright Orange */
 }
 
-/* Full Line Final Style */
-.full-line {
+/* Tracking Title Animation */
+.tracking-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #003366;
+  min-height: 3.5em;
+}
+
+.word {
+  opacity: 0;
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.word.visible {
+  opacity: 1;
+}
+
+.full-line-final {
+  display: none;
   font-weight: bold;
   font-size: 3rem;
   color: #003366;
+}
+
+.full-line-final.visible {
+  display: block;
 }
