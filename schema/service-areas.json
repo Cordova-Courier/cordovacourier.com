@@ -10,9 +10,9 @@
     "logo": "https://beta.cordovacourier.com/images/branding/cordova-logo.png",
     "image": "https://beta.cordovacourier.com/images/branding/cordova-og-banner.png",
     "founder": {
-      "@type": "Person",
-      "name": "Vincent Cordova"
-    ,
+  "@type": "Person",
+  "name": "Vincent Cordova"
+},
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://ai.cordovacourier.com"
