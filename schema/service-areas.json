@@ -12,7 +12,7 @@
     "founder": {
       "@type": "Person",
       "name": "Vincent Cordova"
-    ,
+    },
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://ai.cordovacourier.com"
