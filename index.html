@@ -252,5 +252,18 @@ window.addEventListener('load', function() {
 
   <script src="/js/cordova-ai-search.js"></script>
 
+  <script>
+  if (!document.querySelector('#ai-service-schema')) {
+    fetch('/schema/service-areas.json')
+      .then(res => res.json())
+      .then(data => {
+        const script = document.createElement('script');
+        script.id = 'ai-service-schema';
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
+      });
+  }
+</script>
 </body>
 </html>
