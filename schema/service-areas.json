@@ -98,25 +98,23 @@
     "availableLanguage": ["English", "Spanish"],
     "serviceSmsNumber": "sms:+12098809624",
     "providesService": [
-      {
-        "@type": "ContactPoint",
-        "contactType": "Customer Support Email",
-        "email": "dispatch@cordovacourier.com"
-      },
-      {
-        "@type": "WebApplication",
-        "name": "Request a Quote",
-        "url": "https://ai.cordovacourier.com/quote/index.html"
-      },
-      {
-        "@type": "WebApplication",
-        "name": "Track a Shipment",
-        "url": "https://ai.cordovacourier.com/tracking"
-      }
-    ]
-  }
-    }
+  {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support Email",
+    "email": "dispatch@cordovacourier.com"
   },
+  {
+    "@type": "WebApplication",
+    "name": "Request a Quote",
+    "url": "https://ai.cordovacourier.com/quote/index.html"
+  },
+  {
+    "@type": "WebApplication",
+    "name": "Track a Shipment",
+    "url": "https://ai.cordovacourier.com/tracking"
+  }
+]
+},
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Courier Service Types",
