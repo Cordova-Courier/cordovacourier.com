@@ -1,17 +1,613 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.cordovacourier.com/#courier-service",
   "serviceType": "Courier and Delivery Services",
   "provider": {
     "@type": "Organization",
-    "name": "Cordova Courier"
+    "name": "Cordova Courier",
+    "url": "https://www.cordovacourier.com",
+    "logo": "https://beta.cordovacourier.com/images/branding/cordova-logo.png",
+    "image": "https://beta.cordovacourier.com/images/branding/cordova-og-banner.png",
+    "founder": {
+      "@type": "Person",
+      "name": "Vincent Cordova"
+    ,
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ai.cordovacourier.com"
   },
-  "areaServed": {
-    "@type": "Place",
-    "name": "Nationwide, including California, Arizona, Texas, Florida, and more"
+  "description": "Cordova Courier provides nationwide courier, freight, medical, and airport cargo delivery services — available 24/7 with a 50-mile radius of every major U.S. city we serve.",
+  "serviceOutput": "Fast, secure, same-day delivery for packages, freight, medical samples, and cargo from airport hubs.",
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "name": "About Cordova Courier",
+      "url": "https://www.cordovacourier.com/about"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Our Services",
+      "url": "https://www.cordovacourier.com/services"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "License",
+      "name": "TSA TWIC Card"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "License",
+      "name": "USDOT Registered - MC & DOT Compliant"
+    }
+  ]
+},
+    "foundingDate": "2020-01-01",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100076275864228",
+      "https://www.linkedin.com/company/cordovacourier/",
+      "https://x.com/CordovaCourier",
+      "https://www.tiktok.com/@cordova.courier"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-209-880-9624",
+      "email": "dispatch@cordovacourier.com",
+      "contactType": "Customer Service",
+      "areaServed": "US",
+      "availableLanguage": ["English", "Spanish"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
+  },
+  "audience": {
+    "@type": "Audience",
+    "audienceType": ["Businesses", "Medical Providers", "Freight Brokers", "Airline Cargo Teams"]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "215"
   },
   "availableChannel": {
     "@type": "ServiceChannel",
-    "serviceUrl": "https://ai.cordovacourier.com"
+    "serviceUrl": "https://ai.cordovacourier.com",
+    "servicePhone": {
+      "@type": "ContactPoint",
+      "telephone": "+1-209-880-9624",
+      "contactType": "Customer Service",
+      "areaServed": "US",
+      "availableLanguage": ["English", "Spanish"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    },
+    "availableLanguage": ["English", "Spanish"],
+    "serviceSmsNumber": "sms:+12098809624",
+    "providesService": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support Email",
+        "email": "dispatch@cordovacourier.com"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Request a Quote",
+        "url": "https://ai.cordovacourier.com/quote/index.html"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Track a Shipment",
+        "url": "https://ai.cordovacourier.com/tracking"
+      }
+    ]
   }
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Courier Service Types",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Same-Day Courier Delivery",
+          "description": "Fast same-day pickup and delivery within 50 miles."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Medical Courier",
+          "description": "Secure, HIPAA-compliant delivery of lab specimens and prescriptions."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Freight & Bulk Delivery",
+          "description": "Up to 3 pallets and 3,300 lbs in extended Sprinter vans."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Airport Cargo Recovery",
+          "description": "24/7 cargo pickup at major U.S. airports including SFO, LAX, SMF, SJC, PHX, and more."
+        }
+      },
+    {
+      "@type": "City",
+      "name": "Seattle",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.6062, "longitude": -122.3321 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Portland",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.5122, "longitude": -122.6587 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Dallas",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 32.7767, "longitude": -96.7970 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Houston",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 29.7604, "longitude": -95.3698 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Austin",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 30.2672, "longitude": -97.7431 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "San Antonio",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 29.4241, "longitude": -98.4936 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Miami",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 25.7617, "longitude": -80.1918 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Chicago",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 41.8781, "longitude": -87.6298 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Seattle-Tacoma International Airport (SEA)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.4502, "longitude": -122.3088 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Portland International Airport (PDX)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.5898, "longitude": -122.5951 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Dallas/Fort Worth International Airport (DFW)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 32.8998, "longitude": -97.0403 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Chicago O’Hare International Airport (ORD)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 41.9742, "longitude": -87.9073 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "New York",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 40.7128, "longitude": -74.0060 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Boston",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 42.3601, "longitude": -71.0589 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Atlanta",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.7490, "longitude": -84.3880 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Washington, D.C.",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 38.9072, "longitude": -77.0369 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "John F. Kennedy International Airport (JFK)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 40.6413, "longitude": -73.7781 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Boston Logan International Airport (BOS)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 42.3656, "longitude": -71.0096 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Hartsfield-Jackson Atlanta International Airport (ATL)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.6407, "longitude": -84.4277 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Washington Dulles International Airport (IAD)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 38.9531, "longitude": -77.4565 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Orlando",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 28.5383, "longitude": -81.3792 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Charlotte",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 35.2271, "longitude": -80.8431 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Nashville",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.1627, "longitude": -86.7816 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Denver",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 39.7392, "longitude": -104.9903 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Orlando International Airport (MCO)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 28.4312, "longitude": -81.3081 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Charlotte Douglas International Airport (CLT)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 35.214, "longitude": -80.9431 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Nashville International Airport (BNA)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 36.1263, "longitude": -86.6774 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Denver International Airport (DEN)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 39.8561, "longitude": -104.6737 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Philadelphia",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 39.9526, "longitude": -75.1652 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Detroit",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 42.3314, "longitude": -83.0458 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Minneapolis",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 44.9778, "longitude": -93.2650 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "St. Louis",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 38.6270, "longitude": -90.1994 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Toronto",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 43.651070, "longitude": -79.347015 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Vancouver",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 49.2827, "longitude": -123.1207 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Montreal",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.5017, "longitude": -73.5673 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Mexico City",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 19.4326, "longitude": -99.1332 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Guadalajara",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 20.6597, "longitude": -103.3496 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Monterrey",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 25.6866, "longitude": -100.3161 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Oakland",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.8044, "longitude": -122.2712 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Oakland International Airport (OAK)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.7126, "longitude": -122.2197 },
+        "geoRadius": 80467
+      }
+    }
+  ]
+  },
+  "areaServed": [
+    { "@type": "Place", "name": "United States" },
+    { "@type": "Place", "name": "Canada" },
+    { "@type": "Place", "name": "Mexico" },
+    {
+      "@type": "City",
+      "name": "Los Angeles",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 34.0522, "longitude": -118.2437 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "San Francisco",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.7749, "longitude": -122.4194 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Sacramento",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 38.5816, "longitude": -121.4944 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "San Jose",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.3382, "longitude": -121.8863 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "City",
+      "name": "Phoenix",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.4484, "longitude": -112.0740 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "San Francisco International Airport (SFO)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.6213, "longitude": -122.3790 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Los Angeles International Airport (LAX)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.9416, "longitude": -118.4085 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Sacramento International Airport (SMF)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 38.6951, "longitude": -121.5908 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "San Jose International Airport (SJC)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 37.3639, "longitude": -121.9289 },
+        "geoRadius": 80467
+      }
+    },
+    {
+      "@type": "Place",
+      "name": "Phoenix Sky Harbor International Airport (PHX)",
+      "geo": {
+        "@type": "GeoCircle",
+        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 33.4373, "longitude": -112.0078 },
+        "geoRadius": 80467
+      }
+    }
+  ]
 }
