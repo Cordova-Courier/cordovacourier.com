@@ -14,6 +14,32 @@
 
   <!-- Favicon -->
   <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
+
+  <style>
+    .tracking-title {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #003366;
+      min-height: 3.5em;
+    }
+    .word {
+      opacity: 0;
+      display: inline-block;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .word.visible {
+      opacity: 1;
+    }
+    .full-line-final {
+      display: none;
+      font-weight: bold;
+      font-size: 3rem;
+      color: #003366;
+    }
+    .full-line-final.visible {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
@@ -26,12 +52,12 @@
     <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" width="140">
   </div>
 
-  <!-- Smooth Word-by-Word Fade-In -->
+  <!-- Tracking Title with Sequential Word Fade -->
   <div class="tracking-title">
-    <span class="word blue-text word1">Track</span> 
-    <span class="word blue-text word2">Your</span> 
-    <span class="word orange-text word3">Shipment</span>
-    <span class="full-line" style="display:none;">Track Your Shipment</span>
+    <span class="word word1">Track</span>
+    <span class="word word2">Your</span>
+    <span class="word word3">Shipment</span>
+    <div class="full-line-final">Track Your Shipment</div>
   </div>
 
   <p>Use your tracking number below to get fast, secure, real-time delivery updates with Cordova Courier's nationwide courier tracking portal.</p>
@@ -63,13 +89,14 @@
   </div>
 </footer>
 
-<!-- Fade-in Word-by-Word Timing Script -->
+<!-- Word-by-Word Fade-In Script -->
 <script>
-// After all 3 words fade, show full headline
-setTimeout(() => {
-  document.querySelector('.tracking-title').innerHTML = 
-    '<span class="full-line">Track Your Shipment</span>';
-}, 5500); // After about 5.5 seconds
+  setTimeout(() => document.querySelector('.word1').classList.add('visible'), 200);
+  setTimeout(() => document.querySelector('.word2').classList.add('visible'), 1000);
+  setTimeout(() => document.querySelector('.word3').classList.add('visible'), 1800);
+  setTimeout(() => {
+    document.querySelector('.tracking-title').innerHTML = '<div class="full-line-final visible">Track Your Shipment</div>';
+  }, 5000);
 </script>
 
 </body>
