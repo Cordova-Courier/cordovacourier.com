@@ -77,13 +77,13 @@
 }
 
 /* LANGUAGE SELECTOR DROPDOWN */
-/* CLEAN LANGUAGE DROPDOWN - NO BORDER + ARROW */
+/* LANGUAGE SELECTOR DROPDOWN */
 .main-navbar .language-selector-dropdown select {
-  background-color: rgba(0, 51, 102, 0.2); /* Transparent deep blue */
+  background-color: rgba(0, 51, 102, 0.2);
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
-  color: white;
+  color: #0033cc;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -91,7 +91,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 14px;
@@ -102,4 +102,8 @@
   background-color: rgba(0, 51, 204, 0.1);
   color: #0033cc;
   background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+.main-navbar .language-selector-dropdown select:hover {
+  background-color: rgba(0, 51, 102, 0.35);
 }
