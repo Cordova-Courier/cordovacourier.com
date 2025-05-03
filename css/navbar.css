@@ -1,6 +1,4 @@
-/* ==========================
-   NAVIGATION BAR STYLES
-========================== */
+/* NAVIGATION BAR STYLES */
 .main-navbar {
   width: 100%;
   position: fixed;
@@ -28,16 +26,18 @@
 }
 
 .main-navbar .nav-logo {
-  display: none;
+  visibility: hidden; /* Placeholder space reserved */
+  width: 120px; /* Ensure consistent space */
+  margin-right: 2rem;
 }
 
 .main-navbar.scrolled .nav-logo {
-  display: block;
-  margin-right: 2rem;
+  visibility: visible;
 }
 
 .main-navbar .nav-logo img {
   height: 40px;
+  display: block;
 }
 
 .main-navbar .nav-links {
@@ -75,10 +75,6 @@
 .main-navbar .customer-portal-button a:hover {
   background-color: #e69500;
 }
-
-
-
-/* LANGUAGE SELECTOR DROPDOWN */
 
 /* LANGUAGE SELECTOR DROPDOWN – white default, blue on scroll */
 .main-navbar .language-selector-dropdown select {
