@@ -513,3 +513,26 @@ html, body {
     word-break: break-word;
   }
 }
+
+/* ==========================
+   7. LANGUAGE SELECTOR BELOW NAVBAR
+========================== */
+.language-bar-below {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  text-align: right;
+  padding: 0.25rem 2rem;
+  position: relative;
+  z-index: 998;
+}
+
+.language-bar-below select {
+  padding: 4px 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+}
