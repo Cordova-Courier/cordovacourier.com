@@ -537,3 +537,20 @@ html, body {
   color: #333;
   cursor: pointer;
 }
+
+/* ==========================
+   FIXED: LANGUAGE BAR & HERO OFFSET
+========================== */
+.language-bar-below {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  text-align: right;
+  padding: 0.25rem 2rem;
+  position: relative;
+  z-index: 998;
+}
+
+.hero {
+  padding-top: 140px;
+}
