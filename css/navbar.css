@@ -1,4 +1,6 @@
-/* NAVBAR STYLES - CENTERED + CUSTOMER PORTAL BUTTON */
+/* ==========================
+   NAVIGATION BAR STYLES
+========================== */
 .main-navbar {
   width: 100%;
   position: fixed;
@@ -42,6 +44,9 @@
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .main-navbar .nav-links li a {
@@ -56,7 +61,7 @@
   color: #0033cc;
 }
 
-/* CUSTOMER PORTAL BUTTON STYLE */
+/* CUSTOMER PORTAL BUTTON */
 .main-navbar .customer-portal-button a {
   background-color: orange;
   padding: 0.5rem 1rem;
@@ -69,4 +74,30 @@
 
 .main-navbar .customer-portal-button a:hover {
   background-color: #e69500;
+}
+
+/* LANGUAGE SELECTOR DROPDOWN */
+.main-navbar .language-selector-dropdown select {
+  background-color: rgba(0, 51, 102, 0.2);
+  border: 2px solid #003366;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.main-navbar.scrolled .language-selector-dropdown select {
+  background-color: rgba(0, 51, 204, 0.1);
+  border-color: #0033cc;
+  color: #0033cc;
+}
+
+.main-navbar .language-selector-dropdown select:hover {
+  background-color: rgba(0, 51, 102, 0.35);
 }
