@@ -56,3 +56,23 @@
 body.scrolled {
   padding-top: 120px;
 }
+
+
+/* Logo is hidden on top */
+.nav-logo.hidden-on-top {
+  display: none;
+}
+
+/* Reveal logo only when navbar is scrolled */
+.navbar.scrolled .nav-logo.hidden-on-top {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 40px;
+  width: auto;
+}
