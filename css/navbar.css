@@ -1,4 +1,4 @@
-/* NAVBAR STYLES */
+/* NAVBAR STYLES - CENTERED */
 .main-navbar {
   width: 100%;
   position: fixed;
@@ -8,25 +8,22 @@
   color: white;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .main-navbar.scrolled {
   background-color: white;
   color: #0033cc;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
 }
 
 .main-navbar .nav-container {
-  max-width: 1200px;
-  width: 100%;
-  margin: auto;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  gap: 2rem;
 }
 
 .main-navbar .nav-logo {
@@ -35,6 +32,7 @@
 
 .main-navbar.scrolled .nav-logo {
   display: block;
+  margin-right: 2rem;
 }
 
 .main-navbar .nav-logo img {
@@ -44,7 +42,7 @@
 .main-navbar .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .main-navbar .nav-links li a {
