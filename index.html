@@ -1,214 +1,236 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>Cordova Courier - Courier & Delivery Services Nationwide</title>
-  <meta name="description" content="Cordova Courier provides fast, reliable, and secure courier and delivery services nationwide, specializing in same-day delivery, medical courier services, freight, and airport cargo recovery.">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/css/style.css">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="/images/branding/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/branding/favicon-16x16.png">
-
-  <!-- Apple Touch Icon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/apple-touch-icon.png">
-
-  <!-- Manifest for PWA support -->
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Mobile Theme Color -->
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Schema Loader -->
-  <script src="/js/schema-loader.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Cordova Courier - Courier &amp; Delivery Services Nationwide</title>
+<meta content="Cordova Courier provides fast, reliable, and secure courier and delivery services nationwide, specializing in same-day delivery, medical courier services, freight, and airport cargo recovery." name="description"/>
+<!-- Styles -->
+<link href="/css/style.css" rel="stylesheet"/>
+<!-- Favicon -->
+<link href="/images/branding/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/images/branding/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/branding/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<!-- Apple Touch Icon -->
+<link href="/images/branding/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- Manifest for PWA support -->
+<link href="/site.webmanifest" rel="manifest"/>
+<!-- Mobile Theme Color -->
+<meta content="#ffffff" name="theme-color"/>
+<!-- Schema Loader -->
+<script defer="" src="/js/schema-loader.js"></script>
 </head>
-
 <body>
+<header class="navbar">
+<div class="navbar-inner">
+<a class="logo" href="/">
+<img alt="Cordova Courier Logo" src="/images/branding/cordova-logo.png"/>
+</a>
+<nav class="nav-links">
+<a href="/quote/">Request a Quote</a>
+<a href="/tracking/">Tracking</a>
+<a href="/customer-portal/">Customer Portal</a>
+<a href="/services/">Services</a>
+<a href="/service-areas/">Service Areas</a>
+<a href="/about-us/">About Us</a>
+</nav>
+<div class="language-selector">
+<select onchange="location = this.value;">
+<option value="/">🌎 English</option>
+<option value="/es/">Español</option>
+<option value="/fr/">Français</option>
+<option value="/de/">Deutsch</option>
+<option value="/zh/">中文 (Simplified Chinese)</option>
+<option value="/ja/">日本語 (Japanese)</option>
+<option value="/kr/">한국어 (Korean)</option>
+<option value="/pt/">Português (Portuguese)</option>
+<option value="/ar/">العربية (Arabic)</option>
+<option value="/hi/">हिंदी (Hindi)</option>
+<option value="/tl/">Tagalog (Filipino)</option>
+<option value="/ru/">Русский (Russian)</option>
+</select>
+</div>
+<div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
+</div>
+<div class="mobile-menu" id="mobileMenu">
+<a href="/quote/">Request a Quote</a>
+<a href="/tracking/">Tracking</a>
+<a href="/customer-portal/">Customer Portal</a>
+<a href="/services/">Services</a>
+<a href="/service-areas/">Service Areas</a>
+<a href="/about-us/">About Us</a>
+<div class="language-selector">
+<select onchange="location = this.value;">
+<option value="/">🌎 English</option>
+<option value="/es/">Español</option>
+<option value="/fr/">Français</option>
+<option value="/de/">Deutsch</option>
+<option value="/zh/">中文 (Simplified Chinese)</option>
+<option value="/ja/">日本語 (Japanese)</option>
+<option value="/kr/">한국어 (Korean)</option>
+<option value="/pt/">Português (Portuguese)</option>
+<option value="/ar/">العربية (Arabic)</option>
+<option value="/hi/">हिंदी (Hindi)</option>
+<option value="/tl/">Tagalog (Filipino)</option>
+<option value="/ru/">Русский (Russian)</option>
+</select>
+</div>
+</div>
+</header>
 
 <!-- HERO SECTION -->
 <section class="hero">
-  <video autoplay muted loop playsinline class="background-video">
-    <source src="CordovaCourierVanWithBella.mp4" type="video/mp4">
+<video autoplay="" class="background-video" loop="" muted="" playsinline="">
+<source src="CordovaCourierVanWithBella.mp4" type="video/mp4"/>
     Your browser does not support HTML5 video.
   </video>
-  <div class="overlay"></div>
-
-  <!-- LOGO -->
-  <img src="https://beta.cordovacourier.com/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="logo">
-
-  <!-- LANGUAGE + DISPATCH INFO GROUP -->
+<div class="overlay"></div>
+<!-- LOGO -->
+<img alt="Cordova Courier Logo" class="logo" src="https://beta.cordovacourier.com/images/branding/cordova-logo.png"/>
+<!-- LANGUAGE + DISPATCH INFO GROUP -->
 <div class="header-top-info">
-  
-  <!-- Language Selector -->
-  <div class="language-selector">
-    <select onchange="location = this.value;">
-      <option value="/">🌎 English</option>
-      <option value="/es/">Español</option>
-      <option value="/fr/">Français</option>
-      <option value="/de/">Deutsch</option>
-      <option value="/zh/">中文 (Simplified Chinese)</option>
-      <option value="/ja/">日本語 (Japanese)</option>
-      <option value="/kr/">한국어 (Korean)</option>
-      <option value="/pt/">Português (Portuguese)</option>
-      <option value="/ar/">العربية (Arabic)</option>
-      <option value="/hi/">हिंदी (Hindi)</option>
-      <option value="/tl/">Tagalog (Filipino)</option>
-      <option value="/ru/">Русский (Russian)</option>
-    </select>
-  </div>
-
-  <!-- Dispatch Info -->
-  <div class="contact-info">
-    <div class="contact-item">
-      <span class="contact-icon">📞</span>
-      <a href="tel:2098809264">(209) 880-9624</a>
-    </div>
-    <div class="contact-item">
-      <span class="contact-icon">📧</span>
-      <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a>
-    </div>
-  </div>
-
+<!-- Language Selector -->
+<div class="language-selector">
+<select onchange="location = this.value;">
+<option value="/">🌎 English</option>
+<option value="/es/">Español</option>
+<option value="/fr/">Français</option>
+<option value="/de/">Deutsch</option>
+<option value="/zh/">中文 (Simplified Chinese)</option>
+<option value="/ja/">日本語 (Japanese)</option>
+<option value="/kr/">한국어 (Korean)</option>
+<option value="/pt/">Português (Portuguese)</option>
+<option value="/ar/">العربية (Arabic)</option>
+<option value="/hi/">हिंदी (Hindi)</option>
+<option value="/tl/">Tagalog (Filipino)</option>
+<option value="/ru/">Русский (Russian)</option>
+</select>
 </div>
-  <!-- HERO CONTENT -->
-  <div class="hero-content">
-  <h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
-
-  <a href="/quote/index.html" class="hero-button" target="_blank" rel="noopener noreferrer">
+<!-- Dispatch Info -->
+<div class="contact-info">
+<div class="contact-item">
+<span class="contact-icon">📞</span>
+<a href="tel:2098809264">(209) 880-9624</a>
+</div>
+<div class="contact-item">
+<span class="contact-icon">📧</span>
+<a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a>
+</div>
+</div>
+</div>
+<!-- HERO CONTENT -->
+<div class="hero-content">
+<h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
+<a class="hero-button" href="/quote/index.html" rel="noopener noreferrer" target="_blank">
     Request a Quote
   </a>
-
-  <!-- Cordova AI Assistance Search Field -->
-  <section class="ai-search-container">
-  <div class="ai-search-box">
-    <input
-      type="text"
-      id="aiSearchInput"
-      placeholder="Have a question? Ask Cordova AI Assistance"
-      onkeyup="if(event.key === 'Enter'){ askCordovaAI(); }" />
-    <button onclick="askCordovaAI()" class="ai-submit">Ask</button>
-  </div>
-
-  <!-- Suggested FAQs -->
-  <div class="faq-buttons">
-    <button onclick="askCordovaAI('Do you deliver to Tracy, CA?')">Deliver to Tracy?</button>
-    <button onclick="askCordovaAI('Do you handle airport cargo?')">Airport Cargo?</button>
-    <button onclick="askCordovaAI('Do you offer medical courier services?')">Medical Courier?</button>
-  </div>
-</section>
-
-<section id="searchResults"></section>
-
+<!-- Cordova AI Assistance Search Field -->
+<section class="ai-search-container">
+<div class="ai-search-box">
+<input id="aiSearchInput" onkeyup="if(event.key === 'Enter'){ askCordovaAI(); }" placeholder="Have a question? Ask Cordova AI Assistance" type="text"/>
+<button class="ai-submit" onclick="askCordovaAI()">Ask</button>
 </div>
-
-  <!-- 👇 SCROLL DOWN LINK SHOULD BE INSIDE HERO -->
-  <a href="#services" class="scroll-down">↓</a>
-
+<!-- Suggested FAQs -->
+<div class="faq-buttons">
+<button onclick="askCordovaAI('Do you deliver to Tracy, CA?')">Deliver to Tracy?</button>
+<button onclick="askCordovaAI('Do you handle airport cargo?')">Airport Cargo?</button>
+<button onclick="askCordovaAI('Do you offer medical courier services?')">Medical Courier?</button>
+</div>
 </section>
-
+<section id="searchResults"></section>
+</div>
+<!-- 👇 SCROLL DOWN LINK SHOULD BE INSIDE HERO -->
+<a class="scroll-down" href="#services">↓</a>
+</section>
 <!-- QUICK ACTION BUTTONS SECTION -->
 <section class="quick-actions">
-  <div class="button-container">
-    <a href="/tracking" class="quick-button">📦 Track Shipment</a>
-    <a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" class="quick-button" target="_blank" rel="noopener noreferrer">
+<div class="button-container">
+<a class="quick-button" href="/tracking">📦 Track Shipment</a>
+<a class="quick-button" href="https://secure.ontime360.com/sites/CordovaCourierLLC/" rel="noopener noreferrer" target="_blank">
   🔑 Customer Portal
 </a>
-<a href="/quote/index.html" class="quick-button" target="_blank" rel="noopener noreferrer">
+<a class="quick-button" href="/quote/index.html" rel="noopener noreferrer" target="_blank">
   📝 Request a Quote
 </a>
-
-  </div>
+</div>
 </section>
-
-  <!-- OUR CORE SERVICES SECTION -->
-<section id="services" class="core-services">
-  <h2>Our Core Services</h2>
-  <div class="services-container">
-    <div class="service-card">
-      <h3>Same-Day Courier</h3>
-      <p>Fast, reliable same-day delivery services for businesses and individuals across the region.</p>
-    </div>
-    <div class="service-card">
-      <h3>Medical Courier</h3>
-      <p>HIPAA-compliant medical courier services for labs, hospitals, clinics, and healthcare providers.</p>
-    </div>
-    <div class="service-card">
-      <h3>Freight & Bulk Delivery</h3>
-      <p>Efficient freight and large shipment delivery with capacity for pallets, heavy items, and bulk orders.</p>
-    </div>
-    <div class="service-card">
-      <h3>Airport Cargo Recovery</h3>
-      <p>Professional pickup and delivery services from major airport cargo facilities like SFO, OAK, SMF, and SJC.</p>
-    </div>
-    <div class="service-card">
-      <h3>Routed & Scheduled Deliveries</h3>
-      <p>Reliable recurring delivery solutions for B2B partners, including keg returns and supply routes.</p>
-    </div>
-  </div>
+<!-- OUR CORE SERVICES SECTION -->
+<section class="core-services" id="services">
+<h2>Our Core Services</h2>
+<div class="services-container">
+<div class="service-card">
+<h3>Same-Day Courier</h3>
+<p>Fast, reliable same-day delivery services for businesses and individuals across the region.</p>
+</div>
+<div class="service-card">
+<h3>Medical Courier</h3>
+<p>HIPAA-compliant medical courier services for labs, hospitals, clinics, and healthcare providers.</p>
+</div>
+<div class="service-card">
+<h3>Freight &amp; Bulk Delivery</h3>
+<p>Efficient freight and large shipment delivery with capacity for pallets, heavy items, and bulk orders.</p>
+</div>
+<div class="service-card">
+<h3>Airport Cargo Recovery</h3>
+<p>Professional pickup and delivery services from major airport cargo facilities like SFO, OAK, SMF, and SJC.</p>
+</div>
+<div class="service-card">
+<h3>Routed &amp; Scheduled Deliveries</h3>
+<p>Reliable recurring delivery solutions for B2B partners, including keg returns and supply routes.</p>
+</div>
+</div>
 </section>
-
-  <!-- ABOUT CORDOVA COURIER SECTION -->
-<section id="about" class="about-courier">
-  <h2>About Cordova Courier</h2>
-  <div class="about-content">
-    <p>At Cordova Courier, we are building something different — a company built for its employees, not for shareholders. Our mission is rooted in service, trust, and a deep commitment to the people who power our success: our team.</p>
-
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>✅ Employee Ownership Mindset</h3>
-        <p>Protecting our future, protecting our people. Cordova Courier is committed to staying employee-focused — not shareholder-driven.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ World-Class Compensation and Tools</h3>
-        <p>We empower employees with great pay, top-tier equipment, and the tools they need to succeed professionally and personally.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ Financial Education</h3>
-        <p>We teach wealth-building and financial literacy, giving employees the knowledge to achieve lifelong financial freedom.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ Global Family</h3>
-        <p>We are growing beyond borders — building a worldwide courier network dedicated to empowering workers everywhere we operate.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ Zero Greed. Zero Exploitation. 100% Human Focus.</h3>
-        <p>Our focus is, and will always be, humanity — not profit margins. Cordova Courier serves people, not greed.</p>
-      </div>
-    </div>
-
-    <p style="font-style: italic; color: #003366; margin-top: 30px;">
+<!-- ABOUT CORDOVA COURIER SECTION -->
+<section class="about-courier" id="about">
+<h2>About Cordova Courier</h2>
+<div class="about-content">
+<p>At Cordova Courier, we are building something different — a company built for its employees, not for shareholders. Our mission is rooted in service, trust, and a deep commitment to the people who power our success: our team.</p>
+<div class="about-cards">
+<div class="about-card">
+<h3>✅ Employee Ownership Mindset</h3>
+<p>Protecting our future, protecting our people. Cordova Courier is committed to staying employee-focused — not shareholder-driven.</p>
+</div>
+<div class="about-card">
+<h3>✅ World-Class Compensation and Tools</h3>
+<p>We empower employees with great pay, top-tier equipment, and the tools they need to succeed professionally and personally.</p>
+</div>
+<div class="about-card">
+<h3>✅ Financial Education</h3>
+<p>We teach wealth-building and financial literacy, giving employees the knowledge to achieve lifelong financial freedom.</p>
+</div>
+<div class="about-card">
+<h3>✅ Global Family</h3>
+<p>We are growing beyond borders — building a worldwide courier network dedicated to empowering workers everywhere we operate.</p>
+</div>
+<div class="about-card">
+<h3>✅ Zero Greed. Zero Exploitation. 100% Human Focus.</h3>
+<p>Our focus is, and will always be, humanity — not profit margins. Cordova Courier serves people, not greed.</p>
+</div>
+</div>
+<p style="font-style: italic; color: #003366; margin-top: 30px;">
       "To deliver excellence in every mile while building a future where our employees prosper, our communities grow, and the spirit of service powers everything we do."
     </p>
-  </div>
+</div>
 </section>
-
- <!-- CONTACT SECTION -->
-<section id="contact" class="contact-courier">
-  <h2>Contact Cordova Courier</h2>
-
-  <!-- Logo Above Card -->
-  <div class="contact-logo">
-    <img src="https://beta.cordovacourier.com/images/branding/cordova-logo.png" alt="Cordova Courier Logo">
-  </div>
-
-  <div class="contact-card">
-    <div class="contact-details">
-      <p>📞 <a href="tel:2098809264">(209) 880-9264</a></p>
-      <p>📧 <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a></p>
-      <p style="margin-top: 20px;">Available Nationwide 24/7 — Call or Email Anytime!</p>
-      <a href="/quote/index.html" class="contact-button" target="_blank" rel="noopener noreferrer">
+<!-- CONTACT SECTION -->
+<section class="contact-courier" id="contact">
+<h2>Contact Cordova Courier</h2>
+<!-- Logo Above Card -->
+<div class="contact-logo">
+<img alt="Cordova Courier Logo" src="https://beta.cordovacourier.com/images/branding/cordova-logo.png"/>
+</div>
+<div class="contact-card">
+<div class="contact-details">
+<p>📞 <a href="tel:2098809264">(209) 880-9264</a></p>
+<p>📧 <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a></p>
+<p style="margin-top: 20px;">Available Nationwide 24/7 — Call or Email Anytime!</p>
+<a class="contact-button" href="/quote/index.html" rel="noopener noreferrer" target="_blank">
   Request a Quote
 </a>
-
-    </div>
-  </div>
+</div>
+</div>
 </section>
-
 <!-- ROTATING TEXT SCRIPT -->
 <script>
 const texts = [
@@ -228,7 +250,6 @@ setInterval(() => {
   }, 500);
 }, 4000);
 </script>
-
 <!-- FORCE VIDEO PLAY SCRIPT -->
 <script>
 window.addEventListener('load', function() {
@@ -240,19 +261,16 @@ window.addEventListener('load', function() {
   }
 });
 </script>
-
-  <!-- FOOTER SECTION -->
+<!-- FOOTER SECTION -->
 <footer class="site-footer">
-  <div class="footer-content">
-    <p>📞 (209) 880-9264 | 📧 dispatch@cordovacourier.com</p>
-    <p>© 2025 Cordova Courier LLC. All Rights Reserved.</p>
-    <p><a href="/privacy-policy">Privacy Policy</a></p>
-  </div>
+<div class="footer-content">
+<p>📞 (209) 880-9264 | 📧 dispatch@cordovacourier.com</p>
+<p>© 2025 Cordova Courier LLC. All Rights Reserved.</p>
+<p><a href="/privacy-policy">Privacy Policy</a></p>
+</div>
 </footer>
-
-  <script src="/js/cordova-ai-search.js"></script>
-
-  <script>
+<script src="/js/cordova-ai-search.js"></script>
+<script>
   if (!document.querySelector('#ai-service-schema')) {
     fetch('/schema/service-areas.json')
       .then(res => res.json())
