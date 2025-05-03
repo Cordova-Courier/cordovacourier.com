@@ -1,1 +1,50 @@
+/* NAVBAR STYLES */
+.main-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: none; /* Hidden initially */
+}
 
+.main-navbar.scrolled {
+  display: flex;
+  background-color: white;
+  color: #0033cc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-navbar .nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-navbar .nav-logo img {
+  height: 40px;
+  display: block;
+}
+
+.main-navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.main-navbar .nav-links li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.main-navbar.scrolled .nav-links li a {
+  color: #0033cc;
+}
