@@ -1,3 +1,9 @@
+/* === Global Body Reset to Remove White Gap === */
+body {
+  margin: 0;
+  padding: 120px 0 0 0;
+}
+
 /* ============================================
    Cordova Courier Website - style.css
    Author: Vincent Cordova
@@ -525,6 +531,7 @@ html, body {
   padding: 0.25rem 2rem;
   position: relative;
   z-index: 998;
+  margin-top: 70px; /* adjusts space to avoid navbar overlap, match navbar height if needed */
 }
 
 .language-bar-below select {
@@ -535,14 +542,4 @@ html, body {
   font-size: 1rem;
   color: #333;
   cursor: pointer;
-}
-
-.language-bar-below {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(8px);
-  text-align: right;
-  padding: 0.25rem 2rem;
-  position: relative;
-  z-index: 998;
 }
