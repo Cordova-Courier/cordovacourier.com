@@ -24,7 +24,6 @@
 <body>
 <header class="navbar">
 <div class="navbar-inner">
-
 <nav class="nav-links">
 <div class="nav-logo"><img alt="Cordova Courier Logo" src="/images/branding/cordova-navbar-logo.png"/></div><a href="/quote/">Request a Quote</a>
 <a href="/tracking/">Tracking</a>
@@ -33,22 +32,7 @@
 <a href="/service-areas/">Service Areas</a>
 <a href="/about-us/">About Us</a>
 </nav>
-<div class="language-selector">
-<select onchange="location = this.value;">
-<option value="/">🌎 English</option>
-<option value="/es/">Español</option>
-<option value="/fr/">Français</option>
-<option value="/de/">Deutsch</option>
-<option value="/zh/">中文 (Simplified Chinese)</option>
-<option value="/ja/">日本語 (Japanese)</option>
-<option value="/kr/">한국어 (Korean)</option>
-<option value="/pt/">Português (Portuguese)</option>
-<option value="/ar/">العربية (Arabic)</option>
-<option value="/hi/">हिंदी (Hindi)</option>
-<option value="/tl/">Tagalog (Filipino)</option>
-<option value="/ru/">Русский (Russian)</option>
-</select>
-</div>
+
 <div class="mobile-menu-icon" onclick="toggleMobileMenu()">☰</div>
 </div>
 <div class="mobile-menu" id="mobileMenu">
@@ -58,7 +42,10 @@
 <a href="/services/">Services</a>
 <a href="/service-areas/">Service Areas</a>
 <a href="/about-us/">About Us</a>
-<div class="language-selector">
+
+</div>
+</header>
+<div class="language-bar-below">
 <select onchange="location = this.value;">
 <option value="/">🌎 English</option>
 <option value="/es/">Español</option>
@@ -74,8 +61,7 @@
 <option value="/ru/">Русский (Russian)</option>
 </select>
 </div>
-</div>
-</header>
+
 <!-- HERO SECTION -->
 <section class="hero">
 <video autoplay="" class="background-video" loop="" muted="" playsinline="">
@@ -87,6 +73,7 @@
 <img alt="Cordova Courier Logo" class="logo" src="https://beta.cordovacourier.com/images/branding/cordova-logo.png"/>
 <!-- LANGUAGE + DISPATCH INFO GROUP -->
 <div class="header-top-info">
+<!-- Language Selector -->
 
 <!-- Dispatch Info -->
 </div>
