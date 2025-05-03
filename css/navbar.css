@@ -1,12 +1,11 @@
-
 /* --- NAVBAR BASE STYLES --- */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
-  background: transparent;
-  backdrop-filter: blur(0px);
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: none;
   transition: background 0.3s ease, box-shadow 0.3s ease;
   padding: 0.75rem 2rem;
 }
