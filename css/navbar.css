@@ -1,3 +1,4 @@
+
 /* === FINAL STABLE NAVBAR === */
 
 .main-navbar {
@@ -139,4 +140,25 @@
   .nav-links.open li a {
     color: white !important;
   }
+}
+
+
+/* === LINK STYLE FIXES === */
+
+.nav-links li a {
+  color: #0033cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #0033cc;
+  text-decoration: underline;
+}
+
+/* Highlight current page (e.g., Home) */
+.nav-links li a.active {
+  font-weight: 700;
+  text-decoration: none;
 }
