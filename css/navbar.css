@@ -213,3 +213,17 @@
   background-position: right 0.5rem center;
   background-size: 1rem;
 }
+
+
+/* Center-align the nav links in the navbar */
+.main-navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1.5rem;
+}
