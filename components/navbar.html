@@ -1,1 +1,47 @@
+<!-- NAVIGATION BAR -->
+<nav class="main-navbar" id="mainNavbar">
+  <div class="nav-container">
+    <!-- Hamburger -->
+    <div class="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
 
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+      <!-- Cordova Logo (Only Visible When Scrolled) -->
+      <li class="menu-logo-container">
+        <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="menu-logo"/>
+      </li>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/quote/">Request a Quote</a></li>
+      <li><a href="/tracking/">Tracking</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/service-areas/">Service Areas</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/about-us/">About Us</a></li>
+      <li class="customer-portal-button">
+        <a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" target="_blank" rel="noopener noreferrer">Customer Portal</a>
+      </li>
+      <li class="language-selector-dropdown">
+        <select onchange="location = this.value;">
+          <option disabled selected>🌍 English</option>
+          <option value="/es/">Español</option>
+          <option value="/fr/">Français</option>
+          <option value="/de/">Deutsch</option>
+          <option value="/zh/">中文</option>
+          <option value="/ja/">日本語</option>
+          <option value="/kr/">한국어</option>
+          <option value="/pt/">Português</option>
+          <option value="/ar/">العربية</option>
+          <option value="/hi/">हिंदी</option>
+          <option value="/tl/">Tagalog</option>
+          <option value="/ru/">Русский</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Load Navbar Scripts and Styles -->
+<link rel="stylesheet" href="/css/navbar.css">
+<script src="/js/navbar.js" defer></script>
