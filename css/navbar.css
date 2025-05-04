@@ -31,9 +31,6 @@
 
 .main-navbar .nav-logo {
   visibility: hidden;
-  width: auto;
-  margin-right: 0.75rem;
-  visibility: hidden;
   width: 120px;
   margin-right: 2rem;
 }
@@ -171,58 +168,45 @@
 }
 
 
-/* Invisible placeholder to keep layout aligned before scroll */
-.logo-placeholder {
-  width: 120px;
-  visibility: hidden;
-  display: inline-block;
-}
+/* === FINAL LOGO SCROLL SPACING FIX === */
 
-
-/* === COMPACT SCROLL SPACING === */
-
-/* Updated Scroll Mode for Tight Logo + Menu Spacing */
 .main-navbar.scrolled {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   padding: 0.25rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-navbar.scrolled .nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .main-navbar.scrolled .nav-logo {
-  visibility: visible;
   height: 40px;
-  margin-right: 0.5rem; /* Tightened spacing */
-}
-
-.main-navbar.scrolled .nav-links {
-  gap: 1rem;
+  margin-right: 0.25rem;
+  margin-left: 0;
   padding-left: 0;
 }
 
-.main-navbar.scrolled .nav-links li a {
-  color: #0033cc;
+.main-navbar.scrolled .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 
-.main-navbar.scrolled .customer-portal-button a {
-  background-color: #ff8800;
-  color: white !important;
-  border-radius: 5px;
-  padding: 6px 12px;
+.main-navbar.scrolled .customer-portal-button {
+  margin-left: 1rem;
 }
 
-.main-navbar.scrolled .language-selector-dropdown select {
-  background-color: transparent;
-  border: none;
-  font-weight: bold;
-  color: #0033cc;
-  padding: 4px 10px;
-  font-size: 1rem;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg fill='blue' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.5rem center;
-  background-size: 1rem;
+.main-navbar.scrolled .language-selector-dropdown {
+  margin-left: 0.5rem;
 }
