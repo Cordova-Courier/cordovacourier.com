@@ -31,6 +31,9 @@
 
 .main-navbar .nav-logo {
   visibility: hidden;
+  width: auto;
+  margin-right: 0.75rem;
+  visibility: hidden;
   width: 120px;
   margin-right: 2rem;
 }
@@ -165,4 +168,12 @@
   .main-navbar .nav-links.open li a {
     color: white !important;
   }
+}
+
+
+/* Invisible placeholder to keep layout aligned before scroll */
+.logo-placeholder {
+  width: 120px;
+  visibility: hidden;
+  display: inline-block;
 }
