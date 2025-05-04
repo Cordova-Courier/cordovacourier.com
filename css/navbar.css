@@ -1,11 +1,10 @@
-/* Default: hide hamburger on desktop */
+/* ==========================================
+   BASE NAVBAR STYLES (DESKTOP FIRST)
+========================================== */
 .hamburger {
   display: none;
 }
 
-/* ==========================================
-   BASE NAVBAR STYLES (DESKTOP FIRST)
-========================================== */
 .main-navbar {
   width: 100%;
   position: fixed;
@@ -117,10 +116,26 @@
 /* ==========================================
    RESPONSIVE (TABLET & MOBILE)
 ========================================== */
-
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+  }
+
+  .hamburger span {
+    background: white;
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin: 5px 0;
+    transition: 0.3s ease;
+  }
+
+  .main-navbar.scrolled .hamburger span {
+    background: #0033cc;
   }
 
   .main-navbar .nav-links {
@@ -151,70 +166,7 @@
     text-align: left;
   }
 
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    position: relative;
-  }
-
-  .hamburger span {
-    background: white;
-    display: block;
-    height: 3px;
-    width: 100%;
-    margin: 5px 0;
-    transition: 0.3s ease;
-  }
-
-  .main-navbar.scrolled .hamburger span {
-    background: #0033cc;
-  }
-
-  .main-navbar .nav-links.open li a {
-    color: white !important;
-  }
-}
-
-
-  .main-navbar .nav-links.open {
-    display: flex;
-  }
-
-  .main-navbar .nav-links li {
-    margin: 0.75rem 1rem;
-  }
-
-  .main-navbar .customer-portal-button a,
-  .main-navbar .language-selector-dropdown select {
-    width: 100%;
-    margin: 0.5rem 1rem;
-    text-align: right;
-  }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    position: relative;
-  }
-
-  .hamburger span {
-    background: white;
-    display: block;
-    height: 3px;
-    width: 100%;
-    margin: 5px 0;
-    transition: 0.3s ease;
-  }
-
-  .main-navbar.scrolled .hamburger span {
-    background: #0033cc;
-  }
-
-  /* Prevent scroll color change in mobile dropdown */
+  /* Keep text white even when scrolled */
   .main-navbar .nav-links.open li a {
     color: white !important;
   }
