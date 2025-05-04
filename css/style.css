@@ -518,7 +518,6 @@ html, body {
 /* ==========================
    NAVIGATION BAR ENHANCEMENTS
 ========================== */
-.main-navbar {
   width: 100%;
   position: fixed;
   top: 0;
@@ -531,33 +530,27 @@ html, body {
   align-items: center;
 }
 
-.main-navbar.scrolled {
   background-color: white;
   color: #0033cc;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.main-navbar .nav-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 
-.main-navbar .nav-logo {
   display: none;
 }
 
-.main-navbar.scrolled .nav-logo {
   display: block;
   margin-right: 2rem;
 }
 
-.main-navbar .nav-logo img {
   height: 40px;
 }
 
-.main-navbar .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -566,7 +559,6 @@ html, body {
   padding: 0;
 }
 
-.main-navbar .nav-links li a {
   text-decoration: none;
   color: white;
   font-weight: 600;
@@ -574,12 +566,10 @@ html, body {
   transition: color 0.3s ease;
 }
 
-.main-navbar.scrolled .nav-links li a {
   color: #0033cc;
 }
 
 /* CUSTOMER PORTAL BUTTON */
-.main-navbar .customer-portal-button a {
   background-color: orange;
   padding: 0.5rem 1rem;
   border-radius: 5px;
@@ -589,12 +579,10 @@ html, body {
   transition: background-color 0.3s ease;
 }
 
-.main-navbar .customer-portal-button a:hover {
   background-color: #e69500;
 }
 
 /* LANGUAGE SELECTOR DROPDOWN */
-.main-navbar .language-selector-dropdown select {
   background-color: transparent;
   border: 1px solid white;
   border-radius: 5px;
@@ -605,7 +593,6 @@ html, body {
   transition: all 0.3s ease;
 }
 
-.main-navbar.scrolled .language-selector-dropdown select {
   border-color: #0033cc;
   color: #0033cc;
 }
