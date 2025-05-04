@@ -187,3 +187,15 @@
     top: 1rem;
   }
 }
+
+
+/* === Fix: Mobile menu matches scroll background === */
+@media (max-width: 1024px) {
+  .main-navbar.scrolled .nav-links.open {
+    background-color: white;
+  }
+
+  .main-navbar.scrolled .nav-links.open li a {
+    color: #0033cc !important;
+  }
+}
