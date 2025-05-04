@@ -609,12 +609,3 @@ html, body {
   border-color: #0033cc;
   color: #0033cc;
 }
-
-
-/* === Top Header Logo Resize === */
-.topbar-logo {
-  height: 40px;
-  width: auto;
-  object-fit: contain;
-  margin-left: 1rem;
-}
