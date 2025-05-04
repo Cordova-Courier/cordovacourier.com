@@ -177,3 +177,13 @@
 .nav-links li a:active {
   text-decoration: none !important;
 }
+
+
+/* === HAMBURGER TOGGLE LEFT ALIGNMENT === */
+@media (max-width: 1024px) {
+  .hamburger {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+  }
+}
