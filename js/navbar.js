@@ -1,6 +1,6 @@
 // Scroll-triggered background change
 document.addEventListener("scroll", function () {
-  const navbar = document.getElementById("mainNavbar");
+  const navbar = document.querySelector(".main-navbar");
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
