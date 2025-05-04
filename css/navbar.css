@@ -112,6 +112,7 @@
 /* ==========================================
    RESPONSIVE (TABLET & MOBILE)
 ========================================== */
+
 @media (max-width: 1024px) {
   .main-navbar .nav-links {
     display: none;
@@ -121,9 +122,52 @@
     right: 0;
     background-color: rgba(0, 51, 102, 0.95);
     width: 100%;
-    text-align: right;
-    padding: 1rem;
+    text-align: left;
+    align-items: flex-start;
+    padding-left: 1.5rem;
   }
+
+  .main-navbar .nav-links.open {
+    display: flex;
+  }
+
+  .main-navbar .nav-links li {
+    margin: 0.5rem 0;
+  }
+
+  .main-navbar .customer-portal-button a,
+  .main-navbar .language-selector-dropdown select {
+    width: 100%;
+    margin-left: 1.5rem;
+    text-align: left;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+  }
+
+  .hamburger span {
+    background: white;
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin: 5px 0;
+    transition: 0.3s ease;
+  }
+
+  .main-navbar.scrolled .hamburger span {
+    background: #0033cc;
+  }
+
+  .main-navbar .nav-links.open li a {
+    color: white !important;
+  }
+}
+
 
   .main-navbar .nav-links.open {
     display: flex;
