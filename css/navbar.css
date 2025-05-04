@@ -22,7 +22,7 @@
 
 .main-navbar .nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 2rem;
   width: 100%;
@@ -113,11 +113,6 @@
    RESPONSIVE (TABLET & MOBILE)
 ========================================== */
 @media (max-width: 1024px) {
-  .main-navbar .nav-container {
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
   .main-navbar .nav-links {
     display: none;
     flex-direction: column;
@@ -164,5 +159,10 @@
 
   .main-navbar.scrolled .hamburger span {
     background: #0033cc;
+  }
+
+  /* Prevent scroll color change in mobile dropdown */
+  .main-navbar .nav-links.open li a {
+    color: white !important;
   }
 }
