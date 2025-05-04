@@ -29,18 +29,9 @@
   padding: 0 2rem;
 }
 
-.main-navbar .nav-logo {
-  visibility: hidden;
-  width: auto;
-  margin-right: 0.75rem;
-  visibility: hidden;
-  width: 120px;
-  margin-right: 2rem;
-}
+.main-navbar 
 
-.main-navbar.scrolled .nav-logo {
-  visibility: visible;
-}
+.main-navbar.scrolled 
 
 .main-navbar .nav-logo img {
   height: 40px;
@@ -191,11 +182,7 @@
   padding: 0.25rem 1rem;
 }
 
-.main-navbar.scrolled .nav-logo {
-  visibility: visible;
-  height: 40px;
-  margin-right: 0.5rem; /* Tightened spacing */
-}
+.main-navbar.scrolled 
 
 .main-navbar.scrolled .nav-links {
   gap: 1rem;
