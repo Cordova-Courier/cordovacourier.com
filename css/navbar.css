@@ -227,3 +227,15 @@
   width: 100%;
   gap: 1.5rem;
 }
+
+
+/* Ensure nav-links stay centered when navbar is scrolled */
+.main-navbar.scrolled {
+  display: flex;
+  justify-content: center;
+}
+
+.main-navbar.scrolled .nav-links {
+  justify-content: center;
+  margin: 0 auto;
+}
