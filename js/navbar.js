@@ -1,9 +1,166 @@
-// NAVBAR SCROLL EFFECT
-window.addEventListener('scroll', function () {
-  const navbar = document.getElementById('mainNavbar');
-  if (window.scrollY > 100) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+/* NAVIGATION BAR STYLES */
+.main-navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: transparent;
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-navbar.scrolled {
+  background-color: white;
+  color: #0033cc;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-navbar .nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.main-navbar .nav-logo {
+  visibility: hidden; /* Placeholder space reserved */
+  width: 120px; /* Ensure consistent space */
+  margin-right: 2rem;
+}
+
+.main-navbar.scrolled .nav-logo {
+  visibility: visible;
+}
+
+.main-navbar .nav-logo img {
+  height: 40px;
+  display: block;
+}
+
+.main-navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-navbar .nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.main-navbar.scrolled .nav-links li a {
+  color: #0033cc;
+}
+
+/* CUSTOMER PORTAL BUTTON */
+.main-navbar .customer-portal-button a {
+  background-color: orange;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: white !important;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.main-navbar .customer-portal-button a:hover {
+  background-color: #e69500;
+}
+
+/* LANGUAGE SELECTOR DROPDOWN – white default, blue on scroll */
+.main-navbar .language-selector-dropdown select {
+  background-color: rgba(0, 51, 102, 0.2);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 14px;
+  padding-right: 2rem;
+}
+
+.main-navbar.scrolled .language-selector-dropdown select {
+  background-color: rgba(0, 51, 204, 0.1);
+  color: #0033cc;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+.main-navbar .language-selector-dropdown select:hover {
+  background-color: rgba(0, 51, 102, 0.35);
+}
+
+
+/* ====== MOBILE NAVBAR ====== */
+/* Base styles already handled (from desktop layout) */
+
+@media (max-width: 768px) {
+  .main-navbar .nav-container {
+    justify-content: space-between;
+    padding: 0 1rem;
   }
-});
+
+  .main-navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgba(0, 51, 102, 0.95);
+    width: 100%;
+    text-align: right;
+    padding: 1rem;
+  }
+
+  .main-navbar .nav-links.open {
+    display: flex;
+  }
+
+  .main-navbar .nav-links li {
+    margin: 0.75rem 0;
+  }
+
+  .main-navbar .customer-portal-button a,
+  .main-navbar .language-selector-dropdown select {
+    width: 100%;
+    text-align: right;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+  }
+
+  .hamburger span {
+    background: white;
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin: 5px 0;
+    transition: 0.3s ease;
+  }
+
+  .main-navbar.scrolled .hamburger span {
+    background: #0033cc;
+  }
+}
