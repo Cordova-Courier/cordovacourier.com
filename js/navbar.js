@@ -1,4 +1,4 @@
-// Toggle scroll background
+// Scroll-triggered background change
 document.addEventListener("scroll", function () {
   const navbar = document.getElementById("mainNavbar");
   if (window.scrollY > 50) {
