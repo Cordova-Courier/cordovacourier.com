@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.querySelector(".main-navbar");
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
-  const navItems = document.querySelectorAll(".nav-links a");
   const closeBtn = document.querySelector(".menu-close");
+  const navItems = document.querySelectorAll(".nav-links a");
 
-  // Handle scroll to add/remove background
+  // SCROLL BACKGROUND CHANGE
   const handleScroll = () => {
     if (window.scrollY > 50) {
       navbar.classList.add("scrolled");
@@ -13,30 +13,24 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("scrolled");
     }
   };
-
   window.addEventListener("scroll", handleScroll);
-  handleScroll(); // trigger on load
+  handleScroll(); // call on page load
 
-  // Ensure mobile menu is closed on page load
-  if (navLinks) {
-    navLinks.classList.remove("open");
-  }
-
-  // Hamburger toggle
+  // MOBILE TOGGLE
   if (hamburger && navLinks) {
-    hamburger.addEventListener("click", () => {
+    hamburger.addEventListener("click", function () {
       navLinks.classList.toggle("open");
     });
   }
 
-  // Close menu on any nav link click
+  // CLOSE ON LINK CLICK (mobile)
   navItems.forEach((item) => {
     item.addEventListener("click", () => {
       navLinks.classList.remove("open");
     });
   });
 
-  // Close menu on manual "X" button click
+  // CLOSE ON X BUTTON (if exists)
   if (closeBtn) {
     closeBtn.addEventListener("click", () => {
       navLinks.classList.remove("open");
