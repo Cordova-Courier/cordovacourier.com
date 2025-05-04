@@ -14,11 +14,7 @@
   align-items: center;
 }
 
-.main-navbar.scrolled {
-  background-color: white;
-  color: #0033cc;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+
 
 .main-navbar .nav-container {
   display: flex;
@@ -173,14 +169,7 @@
 /* === COMPACT SCROLL SPACING === */
 
 /* Updated Scroll Mode for Tight Logo + Menu Spacing */
-.main-navbar.scrolled {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  padding: 0.25rem 1rem;
-}
+
 
 .main-navbar.scrolled 
 
@@ -238,10 +227,7 @@
 
 
 /* Ensure nav-links stay centered when navbar is scrolled */
-.main-navbar.scrolled {
-  display: flex;
-  justify-content: center;
-}
+
 
 
 .main-navbar.scrolled .nav-links {
@@ -253,4 +239,17 @@
   padding: 0;
   width: fit-content;
   max-width: 100%;
+}
+
+
+
+/* Combined clean scroll navbar style */
+
+.main-navbar.scrolled {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #0033cc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
