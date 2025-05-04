@@ -167,30 +167,15 @@
   .nav-links.open li a {
     color: white !important;
   }
-}
 
-
-/* === FORCE REMOVE ALL UNDERLINES === */
-.nav-links li a,
-.nav-links li a:visited,
-.nav-links li a:focus,
-.nav-links li a:active {
-  text-decoration: none !important;
-}
-
-
-/* === HAMBURGER TOGGLE LEFT ALIGNMENT === */
-@media (max-width: 1024px) {
+  /* === HAMBURGER TOGGLE LEFT ALIGNMENT === */
   .hamburger {
     position: absolute;
     left: 1rem;
     top: 1rem;
   }
-}
 
-
-/* === Fix: Mobile menu matches scroll background === */
-@media (max-width: 1024px) {
+  /* === Fix: Mobile menu matches scroll background === */
   .main-navbar.scrolled .nav-links.open {
     background-color: white;
   }
@@ -198,4 +183,12 @@
   .main-navbar.scrolled .nav-links.open li a {
     color: #0033cc !important;
   }
+}
+
+/* === FORCE REMOVE ALL UNDERLINES === */
+.nav-links li a,
+.nav-links li a:visited,
+.nav-links li a:focus,
+.nav-links li a:active {
+  text-decoration: none !important;
 }
