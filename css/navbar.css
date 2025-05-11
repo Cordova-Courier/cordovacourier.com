@@ -1,1 +1,169 @@
+/* === GENERAL NAVBAR CONTAINER === */
+.main-navbar {
+  width: 100%;
+  background-color: rgba(0, 51, 153, 0.85); /* light transparent blue */
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
 
+/* === TOP HEADER ROW === */
+.nav-top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-top-left .top-logo {
+  height: 45px;
+}
+
+.nav-tagline {
+  text-align: center;
+  flex: 1;
+  padding: 0.3rem 1rem;
+}
+
+.nav-tagline .main-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.nav-tagline .subtitle {
+  font-size: 0.9rem;
+  color: #ff9900;
+}
+
+.orange-text {
+  color: #f37021;
+  font-style: italic;
+}
+
+/* === RIGHT SIDE CONTACT + LANGUAGE === */
+.nav-top-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: #f37021;
+  color: white;
+}
+
+.language-selector {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 14px;
+  padding-right: 2rem;
+}
+
+/* === MAIN NAV BAR === */
+.nav-main-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 1rem;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+.nav-links li a.cta-btn {
+  background-color: #f37021;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.nav-links li a.cta-btn:hover {
+  background-color: #e66000;
+}
+
+/* === HAMBURGER MENU (for Mobile) === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger span {
+  background: white;
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+}
+
+/* === RESPONSIVE (Mobile) === */
+@media (max-width: 768px) {
+  .nav-top-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-main-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-top: 0.5rem;
+  }
+}
