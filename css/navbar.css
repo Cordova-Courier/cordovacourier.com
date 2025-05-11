@@ -1,9 +1,3 @@
- # Load the current navbar.css file and review its content
-navbar_css_path = "/mnt/data/navbar.css"
-navbar_css_content = Path(navbar_css_path).read_text()
-
-# Add the necessary styles for contact buttons (phone & email) in the top bar above the navbar
-updated_navbar_css = """
 /* === NAVBAR STYLES === */
 .main-navbar {
   width: 100%;
@@ -221,10 +215,3 @@ updated_navbar_css = """
 .nav-links li a:active {
   text-decoration: none !important;
 }
-"""
-
-# Save the final cleaned navbar.css
-updated_navbar_css_path = "/mnt/data/updated-navbar-cleaned.css"
-Path(updated_navbar_css_path).write_text(updated_navbar_css)
-
-updated_navbar_css_path
