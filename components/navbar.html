@@ -1,61 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cordova Courier</title>
-  <link rel="stylesheet" href="/css/navbar.css"/>
-</head>
-<body>
 
 <!-- NAVIGATION BAR -->
-<nav class="main-navbar" id="mainNavbar">
-<div class="nav-container">
-<div aria-label="Menu" class="hamburger" role="button" tabindex="0">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<ul class="nav-links">
-<li><a href="/">Home</a></li>
-<li><a href="/quote/">Request a Quote</a></li>
-<li><a href="/tracking/">Tracking</a></li>
-<li><a href="/services/">Services</a></li>
-<li><a href="/service-areas/">Service Areas</a></li>
-<li><a href="/contact/">Contact</a></li>
-<li><a href="/about-us/">About Us</a></li>
-<li class="customer-portal-button">
-<a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" rel="noopener noreferrer" target="_blank">Customer Portal</a>
-</li>
-<li class="language-selector-dropdown">
-<select onchange="location = this.value;">
-<option disabled="" selected="">🌍 English</option>
-<option value="/es/">Español</option>
-<option value="/fr/">Français</option>
-<option value="/de/">Deutsch</option>
-<option value="/zh/">中文</option>
-<option value="/ja/">日本語</option>
-<option value="/kr/">한국어</option>
-<option value="/pt/">Português</option>
-<option value="/ar/">العربية</option>
-<option value="/hi/">हिंदी</option>
-<option value="/tl/">Tagalog</option>
-<option value="/ru/">Русский</option>
-</select>
-</li>
-</ul>
+<nav class="main-navbar">
 
+  <!-- TOP HEADER SECTION -->
+  <div class="nav-top-header">
+    <div class="nav-top-left">
+      <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="top-logo">
+    </div>
+    <div class="nav-tagline">
+      <div class="main-title">Cordova Courier – Delivering Excellence Nationwide</div>
+      <div class="subtitle">– <span class="orange-text">Because Every Mile Matters</span></div>
+    </div>
+    <div class="nav-top-right">
+      <a href="tel:2098809624" class="nav-btn">📞 (209) 880-9624</a>
+      <a href="mailto:dispatch@cordovacourier.com" class="nav-btn">📧 dispatch@cordovacourier.com</a>
+      <select class="nav-btn language-selector" onchange="location = this.value;">
+        <option disabled selected>🌍 ENGLISH</option>
+        <option value="/es/">Español</option>
+        <option value="/fr/">Français</option>
+        <option value="/de/">Deutsch</option>
+        <option value="/zh/">中文</option>
+        <option value="/ja/">日本語</option>
+      </select>
+    </div>
+  </div>
 
-</div>
+  <!-- MAIN NAVIGATION SECTION -->
+  <div class="nav-main-bar">
+    <div class="hamburger" role="button" aria-label="Toggle Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/quote/">Request a Quote</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/service-areas/">Service Areas</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/about-us/">About Us</a></li>
+      <li><a href="/tracking/" class="cta-btn">Tracking</a></li>
+      <li><a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" class="cta-btn" target="_blank" rel="noopener noreferrer">Customer Portal</a></li>
+    </ul>
+  </div>
+
 </nav>
 
-<!-- Dummy Page Content -->
-<main style="padding: 6rem 1rem;">
-  <h1 style="text-align: center;">Cordova Courier – Delivering Excellence Nationwide</h1>
-  <p style="text-align: center;">This is a sample page with a working navigation bar.</p>
-</main>
-
-<!-- SCRIPTS -->
-<script src="/js/navbar.js"></script>
-</body>
-</html>
