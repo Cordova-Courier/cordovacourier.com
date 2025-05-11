@@ -1,33 +1,20 @@
-<!-- CONTACT INFO ABOVE NAVBAR (aligned to the right with language selector) -->
-<div class="top-contact-buttons">
-  <a href="tel:2098809264" class="contact-button phone-btn">📞 (209) 880-9624</a>
-  <a href="mailto:dispatch@cordovacourier.com" class="contact-button email-btn">📧 dispatch@cordovacourier.com</a>
-</div>
-
 <!-- NAVIGATION BAR -->
 <nav class="main-navbar" id="mainNavbar">
   <div class="nav-container">
-    <!-- Hamburger -->
-    <div class="hamburger" role="button" aria-label="Menu" tabindex="0">
-      <span></span><span></span><span></span>
+
+    <!-- Left: Logo -->
+    <div class="nav-logo">
+      <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="menu-logo" />
     </div>
 
-    <!-- Navigation Links -->
-    <ul class="nav-links">
-      <li class="menu-logo-container">
-        <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="menu-logo"/>
-      </li>
-      <li><a href="/" class="active">Home</a></li>
-      <li><a href="/quote/">Request a Quote</a></li>
-      <li><a href="/tracking/">Tracking</a></li>
-      <li><a href="/services/">Services</a></li>
-      <li><a href="/service-areas/">Service Areas</a></li>
-      <li><a href="/contact/">Contact</a></li>
-      <li><a href="/about-us/">About Us</a></li>
-      <li class="customer-portal-button">
+    <!-- Right-Top: Dispatch Contact Buttons and Language -->
+    <div class="nav-contact-language">
+      <a href="tel:2098809264" class="contact-button phone-btn">📞 (209) 880-9624</a>
+      <a href="mailto:dispatch@cordovacourier.com" class="contact-button email-btn">📧 dispatch@cordovacourier.com</a>
+      <div class="customer-portal-button">
         <a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" target="_blank" rel="noopener noreferrer">Customer Portal</a>
-      </li>
-      <li class="language-selector-dropdown">
+      </div>
+      <div class="language-selector-dropdown">
         <select onchange="location = this.value;">
           <option disabled selected>🌍 English</option>
           <option value="/es/">Español</option>
@@ -42,11 +29,29 @@
           <option value="/tl/">Tagalog</option>
           <option value="/ru/">Русский</option>
         </select>
-      </li>
+      </div>
+    </div>
+
+    <!-- Center: Navigation Links -->
+    <ul class="nav-links">
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/quote/">Request a Quote</a></li>
+      <li><a href="/tracking/">Tracking</a></li>
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/service-areas/">Service Areas</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/about-us/">About Us</a></li>
     </ul>
+
+    <!-- Hamburger (mobile only) -->
+    <div class="hamburger" role="button" aria-label="Menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+
   </div>
 </nav>
 
 <!-- Load Navbar Scripts and Styles -->
 <link rel="stylesheet" href="/css/navbar.css">
 <script src="/js/navbar.js" defer></script>
+
