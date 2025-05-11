@@ -21,35 +21,35 @@
   padding: 0 1rem;
 }
 
-/* === TOP BAR FLEX ALIGNMENT === */
+/* === TOP RIGHT FLEX GROUP === */
 .nav-top-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0 0.2rem 0;
+  padding: 0.3rem 0 0.2rem 0;
   flex-wrap: wrap;
 }
 
-.nav-top-right .top-button,
+.contact-button,
 .language-selector-dropdown select {
+  height: 36px;
   display: inline-flex;
   align-items: center;
-  font-size: 0.9rem;
+  vertical-align: middle;
+  font-size: 0.95rem;
   font-weight: 600;
   border-radius: 5px;
   border: none;
   white-space: nowrap;
   cursor: pointer;
-  padding: 0.4rem 0.75rem;
+  padding: 0 1rem;
   background-color: rgba(0, 51, 102, 0.2);
   color: white;
-  line-height: 1.2;
-  vertical-align: middle;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.top-button:hover {
+.contact-button:hover {
   background-color: #e69500;
   color: white;
 }
@@ -69,12 +69,12 @@
   background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
 }
 
-/* === NAVIGATION BAR === */
+/* === NAVIGATION === */
 .nav-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.4rem 0;
+  padding: 0.5rem 0 0.35rem 0;
 }
 
 .nav-logo img {
@@ -107,7 +107,7 @@
 }
 
 .customer-portal-button a {
-  padding: 0.4rem 0.75rem;
+  padding: 0.45rem 0.9rem;
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 5px;
