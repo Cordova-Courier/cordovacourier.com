@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Scroll-triggered navbar update
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 5) {
       navbar.classList.add("scrolled");
       if (logo) {
         logo.src = "/images/branding/cordova-navbar-logo.png";
