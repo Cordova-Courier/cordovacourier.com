@@ -1,4 +1,4 @@
-* === GENERAL NAVBAR CONTAINER === */
+/* === GENERAL NAVBAR CONTAINER === */
 .main-navbar {
   width: 100%;
   background-color: rgba(0, 51, 153, 0.85); /* light transparent blue */
@@ -218,3 +218,13 @@ body {
   font-size: 1.1rem;
   line-height: 1;
   margin-top: 0.2rem;
+
+
+/* === Logo Size & Positioning === */
+.top-logo,
+.top-logo-overlap {
+  height: 140px;
+  position: absolute;
+  top: -40px;
+  z-index: 2;
+}
