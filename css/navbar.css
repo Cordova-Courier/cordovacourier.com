@@ -1,31 +1,14 @@
-/* === FIXED NAVBAR WITH DARK BACKGROUND ON SCROLL === */
+/* === GENERAL NAVBAR CONTAINER === */
 .main-navbar {
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 999;
-  background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.main-navbar.scrolled {
-  background-color: rgba(7, 55, 99, 0.95); /* dark blue */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.main-navbar .top-logo,
-.main-navbar .top-logo-overlap {
-  transition: height 0.3s ease;
-}
-
-.main-navbar.scrolled .top-logo,
-.main-navbar.scrolled .top-logo-overlap {
-  height: 40px;
-  position: static;
-}
-
-/* === GENERAL NAVBAR CONTAINER === */
-
 
 /* === TOP HEADER ROW === */
 .nav-top-header {
@@ -219,7 +202,10 @@
 
 
 /* === SCROLL STATE === */
-
+.main-navbar.scrolled {
+  background-color: #073763;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 .main-navbar.scrolled .top-logo,
 .main-navbar.scrolled .top-logo-overlap {
@@ -229,15 +215,4 @@
 
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
-}
-
-
-/* === NAV LINK TRANSITION ON SCROLL === */
-.main-navbar .nav-links li a {
-  transition: color 0.3s ease, opacity 0.3s ease;
-  opacity: 1;
-}
-
-.main-navbar.scrolled .nav-links li a {
-  opacity: 0.9;
 }
