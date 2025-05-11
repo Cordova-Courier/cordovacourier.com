@@ -199,3 +199,20 @@
     margin-top: 0.5rem;
   }
 }
+
+
+/* === SCROLL STATE === */
+.main-navbar.scrolled {
+  background-color: #073763;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-navbar.scrolled .top-logo,
+.main-navbar.scrolled .top-logo-overlap {
+  height: 40px;
+  position: static;
+}
+
+.main-navbar.scrolled .nav-links {
+  justify-content: flex-end;
+}
