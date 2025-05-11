@@ -201,18 +201,6 @@ window.addEventListener('load', function() {
   }
 </script>
 
-
-
-
-<script>
-  fetch('/components/navbar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navbar-placeholder').innerHTML = html;
-    });
-</script>
-
-
 <script>
   fetch('/components/navbar.html')
     .then(res => res.text())
