@@ -201,17 +201,11 @@ window.addEventListener('load', function() {
 
 
 
-<script>
-  fetch('/components/navbar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navbar-placeholder').innerHTML = html;
-    });
 
-      
 
 
 <script>
+  // Load navbar and then attach scroll/menu script
   fetch('/components/navbar.html')
     .then(res => res.text())
     .then(html => {
