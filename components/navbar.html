@@ -34,22 +34,30 @@
       border-radius: 5px;
       color: white;
     }
-  </style>
+  
+.nav-btn.contact-blue {
+  background-color: #073763;
+}
+.nav-btn.contact-blue:hover {
+  background-color: #f37021;
+}
+</style>
+
 </head>
 <body>
 
 <nav class="main-navbar">
   <div class="nav-top-header">
     <div class="nav-top-left">
-      <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="top-logo">
+      <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="top-logo" style="height: 70px;">
     </div>
     <div class="nav-tagline">
       <div class="main-title">Cordova Courier – Delivering Excellence Nationwide</div>
       <div class="subtitle">– <span class="orange-text">Because Every Mile Matters</span></div>
     </div>
     <div class="nav-top-right">
-      <a href="tel:2098809624" class="nav-btn">📞 (209) 880-9624</a>
-      <a href="mailto:dispatch@cordovacourier.com" class="nav-btn">📧 dispatch@cordovacourier.com</a>
+      <a href="tel:2098809624" class="nav-btn contact-blue">📞 (209) 880-9624</a>
+      <a href="mailto:dispatch@cordovacourier.com" class="nav-btn contact-blue">📧 dispatch@cordovacourier.com</a>
       <select class="nav-btn language-selector" onchange="location = this.value;">
         <option disabled selected>🌍 ENGLISH</option>
         <option value="/es/">Español</option>
@@ -64,7 +72,7 @@
     <ul class="nav-links">
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/quote/">Request a Quote</a></li>
-      <li><a href="/services/">Services</a></li>
+      <li><a href="/services/">Services</a></li><li><a href="/service-areas/">Service Areas</a></li>
       <li><a href="/about-us/">About Us</a></li>
       <li><a href="/tracking/" class="cta-btn">Tracking</a></li>
       <li><a href="/portal/" class="cta-btn">Customer Portal</a></li>
@@ -72,7 +80,9 @@
   </div>
 </nav>
 
+<main style="padding: 6rem 1rem; color: white;">
+  <h2>Fully Transparent Preview</h2>
+  <p>Navbar background is 100% transparent.</p>
 </main>
 </body>
 </html>
-
