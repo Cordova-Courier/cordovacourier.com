@@ -1,9 +1,3 @@
-# Read the current navbar.html content
-navbar_html_path = "/mnt/data/navbar.html"
-navbar_html_content = Path(navbar_html_path).read_text()
-
-# Updated version with contact buttons above the navbar
-updated_navbar_html = """
 <!-- CONTACT INFO ABOVE NAVBAR -->
 <div class="top-contact-buttons">
   <a href="tel:2098809264" class="contact-button phone-btn">📞 (209) 880-9624</a>
@@ -71,10 +65,3 @@ updated_navbar_html = """
 <!-- Load Navbar Scripts and Styles -->
 <link rel="stylesheet" href="/css/navbar.css">
 <script src="/js/navbar.js" defer></script>
-"""
-
-# Save the updated navbar.html
-updated_navbar_html_path = "/mnt/data/navbar-updated-with-contact-buttons.html"
-Path(updated_navbar_html_path).write_text(updated_navbar_html)
-
-updated_navbar_html_path
