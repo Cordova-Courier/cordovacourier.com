@@ -1,19 +1,14 @@
 /* === GENERAL NAVBAR CONTAINER === */
-/* === SCROLL EFFECT STYLES === */
 .main-navbar {
+  width: 100%;
   background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  z-index: 10;
-  position: relative;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  z-index: 999;
 }
-
-.main-navbar.scrolled {
-  background-color: rgba(7, 55, 99, 0.9); /* Deep blue with transparency */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-* === GENERAL NAVBAR CONTAINER === */
-
 
 /* === TOP HEADER ROW === */
 .nav-top-header {
@@ -35,13 +30,17 @@
 }
 
 .nav-tagline .main-title {
-  font-size: 1rem;
+  font-size: 1.4rem;
   font-weight: 700;
+  line-height: 1.1;
 }
 
 .nav-tagline .subtitle {
-  font-size: 0.9rem;
-  color: #ff9900;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 0.2rem;
+  color: #f37021;
 }
 
 .orange-text {
@@ -69,11 +68,17 @@
   cursor: pointer;
 }
 
-.nav-btn:hover {
+.nav-btn:hover,
+.nav-btn.contact-blue:hover {
   background-color: #f37021;
   color: white;
 }
 
+.nav-btn.contact-blue {
+  background-color: #073763;
+}
+
+/* === LANGUAGE SELECTOR === */
 .language-selector {
   appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
@@ -126,6 +131,24 @@
   background-color: #e66000;
 }
 
+/* === LOGO WRAPPER & POSITION === */
+.logo-wrapper {
+  position: relative;
+  height: 0;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 60px;
+  z-index: 2;
+}
+
+.top-logo,
+.top-logo-overlap {
+  height: 140px;
+  position: absolute;
+  top: -40px;
+  z-index: 2;
+}
+
 /* === HAMBURGER MENU (for Mobile) === */
 .hamburger {
   display: none;
@@ -142,6 +165,10 @@
   height: 3px;
   width: 100%;
   border-radius: 2px;
+}
+
+.main-navbar.scrolled .hamburger span {
+  background: #0033cc;
 }
 
 /* === RESPONSIVE (Mobile) === */
@@ -173,63 +200,19 @@
   }
 }
 
-/* === Injected from navbar.html === */
-body {
-      margin: 0;
-      font-family: sans-serif;
-      background: black;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      justify-content: start; padding-left: 60px;
-      margin-top: 0.5rem;
-      padding: 0;
-    }
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .cta-btn {
-      background-color: #f37021;
-      padding: 0.4rem 0.8rem;
-      border-radius: 5px;
-      color: white;
-    }
-  
-.nav-btn.contact-blue {
+
+/* === SCROLL STATE === */
+.main-navbar.scrolled {
   background-color: #073763;
-}
-.nav-btn.contact-blue:hover {
-  background-color: #f37021;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo-wrapper {
-  position: relative;
-  height: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: start; padding-left: 60px;
-}
-.top-logo-overlap {
-  position: absolute;
-  top: -40px;
-  height: 140px;
-  z-index: 2;
+.main-navbar.scrolled .top-logo,
+.main-navbar.scrolled .top-logo-overlap {
+  height: 40px;
+  position: static;
 }
 
-.nav-tagline .main-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
-
-.nav-tagline .subtitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1;
-  margin-top: 0.2rem;
+.main-navbar.scrolled .nav-links {
+  justify-content: flex-end;
 }
