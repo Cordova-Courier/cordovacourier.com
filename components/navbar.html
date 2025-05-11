@@ -41,7 +41,22 @@
 .nav-btn.contact-blue:hover {
   background-color: #f37021;
 }
+
+.logo-wrapper {
+  position: relative;
+  height: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+.top-logo-overlap {
+  position: absolute;
+  top: -20px;
+  height: 70px;
+  z-index: 2;
+}
 </style>
+
 
 </head>
 <body>
@@ -49,7 +64,11 @@
 <nav class="main-navbar">
   <div class="nav-top-header">
     <div class="nav-top-left">
-      <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="top-logo" style="height: 70px;">
+      
+    <div class="logo-wrapper">
+      <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="top-logo-overlap">
+    </div>
+    
     </div>
     <div class="nav-tagline">
       <div class="main-title">Cordova Courier – Delivering Excellence Nationwide</div>
@@ -79,7 +98,7 @@
     </ul>
   </div>
 </nav>
- 
+
 </main>
 </body>
 </html>
