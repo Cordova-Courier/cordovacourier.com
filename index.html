@@ -20,7 +20,11 @@
 <!-- Mobile Theme Color -->
 <meta content="#ffffff" name="theme-color"/>
 <!-- Schema Loader -->
-<script defer="" src="/js/schema-loader.js"></script>
+<script defer="" src="/js/schema-loader.js">
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
 </head>
 <body>
 <div id="navbar-placeholder"></div>
@@ -166,7 +170,11 @@ setInterval(() => {
     changingText.style.opacity = 1;
   }, 500);
 }, 4000);
-</script>
+
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
 <!-- FORCE VIDEO PLAY SCRIPT -->
 <script>
 window.addEventListener('load', function() {
@@ -177,7 +185,11 @@ window.addEventListener('load', function() {
     });
   }
 });
-</script>
+
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
 <!-- FOOTER SECTION -->
 <footer class="site-footer">
 <div class="footer-content">
@@ -186,7 +198,11 @@ window.addEventListener('load', function() {
 <p><a href="/privacy-policy">Privacy Policy</a></p>
 </div>
 </footer>
-<script src="/js/cordova-ai-search.js"></script>
+<script src="/js/cordova-ai-search.js">
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
 <script>
   if (!document.querySelector('#ai-service-schema')) {
     fetch('/schema/service-areas.json')
@@ -199,8 +215,16 @@ window.addEventListener('load', function() {
         document.head.appendChild(script);
       });
   }
-</script>
-<script src="/js/navbar.js"></script>
+
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
+<script src="/js/navbar.js">
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
 
 
 
@@ -210,7 +234,11 @@ window.addEventListener('load', function() {
     .then(html => {
       document.getElementById('navbar-placeholder').innerHTML = html;
     });
-</script>
+
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    </script>
 
 </body>
 </html>
