@@ -4,7 +4,71 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cordova Courier – Transparent</title>
- 
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+    }
+    .main-navbar {
+      background-color: transparent;
+      color: white;
+      padding: 1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      justify-content: start; padding-left: 60px;
+      margin-top: 0.5rem;
+      padding: 0;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-btn {
+      background-color: #f37021;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      color: white;
+    }
+  
+.nav-btn.contact-blue {
+  background-color: #073763;
+}
+.nav-btn.contact-blue:hover {
+  background-color: #f37021;
+}
+
+.logo-wrapper {
+  position: relative;
+  height: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: start; padding-left: 60px;
+}
+.top-logo-overlap {
+  position: absolute;
+  top: -40px;
+  height: 140px;
+  z-index: 2;
+}
+
+.nav-tagline .main-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.nav-tagline .subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+</style>
 </head>
 <body>
 
