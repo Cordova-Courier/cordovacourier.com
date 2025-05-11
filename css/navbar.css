@@ -204,15 +204,12 @@
 /* === SCROLL STATE === */
 .main-navbar.scrolled {
   background-color: #073763;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .main-navbar.scrolled .top-logo,
 .main-navbar.scrolled .top-logo-overlap {
-  height: 40px;
-  position: static;
-}
-
-.main-navbar.scrolled .nav-links {
-  justify-content: flex-end;
+  height: 40px !important;
+  transition: height 0.3s ease;
 }
