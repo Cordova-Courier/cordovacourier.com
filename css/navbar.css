@@ -21,22 +21,21 @@
   padding: 0 1rem;
 }
 
-/* === TOP RIGHT FLEX GROUP === */
+/* === TOP BAR FLEX ALIGNMENT === */
 .nav-top-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.3rem 0 0.2rem 0;
+  padding: 0.4rem 0 0.2rem 0;
   flex-wrap: wrap;
 }
 
-.contact-button,
+.nav-top-right .top-button,
 .language-selector-dropdown select {
   height: 36px;
   display: inline-flex;
   align-items: center;
-  vertical-align: middle;
   font-size: 0.95rem;
   font-weight: 600;
   border-radius: 5px;
@@ -46,10 +45,12 @@
   padding: 0 1rem;
   background-color: rgba(0, 51, 102, 0.2);
   color: white;
+  line-height: 1;
+  vertical-align: middle;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.contact-button:hover {
+.top-button:hover {
   background-color: #e69500;
   color: white;
 }
@@ -69,12 +70,12 @@
   background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
 }
 
-/* === NAVIGATION === */
+/* === NAVIGATION BAR === */
 .nav-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0 0.35rem 0;
+  padding: 0.4rem 0;
 }
 
 .nav-logo img {
