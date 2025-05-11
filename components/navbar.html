@@ -1,18 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cordova Courier – Transparent</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+    }
+    .main-navbar {
+      background-color: transparent;
+      color: white;
+      padding: 1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      justify-content: center;
+      margin-top: 0.5rem;
+      padding: 0;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-btn {
+      background-color: #f37021;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
 <nav class="main-navbar">
   <div class="nav-top-header">
     <div class="nav-top-left">
-      <img src="/cordova-logo.png" alt="Cordova Courier Logo" class="top-logo" style="height: 65px;">
+      <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="top-logo">
     </div>
     <div class="nav-tagline">
       <div class="main-title">Cordova Courier – Delivering Excellence Nationwide</div>
       <div class="subtitle">– <span class="orange-text">Because Every Mile Matters</span></div>
     </div>
     <div class="nav-top-right">
-      <a href="tel:2098809624" class="nav-btn contact-solid">📞 (209) 880-9624</a>
-      <a href="mailto:dispatch@cordovacourier.com" class="nav-btn contact-solid">📧 dispatch@cordovacourier.com</a>
+      <a href="tel:2098809624" class="nav-btn">📞 (209) 880-9624</a>
+      <a href="mailto:dispatch@cordovacourier.com" class="nav-btn">📧 dispatch@cordovacourier.com</a>
       <select class="nav-btn language-selector" onchange="location = this.value;">
         <option disabled selected>🌍 ENGLISH</option>
         <option value="/es/">Español</option>
@@ -27,7 +64,7 @@
     <ul class="nav-links">
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/quote/">Request a Quote</a></li>
-      <li><a href="/services/">Services</a></li><li><a href="/service-areas/">Service Area</a></li>
+      <li><a href="/services/">Services</a></li>
       <li><a href="/about-us/">About Us</a></li>
       <li><a href="/tracking/" class="cta-btn">Tracking</a></li>
       <li><a href="/portal/" class="cta-btn">Customer Portal</a></li>
@@ -41,3 +78,4 @@
 </main>
 </body>
 </html>
+
