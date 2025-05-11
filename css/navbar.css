@@ -1,5 +1,10 @@
-   /* === FINAL STABLE NAVBAR === */
+ # Load the current navbar.css file and review its content
+navbar_css_path = "/mnt/data/navbar.css"
+navbar_css_content = Path(navbar_css_path).read_text()
 
+# Add the necessary styles for contact buttons (phone & email) in the top bar above the navbar
+updated_navbar_css = """
+/* === NAVBAR STYLES === */
 .main-navbar {
   width: 100%;
   position: fixed;
@@ -30,7 +35,6 @@
   padding: 0;
 }
 
-/* === Menu Link Styling === */
 .nav-links {
   list-style: none;
   display: flex;
@@ -44,9 +48,41 @@
   font-size: 1rem;
 }
 
+/* Contact Buttons Above Navbar */
+.top-contact-buttons {
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0.5rem 2rem;
+  gap: 1.5rem;
+}
+
+.contact-button {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  background-color: #0033cc;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #e69500;
+}
+
+.phone-btn {
+  background-color: #0033cc;
+}
+
+.email-btn {
+  background-color: #0073e6;
+}
+
+/* Default state (top of page): white text */
 .main-navbar:not(.scrolled) .nav-links li a {
   color: white;
-  text-decoration: none;
 }
 
 .main-navbar:not(.scrolled) .nav-links li a.active {
@@ -58,6 +94,7 @@
   text-decoration: underline;
 }
 
+/* Scrolled state: blue text */
 .main-navbar.scrolled .nav-links li a {
   color: #0033cc;
   text-decoration: none;
@@ -67,12 +104,7 @@
   font-weight: 700;
 }
 
-.main-navbar.scrolled .nav-links li a:hover {
-  color: #0033cc;
-  text-decoration: underline;
-}
-
-/* === Customer Portal Button === */
+/* Customer Portal Button */
 .main-navbar .customer-portal-button a {
   background-color: orange;
   padding: 0.5rem 1rem;
@@ -87,7 +119,7 @@
   background-color: #e69500;
 }
 
-/* === Language Selector === */
+/* Language Selector Dropdown */
 .main-navbar .language-selector-dropdown select {
   background-color: rgba(0, 51, 102, 0.2);
   border: none;
@@ -103,7 +135,6 @@
   background-position: right 0.75rem center;
   background-size: 14px;
   padding-right: 2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-navbar.scrolled .language-selector-dropdown select {
@@ -112,7 +143,7 @@
   background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
 }
 
-/* === Hamburger Menu === */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -134,7 +165,7 @@
   background: #0033cc;
 }
 
-/* === Mobile Styles === */
+/* Mobile Styles */
 @media (max-width: 1024px) {
   .nav-links {
     display: none;
@@ -183,10 +214,17 @@
   }
 }
 
-/* === Remove Link Underlines Globally === */
+/* === FORCE REMOVE ALL UNDERLINES === */
 .nav-links li a,
 .nav-links li a:visited,
 .nav-links li a:focus,
 .nav-links li a:active {
   text-decoration: none !important;
 }
+"""
+
+# Save the final cleaned navbar.css
+updated_navbar_css_path = "/mnt/data/updated-navbar-cleaned.css"
+Path(updated_navbar_css_path).write_text(updated_navbar_css)
+
+updated_navbar_css_path
