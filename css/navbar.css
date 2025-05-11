@@ -28,29 +28,28 @@
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
-  padding: 0.25rem 0 0.25rem 0;
+  padding: 0.35rem 0 0.2rem 0;
 }
 
-/* Transparent-style contact buttons */
+/* Contact buttons: semi-transparent orange */
 .contact-button {
   padding: 0.45rem 0.75rem;
   font-size: 0.9rem;
   font-weight: 600;
   border-radius: 5px;
-  border: 1px solid white;
+  border: none;
   text-decoration: none;
   color: white;
-  background-color: transparent;
+  background-color: rgba(255, 102, 0, 0.9); /* semi-transparent orange */
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact-button:hover {
   background-color: #e69500;
   color: white;
-  border-color: #e69500;
 }
 
-/* Portal button */
+/* Customer Portal remains solid */
 .customer-portal-button a {
   padding: 0.5rem 0.75rem;
   font-size: 0.9rem;
