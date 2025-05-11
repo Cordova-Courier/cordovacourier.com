@@ -1,5 +1,8 @@
 /* === GENERAL NAVBAR CONTAINER === */
 .main-navbar {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   background-color: transparent;
   color: white;
