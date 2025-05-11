@@ -1,8 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cordova Courier – Transparent</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: black;
+    }
+    .main-navbar {
+      background-color: rgba(0, 51, 153, 0.6);
+      color: white;
+      padding: 1rem;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      justify-content: center;
+      margin-top: 0.5rem;
+      padding: 0;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .cta-btn {
+      background-color: #f37021;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
 
-<!-- NAVIGATION BAR -->
 <nav class="main-navbar">
-
-  <!-- TOP HEADER SECTION -->
   <div class="nav-top-header">
     <div class="nav-top-left">
       <img src="/images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="top-logo">
@@ -18,14 +54,9 @@
         <option disabled selected>🌍 ENGLISH</option>
         <option value="/es/">Español</option>
         <option value="/fr/">Français</option>
-        <option value="/de/">Deutsch</option>
-        <option value="/zh/">中文</option>
-        <option value="/ja/">日本語</option>
       </select>
     </div>
   </div>
-
-  <!-- MAIN NAVIGATION SECTION -->
   <div class="nav-main-bar">
     <div class="hamburger" role="button" aria-label="Toggle Menu" tabindex="0">
       <span></span><span></span><span></span>
@@ -34,13 +65,16 @@
       <li><a href="/" class="active">Home</a></li>
       <li><a href="/quote/">Request a Quote</a></li>
       <li><a href="/services/">Services</a></li>
-      <li><a href="/service-areas/">Service Areas</a></li>
-      <li><a href="/contact/">Contact</a></li>
       <li><a href="/about-us/">About Us</a></li>
       <li><a href="/tracking/" class="cta-btn">Tracking</a></li>
-      <li><a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" class="cta-btn" target="_blank" rel="noopener noreferrer">Customer Portal</a></li>
+      <li><a href="/portal/" class="cta-btn">Customer Portal</a></li>
     </ul>
   </div>
-
 </nav>
 
+<main style="padding: 6rem 1rem; color: white;">
+  <h2>Transparent Preview</h2>
+  <p>Background is visible through navbar (60% opacity).</p>
+</main>
+</body>
+</html>
