@@ -21,23 +21,22 @@
   padding: 0 1rem;
 }
 
-/* === TOP RIGHT FLEX GROUP === */
-.nav-top-right {
+/* === CENTERED TOP BAR GROUP === */
+.nav-top-center {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   padding: 0.3rem 0 0.2rem 0;
   flex-wrap: wrap;
 }
 
-.contact-button,
+.nav-top-center a,
 .language-selector-dropdown select {
   height: 36px;
   display: inline-flex;
   align-items: center;
-  vertical-align: middle;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 5px;
   border: none;
@@ -47,9 +46,10 @@
   background-color: rgba(0, 51, 102, 0.2);
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.2;
 }
 
-.contact-button:hover {
+.nav-top-center a:hover {
   background-color: #e69500;
   color: white;
 }
@@ -69,12 +69,12 @@
   background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
 }
 
-/* === NAVIGATION === */
+/* === NAVIGATION BAR === */
 .nav-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0 0.35rem 0;
+  padding: 0.4rem 0;
 }
 
 .nav-logo img {
@@ -106,29 +106,13 @@
   text-decoration: underline;
 }
 
-.customer-portal-button a {
-  padding: 0.45rem 0.9rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border-radius: 5px;
-  text-decoration: none;
-  color: white;
-  background-color: #0033cc;
-  transition: background-color 0.3s ease;
-  white-space: nowrap;
-}
-
-.customer-portal-button a:hover {
-  background-color: #e69500;
-}
-
 /* === MOBILE === */
 .hamburger {
   display: none;
 }
 
 @media (max-width: 1024px) {
-  .nav-top-right {
+  .nav-top-center {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
