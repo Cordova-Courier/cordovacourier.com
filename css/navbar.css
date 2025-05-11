@@ -21,18 +21,17 @@
   padding: 0 1rem;
 }
 
-/* === CENTERED TOP BAR GROUP === */
+/* === TOP CONTACT ROW === */
 .nav-top-center {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.3rem 0 0.2rem 0;
+  padding: 0.3rem 0;
   flex-wrap: wrap;
 }
 
-.nav-top-center a,
-.language-selector-dropdown select {
+.nav-top-center a {
   height: 36px;
   display: inline-flex;
   align-items: center;
@@ -52,21 +51,6 @@
 .nav-top-center a:hover {
   background-color: #e69500;
   color: white;
-}
-
-.language-selector-dropdown select {
-  appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 14px;
-  padding-right: 2rem;
-}
-
-.main-navbar.scrolled .language-selector-dropdown select {
-  color: #0033cc;
-  background-color: rgba(0, 51, 204, 0.1);
-  background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
 }
 
 /* === NAVIGATION BAR === */
@@ -104,6 +88,47 @@
 
 .nav-links li a:hover {
   text-decoration: underline;
+}
+
+.customer-portal-button a {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  background-color: #0033cc;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.customer-portal-button a:hover {
+  background-color: #e69500;
+}
+
+.language-selector-dropdown select {
+  height: 36px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 0 1rem;
+  border: none;
+  background-color: rgba(0, 51, 102, 0.2);
+  color: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 14px;
+  padding-right: 2rem;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.main-navbar.scrolled .language-selector-dropdown select {
+  color: #0033cc;
+  background-color: rgba(0, 51, 204, 0.1);
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
 }
 
 /* === MOBILE === */
