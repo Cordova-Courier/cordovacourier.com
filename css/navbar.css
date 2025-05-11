@@ -1,4 +1,4 @@
-/* === MAIN NAVBAR CONTAINER === */
+/* === MAIN NAVBAR === */
 .main-navbar {
   width: 100%;
   position: fixed;
@@ -13,18 +13,17 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* === NAV CONTAINER LAYOUT === */
+/* === CONTAINER WRAPPING ALL === */
 .nav-container {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   padding: 0 1rem;
 }
 
-/* === TOP BAR RIGHT (CONTACT + LANG) === */
-.nav-contact-language {
+/* === TOP RIGHT: CONTACT & LANG === */
+.nav-top-right {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -32,40 +31,6 @@
   padding: 0.5rem 0;
 }
 
-/* === LOGO (BOTTOM LEFT OF NAVBAR) === */
-.nav-logo {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.nav-logo img {
-  height: 40px;
-}
-
-/* === CENTER NAV LINKS === */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin: 0;
-  padding: 0.75rem 0;
-  gap: 1.5rem;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  color: white;
-}
-
-.main-navbar.scrolled .nav-links li a {
-  color: #0033cc;
-}
-
-/* === RIGHT CONTROLS === */
 .contact-button,
 .customer-portal-button a {
   padding: 0.5rem 0.75rem;
@@ -84,19 +49,66 @@
 }
 
 .language-selector-dropdown select {
-  background: transparent;
-  border: 1px solid #ccc;
+  background-color: rgba(0, 51, 102, 0.2);
+  border: none;
   border-radius: 5px;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   color: white;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
-  background-color: rgba(0, 51, 102, 0.2);
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 14px;
+  padding-right: 2rem;
 }
 
 .main-navbar.scrolled .language-selector-dropdown select {
   color: #0033cc;
   background-color: rgba(0, 51, 204, 0.1);
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%230033cc' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+/* === BOTTOM NAV: LOGO + LINKS === */
+.nav-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* LOGO */
+.nav-logo img {
+  height: 40px;
+}
+
+/* NAVIGATION LINKS CENTERED */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex: 1;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+}
+
+.main-navbar.scrolled .nav-links li a {
+  color: #0033cc;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
 }
 
 /* === HAMBURGER MENU (Mobile) === */
@@ -105,12 +117,24 @@
 }
 
 @media (max-width: 1024px) {
+  .nav-top-right {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .nav-links {
     flex-direction: column;
     align-items: flex-start;
     background: rgba(0, 51, 102, 0.95);
     width: 100%;
     display: none;
+    padding: 1rem;
   }
 
   .nav-links.open {
@@ -121,10 +145,10 @@
     display: block;
     position: absolute;
     right: 1rem;
-    top: 1rem;
-    cursor: pointer;
+    top: 0.75rem;
     width: 30px;
     height: 25px;
+    cursor: pointer;
   }
 
   .hamburger span {
@@ -137,15 +161,9 @@
   .main-navbar.scrolled .hamburger span {
     background: #0033cc;
   }
-
-  .nav-contact-language {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.5rem;
-  }
 }
 
-/* === NO UNDERLINE === */
+/* === FORCE REMOVE ALL UNDERLINES === */
 .nav-links li a,
 .nav-links li a:visited,
 .nav-links li a:focus,
