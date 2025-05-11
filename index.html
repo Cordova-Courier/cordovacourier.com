@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<body><!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -20,11 +20,10 @@
 <!-- Mobile Theme Color -->
 <meta content="#ffffff" name="theme-color"/>
 <!-- Schema Loader -->
-<script defer="" src="/js/schema-loader.js"></script>
+<script defer="" src="/js/schema-loader.js">
+      
 </head>
-<body>
-<div id="navbar-placeholder"></div>
-<!-- NAVIGATION BAR -->
+
 <div id="navbar-placeholder"></div>
 <!-- HERO SECTION -->
 <section class="hero">
@@ -166,7 +165,8 @@ setInterval(() => {
     changingText.style.opacity = 1;
   }, 500);
 }, 4000);
-</script>
+
+      
 <!-- FORCE VIDEO PLAY SCRIPT -->
 <script>
 window.addEventListener('load', function() {
@@ -177,7 +177,8 @@ window.addEventListener('load', function() {
     });
   }
 });
-</script>
+
+      
 <!-- FOOTER SECTION -->
 <footer class="site-footer">
 <div class="footer-content">
@@ -186,31 +187,19 @@ window.addEventListener('load', function() {
 <p><a href="/privacy-policy">Privacy Policy</a></p>
 </div>
 </footer>
-<script src="/js/cordova-ai-search.js"></script>
+<script src="/js/cordova-ai-search.js">
+      
 <script>
   if (!document.querySelector('#ai-service-schema')) {
     fetch('/schema/service-areas.json')
       .then(res => res.json())
       .then(data => {
-        const script = document.createElement('script');
-        script.id = 'ai-service-schema';
-        script.type = 'application/ld+json';
-        script.textContent = JSON.stringify(data);
-        document.head.appendChild(script);
-      });
-  }
-</script>
+        
 
 
 
 
-<script>
-  fetch('/components/navbar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navbar-placeholder').innerHTML = html;
-    });
-</script>
+
 
 
 <script>
@@ -226,3 +215,4 @@ window.addEventListener('load', function() {
 
 </body>
 </html>
+
