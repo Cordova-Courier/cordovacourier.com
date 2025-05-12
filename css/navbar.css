@@ -161,3 +161,20 @@
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
 }
+
+/* === BACKGROUND TRANSITION LAYER === */
+.navbar-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 0;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.main-navbar.scrolled .navbar-background {
+  background-color: rgba(7, 55, 99, 0.95);
+  backdrop-filter: blur(6px);
+}
