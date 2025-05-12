@@ -199,6 +199,12 @@ window.addEventListener('load', function() {
   }
 </script>
 
+<!-- For scroll testing -->
+<div style="height: 3000px;"></div>
+
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
+
 <script>
   fetch('/components/navbar.html')
     .then(res => res.text())
@@ -209,6 +215,6 @@ window.addEventListener('load', function() {
       document.body.appendChild(script);
     });
 </script>
-<div style="height: 3000px;"></div>
+
 </body>
 </html>
