@@ -23,6 +23,21 @@
 <script defer="" src="/js/schema-loader.js"></script>
 </head>
 <body>
+
+<!-- Navbar placeholder -->
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    });
+</script>
+
 <div id="navbar-placeholder"></div>
 <!-- HERO SECTION -->
 <section class="hero">
@@ -202,19 +217,11 @@ window.addEventListener('load', function() {
 <!-- For scroll testing -->
 <div style="height: 3000px;"></div>
 
-<!-- Navbar placeholder -->
-<div id="navbar-placeholder"></div>
 
-<script>
-  fetch('/components/navbar.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('navbar-placeholder').innerHTML = html;
-      const script = document.createElement('script');
-      script.src = '/js/navbar.js';
-      document.body.appendChild(script);
-    });
-</script>
+
+</body>
+</html>
+
 
 </body>
 </html>
