@@ -1,213 +1,52 @@
-/* === GENERAL NAVBAR CONTAINER === */
-.main-navbar {
-  width: 100%;
-  background-color: transparent;
-  color: white;
-  font-family: sans-serif;
-  font-weight: 600;
-  position: fixed;
-  top: 0;
-  z-index: 999;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("NAVBAR.JS loaded");
 
-/* === TOP HEADER ROW === */
-.nav-top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  flex-wrap: wrap;
-}
+  setTimeout(() => {
+    const navbar = document.querySelector(".main-navbar");
+    const logo = document.querySelector(".top-logo-overlap") || document.querySelector(".top-logo");
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
 
-.nav-top-left .top-logo {
-  height: 45px;
-}
+    if (!navbar) {
+      console.warn("main-navbar not found.");
+      return;
+    }
 
-.nav-tagline {
-  text-align: center;
-  flex: 1;
-  padding: 0.3rem 1rem;
-}
+    console.log("Scroll listener initialized");
 
-.nav-tagline .main-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.1;
-}
+    // Scroll-triggered navbar update
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 5) {
+        navbar.classList.add("scrolled");
+        if (logo) {
+          logo.src = "/images/branding/cordova-navbar-logo.png";
+          logo.style.height = "40px";
+          logo.style.position = "static";
+        }
+      } else {
+        navbar.classList.remove("scrolled");
+        if (logo) {
+          logo.src = "/images/branding/cordova-logo.png";
+          logo.style.height = "140px";
+          logo.style.position = "absolute";
+          logo.style.top = "-40px";
+        }
+      }
+    });
 
-.nav-tagline .subtitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1;
-  margin-top: 0.2rem;
-  color: #f37021;
-}
+    // Hamburger toggle
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("open");
+      });
+    }
 
-.orange-text {
-  color: #f37021;
-  font-style: italic;
-}
-
-/* === RIGHT SIDE CONTACT + LANGUAGE === */
-.nav-top-right {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.nav-btn {
-  padding: 0.4rem 0.8rem;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.nav-btn:hover,
-.nav-btn.contact-blue:hover {
-  background-color: #f37021;
-  color: white;
-}
-
-.nav-btn.contact-blue {
-  background-color: #073763;
-}
-
-/* === LANGUAGE SELECTOR === */
-.language-selector {
-  appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 14px;
-  padding-right: 2rem;
-}
-
-/* === MAIN NAV BAR === */
-.nav-main-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.25rem 1rem;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  text-decoration: underline;
-}
-
-.nav-links li a.cta-btn {
-  background-color: #f37021;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  font-weight: 700;
-}
-
-.nav-links li a.cta-btn:hover {
-  background-color: #e66000;
-}
-
-/* === LOGO WRAPPER & POSITION === */
-.logo-wrapper {
-  position: relative;
-  height: 0;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 60px;
-  z-index: 2;
-}
-
-.top-logo,
-.top-logo-overlap {
-  height: 140px;
-  position: absolute;
-  top: -40px;
-  z-index: 2;
-}
-
-/* === HAMBURGER MENU (for Mobile) === */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 24px;
-  height: 20px;
-  cursor: pointer;
-  margin-left: auto;
-}
-
-.hamburger span {
-  background: white;
-  height: 3px;
-  width: 100%;
-  border-radius: 2px;
-}
-
-.main-navbar.scrolled .hamburger span {
-  background: #0033cc;
-}
-
-/* === RESPONSIVE (Mobile) === */
-@media (max-width: 768px) {
-  .nav-top-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .nav-main-bar {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    display: none;
-    width: 100%;
-    padding: 1rem 0;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-    margin-top: 0.5rem;
-  }
-}
-
-/* === SCROLL STATE === */
-.main-navbar.scrolled {
-  background-color: rgba(7, 55, 99, 0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.main-navbar.scrolled .top-logo,
-
-.main-navbar.scrolled .nav-links {
-  justify-content: flex-end;
-}
+    // Close mobile menu on nav link click
+    const navItems = document.querySelectorAll(".nav-links a");
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
+    });
+  }, 100); // slight delay to ensure navbar is injected
+});
