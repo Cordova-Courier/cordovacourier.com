@@ -33,20 +33,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     });
-
-    // Hamburger toggle
-    if (hamburger && navLinks) {
-      hamburger.addEventListener("click", function () {
-        navLinks.classList.toggle("open");
-      });
-    }
-
-    // Close mobile menu on nav link click
-    const navItems = document.querySelectorAll(".nav-links a");
-    navItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-      });
-    });
-  }, 100); // slight delay to ensure navbar is injected
-});
