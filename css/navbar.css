@@ -158,3 +158,11 @@
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
 }
+
+
+/* Allow main-navbar scroll background to show */
+.nav-top-header,
+.nav-main-bar {
+  position: relative;
+  z-index: 2;
+}
