@@ -1,142 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Cordova Courier - Employee-Centric Courier Company</title>
-  <meta name="description" content="Cordova Courier is a nationwide delivery company built for the people who power it. Discover our mission, values, and commitment to employee ownership, global reach, and customer satisfaction.">
-  <meta name="keywords" content="Cordova Courier, About Cordova Courier, Employee-first delivery company, Nationwide courier, Global courier company, Same-day delivery, Freight logistics, Medical courier, Airport cargo delivery">
-  <meta name="author" content="Cordova Courier">
-  <link rel="canonical" href="https://www.cordovacourier.com/about-us">
-  <link rel="stylesheet" href="/css/about-us.css">
-</head>
-<body>
-  <header class="header">
-    <h1>About Cordova Courier</h1>
-    <p>Your Trusted, People-First Delivery Partner</p>
-  </header>
+/* ==========================
+   ABOUT US - CORDOVA COURIER STYLING
+========================== */
 
-  <section class="about-courier">
-    <h2>🌍 Our Mission</h2>
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>Putting People First</h3>
-        <p>Our mission is rooted in respect, dignity, and real opportunity. Cordova Courier isn’t just delivering packages — we’re delivering hope, stability, and fairness to everyone who makes our success possible.</p>
-      </div>
-      <div class="about-card">
-        <h3>Redefining Industry Standards</h3>
-        <p>We challenge the status quo of greed-driven business models. By focusing on our employees first, we naturally create better service, better innovation, and a better future.</p>
-      </div>
-      <div class="about-card">
-        <h3>Powering Dreams</h3>
-        <p>We help our team members chase goals beyond the road — whether that’s starting a business, going back to school, or buying their first home. When they win, we all do.</p>
-      </div>
-    </div>
-  </section>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #003366;
+  line-height: 1.6;
+}
 
-  <section class="about-courier">
-    <h2>💼 Our Core Commitments</h2>
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>✅ Employee Ownership Mindset</h3>
-        <p>Protecting our future, protecting our people. Cordova Courier is committed to staying employee-focused — not shareholder-driven.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ World-Class Compensation and Tools</h3>
-        <p>We empower employees with great pay, top-tier equipment, and the tools they need to succeed professionally and personally.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ Financial Education</h3>
-        <p>We teach wealth-building and financial literacy, giving employees the knowledge to achieve lifelong financial freedom.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ Global Family</h3>
-        <p>We are growing beyond borders — building a worldwide courier network dedicated to empowering workers everywhere we operate.</p>
-      </div>
-      <div class="about-card">
-        <h3>✅ Zero Greed. Zero Exploitation. 100% Human Focus.</h3>
-        <p>Our focus is, and will always be, humanity — not profit margins. Cordova Courier serves people, not greed.</p>
-      </div>
-    </div>
-  </section>
+header.header {
+  background: linear-gradient(90deg, #ff6600, #0033cc);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  <section class="about-courier">
-    <h2>📦 What We Do</h2>
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>Nationwide & Regional Deliveries</h3>
-        <p>From California to New York and everywhere between, we offer same-day and next-day delivery solutions with real-time tracking and professional couriers.</p>
-      </div>
-      <div class="about-card">
-        <h3>Freight, Medical & Legal Logistics</h3>
-        <p>Our TSA-TWIC certified drivers safely deliver sensitive documents, bulk freight, lab work, pharmaceuticals, and high-priority legal files with unmatched reliability.</p>
-      </div>
-      <div class="about-card">
-        <h3>50-Mile City Radius + Airport Recovery</h3>
-        <p>We service major U.S. cities within a 50-mile radius and specialize in airport cargo pickup/delivery from LAX, JFK, SFO, and more.</p>
-      </div>
-    </div>
-  </section>
+header.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
-  <section class="about-courier">
-    <h2>❤️ Delivering More Than Packages</h2>
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>We See People</h3>
-        <p>When someone experiencing homelessness approaches one of our couriers for food or water, we respond — not with hesitation, but with compassion and action.</p>
-      </div>
-      <div class="about-card">
-        <h3>We Help Pets Too</h3>
-        <p>Every living being matters. Our couriers are encouraged to purchase food and water for pets of those in need — because humanity includes our furry friends too.</p>
-      </div>
-      <div class="about-card">
-        <h3>Empowered by Purpose</h3>
-        <p>Each courier has a company card to use for helping the community. We believe kindness should be built into every delivery route.</p>
-      </div>
-    </div>
-  </section>
+header.header p {
+  font-size: 1.3rem;
+  margin-top: 0;
+}
 
-  <section class="about-courier">
-    <h2>⚙️ Powered by Smart Technology</h2>
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>AI-Driven Order Tools</h3>
-        <p>Get instant quotes, smart order intake, and seamless tracking from our beta platform at <a href="https://ai.cordovacourier.com">ai.cordovacourier.com</a>.</p>
-      </div>
-      <div class="about-card">
-        <h3>Live Dispatch, 24/7</h3>
-        <p>Technology never replaces people — it supports them. Our live dispatchers are always ready to assist, no matter the hour.</p>
-      </div>
-      <div class="about-card">
-        <h3>Nationwide Scalability</h3>
-        <p>From local pickups to coast-to-coast shipping, our platform scales with your needs while maintaining the heart of a people-first operation.</p>
-      </div>
-    </div>
-  </section>
+.about-courier {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  <section class="about-courier">
-    <h2>🚀 Join the Movement</h2>
-    <div class="about-cards">
-      <div class="about-card">
-        <h3>We’re Not Just a Courier</h3>
-        <p>We are a movement — one that proves businesses can grow, serve, and protect people at the same time. It’s not radical — it’s right.</p>
-      </div>
-      <div class="about-card">
-        <h3>Building a Better Economy</h3>
-        <p>Through employee-first values, Cordova Courier is paving the way for a healthier, more inclusive delivery industry where everyone thrives.</p>
-      </div>
-      <div class="about-card">
-        <h3>Help Us Deliver Change</h3>
-        <p>Every delivery funds our mission. Every employee enriches our culture. Every act of kindness strengthens our movement. Join us.</p>
-      </div>
-    </div>
-  </section>
+.about-courier h2 {
+  font-size: 2.4rem;
+  color: #003366;
+  margin-bottom: 30px;
+}
 
-  <footer class="footer">
-    <p><strong>Cordova Courier Team</strong><br>
-    📞 (209) 880-9624<br>
-    📧 dispatch@cordovacourier.com<br>
-    🌐 <a href="https://www.cordovacourier.com">www.cordovacourier.com</a></p>
-  </footer>
-</body>
-</html>
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #333333;
+  line-height: 1.7;
+}
+
+.about-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.about-card {
+  background-color: #003366;
+  color: white;
+  flex: 1 1 280px;
+  max-width: 320px;
+  padding: 25px 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.about-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+.about-card a {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+footer.footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+}
+
+footer.footer a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  header.header h1 {
+    font-size: 2rem;
+  }
+
+  header.header p,
+  .about-content,
+  .about-card p {
+    font-size: 1rem;
+  }
+
+  .about-courier h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-card h3 {
+    font-size: 1.1rem;
+  }
+
+  footer.footer {
+    font-size: 0.9rem;
+  }
+}
