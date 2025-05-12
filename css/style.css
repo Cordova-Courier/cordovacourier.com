@@ -42,63 +42,6 @@ html, body {
   z-index: 0;
 }
 
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 140px;
-  z-index: 2;
-}
-
-/* Header Top Info (Language Selector + Dispatch Info) */
-.header-top-info {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  text-align: right;
-  z-index: 2;
-}
-
-.language-selector select {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  background-color: #ffffff;
-  color: #333;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.language-selector select:hover {
-  background-color: #f0f0f0;
-}
-
-.contact-info {
-  text-align: right;
-}
-
-.contact-item {
-  margin-bottom: 5px;
-}
-
-.contact-icon {
-  color: red;
-  font-size: 1.5rem;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-
-.contact-info a {
-  color: white;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
 /* Hero Content (Headline + Button) */
 .hero-content {
   position: absolute;
