@@ -8,10 +8,6 @@
   position: fixed;
   top: 0;
   z-index: 999;
-  background-color: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
 }
 
 /* === TOP HEADER ROW === */
@@ -204,7 +200,6 @@
   }
 }
 
-
 /* === SCROLL STATE === */
 .main-navbar.scrolled {
   background-color: rgba(7, 55, 99, 0.95);
@@ -212,10 +207,6 @@
 }
 
 .main-navbar.scrolled .top-logo,
-.main-navbar.scrolled .top-logo-overlap {
-  height: 40px;
-  position: static;
-}
 
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
