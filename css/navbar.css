@@ -150,12 +150,6 @@
 }
 
 /* === SCROLL STATE === */
-.main-navbar.scrolled {
-  background-color: rgba(7, 55, 99, 0.95);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
-}
 
 .main-navbar.scrolled {
   background-color: rgba(255, 0, 0, 0.8); /* 🔴 bright red for test */
