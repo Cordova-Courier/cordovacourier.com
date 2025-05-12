@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelector(".nav-links");
 
     if (!navbar) {
-      console.warn("main-navbar not found.");
+      console.warn("main-navbar NOT FOUND");
       return;
     }
 
@@ -16,22 +16,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Scroll-triggered navbar update
     window.addEventListener("scroll", () => {
+      console.log("ScrollY =", window.scrollY);
       if (window.scrollY > 5) {
         navbar.classList.add("scrolled");
-        if (logo) {
-          logo.src = "/images/branding/cordova-navbar-logo.png";
-          logo.style.height = "40px";
-          logo.style.position = "static";
-        }
+        console.log("Navbar SCROLLED");
       } else {
         navbar.classList.remove("scrolled");
-        if (logo) {
-          logo.src = "/images/branding/cordova-logo.png";
-          logo.style.height = "140px";
-          logo.style.position = "absolute";
-          logo.style.top = "-40px";
-        }
+        console.log("Navbar UN-SCROLLED");
       }
+    });
+
+    // Hamburger toggle
+    if (hamburger && navLinks) {
+      hamburger.addEventListener("click", function () {
+        navLinks.classList.toggle("open");
+      });
+    }
+
+    // Close mobile menu on nav link click
+    const navItems = document.querySelectorAll(".nav-links a");
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+      });
     });
   }, 100);
 });
