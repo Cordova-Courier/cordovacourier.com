@@ -147,10 +147,9 @@
 
 .top-logo,
 .top-logo-overlap {
-  height: 140px;
-  position: absolute;
-  top: -40px;
-  z-index: 2;
+  height: 100px;
+  display: block;
+  max-width: 100%;
 }
 
 /* === HAMBURGER MENU (for Mobile) === */
