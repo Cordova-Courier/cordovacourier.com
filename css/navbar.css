@@ -8,6 +8,10 @@
   position: fixed;
   top: 0;
   z-index: 999;
+  background-color: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 }
 
 /* === TOP HEADER ROW === */
@@ -144,9 +148,9 @@
 .top-logo,
 .top-logo-overlap {
   height: 140px;
-  display: block;
-  max-width: 100%;
-  position: static;
+  position: absolute;
+  top: -40px;
+  z-index: 2;
 }
 
 /* === HAMBURGER MENU (for Mobile) === */
@@ -200,6 +204,7 @@
   }
 }
 
+
 /* === SCROLL STATE === */
 .main-navbar.scrolled {
   background-color: rgba(7, 55, 99, 0.95);
@@ -207,7 +212,38 @@
 }
 
 .main-navbar.scrolled .top-logo,
+.main-navbar.scrolled .top-logo-overlap {
+  height: 40px;
+  position: static;
+}
 
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
+}
+
+
+
+/* === FLOATING LOGO FIX === */
+.nav-logo {
+  position: absolute;
+  top: -10px;
+  left: 1rem;
+  z-index: 1000;
+}
+
+.nav-logo img {
+  height: 100px;
+  width: auto;
+  max-height: none;
+}
+
+/* Ensure the navbar isn't pushed by logo */
+.main-navbar .nav-bottom {
+  padding-top: 0;
+}
+
+/* Remove default logo padding if present */
+.nav-logo-container {
+  padding: 0 !important;
+  margin: 0 !important;
 }
