@@ -204,6 +204,7 @@
   }
 }
 
+
 /* === SCROLL STATE === */
 .main-navbar.scrolled {
   background-color: rgba(7, 55, 99, 0.95);
@@ -211,6 +212,10 @@
 }
 
 .main-navbar.scrolled .top-logo,
+.main-navbar.scrolled .top-logo-overlap {
+  height: 40px;
+  position: static;
+}
 
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
