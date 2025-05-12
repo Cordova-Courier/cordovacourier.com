@@ -150,19 +150,16 @@
 }
 
 /* === SCROLL STATE === */
-.main-navbar.scrolled {
-  background-color: rgba(7, 55, 99, 0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .main-navbar.scrolled .nav-links {
   justify-content: flex-end;
 }
 
-
-/* Allow main-navbar scroll background to show */
-.nav-top-header,
-.nav-main-bar {
-  position: relative;
-  z-index: 2;
+/* === FINAL SCROLL EFFECT === */
+.main-navbar.scrolled {
+  background-color: rgba(7, 55, 99, 0.95); /* Cordova dark blue */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
 }
