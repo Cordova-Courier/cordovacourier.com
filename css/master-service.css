@@ -1,0 +1,127 @@
+/* ===============================
+   MASTER SERVICE AREA PAGE STYLES
+================================== */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.hero-section {
+  background: linear-gradient(to right, #003366, #005599);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-buttons .btn:hover {
+  background-color: #cc5200;
+}
+
+.services-row {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.services-row h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #003366;
+}
+
+.services-row .icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.services-row .icons div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 120px;
+}
+
+.services-row .icons img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.grid-section {
+  padding: 50px 20px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.grid-section h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 30px;
+}
+
+.state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.state-grid a {
+  display: block;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #003366;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.state-grid a:hover {
+  background-color: #ff6600;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
