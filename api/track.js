@@ -1,17 +1,16 @@
-// === /api/track.js (Vercel Serverless Function using official OnTime360 API) ===
-// Securely returns filtered tracking data for Cordova AI & schema use
-
+// /api/track.js — Vercel Serverless Function
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
 
-  const apiKey = process.env.ONTIME360_API_KEY;
-  const endpoint = `https://api.ontime360.com/v1/orders/${tn}`;
+  const API_KEY = process.env.ONTIME360_API_KEY;
+  const COMPANY_ID = 'CORDOVACOURIERLLC';
+  const BASE_URL = `https://secure.ontime360.com/sites/${COMPANY_ID}/api`;
 
   try {
-    const response = await fetch(endpoint, {
+    const response = await fetch(`${BASE_URL}/orders/${tn}`, {
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       }
     });
@@ -22,7 +21,6 @@ export default async function handler(req, res) {
 
     const order = await response.json();
 
-    // Extract and format data safely
     const data = {
       trackingNumber: order.OrderNumber || tn,
       status: order.Status?.Name || 'Unknown',
@@ -31,17 +29,17 @@ export default async function handler(req, res) {
       pickupTime: order.ActualPickupTime || order.ExpectedPickupTime || '',
       dropoffTime: order.ActualDeliveryTime || order.ExpectedDeliveryTime || '',
       vehicle: order.VehicleType || '',
-      history: order.History?.map(h => ({
+      history: (order.History || []).map(h => ({
         time: h.Timestamp,
         status: h.StatusName,
         note: h.Note
-      })) || []
+      }))
     };
 
-    res.status(200).json(data);
+    return res.status(200).json(data);
 
   } catch (err) {
     console.error('Track API error:', err);
-    res.status(500).json({ error: 'Internal Server Error' });
+    return res.status(500).json({ error: 'Internal Server Error' });
   }
 }
