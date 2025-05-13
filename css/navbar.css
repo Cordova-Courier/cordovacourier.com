@@ -168,8 +168,9 @@ body, html {
   }
 }
 
-/* Keep email button solid, but enhance hover on phone */
-.nav-contact a[href^="tel:"] {
+/* Consistent hover for phone and email buttons */
+.nav-contact a[href^="tel:"],
+.nav-contact a[href^="mailto:"] {
   display: inline-block;
   background-color: #F97316;
   color: white;
@@ -181,19 +182,9 @@ body, html {
   border: 2px solid #F97316;
 }
 
-.nav-contact a[href^="tel:"]:hover {
+.nav-contact a[href^="tel:"]:hover,
+.nav-contact a[href^="mailto:"]:hover {
   background-color: #e26310;
   color: white;
   transform: scale(1.05);
-}
-
-.nav-contact a[href^="mailto:"] {
-  display: inline-block;
-  background-color: #F97316;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: transform 0.3s ease;
 }
