@@ -24,31 +24,17 @@
     <button id="download-pdf" style="display:none">📄 Download PDF</button>
   </div>
 
-  <!-- Cordova AI Assistant -->
+  <!-- Cordova AI Chat Widget (same as home screen) -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    let tn = urlParams.get('tn');
+    const tn = urlParams.get('tn');
 
-    const aiContainer = document.createElement('div');
-    aiContainer.id = 'cordova-ai-container';
-    aiContainer.style.position = 'fixed';
-    aiContainer.style.bottom = '20px';
-    aiContainer.style.right = '20px';
-    aiContainer.style.zIndex = '9999';
-
-    const aiFrame = document.createElement('iframe');
-    aiFrame.src = `https://ai.cordovacourier.com?source=tracking&tn=${encodeURIComponent(tn || '')}`;
-    aiFrame.width = '380';
-    aiFrame.height = '520';
-    aiFrame.style.border = 'none';
-    aiFrame.style.borderRadius = '12px';
-    aiFrame.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-    aiFrame.title = 'Cordova AI Assistant';
-    aiFrame.allow = 'microphone; clipboard-write; autoplay';
-
-    aiContainer.appendChild(aiFrame);
-    document.body.appendChild(aiContainer);
+    window.cordovaChatConfig = {
+      source: "tracking",
+      trackingNumber: tn || ""
+    };
   </script>
+  <script src="https://ai.cordovacourier.com/widget.js" defer></script>
 
   <script>
     const phrases = [
