@@ -1,4 +1,4 @@
-// /api/track.js — Final fallback using StatusName, Note, or mapped StatusLevel
+// /api/track.js — Now includes signature data and debug logging for status history
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -50,6 +50,29 @@ export default async function handler(req, res) {
     });
     const historyData = await historyRes.json();
 
+    const signatureRes = await fetch(`${BASE_URL}/order/signature?orderID=${orderId}`, {
+      headers: {
+        'Authorization': API_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    let signature = null;
+    try {
+      signature = await signatureRes.json();
+    } catch (e) {
+      signature = null;
+    }
+
+    const history = Array.isArray(historyData) ? historyData.map(h => {
+      const label = h.StatusName || h.Note || statusMap[h.StatusLevel] || 'Unknown';
+      console.log("🔍 Status Debug:", { time: h.Timestamp, raw: h });
+      return {
+        time: h.Timestamp,
+        status: label,
+        note: h.Note || ''
+      };
+    }) : [];
+
     const data = {
       trackingNumber: order.TrackingNumber || tn,
       status: order.Status?.Description || order.Status?.Name || statusMap[order.Status?.Level] || 'Unknown',
@@ -58,11 +81,8 @@ export default async function handler(req, res) {
       pickupTime: order.CollectionArrivalDate || order.CollectionArrivalWindow?.EarliestTime || '',
       dropoffTime: order.DeliveryArrivalDate || order.DeliveryArrivalWindow?.EarliestTime || '',
       vehicle: order.VehicleRequired?.Name || '',
-      history: Array.isArray(historyData) ? historyData.map(h => ({
-        time: h.Timestamp,
-        status: h.StatusName || h.Note || statusMap[h.StatusLevel] || 'Unknown',
-        note: h.Note || ''
-      })) : []
+      signature: signature || null,
+      history
     };
 
     return res.status(200).json(data);
