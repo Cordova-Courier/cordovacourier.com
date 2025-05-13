@@ -124,44 +124,69 @@ body, html {
   background-color: transparent;
 }
 
-/* Align hamburger with logo on small screens */
+/* Force responsive layout for all buttons and contact items */
 @media screen and (max-width: 768px) {
   .navbar-top {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
   .nav-left {
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
     align-items: center;
-    gap: 10px;
-    width: auto;
   }
 
   .hamburger {
-    order: 2;
+    display: flex;
     margin-left: auto;
-    margin-right: 10px;
   }
 
   .nav-contact {
+    display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 6px;
+    flex-wrap: wrap;
+    gap: 8px;
     justify-content: space-between;
     width: 100%;
-    padding: 0 10px;
+    padding: 10px 0;
   }
 
   .nav-contact a,
   .nav-contact span {
-    font-size: 0.8rem;
-    padding: 6px 10px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
     white-space: nowrap;
-    flex: 1;
+    flex: 1 0 30%;
     text-align: center;
+  }
+
+  .navbar-bottom {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #156082;
+    padding: 10px;
+  }
+
+  .navbar-bottom.open {
+    display: flex;
+  }
+
+  .navbar-bottom a {
+    font-size: 1rem;
+    padding: 10px 14px;
+    margin: 4px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .btn-outline {
+    display: block;
+    margin: 6px auto;
+    width: 90%;
   }
 }
 
