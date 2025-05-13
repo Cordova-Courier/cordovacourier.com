@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   z-index: 999;
+  transition: all 0.4s ease;
 }
 
 .navbar-top {
@@ -16,6 +17,7 @@
   flex-wrap: wrap;
   color: white;
   z-index: 998;
+  transition: all 0.3s ease;
 }
 
 .navbar-bottom {
@@ -25,12 +27,17 @@
   flex-wrap: wrap;
   padding: 10px;
   background-color: transparent;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 /* On Scroll Effect */
+#navbar.scrolled .navbar-top {
+  display: none;
+}
+
 #navbar.scrolled .navbar-bottom {
-  background-color: rgba(21, 96, 130, 0.9);
+  background-color: #156082;
+  backdrop-filter: none;
 }
 
 .nav-links a {
@@ -61,10 +68,3 @@
   position: relative;
   z-index: 1;
 }
-
-/* Optional fade-in effect for menu transition */
-.navbar-bottom {
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
-}
-
-
