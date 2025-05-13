@@ -1,4 +1,4 @@
-/* Cleaned Final navbar.css — transparent bottom, solid on scroll */
+/* Final navbar.css with scroll transition and transparency fix */
 
 #navbar {
   width: 100%;
@@ -27,10 +27,10 @@
   gap: 20px;
   flex-wrap: wrap;
   padding: 10px;
-  background-color: transparent;
+  background-color: transparent !important;
   position: relative;
   z-index: 1000;
-  transition: background-color 0.4s ease;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 #navbar.scrolled .navbar-top {
@@ -39,9 +39,9 @@
 
 #navbar.scrolled .navbar-bottom {
   background-color: #156082;
+  backdrop-filter: none;
 }
 
-/* Animated link hover (main nav only) */
 .nav-links a {
   text-decoration: none;
   color: white;
@@ -50,12 +50,6 @@
   transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #FFA94D;
-  transform: translateY(-2px);
-}
-
-/* Button style (Tracking + Customer Portal) */
 .btn-outline {
   border: 2px solid #FFA94D;
   border-radius: 6px;
@@ -66,12 +60,10 @@
 
 .btn-outline:hover {
   background-color: #FFA94D;
-  color: white !important;
+  color: white;
   transform: scale(1.05);
-  border: 2px solid #FFA94D;
 }
 
-/* Branding elements */
 .nav-left {
   display: flex;
   align-items: center;
@@ -101,7 +93,6 @@
   margin-top: 5px;
 }
 
-/* Contact section */
 .nav-contact {
   display: flex;
   gap: 10px;
@@ -120,20 +111,20 @@
   white-space: nowrap;
 }
 
-/* Hero padding to allow scroll */
+/* Proper scroll spacing: this is for .navbar-top only */
 .hero {
-  padding-top: 70px;
+  padding-top: 70px; /* height of navbar-top only */
   position: relative;
   background: transparent;
   z-index: 1;
 }
 
-/* Global transparent background safeguard */
+/* Global safeguard */
 body, html {
   background-color: transparent;
 }
 
-/* Responsive design */
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .navbar-top, .navbar-bottom {
     flex-direction: column;
@@ -168,62 +159,8 @@ body, html {
   }
 }
 
-/* Consistent hover for phone and email buttons */
-.nav-contact a[href^="tel:"],
-.nav-contact a[href^="mailto:"] {
-  display: inline-block;
-  background-color: #F97316;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 2px solid #F97316;
-}
-
-.nav-contact a[href^="tel:"]:hover,
-.nav-contact a[href^="mailto:"]:hover {
-  background-color: #e26310;
-  color: white;
-  transform: scale(1.05);
-}
-
-/* Hamburger menu icon */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 10px;
-  gap: 4px;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 25px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* Mobile styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .navbar-bottom {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: #156082;
-  }
-
-  .navbar-bottom.open {
-    display: flex;
-
-    @media screen and (max-width: 480px) {
+/* Properly scoped 480px override */
+@media screen and (max-width: 480px) {
   .nav-contact {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -238,7 +175,3 @@ body, html {
     white-space: nowrap;
   }
 }
-
-  }
-}
-
