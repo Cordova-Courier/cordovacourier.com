@@ -1,4 +1,4 @@
-// /api/track.js — Enhanced with full history using /orderStatusChanges/{orderID}
+// /api/track.js — Enhanced with fallback status mapping for OnTime360 history
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -7,15 +7,26 @@ export default async function handler(req, res) {
   const COMPANY_ID = 'CORDOVACOURIERLLC';
   const BASE_URL = `https://secure.ontime360.com/sites/${COMPANY_ID}/api`;
 
+  const statusMap = {
+    0: 'None',
+    1: 'Dispatched',
+    2: 'Assigned / In Route',
+    3: 'Delivered',
+    4: 'Cancelled',
+    5: 'Cancelled - Billable',
+    6: 'Assigned',
+    7: 'Stored',
+    8: 'Unassigned Stored',
+    9: 'Quoted'
+  };
+
   try {
-    // Step 1: Search by trackingNumber to get internal GUID
     const searchRes = await fetch(`${BASE_URL}/orders?trackingNumber=${tn}`, {
       headers: {
         'Authorization': API_KEY,
         'Content-Type': 'application/json'
       }
     });
-
     const searchResults = await searchRes.json();
     if (!Array.isArray(searchResults) || searchResults.length === 0) {
       return res.status(404).json({ error: 'Tracking number not found' });
@@ -23,7 +34,6 @@ export default async function handler(req, res) {
 
     const orderId = searchResults[0];
 
-    // Step 2: Retrieve full order details
     const orderRes = await fetch(`${BASE_URL}/orders/${orderId}`, {
       headers: {
         'Authorization': API_KEY,
@@ -32,7 +42,6 @@ export default async function handler(req, res) {
     });
     const order = await orderRes.json();
 
-    // Step 3: Get full order status change history
     const historyRes = await fetch(`${BASE_URL}/orderStatusChanges/${orderId}`, {
       headers: {
         'Authorization': API_KEY,
@@ -43,7 +52,7 @@ export default async function handler(req, res) {
 
     const data = {
       trackingNumber: order.TrackingNumber || tn,
-      status: order.Status?.Description || order.Status?.Name || 'Unknown',
+      status: order.Status?.Description || order.Status?.Name || statusMap[order.Status?.Level] || 'Unknown',
       origin: `${order.CollectionLocation?.City || ''}, ${order.CollectionLocation?.State || ''}`.trim(),
       destination: `${order.DeliveryLocation?.City || ''}, ${order.DeliveryLocation?.State || ''}`.trim(),
       pickupTime: order.CollectionArrivalDate || order.CollectionArrivalWindow?.EarliestTime || '',
@@ -51,7 +60,7 @@ export default async function handler(req, res) {
       vehicle: order.VehicleRequired?.Name || '',
       history: Array.isArray(historyData) ? historyData.map(h => ({
         time: h.Timestamp,
-        status: h.StatusName || 'Unknown',
+        status: h.StatusName || statusMap[h.StatusLevel] || 'Unknown',
         note: h.Note || ''
       })) : []
     };
