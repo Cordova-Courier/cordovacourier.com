@@ -1,4 +1,3 @@
-// /api/track.js — Vercel Serverless Function using OnTime360 official API with trackingNumber param
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -8,7 +7,7 @@ export default async function handler(req, res) {
   const BASE_URL = `https://secure.ontime360.com/sites/${COMPANY_ID}/api`;
 
   try {
-    // Step 1: Search orders by trackingNumber
+    // Step 1: Search by tracking number
     const searchRes = await fetch(`${BASE_URL}/orders?trackingNumber=${tn}`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`,
@@ -16,7 +15,11 @@ export default async function handler(req, res) {
       }
     });
 
-    const searchResults = await searchRes.json();
+    const text = await searchRes.text(); // grab raw body for debug
+    console.log("🔍 Step 1: Status", searchRes.status);
+    console.log("🔍 Step 1: Body", text);
+
+    const searchResults = JSON.parse(text);
 
     if (!Array.isArray(searchResults) || searchResults.length === 0) {
       return res.status(404).json({ error: 'Tracking number not found' });
@@ -24,7 +27,7 @@ export default async function handler(req, res) {
 
     const orderId = searchResults[0];
 
-    // Step 2: Retrieve order details using the internal ID
+    // Step 2: Get order details
     const orderRes = await fetch(`${BASE_URL}/orders/${orderId}`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`,
@@ -32,7 +35,11 @@ export default async function handler(req, res) {
       }
     });
 
-    const order = await orderRes.json();
+    const orderText = await orderRes.text();
+    console.log("🔍 Step 2: Status", orderRes.status);
+    console.log("🔍 Step 2: Body", orderText);
+
+    const order = JSON.parse(orderText);
 
     const data = {
       trackingNumber: order.OrderNumber || tn,
@@ -51,7 +58,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json(data);
   } catch (err) {
-    console.error('Track API error:', err);
-    return res.status(500).json({ error: 'Internal Server Error' });
+    console.error('❌ Track API Error:', err);
+    return res.status(500).json({ error: 'Internal Server Error', details: err.message });
   }
 }
