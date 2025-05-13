@@ -1,15 +1,17 @@
 /* === GENERAL NAVBAR CONTAINER === */
-.main-navbar {
-  width: 100%;
+/* === TOP SECTION - Contact & Language === */
+.nav-top-header {
   background: linear-gradient(to right, #003366, #005599);
-  color: white;
-  font-family: sans-serif;
-  font-weight: 600;
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem; /* Increased padding */
+  gap: 0.75rem;
+  height: auto; /* Ensures it expands for taller buttons */
+  z-index: 998;
 }
+
 
 
 /* === TOP HEADER ROW === */
