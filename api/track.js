@@ -1,4 +1,4 @@
-// /api/track.js — FINAL version using official OnTime360 API
+// /api/track.js — Enhanced with full history using /orderStatusChanges/{orderID}
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -17,38 +17,43 @@ export default async function handler(req, res) {
     });
 
     const searchResults = await searchRes.json();
-
     if (!Array.isArray(searchResults) || searchResults.length === 0) {
       return res.status(404).json({ error: 'Tracking number not found' });
     }
 
     const orderId = searchResults[0];
 
-    // Step 2: Retrieve full order details using the GUID
+    // Step 2: Retrieve full order details
     const orderRes = await fetch(`${BASE_URL}/orders/${orderId}`, {
       headers: {
         'Authorization': API_KEY,
         'Content-Type': 'application/json'
       }
     });
-
     const order = await orderRes.json();
+
+    // Step 3: Get full order status change history
+    const historyRes = await fetch(`${BASE_URL}/orderStatusChanges/${orderId}`, {
+      headers: {
+        'Authorization': API_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    const historyData = await historyRes.json();
 
     const data = {
       trackingNumber: order.TrackingNumber || tn,
-      status: order.Status?.Description || 'Unknown',
+      status: order.Status?.Description || order.Status?.Name || 'Unknown',
       origin: `${order.CollectionLocation?.City || ''}, ${order.CollectionLocation?.State || ''}`.trim(),
       destination: `${order.DeliveryLocation?.City || ''}, ${order.DeliveryLocation?.State || ''}`.trim(),
       pickupTime: order.CollectionArrivalDate || order.CollectionArrivalWindow?.EarliestTime || '',
       dropoffTime: order.DeliveryArrivalDate || order.DeliveryArrivalWindow?.EarliestTime || '',
       vehicle: order.VehicleRequired?.Name || '',
-      history: order.Status?.Timestamp ? [
-        {
-          time: order.Status.Timestamp,
-          status: order.Status.Description || 'Unknown',
-          note: ''
-        }
-      ] : []
+      history: Array.isArray(historyData) ? historyData.map(h => ({
+        time: h.Timestamp,
+        status: h.StatusName || 'Unknown',
+        note: h.Note || ''
+      })) : []
     };
 
     return res.status(200).json(data);
