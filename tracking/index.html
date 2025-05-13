@@ -68,10 +68,11 @@
         <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity})</div>
       `).join('');
 
-      if (data.proofOfDelivery.signatureImage) {
-        document.getElementById("signature-section").innerHTML = `
-          <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
-      }
+      if (data.proofOfDelivery.signatureImage && !data.proofOfDelivery.signatureImage.includes("bnVsbA==")) {
+  document.getElementById("signature-section").innerHTML = `
+    <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
+     }
+
 
       const btn = document.getElementById("download-pdf");
       btn.style.display = 'block';
