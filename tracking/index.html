@@ -2,102 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Track Your Shipment | Fast Courier Tracking | Cordova Courier</title>
-  <meta name="description" content="Easily track your courier shipments with Cordova Courier. Get real-time delivery updates, shipment status, and secure package tracking anytime nationwide.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Shipment | Cordova Courier</title>
+  <script>
+    async function fetchTrackingData() {
+      const trackingNumber = window.location.pathname.split("/").pop();
+      const res = await fetch(`https://your-vercel-domain.vercel.app/api/track?tn=${trackingNumber}`);
+      const data = await res.json();
 
-  <!-- Main Site Styles -->
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <!-- Tracking Page Specific Styles -->
-  <link rel="stylesheet" href="/css/tracking.css">
+      document.getElementById("tracking-info").innerText =
+        `Tracking #: ${data.trackingNumber}\nStatus: ${data.status}\nFrom: ${data.origin}\nTo: ${data.destination}`;
 
-  <!-- Favicon -->
-  <link rel="icon" href="/images/branding/favicon.ico" type="image/x-icon">
+      const schema = {
+        "@context": "https://schema.org",
+        "@type": "ParcelDelivery",
+        "trackingNumber": data.trackingNumber,
+        "trackingUrl": window.location.href,
+        "carrier": {
+          "@type": "Organization",
+          "name": "Cordova Courier",
+          "url": "https://www.cordovacourier.com"
+        },
+        "deliveryAddress": {
+          "@type": "PostalAddress",
+          "addressLocality": data.destination.split(",")[0] || "",
+          "addressRegion": data.destination.split(",")[1]?.trim() || ""
+        },
+        "deliveryStatus": {
+          "@type": "DeliveryEvent",
+          "eventStatus": `https://schema.org/${data.status.replace(/\s+/g, '')}`
+        }
+      };
 
-  <style>
-    .tracking-title {
-      font-size: 3rem;
-      font-weight: bold;
-      color: #003366;
-      min-height: 3.5em;
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
     }
-    .word {
-      opacity: 0;
-      display: inline-block;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .word.visible {
-      opacity: 1;
-    }
-    .full-line-final {
-      display: none;
-      font-weight: bold;
-      font-size: 3rem;
-      color: #003366;
-    }
-    .full-line-final.visible {
-      display: block;
-    }
-  </style>
+
+    window.onload = fetchTrackingData;
+  </script>
 </head>
-
 <body>
+  <h1>Track Your Shipment (Cordova AI Powered)</h1>
+  <pre id="tracking-info">Loading...</pre>
 
-<!-- TRACKING FORM SECTION -->
-<section class="tracking-form-section">
+  <hr />
 
-  <!-- Logo Above Title -->
-  <div class="contact-logo">
-    <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" width="140">
-  </div>
-
-  <!-- Tracking Title with Sequential Word Fade -->
-  <div class="tracking-title">
-    <span class="word word1">Track</span>
-    <span class="word word2">Your</span>
-    <span class="word word3">Shipment</span>
-    <div class="full-line-final">Track Your Shipment</div>
-  </div>
-
-  <p>Use your tracking number below to get fast, secure, real-time delivery updates with Cordova Courier's nationwide courier tracking portal.</p>
-
-  <form name="trForm" method="post" action="https://www.ontime360.com/tracking/trackingresults.aspx" id="trForm" target="_blank">
-    <div class="tracking-form">
-      <input name="TrackingNumber" type="text" maxlength="50" id="TrackingNumber" placeholder="Enter Tracking Number" required>
-      <input type="submit" name="btnSubmit" value="Track Shipment" id="btnSubmit">
+  <h3>Manual Tracking Lookup (Powered by OnTime360)</h3>
+  <form name="trForm" method="post" action="https://www.ontime360.com/tracking/trackingresults.aspx" id="trForm">
+    <div style="border: solid 1px #FFA94D; padding: 10px; background-color: #FFE5CC; font: 10pt Tahoma, sans-serif; border-radius: 8px;">
+      <table>
+        <tr>
+          <td style="color: #333;">Tracking Number:</td>
+        </tr>
+        <tr>
+          <td>
+            <input name="TrackingNumber" type="text" maxlength="50" id="TrackingNumber" style="padding: 6px; border: 1px solid #CCC; border-radius: 4px;" />
+            &nbsp;
+            <input type="submit" name="btnSubmit" value="Submit" onclick="trForm.target='_blank';" id="btnSubmit" 
+                   style="background-color: #FF8800; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span style="font: 8pt Tahoma, sans-serif; color: #666;">Powered by 
+              <a style="text-decoration: none; color: #666;" target="_blank" href="https://www.ontime360.com">OnTime 360</a> Courier Software
+            </span>
+          </td>
+        </tr>
+      </table>
+      <input type="hidden" name="accid" id="accid" value="M3UXLvzAV1bGHUjZFkFdi42dqdx7YfvdCZg1OYCibTkO0WaiYQaxJg==" />
     </div>
-    <div class="tracking-powered">
-      Powered by <a href="https://www.ontime360.com" target="_blank" rel="noopener noreferrer">OnTime 360 Courier Software</a>
-    </div>
-    <input type="hidden" name="accid" id="accid" value="M3UXLvzAV1bGHUjZFkFdi42dqdx7YfvdCZg1OYCibTkO0WaiYQaxJg==" />
   </form>
-
-  <!-- Dispatch Help Message -->
-  <p class="tracking-help">
-    Need help? Please call our 24/7 dispatch at <a href="tel:2098809624">(209) 880-9624</a> if you need assistance with tracking.
-  </p>
-
-</section>
-
-<!-- FOOTER SECTION -->
-<footer class="site-footer">
-  <div class="footer-content">
-    <p>📞 (209) 880-9264 | 📧 dispatch@cordovacourier.com</p>
-    <p>© 2025 Cordova Courier LLC. All Rights Reserved.</p>
-    <p><a href="/privacy-policy">Privacy Policy</a></p>
-  </div>
-</footer>
-
-<!-- Word-by-Word Fade-In Script -->
-<script>
-  setTimeout(() => document.querySelector('.word1').classList.add('visible'), 200);
-  setTimeout(() => document.querySelector('.word2').classList.add('visible'), 1000);
-  setTimeout(() => document.querySelector('.word3').classList.add('visible'), 1800);
-  setTimeout(() => {
-    document.querySelector('.tracking-title').innerHTML = '<div class="full-line-final visible">Track Your Shipment</div>';
-  }, 5000);
-</script>
-
 </body>
 </html>
