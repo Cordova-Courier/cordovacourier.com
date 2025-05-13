@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0;url=/tracking/index.html">
+  <script>
+    const path = window.location.pathname;
+    const match = path.match(/\\/tracking\\/(\\w+)/i);
+    if (match && match[1]) {
+      window.location.replace(`/tracking/index.html?tn=${match[1]}`);
+    } else {
+      window.location.replace('/');
+    }
+  </script>
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
