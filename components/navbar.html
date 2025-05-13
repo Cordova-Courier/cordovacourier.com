@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cordova Courier Navbar</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
@@ -19,6 +18,7 @@
       top: 0;
       z-index: 999;
       transition: all 0.4s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .navbar.scrolled {
@@ -34,24 +34,22 @@
       border-color: #156082;
     }
 
-    .navbar-top,
-    .navbar-bottom {
+    .navbar-top, .navbar-bottom {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 20px;
+      padding: 10px 30px;
+      flex-wrap: wrap;
     }
 
     .nav-left {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .navbar img.logo {
-      height: 50px;
-      margin-right: 15px;
+      height: 60px;
     }
 
     .nav-title-group {
@@ -60,7 +58,7 @@
     }
 
     .nav-title {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 700;
       color: #FFA94D;
     }
@@ -74,6 +72,9 @@
       font-style: italic;
       font-weight: 600;
       color: #ffffff;
+      font-size: 1rem;
+      text-align: center;
+      width: 100%;
       margin-top: 5px;
     }
 
@@ -86,28 +87,22 @@
 
     .nav-contact span,
     .nav-contact a {
-      background-color: #F97316;
+      background-color: #fda65c;
       color: white;
-      padding: 10px 15px;
+      padding: 8px 14px;
       border-radius: 6px;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .nav-contact span:hover,
-    .nav-contact a:hover {
-      transform: scale(1.05);
-      background-color: #fb923c;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 20px;
       width: 100%;
-      padding-top: 5px;
+      padding: 10px 10px;
     }
 
     .nav-links a {
@@ -115,47 +110,57 @@
       color: white;
       font-weight: 600;
       font-size: 1rem;
-      padding: 6px 10px;
-      transition: color 0.3s, transform 0.2s;
-    }
-
-    .nav-links a:hover {
-      transform: scale(1.05);
+      transition: all 0.3s ease;
+      padding: 8px 14px;
     }
 
     .btn-outline {
-      padding: 8px 16px;
       border: 2px solid #FFA94D;
-      color: white;
       background-color: transparent;
       border-radius: 6px;
-      transition: all 0.3s, transform 0.2s;
+      color: white;
+      transition: all 0.3s ease;
     }
 
     .btn-outline:hover {
       background-color: #FFA94D;
-      color: white;
+      color: #ffffff;
       transform: scale(1.05);
     }
 
-    @media (max-width: 768px) {
-      .navbar-top,
-      .navbar-bottom {
+    @media screen and (max-width: 768px) {
+      .navbar-top, .navbar-bottom {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .nav-contact,
-      .nav-links {
-        justify-content: flex-start;
-        width: 100%;
-        padding: 10px 0;
+        padding: 10px 15px;
       }
 
       .nav-left {
         flex-direction: row;
-        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+      }
+
+      .nav-title {
+        font-size: 1.3rem;
+      }
+
+      .nav-tagline {
+        font-size: 0.95rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
         width: 100%;
+        padding-left: 0;
+      }
+
+      .nav-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
       }
     }
   </style>
@@ -166,8 +171,7 @@
       <div class="nav-left">
         <img src="images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="logo" />
         <div class="nav-title-group">
-          <div class="nav-title">Cordova Courier <span style="color:white">- Delivering Excellence Nationwide</span></div>
-          <div class="nav-tagline">-<em>Because Every Mile Matters</em></div>
+          <div class="nav-title">Cordova Courier <span style="color:white">| Delivering Excellence Nationwide</span></div>
         </div>
       </div>
       <div class="nav-contact">
@@ -176,6 +180,7 @@
         <span>ENGLISH</span>
       </div>
     </div>
+    <div class="nav-tagline">-<em>Because Every Mile Matters</em></div>
     <div class="navbar-bottom nav-links">
       <a href="#">Home</a>
       <a href="#">Request a Quote</a>
@@ -191,11 +196,7 @@
   <script>
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 40) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
     });
   </script>
 </body>
