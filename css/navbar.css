@@ -168,23 +168,20 @@ body, html {
   }
 }
 
-/* Contact phone + email styling override */
+/* Contact phone + email kept as solid orange */
 .nav-contact a[href^="tel:"],
 .nav-contact a[href^="mailto:"] {
   display: inline-block;
-  border: 2px solid #FFA94D;
-  background-color: transparent;
+  background-color: #F97316;
   color: white;
   padding: 8px 14px;
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .nav-contact a[href^="tel:"]:hover,
 .nav-contact a[href^="mailto:"]:hover {
-  background-color: #FFA94D;
-  color: white;
   transform: scale(1.05);
 }
