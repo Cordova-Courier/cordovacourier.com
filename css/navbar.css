@@ -113,7 +113,7 @@
 
 /* Proper scroll spacing: this is for .navbar-top only */
 .hero {
-  padding-top: 100px; /* height of navbar-top only */
+  padding-top: 70px; /* height of navbar-top only */
   position: relative;
   background: transparent;
   z-index: 1;
