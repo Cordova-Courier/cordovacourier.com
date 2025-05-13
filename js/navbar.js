@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("NAVBAR.JS loaded - static mode");
-
+  const navbar = document.querySelector(".main-navbar");
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
-  // Scroll transition disabled — using static navbar
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 5) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
 
   if (hamburger && navLinks) {
     hamburger.addEventListener("click", function () {
@@ -12,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const navItems = document.querySelectorAll(".nav-links a");
-  navItems.forEach((item) => {
+  document.querySelectorAll(".nav-links a").forEach((item) => {
     item.addEventListener("click", () => {
       navLinks.classList.remove("open");
     });
