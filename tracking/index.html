@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Cordova Courier Smart Tracking</title>
-  <link rel="stylesheet" href="/css/tracking.css">
+  <link rel="stylesheet" href="/css/tracking.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
@@ -15,10 +15,6 @@
 
   <div class="overlay">
     <h1 id="headline">Cordova Courier Smart Tracking</h1>
-    <form id="manual-form">
-      <input id="manual-tn" type="text" placeholder="Enter tracking number" />
-      <button type="submit">Track</button>
-    </form>
   </div>
 
   <div class="tracking-container">
@@ -28,26 +24,43 @@
     <button id="download-pdf" style="display:none">📄 Download PDF</button>
   </div>
 
+  <!-- Cordova AI Assistant -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    let tn = urlParams.get('tn');
+
+    const aiContainer = document.createElement('div');
+    aiContainer.id = 'cordova-ai-container';
+    aiContainer.style.position = 'fixed';
+    aiContainer.style.bottom = '20px';
+    aiContainer.style.right = '20px';
+    aiContainer.style.zIndex = '9999';
+
+    const aiFrame = document.createElement('iframe');
+    aiFrame.src = `https://ai.cordovacourier.com?source=tracking&tn=${encodeURIComponent(tn || '')}`;
+    aiFrame.width = '380';
+    aiFrame.height = '520';
+    aiFrame.style.border = 'none';
+    aiFrame.style.borderRadius = '12px';
+    aiFrame.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
+    aiFrame.title = 'Cordova AI Assistant';
+    aiFrame.allow = 'microphone; clipboard-write; autoplay';
+
+    aiContainer.appendChild(aiFrame);
+    document.body.appendChild(aiContainer);
+  </script>
+
   <script>
     const phrases = [
       "Cordova Courier Smart Tracking",
       "AI-Powered Delivery Status",
-      "Cordova Courier Smart Tracking – Enter Tracking Number"
+      "Cordova Courier Smart Tracking – Real-time Support"
     ];
     let idx = 0;
     setInterval(() => {
       document.getElementById('headline').textContent = phrases[idx % phrases.length];
       idx++;
     }, 3000);
-
-    const urlParams = new URLSearchParams(window.location.search);
-    let tn = urlParams.get('tn');
-
-    document.getElementById("manual-form").addEventListener("submit", e => {
-      e.preventDefault();
-      const manualTN = document.getElementById("manual-tn").value.trim();
-      if (manualTN) window.location.search = `?tn=${manualTN}`;
-    });
 
     async function fetchTracking(tn) {
       const res = await fetch(`/api/track?tn=${tn}`);
@@ -65,14 +78,13 @@
       document.getElementById("details").innerHTML = details;
 
       document.getElementById("timeline").innerHTML = data.history.map(h => `
-        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity})</div>
+        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity || ''})</div>
       `).join('');
 
       if (data.proofOfDelivery.signatureImage && !data.proofOfDelivery.signatureImage.includes("bnVsbA==")) {
-  document.getElementById("signature-section").innerHTML = `
-    <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
-     }
-
+        document.getElementById("signature-section").innerHTML = `
+          <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
+      }
 
       const btn = document.getElementById("download-pdf");
       btn.style.display = 'block';
@@ -97,10 +109,8 @@
         doc.save(`Cordova-POD-${data.trackingNumber}.pdf`);
       }
     }
+
     if (tn) fetchTracking(tn);
-  </script>
-</body>
-</html>
   </script>
 </body>
 </html>
