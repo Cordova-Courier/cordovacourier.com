@@ -1,151 +1,89 @@
-/* TRACKING FORM SECTION */
-.tracking-form-section {
-  background-color: #f7f7f7;
-  padding: 60px 20px;
+/* Cordova Courier Smart Tracking Styles */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background-color: #000;
+  overflow-x: hidden;
+}
+
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.overlay {
   text-align: center;
-  color: #003366;
+  margin-top: 10vh;
+  padding: 20px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.tracking-form-section h1 {
+.overlay h1 {
   font-size: 2.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-.tracking-form-section p {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-}
-
-.tracking-form {
+.overlay form {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
-.tracking-form input[type="text"] {
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  border: 2px solid #003366;
-  border-radius: 8px;
-  width: 300px;
-  max-width: 90%;
+.overlay input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  width: 250px;
+  font-size: 1rem;
 }
 
-.tracking-form input[type="submit"] {
-  padding: 12px 30px;
+.overlay button {
   background-color: #ff6600;
   color: white;
-  font-size: 1.1rem;
   border: none;
-  border-radius: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
 }
 
-.tracking-form input[type="submit"]:hover {
-  background-color: #e05500;
-  transform: translateY(-2px);
+.tracking-container {
+  background: white;
+  color: #333;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-.tracking-powered {
-  font-size: 0.9rem;
-  color: gray;
-}
-
-.tracking-powered a {
-  color: gray;
-  text-decoration: none;
-}
-
-.tracking-powered a:hover {
-  text-decoration: underline;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .tracking-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tracking-form input[type="text"] {
-    width: 90%;
-    max-width: 400px;
-    font-size: 1rem;
-  }
-
-  .tracking-form input[type="submit"] {
-    width: auto;              /* shrink to fit content */
-    padding: 12px 24px;       /* smaller padding = shorter button */
-    font-size: 1rem;
-    margin-top: 12px;
-    display: block;
-    text-align: center;
-  }
-}
-
-/* --- TRACKING TITLE FADE-IN WORD BY WORD --- */
-@media (max-width: 768px) {
-  .tracking-form {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .tracking-form input[type="text"] {
-    width: 90%;
-    max-width: 400px;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
-
-  .tracking-form input[type="submit"] {
-    width: 100%;
-    max-width: 320px; /* UPDATED: slightly longer than before */
-    font-size: 1rem;
-    padding: 12px 30px;
-    margin-top: 12px;
-    display: block;
-    text-align: center;
-    box-sizing: border-box;
-  }
-}
-
-/* Word Colors */
-.blue-text {
-  color: #003366; /* Deep Blue */
-}
-
-.orange-text {
-  color: #ff6600; /* Bright Orange */
-}
-
-/* Tracking Title Animation */
-.tracking-title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #003366;
-  min-height: 3.5em;
-}
-
-.word {
-  opacity: 0;
-  display: inline-block;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.word.visible {
-  opacity: 1;
-}
-
-.full-line-final {
-  display: none;
-  font-weight: bold;
-  font-size: 3rem;
+.tracking-container h2 {
   color: #003366;
 }
 
-.full-line-final.visible {
+.signature-img {
+  max-width: 250px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+.chat-frame {
+  width: 100%;
+  height: 500px;
+  border: none;
+  margin: 0;
+  padding: 0;
   display: block;
+  background: white;
+  border-top: 2px solid #ccc;
+  z-index: 10;
 }
