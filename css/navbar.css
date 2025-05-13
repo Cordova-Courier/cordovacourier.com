@@ -1,100 +1,138 @@
-/* === NAVBAR BASE === */
+
+/* === GENERAL NAVBAR STYLING === */
 .main-navbar {
-  position: fixed;
-  top: 0;
   width: 100%;
+  position: absolute;
+  top: 0;
   z-index: 999;
-  background-color: transparent;
+  background: transparent;
   color: white;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.main-navbar.scrolled {
-  background-color: rgba(0, 51, 102, 0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* === NAVBAR STRUCTURE === */
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-top {
+  display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.nav-logo img {
-  height: 60px;
-}
-
-/* === NAV LINKS === */
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-  color: #ff8800;
-}
-
-.main-navbar.scrolled .nav-links li a {
-  color: white;
-}
-
-/* === CONTACT & CTA BUTTONS === */
-.nav-contact-group {
-  display: flex;
-  gap: 0.5rem;
   align-items: center;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  max-width: 1400px;
 }
 
-.nav-contact-group .btn {
-  padding: 0.5rem 1rem;
+.logo-container img {
+  height: 90px;
+  margin-right: 1rem;
+  transform: translateY(10px);
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #ff751a;
+  margin-top: 0.25rem;
+}
+
+/* === BUTTONS GROUP === */
+.contact-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-button {
   background-color: #ff6600;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
+  padding: 0.4rem 1rem;
   border-radius: 5px;
-  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.nav-contact-group .btn:hover {
+.contact-button:hover {
   background-color: #e69500;
 }
 
-/* === HAMBURGER FOR MOBILE === */
-.hamburger {
-  display: none;
+.language-selector {
+  background-color: #ff6600;
+  color: white;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }
 
-@media (max-width: 1024px) {
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    margin-left: auto;
+/* === BOTTOM NAVIGATION BAR === */
+.navbar-bottom {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff9900;
+}
+
+/* === SPECIAL NAV BUTTONS === */
+.nav-btn {
+  border: 2px solid #ff6600;
+  padding: 0.4rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: white;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #ff6600;
+  color: white;
+}
+
+/* === RESPONSIVE TWEAKS (if needed) */
+@media (max-width: 768px) {
+  .navbar-top,
+  .navbar-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .nav-links {
-    display: none;
     flex-direction: column;
-    width: 100%;
-    background-color: rgba(0, 51, 102, 0.95);
-    padding: 1rem;
-  }
-
-  .nav-links.open {
-    display: flex;
+    gap: 1rem;
   }
 }
