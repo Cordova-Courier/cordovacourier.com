@@ -42,8 +42,24 @@
 }
 
 /* Links & Buttons */
+/* Menu link hover effect for main nav only */
 .nav-links a:hover {
   color: #FFA94D;
+}
+
+/* Revert tracking and portal buttons to original style */
+.btn-outline {
+  border: 2px solid #FFA94D;
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: #FFA94D;
+  color: white;
+  transform: scale(1.05);
 }
 .nav-links a {
   text-decoration: none;
