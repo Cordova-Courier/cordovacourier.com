@@ -39,20 +39,48 @@
       max-width: 300px;
       margin-top: 10px;
     }
+    #manual-form {
+      margin-bottom: 30px;
+      padding: 12px;
+      background-color: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
   <div class="tracking-container">
     <h1>📦 Cordova Courier Tracking</h1>
+
+    <form id="manual-form">
+      <label for="manual-tn">Enter your tracking number:</label><br>
+      <input id="manual-tn" type="text" maxlength="50" style="margin-top: 6px; padding: 6px; border: 1px solid #ccc; border-radius: 4px; width: 70%;">
+      <button type="submit" style="margin-left: 10px; background-color: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Track</button>
+    </form>
+
     <div id="details" class="section"></div>
     <div id="timeline" class="section"></div>
     <div id="signature-section" class="section"></div>
-    <button id="download-pdf" style="margin-top: 20px;">📄 Download Proof of Delivery (PDF)</button>
+    <button id="download-pdf" style="margin-top: 20px; display: none;">📄 Download Proof of Delivery (PDF)</button>
   </div>
+
+  <iframe
+    src="https://ai.cordovacourier.com"
+    style="width: 100%; height: 500px; border: none; margin-top: 40px; border-radius: 12px;"
+    title="Cordova AI Assistant"
+  ></iframe>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const tn = urlParams.get('tn');
+    let tn = urlParams.get('tn');
+
+    document.getElementById("manual-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const manualTN = document.getElementById("manual-tn").value.trim();
+      if (manualTN) {
+        window.location.search = `?tn=${manualTN}`;
+      }
+    });
 
     async function fetchTracking(tn) {
       const res = await fetch(`/api/track?tn=${tn}`);
@@ -87,7 +115,9 @@
         `;
       }
 
-      document.getElementById("download-pdf").addEventListener("click", async () => {
+      const pdfButton = document.getElementById("download-pdf");
+      pdfButton.style.display = 'inline-block';
+      pdfButton.onclick = () => {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
 
@@ -119,13 +149,11 @@
         }
 
         doc.save(`Cordova-POD-${data.trackingNumber}.pdf`);
-      });
+      };
     }
 
     if (tn) {
       fetchTracking(tn);
-    } else {
-      document.getElementById("details").innerHTML = '<p style="color: red;">Missing tracking number.</p>';
     }
   </script>
 </body>
