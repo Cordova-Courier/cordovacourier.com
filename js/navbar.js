@@ -1,7 +1,8 @@
-// Wait until #navbar exists in the DOM before attaching scroll behavior
-function setupScroll() {
+// Navbar scroll behavior + mobile toggle
+
+function setupNavbarScrollAndToggle() {
   const navbar = document.getElementById("navbar");
-  if (!navbar) return requestAnimationFrame(setupScroll);
+  if (!navbar) return requestAnimationFrame(setupNavbarScrollAndToggle);
 
   const navbarTop = document.querySelector(".navbar-top");
 
@@ -16,4 +17,13 @@ function setupScroll() {
   });
 }
 
-requestAnimationFrame(setupScroll);
+// Toggle mobile menu
+function toggleMobileMenu() {
+  const menu = document.getElementById("mobileMenu");
+  if (menu) {
+    menu.classList.toggle("open");
+  }
+}
+
+// Ensure setup runs when DOM is ready and navbar is injected
+requestAnimationFrame(setupNavbarScrollAndToggle);
