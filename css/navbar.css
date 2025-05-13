@@ -1,4 +1,5 @@
-/* Final navbar.css with transparent-to-solid scroll fix */
+/* Final navbar.css with scroll transition and transparency fix */
+
 #navbar {
   width: 100%;
   position: fixed;
@@ -110,14 +111,20 @@
   white-space: nowrap;
 }
 
-/* Ensures hero scroll works */
+/* Proper scroll spacing: this is for .navbar-top only */
 .hero {
-  padding-top: 140px;
+  padding-top: 100px; /* height of navbar-top only */
   position: relative;
+  background: transparent;
   z-index: 1;
 }
 
-/* Responsive styles */
+/* Global safeguard */
+body, html {
+  background-color: transparent;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .navbar-top, .navbar-bottom {
     flex-direction: column;
