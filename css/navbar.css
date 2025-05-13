@@ -52,6 +52,10 @@
 
 /* Revert tracking and portal buttons to original style */
 .btn-outline {
+  border: 2px solid #FFA94D !important;
+  color: white !important;
+  background-color: transparent !important;
+
   border: 2px solid #FFA94D;
   border-radius: 6px;
   background-color: transparent;
@@ -60,6 +64,11 @@
 }
 
 .btn-outline:hover {
+  border: 2px solid #FFA94D !important;
+  background-color: #FFA94D !important;
+  color: white !important;
+  transform: scale(1.05);
+
   background-color: #FFA94D;
   color: white !important;
   transform: scale(1.05);
@@ -91,6 +100,10 @@
 }
 
 .btn-outline {
+  border: 2px solid #FFA94D !important;
+  color: white !important;
+  background-color: transparent !important;
+
   border: 2px solid #FFA94D;
   border-radius: 6px;
   background-color: transparent;
@@ -99,6 +112,11 @@
 }
 
 .btn-outline:hover {
+  border: 2px solid #FFA94D !important;
+  background-color: #FFA94D !important;
+  color: white !important;
+  transform: scale(1.05);
+
   background-color: #FFA94D;
   color: white !important;
   transform: scale(1.05);
