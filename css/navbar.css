@@ -227,4 +227,21 @@ body, html {
     margin: 6px 0;
     width: 100%;
   }
+
+  @media screen and (max-width: 768px) {
+  .btn-outline {
+    width: 100%;
+    margin: 6px 0;
+    text-align: left;
+    padding-left: 16px;
+    box-sizing: border-box;
+  }
+
+  .navbar-bottom a {
+    text-align: left;
+    padding-left: 16px;
+    box-sizing: border-box;
+  }
+}
+
 }
