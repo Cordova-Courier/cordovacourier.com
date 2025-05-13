@@ -1,3 +1,4 @@
+<!-- Updated Mobile Layout for Navbar -->
 <header id="navbar" class="navbar">
   <div class="navbar-top">
     <div class="nav-left">
@@ -8,12 +9,17 @@
       </div>
     </div>
     <div class="nav-contact">
-      <span>(209) 880-9624</span>
+      <a href="tel:2098809624">(209) 880-9624</a>
       <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a>
       <span>ENGLISH</span>
     </div>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </div>
-  <div class="navbar-bottom nav-links">
+  <div class="navbar-bottom nav-links" id="mobileMenu">
     <a href="#">Home</a>
     <a href="#">Request a Quote</a>
     <a href="#">Services</a>
