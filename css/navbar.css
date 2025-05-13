@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   color: white;
   z-index: 998;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; color: white;
 }
 
 .navbar-bottom {
@@ -42,12 +42,32 @@
 }
 
 /* Links & Buttons */
+.nav-links a:hover {
+  color: #FFA94D;
+}
 .nav-links a {
   text-decoration: none;
   color: white;
   font-weight: 600;
   padding: 8px 14px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition: color 0.3s ease;
+}
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease; color: white;
+
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition: all 0.3s ease; color: white;
 }
 
 .btn-outline {
@@ -55,7 +75,7 @@
   border-radius: 6px;
   background-color: transparent;
   color: white;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; color: white;
 }
 
 .btn-outline:hover {
