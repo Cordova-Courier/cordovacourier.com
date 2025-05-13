@@ -3,158 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Track Your Shipment | Cordova Courier</title>
+  <title>Cordova Courier Smart Tracking</title>
+  <link rel="stylesheet" href="/css/tracking.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f5f5f5;
-      color: #333;
-    }
-    .tracking-container {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .section {
-      margin-bottom: 20px;
-    }
-    .timeline {
-      border-left: 3px solid #007bff;
-      padding-left: 20px;
-      margin-top: 10px;
-    }
-    .timeline-item {
-      margin-bottom: 10px;
-    }
-    .timeline-item span {
-      display: block;
-    }
-    .signature {
-      border: 1px solid #ccc;
-      max-width: 300px;
-      margin-top: 10px;
-    }
-    #manual-form {
-      margin-bottom: 30px;
-      padding: 12px;
-      background-color: #fff3cd;
-      border: 1px solid #ffc107;
-      border-radius: 8px;
-    }
-  </style>
 </head>
 <body>
-  <div class="tracking-container">
-    <h1>📦 Cordova Courier Tracking</h1>
+  <video autoplay muted loop id="bg-video">
+    <source src="/CordovaCourierVanWithBella.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
+  <div class="overlay">
+    <h1 id="headline">Cordova Courier Smart Tracking</h1>
     <form id="manual-form">
-      <label for="manual-tn">Enter your tracking number:</label><br>
-      <input id="manual-tn" type="text" maxlength="50" style="margin-top: 6px; padding: 6px; border: 1px solid #ccc; border-radius: 4px; width: 70%;">
-      <button type="submit" style="margin-left: 10px; background-color: #007bff; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;">Track</button>
+      <input id="manual-tn" type="text" placeholder="Enter tracking number" />
+      <button type="submit">Track</button>
     </form>
-
-    <div id="details" class="section"></div>
-    <div id="timeline" class="section"></div>
-    <div id="signature-section" class="section"></div>
-    <button id="download-pdf" style="margin-top: 20px; display: none;">📄 Download Proof of Delivery (PDF)</button>
   </div>
 
-  <iframe
-    src="https://ai.cordovacourier.com"
-    style="width: 100%; height: 500px; border: none; margin-top: 40px; border-radius: 12px;"
-    title="Cordova AI Assistant"
-  ></iframe>
+  <div class="tracking-container">
+    <div id="details"></div>
+    <div id="timeline"></div>
+    <div id="signature-section"></div>
+    <button id="download-pdf" style="display:none">📄 Download PDF</button>
+  </div>
+
+  <iframe class="chat-frame" src="https://ai.cordovacourier.com" title="Cordova AI Assistant"></iframe>
 
   <script>
+    const phrases = [
+      "Cordova Courier Smart Tracking",
+      "AI-Powered Delivery Status",
+      "Cordova Courier Smart Tracking – Enter Tracking Number"
+    ];
+    let idx = 0;
+    setInterval(() => {
+      document.getElementById('headline').textContent = phrases[idx % phrases.length];
+      idx++;
+    }, 3000);
+
     const urlParams = new URLSearchParams(window.location.search);
     let tn = urlParams.get('tn');
 
     document.getElementById("manual-form").addEventListener("submit", e => {
       e.preventDefault();
       const manualTN = document.getElementById("manual-tn").value.trim();
-      if (manualTN) {
-        window.location.search = `?tn=${manualTN}`;
-      }
+      if (manualTN) window.location.search = `?tn=${manualTN}`;
     });
 
     async function fetchTracking(tn) {
       const res = await fetch(`/api/track?tn=${tn}`);
       const data = await res.json();
-
       const details = `
         <h2>Status: ${data.status}</h2>
-        <p><strong>Tracking Number:</strong> ${data.trackingNumber}</p>
-        <p><strong>Order Received:</strong> ${new Date(data.orderReceived).toLocaleString()}</p>
-        <p><strong>Origin:</strong> ${data.origin}</p>
-        <p><strong>Destination:</strong> ${data.destination}</p>
-        <p><strong>Collected From:</strong> ${data.collectedFrom}</p>
+        <p><strong>Tracking #:</strong> ${data.trackingNumber}</p>
+        <p><strong>From:</strong> ${data.origin}</p>
+        <p><strong>To:</strong> ${data.destination}</p>
+        <p><strong>Pickup:</strong> ${new Date(data.pickupTime).toLocaleString()}</p>
+        <p><strong>Drop-off:</strong> ${new Date(data.dropoffTime).toLocaleString()}</p>
         <p><strong>Delivered To:</strong> ${data.proofOfDelivery.deliveredTo}</p>
-        <p><strong>Pickup Time:</strong> ${new Date(data.pickupTime).toLocaleString()}</p>
-        <p><strong>Drop-off Time:</strong> ${new Date(data.dropoffTime).toLocaleString()}</p>
         <p><strong>Vehicle:</strong> ${data.vehicle}</p>
       `;
       document.getElementById("details").innerHTML = details;
 
-      const historyHtml = data.history.map(h => `
-        <div class="timeline-item">
-          <span><strong>${new Date(h.time).toLocaleString()}</strong></span>
-          <span>${h.status} — ${h.activity}</span>
-        </div>
+      document.getElementById("timeline").innerHTML = data.history.map(h => `
+        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity})</div>
       `).join('');
-      document.getElementById("timeline").innerHTML = `<h3>Delivery Timeline</h3><div class="timeline">${historyHtml}</div>`;
 
       if (data.proofOfDelivery.signatureImage) {
         document.getElementById("signature-section").innerHTML = `
-          <h3>Proof of Delivery Signature</h3>
-          <img class="signature" src="${data.proofOfDelivery.signatureImage}" alt="Signature" />
-        `;
+          <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
       }
 
-      const pdfButton = document.getElementById("download-pdf");
-      pdfButton.style.display = 'inline-block';
-      pdfButton.onclick = () => {
+      const btn = document.getElementById("download-pdf");
+      btn.style.display = 'block';
+      btn.onclick = () => {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-
-        doc.setFontSize(14);
         doc.text("Cordova Courier - Proof of Delivery", 20, 20);
-
-        const lines = [
+        let y = 30;
+        [
           `Tracking #: ${data.trackingNumber}`,
           `Status: ${data.status}`,
           `From: ${data.origin}`,
           `To: ${data.destination}`,
-          `Collected From: ${data.collectedFrom}`,
-          `Delivered To: ${data.proofOfDelivery.deliveredTo}`,
           `Pickup Time: ${new Date(data.pickupTime).toLocaleString()}`,
           `Drop-off Time: ${new Date(data.dropoffTime).toLocaleString()}`,
+          `Delivered To: ${data.proofOfDelivery.deliveredTo}`,
           `Vehicle: ${data.vehicle}`
-        ];
-
-        let y = 35;
-        lines.forEach(line => {
-          doc.text(line, 20, y);
-          y += 8;
-        });
-
+        ].forEach(line => { doc.text(line, 20, y); y += 8; });
         if (data.proofOfDelivery.signatureImage) {
-          doc.text("Signature:", 20, y + 5);
-          doc.addImage(data.proofOfDelivery.signatureImage, 'PNG', 20, y + 10, 60, 30);
-          y += 45;
+          doc.addImage(data.proofOfDelivery.signatureImage, 'PNG', 20, y + 5, 60, 30);
         }
-
         doc.save(`Cordova-POD-${data.trackingNumber}.pdf`);
-      };
+      }
     }
-
-    if (tn) {
-      fetchTracking(tn);
-    }
+    if (tn) fetchTracking(tn);
+  </script>
+</body>
+</html>
   </script>
 </body>
 </html>
