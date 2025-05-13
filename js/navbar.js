@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const navbar = document.querySelector(".main-navbar");
+  const navbar = document.getElementById("navbar");
   const hamburger = document.querySelector(".hamburger");
   const navLinks = document.querySelector(".nav-links");
 
