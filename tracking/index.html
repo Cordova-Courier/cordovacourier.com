@@ -4,83 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Track Your Shipment | Cordova Courier</title>
-  <script>
-    async function fetchTrackingData() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const trackingNumber = urlParams.get("tn");
-
-      if (!trackingNumber) {
-        document.getElementById("tracking-info").innerText = "No tracking number provided.";
-        return;
-      }
-
-      const res = await fetch(`https://ai.cordovacourier.com/api/track?tn=${trackingNumber}`);
-      const data = await res.json();
-
-      document.getElementById("tracking-info").innerText =
-        `Tracking #: ${data.trackingNumber}\nStatus: ${data.status}\nFrom: ${data.origin}\nTo: ${data.destination}`;
-
-      const schema = {
-        "@context": "https://schema.org",
-        "@type": "ParcelDelivery",
-        "trackingNumber": data.trackingNumber,
-        "trackingUrl": window.location.href,
-        "carrier": {
-          "@type": "Organization",
-          "name": "Cordova Courier",
-          "url": "https://www.cordovacourier.com"
-        },
-        "deliveryAddress": {
-          "@type": "PostalAddress",
-          "addressLocality": data.destination.split(",")[0] || "",
-          "addressRegion": data.destination.split(",")[1]?.trim() || ""
-        },
-        "deliveryStatus": {
-          "@type": "DeliveryEvent",
-          "eventStatus": `https://schema.org/${data.status.replace(/\s+/g, '')}`
-        }
-      };
-
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f5f5f5;
+      color: #333;
     }
-
-    window.onload = fetchTrackingData;
-  </script>
+    .tracking-container {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .timeline {
+      border-left: 3px solid #007bff;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    .timeline-item {
+      margin-bottom: 10px;
+    }
+    .timeline-item span {
+      display: block;
+    }
+    .signature {
+      border: 1px solid #ccc;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Track Your Shipment (Cordova AI Powered)</h1>
-  <pre id="tracking-info">Loading...</pre>
+  <div class="tracking-container">
+    <h1>📦 Cordova Courier Tracking</h1>
+    <div id="details" class="section"></div>
+    <div id="timeline" class="section"></div>
+    <div id="signature-section" class="section"></div>
+  </div>
 
-  <hr />
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const tn = urlParams.get('tn');
 
-  <h3>Manual Tracking Lookup (Powered by OnTime360)</h3>
-  <form name="trForm" method="post" action="https://www.ontime360.com/tracking/trackingresults.aspx" id="trForm">
-    <div style="border: solid 1px #FFA94D; padding: 10px; background-color: #FFE5CC; font: 10pt Tahoma, sans-serif; border-radius: 8px;">
-      <table>
-        <tr>
-          <td style="color: #333;">Tracking Number:</td>
-        </tr>
-        <tr>
-          <td>
-            <input name="TrackingNumber" type="text" maxlength="50" id="TrackingNumber" style="padding: 6px; border: 1px solid #CCC; border-radius: 4px;" />
-            &nbsp;
-            <input type="submit" name="btnSubmit" value="Submit" onclick="trForm.target='_blank';" id="btnSubmit" 
-                   style="background-color: #FF8800; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span style="font: 8pt Tahoma, sans-serif; color: #666;">Powered by 
-              <a style="text-decoration: none; color: #666;" target="_blank" href="https://www.ontime360.com">OnTime 360</a> Courier Software
-            </span>
-          </td>
-        </tr>
-      </table>
-      <input type="hidden" name="accid" id="accid" value="M3UXLvzAV1bGHUjZFkFdi42dqdx7YfvdCZg1OYCibTkO0WaiYQaxJg==" />
-    </div>
-  </form>
+    async function fetchTracking(tn) {
+      const res = await fetch(`/api/track?tn=${tn}`);
+      const data = await res.json();
+
+      const details = `
+        <h2>Status: ${data.status}</h2>
+        <p><strong>Tracking Number:</strong> ${data.trackingNumber}</p>
+        <p><strong>Order Received:</strong> ${new Date(data.orderReceived).toLocaleString()}</p>
+        <p><strong>Origin:</strong> ${data.origin}</p>
+        <p><strong>Destination:</strong> ${data.destination}</p>
+        <p><strong>Collected From:</strong> ${data.collectedFrom}</p>
+        <p><strong>Delivered To:</strong> ${data.proofOfDelivery.deliveredTo}</p>
+        <p><strong>Pickup Time:</strong> ${new Date(data.pickupTime).toLocaleString()}</p>
+        <p><strong>Drop-off Time:</strong> ${new Date(data.dropoffTime).toLocaleString()}</p>
+        <p><strong>Vehicle:</strong> ${data.vehicle}</p>
+      `;
+      document.getElementById("details").innerHTML = details;
+
+      const historyHtml = data.history.map(h => `
+        <div class="timeline-item">
+          <span><strong>${new Date(h.time).toLocaleString()}</strong></span>
+          <span>${h.status} — ${h.activity}</span>
+        </div>
+      `).join('');
+      document.getElementById("timeline").innerHTML = `<h3>Delivery Timeline</h3><div class="timeline">${historyHtml}</div>`;
+
+      if (data.proofOfDelivery.signatureImage) {
+        document.getElementById("signature-section").innerHTML = `
+          <h3>Proof of Delivery Signature</h3>
+          <img class="signature" src="${data.proofOfDelivery.signatureImage}" alt="Signature" />
+        `;
+      }
+    }
+
+    if (tn) {
+      fetchTracking(tn);
+    } else {
+      document.getElementById("details").innerHTML = '<p style="color: red;">Missing tracking number.</p>';
+    }
+  </script>
 </body>
 </html>
