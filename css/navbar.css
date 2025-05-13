@@ -1,5 +1,4 @@
-/* Final navbar.css with scroll transition and transparency fix */
-
+/* ===== Desktop Styles ===== */
 #navbar {
   width: 100%;
   position: fixed;
@@ -30,7 +29,7 @@
   background-color: transparent;
   position: relative;
   z-index: 1000;
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 
 #navbar.scrolled .navbar-top {
@@ -39,7 +38,6 @@
 
 #navbar.scrolled .navbar-bottom {
   background-color: #156082;
-  backdrop-filter: none;
 }
 
 .nav-links a {
@@ -48,6 +46,11 @@
   font-weight: 600;
   padding: 8px 14px;
   transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FFA94D;
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -60,8 +63,9 @@
 
 .btn-outline:hover {
   background-color: #FFA94D;
-  color: white;
+  color: white !important;
   transform: scale(1.05);
+  border: 2px solid #FFA94D;
 }
 
 .nav-left {
@@ -100,8 +104,8 @@
   flex-wrap: wrap;
 }
 
-.nav-contact span,
-.nav-contact a {
+.nav-contact a,
+.nav-contact span {
   background-color: #F97316;
   color: white;
   padding: 8px 14px;
@@ -111,19 +115,7 @@
   white-space: nowrap;
 }
 
-/* Proper scroll spacing: this is for .navbar-top only */
-.hero {
-  padding-top: 70px; /* height of navbar-top only */
-  position: relative;
-  background: transparent;
-  z-index: 1;
-}
-
-/* Global safeguard */
-body, html {
-  background-color: transparent;
-}
-
+/* ===== Mobile Styles ===== */
 @media screen and (max-width: 768px) {
   .navbar-top {
     flex-direction: column;
