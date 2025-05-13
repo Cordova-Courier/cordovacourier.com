@@ -1,50 +1,119 @@
-<nav class="main-navbar">
-  <div class="nav-container">
-    <div class="nav-top-header">
-      <div class="nav-logo">
-        <img src="/images/branding/cordova-logo.png" alt="Cordova Courier Logo" class="logo" />
-      </div>
-      <div class="nav-tagline">
-        <div class="tagline-main">
-          <span class="company">Cordova Courier</span> | Delivering Excellence Nationwide
-        </div>
-        <div class="tagline-sub">– <em>Because Every Mile Matters</em></div>
-      </div>
-      <div class="nav-contact">
-        <a class="contact-button" href="tel:2098809624">
-          <span class="icon">📞</span> (209) 880-9624
-        </a>
-        <a class="contact-button" href="mailto:dispatch@cordovacourier.com">
-          <span class="icon">📧</span> dispatch@cordovacourier.com
-        </a>
-        <div class="language-selector-dropdown">
-          <select onchange="location = this.value;">
-            <option disabled selected>🌍 ENGLISH</option>
-            <option value="/es/">Español</option>
-            <option value="/fr/">Français</option>
-            <option value="/de/">Deutsch</option>
-            <option value="/zh/">中文</option>
-            <option value="/ja/">日本語</option>
-            <option value="/kr/">한국어</option>
-            <option value="/pt/">Português</option>
-            <option value="/ar/">العربية</option>
-            <option value="/hi/">हिंदी</option>
-            <option value="/tl/">Tagalog</option>
-            <option value="/ru/">Русский</option>
-          </select>
-        </div>
-      </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cordova Courier Navbar</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      background-color: #156082;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      transition: all 0.4s ease;
+    }
+
+    .navbar.scrolled {
+      background-color: #ffffff;
+      color: #156082;
+    }
+
+    .navbar.scrolled .nav-links a,
+    .navbar.scrolled .btn-outline {
+      color: #156082;
+      border-color: #156082;
+    }
+
+    .navbar img.logo {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #FFA94D;
+    }
+
+    .nav-tagline {
+      font-size: 1rem;
+      margin-left: 10px;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .btn-outline {
+      padding: 8px 16px;
+      border: 2px solid #FFA94D;
+      color: white;
+      background-color: transparent;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background-color: #FFA94D;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="nav-left">
+      <img src="images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="logo" />
+      <div class="nav-title">Cordova Courier</div>
     </div>
-    <div class="nav-main-bar">
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/quote/">Request a Quote</a></li>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/service-areas/">Service Areas</a></li>
-        <li><a href="/about-us/">About Us</a></li>
-        <li><a href="/tracking/" class="secondary-button">Tracking</a></li>
-        <li><a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" target="_blank" rel="noopener noreferrer" class="secondary-button">Customer Portal</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Request a Quote</a>
+      <a href="#">Services</a>
+      <a href="#">Service Areas</a>
+      <a href="#">Contact</a>
+      <a href="#">About Us</a>
+      <a href="#" class="btn-outline">Tracking</a>
+      <a href="#" class="btn-outline">Customer Portal</a>
+    </nav>
+  </header>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
