@@ -1,44 +1,32 @@
-<!DOCTYPE html>
+!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cordova Courier Smart Tracking</title>
-  <link rel="stylesheet" href="/css/tracking.css" />
-  <link rel="stylesheet" href="/styles/ai/chat.css" />
-  <script src="/scripts/ai/chat.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cordova Courier Smart Tracking</title>
+<link href="/css/tracking.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <video autoplay muted loop id="bg-video">
-    <source src="/CordovaCourierVanWithBella.mp4" type="video/mp4">
+<video autoplay="" id="bg-video" loop="" muted="">
+<source src="/CordovaCourierVanWithBella.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
   </video>
+<div class="overlay">
+<h1 id="headline">Cordova Courier Smart Tracking</h1>
+<form id="manual-form">
 
-  <div class="overlay">
-    <h1 id="headline">Cordova Courier Smart Tracking</h1>
-  </div>
-
-  <div class="tracking-container">
-    <div id="details"></div>
-    <div id="timeline"></div>
-    <div id="signature-section"></div>
-    <button id="download-pdf" style="display:none">📄 Download PDF</button>
-  </div>
-
-  <!-- Full Cordova AI Widget (matches homepage style) -->
-  <div id="cordova-chat-root"></div>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const tn = urlParams.get('tn');
-
-    window.cordovaChatConfig = {
-      source: "tracking",
-      trackingNumber: tn || ""
-    };
-  </script>
-  <script src="https://ai.cordovacourier.com/widget.js" defer></script>
-
-  <script>
+<button type="submit">Track</button>
+</form>
+</div>
+<div class="tracking-container">
+<div id="details"></div>
+<div id="timeline"></div>
+<div id="signature-section"></div>
+<button id="download-pdf" style="display:none">📄 Download PDF</button>
+</div>
+<script>
     const phrases = [
       "Cordova Courier Smart Tracking",
       "AI-Powered Delivery Status",
@@ -49,6 +37,15 @@
       document.getElementById('headline').textContent = phrases[idx % phrases.length];
       idx++;
     }, 3000);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let tn = urlParams.get('tn');
+
+    document.getElementById("manual-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const manualTN = document.getElementById("manual-tn").value.trim();
+      if (manualTN) window.location.search = `?tn=${manualTN}`;
+    });
 
     async function fetchTracking(tn) {
       const res = await fetch(`/api/track?tn=${tn}`);
@@ -66,13 +63,14 @@
       document.getElementById("details").innerHTML = details;
 
       document.getElementById("timeline").innerHTML = data.history.map(h => `
-        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity || ''})</div>
+        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity})</div>
       `).join('');
 
       if (data.proofOfDelivery.signatureImage && !data.proofOfDelivery.signatureImage.includes("bnVsbA==")) {
-        document.getElementById("signature-section").innerHTML = `
-          <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
-      }
+  document.getElementById("signature-section").innerHTML = `
+    <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
+     }
+
 
       const btn = document.getElementById("download-pdf");
       btn.style.display = 'block';
@@ -95,10 +93,10 @@
           doc.addImage(data.proofOfDelivery.signatureImage, 'PNG', 20, y + 5, 60, 30);
         }
         doc.save(`Cordova-POD-${data.trackingNumber}.pdf`);
-      };
+      }
     }
-
     if (tn) fetchTracking(tn);
   </script>
 </body>
 </html>
+
