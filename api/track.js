@@ -1,3 +1,4 @@
+// /api/track.js — FINAL version using official OnTime360 API
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -7,19 +8,15 @@ export default async function handler(req, res) {
   const BASE_URL = `https://secure.ontime360.com/sites/${COMPANY_ID}/api`;
 
   try {
-    // Step 1: Search by tracking number
+    // Step 1: Search by trackingNumber to get internal GUID
     const searchRes = await fetch(`${BASE_URL}/orders?trackingNumber=${tn}`, {
       headers: {
-        'Authorization': `Bearer ${API_KEY}`,
+        'Authorization': API_KEY,
         'Content-Type': 'application/json'
       }
     });
 
-    const text = await searchRes.text(); // grab raw body for debug
-    console.log("🔍 Step 1: Status", searchRes.status);
-    console.log("🔍 Step 1: Body", text);
-
-    const searchResults = JSON.parse(text);
+    const searchResults = await searchRes.json();
 
     if (!Array.isArray(searchResults) || searchResults.length === 0) {
       return res.status(404).json({ error: 'Tracking number not found' });
@@ -27,38 +24,36 @@ export default async function handler(req, res) {
 
     const orderId = searchResults[0];
 
-    // Step 2: Get order details
+    // Step 2: Retrieve full order details using the GUID
     const orderRes = await fetch(`${BASE_URL}/orders/${orderId}`, {
       headers: {
-        'Authorization': `Bearer ${API_KEY}`,
+        'Authorization': API_KEY,
         'Content-Type': 'application/json'
       }
     });
 
-    const orderText = await orderRes.text();
-    console.log("🔍 Step 2: Status", orderRes.status);
-    console.log("🔍 Step 2: Body", orderText);
-
-    const order = JSON.parse(orderText);
+    const order = await orderRes.json();
 
     const data = {
-      trackingNumber: order.OrderNumber || tn,
-      status: order.Status?.Name || 'Unknown',
-      origin: `${order.Origin?.City || ''}, ${order.Origin?.State || ''}`.trim(),
-      destination: `${order.Destination?.City || ''}, ${order.Destination?.State || ''}`.trim(),
-      pickupTime: order.ActualPickupTime || order.ExpectedPickupTime || '',
-      dropoffTime: order.ActualDeliveryTime || order.ExpectedDeliveryTime || '',
-      vehicle: order.VehicleType || '',
-      history: (order.History || []).map(h => ({
-        time: h.Timestamp,
-        status: h.StatusName,
-        note: h.Note
-      }))
+      trackingNumber: order.TrackingNumber || tn,
+      status: order.Status?.Description || 'Unknown',
+      origin: `${order.CollectionLocation?.City || ''}, ${order.CollectionLocation?.State || ''}`.trim(),
+      destination: `${order.DeliveryLocation?.City || ''}, ${order.DeliveryLocation?.State || ''}`.trim(),
+      pickupTime: order.CollectionArrivalDate || order.CollectionArrivalWindow?.EarliestTime || '',
+      dropoffTime: order.DeliveryArrivalDate || order.DeliveryArrivalWindow?.EarliestTime || '',
+      vehicle: order.VehicleRequired?.Name || '',
+      history: order.Status?.Timestamp ? [
+        {
+          time: order.Status.Timestamp,
+          status: order.Status.Description || 'Unknown',
+          note: ''
+        }
+      ] : []
     };
 
     return res.status(200).json(data);
   } catch (err) {
-    console.error('❌ Track API Error:', err);
+    console.error('Track API error:', err);
     return res.status(500).json({ error: 'Internal Server Error', details: err.message });
   }
 }
