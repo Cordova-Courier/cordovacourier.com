@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const navbar = document.getElementById("navbar");
+
+  // Wait until navbar is in the DOM
+  if (!navbar) return;
+
   const navbarTop = document.querySelector(".navbar-top");
 
   window.addEventListener("scroll", () => {
