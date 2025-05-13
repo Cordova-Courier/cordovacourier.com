@@ -229,6 +229,104 @@ body, html {
   }
 
   @media screen and (max-width: 768px) {
+  .navbar-top {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+  }
+
+  .nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .nav-title-group {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFA94D;
+  }
+
+  .nav-tagline {
+    font-size: 0.85rem;
+    color: white;
+  }
+
+  .nav-contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-contact a,
+  .nav-contact span {
+    flex: 1;
+    font-size: 0.8rem;
+    padding: 8px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    display: flex;
+    align-self: center;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    gap: 4px;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-bottom {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #156082;
+    padding: 10px;
+  }
+
+  .navbar-bottom.open {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .navbar-bottom a {
+    font-size: 1rem;
+    padding: 10px 14px;
+    margin: 4px 0;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
   .btn-outline {
     width: 100%;
     margin: 6px 0;
@@ -236,12 +334,4 @@ body, html {
     padding-left: 16px;
     box-sizing: border-box;
   }
-
-  .navbar-bottom a {
-    text-align: left;
-    padding-left: 16px;
-    box-sizing: border-box;
-  }
-}
-
 }
