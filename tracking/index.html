@@ -17,7 +17,33 @@
     <h1 id="headline">Cordova Courier Smart Tracking</h1>
   </div>
 
-  <div class="tracking-container">
+  
+<form name="trForm" method="post" action="https://www.ontime360.com/tracking/trackingresults.aspx" id="trForm">
+  <div style="border: solid 1px #FFA94D; padding: 10px; background-color: #FFE5CC; font: 10pt Tahoma, sans-serif; border-radius: 8px; max-width: 640px; margin: 20px auto;">
+    <table>
+      <tr>
+        <td style="color: #333;">Tracking Number:</td>
+      </tr>
+      <tr>
+        <td>
+          <input name="TrackingNumber" type="text" maxlength="50" id="TrackingNumber" style="padding: 6px; border: 1px solid #CCC; border-radius: 4px;" />
+          &nbsp;
+          <input type="submit" name="btnSubmit" value="Submit" onclick="trForm.target='_blank';" id="btnSubmit" 
+                 style="background-color: #FF8800; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span style="font: 8pt Tahoma, sans-serif; color: #666;">Powered by 
+            <a style="text-decoration: none; color: #666;" target="_blank" href="https://www.ontime360.com">OnTime 360</a> Courier Software
+          </span>
+        </td>
+      </tr>
+    </table>
+    <input type="hidden" name="accid" id="accid" value="M3UXLvzAV1bGHUjZFkFdi42dqdx7YfvdCZg1OYCibTkO0WaiYQaxJg==" />
+  </div>
+</form>
+<div class="tracking-container">
     <div id="details"></div>
     <div id="timeline"></div>
     <div id="signature-section"></div>
