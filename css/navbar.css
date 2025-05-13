@@ -30,7 +30,7 @@
   transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-/* On Scroll Effect */
+/* Scroll Behavior */
 #navbar.scrolled .navbar-top {
   display: none;
 }
@@ -40,6 +40,7 @@
   backdrop-filter: none;
 }
 
+/* Navigation links */
 .nav-links a {
   text-decoration: none;
   color: white;
@@ -62,7 +63,7 @@
   transform: scale(1.05);
 }
 
-/* Logo and text grouping */
+/* Logo and branding */
 .nav-left {
   display: flex;
   align-items: center;
@@ -92,6 +93,7 @@
   margin-top: 5px;
 }
 
+/* Contact styling */
 .nav-contact {
   display: flex;
   gap: 10px;
@@ -110,7 +112,14 @@
   white-space: nowrap;
 }
 
-/* Responsive behavior */
+/* Important: Add spacing so scroll effect works */
+.hero {
+  padding-top: 140px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
 @media screen and (max-width: 768px) {
   .navbar-top, .navbar-bottom {
     flex-direction: column;
