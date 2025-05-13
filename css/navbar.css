@@ -167,3 +167,24 @@ body, html {
     gap: 6px;
   }
 }
+
+/* Contact phone + email styling override */
+.nav-contact a[href^="tel:"],
+.nav-contact a[href^="mailto:"] {
+  display: inline-block;
+  border: 2px solid #FFA94D;
+  background-color: transparent;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-contact a[href^="tel:"]:hover,
+.nav-contact a[href^="mailto:"]:hover {
+  background-color: #FFA94D;
+  color: white;
+  transform: scale(1.05);
+}
