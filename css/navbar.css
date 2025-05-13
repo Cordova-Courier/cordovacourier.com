@@ -45,6 +45,9 @@
 /* Menu link hover effect for main nav only */
 .nav-links a:hover {
   color: #FFA94D;
+  transform: translateY(-2px);
+}
+  color: #FFA94D;
 }
 
 /* Revert tracking and portal buttons to original style */
