@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Wait until #navbar exists in the DOM before attaching scroll behavior
+function setupScroll() {
   const navbar = document.getElementById("navbar");
-
-  if (!navbar) return; // Safety check
+  if (!navbar) return requestAnimationFrame(setupScroll);
 
   const navbarTop = document.querySelector(".navbar-top");
 
@@ -14,4 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (navbarTop) navbarTop.style.display = "flex";
     }
   });
-});
+}
+
+requestAnimationFrame(setupScroll);
