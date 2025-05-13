@@ -124,7 +124,7 @@ body, html {
   background-color: transparent;
 }
 
-/* Force responsive layout for all buttons and contact items */
+/* Full mobile layout: contact row, then toggle menu button */
 @media screen and (max-width: 768px) {
   .navbar-top {
     flex-direction: column;
@@ -133,34 +133,47 @@ body, html {
   }
 
   .nav-left {
-    flex-direction: row;
-    justify-content: space-between;
     width: 100%;
-    align-items: center;
-  }
-
-  .hamburger {
-    display: flex;
-    margin-left: auto;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .nav-contact {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 8px;
     justify-content: space-between;
     width: 100%;
-    padding: 10px 0;
+    margin-top: 10px;
   }
 
   .nav-contact a,
   .nav-contact span {
-    font-size: 0.85rem;
-    padding: 6px 12px;
-    white-space: nowrap;
-    flex: 1 0 30%;
+    flex: 1;
+    font-size: 0.8rem;
+    padding: 8px;
     text-align: center;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    display: flex;
+    align-self: center;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    gap: 4px;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
   .navbar-bottom {
@@ -189,4 +202,3 @@ body, html {
     width: 90%;
   }
 }
-
