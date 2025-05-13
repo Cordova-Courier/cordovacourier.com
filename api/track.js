@@ -1,4 +1,4 @@
-// /api/track.js — Vercel Serverless Function
+// /api/track.js — Vercel Serverless Function using OnTime360 official API (2-step)
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -8,18 +8,31 @@ export default async function handler(req, res) {
   const BASE_URL = `https://secure.ontime360.com/sites/${COMPANY_ID}/api`;
 
   try {
-    const response = await fetch(`${BASE_URL}/orders/${tn}`, {
+    // Step 1: Search orders by OrderNumber (aka tracking number)
+    const searchRes = await fetch(`${BASE_URL}/orders?orderNumber=${tn}`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       }
     });
 
-    if (!response.ok) {
-      return res.status(response.status).json({ error: 'Tracking number not found or unauthorized' });
+    const searchResults = await searchRes.json();
+
+    if (!Array.isArray(searchResults) || searchResults.length === 0) {
+      return res.status(404).json({ error: 'Tracking number not found' });
     }
 
-    const order = await response.json();
+    const orderId = searchResults[0];
+
+    // Step 2: Retrieve order details using the internal ID
+    const orderRes = await fetch(`${BASE_URL}/orders/${orderId}`, {
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    const order = await orderRes.json();
 
     const data = {
       trackingNumber: order.OrderNumber || tn,
@@ -37,7 +50,6 @@ export default async function handler(req, res) {
     };
 
     return res.status(200).json(data);
-
   } catch (err) {
     console.error('Track API error:', err);
     return res.status(500).json({ error: 'Internal Server Error' });
