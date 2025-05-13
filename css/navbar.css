@@ -168,8 +168,25 @@ body, html {
   }
 }
 
-/* Contact phone + email kept as solid orange */
-.nav-contact a[href^="tel:"],
+/* Keep email button solid, but add hover to phone */
+.nav-contact a[href^="tel:"] {
+  display: inline-block;
+  background-color: #F97316;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #F97316;
+}
+
+.nav-contact a[href^="tel:"]:hover {
+  background-color: transparent;
+  color: white;
+  transform: scale(1.05);
+}
+
 .nav-contact a[href^="mailto:"] {
   display: inline-block;
   background-color: #F97316;
@@ -179,9 +196,4 @@ body, html {
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.3s ease;
-}
-
-.nav-contact a[href^="tel:"]:hover,
-.nav-contact a[href^="mailto:"]:hover {
-  transform: scale(1.05);
 }
