@@ -124,26 +124,51 @@ body, html {
   background-color: transparent;
 }
 
-/* Full mobile layout: contact row, then toggle menu button */
 @media screen and (max-width: 768px) {
   .navbar-top {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     padding: 10px;
   }
 
   .nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .nav-title-group {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFA94D;
+  }
+
+  .nav-tagline {
+    font-size: 0.85rem;
+    color: white;
   }
 
   .nav-contact {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 8px;
     justify-content: space-between;
+    gap: 8px;
     width: 100%;
     margin-top: 10px;
   }
@@ -186,19 +211,20 @@ body, html {
 
   .navbar-bottom.open {
     display: flex;
+    align-items: flex-start;
   }
 
   .navbar-bottom a {
     font-size: 1rem;
     padding: 10px 14px;
     margin: 4px 0;
-    text-align: center;
     width: 100%;
+    text-align: left;
   }
 
   .btn-outline {
     display: block;
-    margin: 6px auto;
-    width: 90%;
+    margin: 6px 0;
+    width: 100%;
   }
 }
