@@ -1,4 +1,4 @@
-// /api/track.js — Now includes signature data and debug logging for status history
+// /api/track.js — Updated with structured proofOfDelivery block
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -19,6 +19,14 @@ export default async function handler(req, res) {
     8: 'Unassigned Stored',
     9: 'Quoted'
   };
+
+  const timelineMap = [
+    'Driver is now en route to pick-up',
+    'Driver has arrived at Pick-up',
+    'In Transit',
+    'Driver has arrived at drop-off',
+    'Completed'
+  ];
 
   try {
     const searchRes = await fetch(`${BASE_URL}/orders?trackingNumber=${tn}`, {
@@ -58,30 +66,38 @@ export default async function handler(req, res) {
     });
     let signature = null;
     try {
-      signature = await signatureRes.json();
+      signature = await signatureRes.text(); // image base64
     } catch (e) {
       signature = null;
     }
 
-    const history = Array.isArray(historyData) ? historyData.map(h => {
-      const label = h.StatusName || h.Note || statusMap[h.StatusLevel] || 'Unknown';
-      console.log("🔍 Status Debug:", { time: h.Timestamp, raw: h });
-      return {
-        time: h.Timestamp,
-        status: label,
-        note: h.Note || ''
-      };
-    }) : [];
+    const history = Array.isArray(historyData)
+      ? historyData.map((h, idx) => {
+          const status = h.StatusName || statusMap[h.StatusLevel] || 'Submitted';
+          const activity = h.Note || timelineMap[idx] || 'Activity';
+          return {
+            time: h.Timestamp,
+            status,
+            activity
+          };
+        })
+      : [];
 
     const data = {
       trackingNumber: order.TrackingNumber || tn,
       status: order.Status?.Description || order.Status?.Name || statusMap[order.Status?.Level] || 'Unknown',
       origin: `${order.CollectionLocation?.City || ''}, ${order.CollectionLocation?.State || ''}`.trim(),
       destination: `${order.DeliveryLocation?.City || ''}, ${order.DeliveryLocation?.State || ''}`.trim(),
-      pickupTime: order.CollectionArrivalDate || order.CollectionArrivalWindow?.EarliestTime || '',
-      dropoffTime: order.DeliveryArrivalDate || order.DeliveryArrivalWindow?.EarliestTime || '',
+      orderReceived: order.DateSubmitted || '',
+      collectedFrom: order.CollectionLocation?.ContactName || '',
+      pickupTime: order.CollectionArrivalDate || '',
+      dropoffTime: order.DeliveryArrivalDate || '',
       vehicle: order.VehicleRequired?.Name || '',
-      signature: signature || null,
+      proofOfDelivery: {
+        deliveredTo: order.DeliveryContactName || '',
+        time: order.DeliveryArrivalDate || '',
+        signatureImage: signature ? `data:image/png;base64,${signature}` : null
+      },
       history
     };
 
