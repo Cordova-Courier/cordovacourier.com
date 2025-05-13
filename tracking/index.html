@@ -7,7 +7,7 @@
   <script>
     async function fetchTrackingData() {
       const trackingNumber = window.location.pathname.split("/").pop();
-      const res = await fetch(`https://your-vercel-domain.vercel.app/api/track?tn=${trackingNumber}`);
+      const res = await fetch(`https://ai.cordovacourier.com/api/track?tn=${trackingNumber}`);
       const data = await res.json();
 
       document.getElementById("tracking-info").innerText =
