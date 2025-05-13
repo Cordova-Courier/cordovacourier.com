@@ -1,4 +1,4 @@
-/* Final navbar.css — transparent bottom, solid on scroll */
+/* Cleaned Final navbar.css — transparent bottom, solid on scroll */
 
 #navbar {
   width: 100%;
@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   color: white;
   z-index: 998;
-  transition: all 0.3s ease; color: white;
+  transition: all 0.3s ease;
 }
 
 .navbar-bottom {
@@ -41,21 +41,22 @@
   background-color: #156082;
 }
 
-/* Links & Buttons */
-/* Menu link hover effect for main nav only */
+/* Animated link hover (main nav only) */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  padding: 8px 14px;
+  transition: all 0.3s ease;
+}
+
 .nav-links a:hover {
   color: #FFA94D;
   transform: translateY(-2px);
 }
-  color: #FFA94D;
-}
 
-/* Revert tracking and portal buttons to original style */
+/* Button style (Tracking + Customer Portal) */
 .btn-outline {
-  border: 2px solid #FFA94D !important;
-  color: white !important;
-  background-color: transparent !important;
-
   border: 2px solid #FFA94D;
   border-radius: 6px;
   background-color: transparent;
@@ -64,59 +65,6 @@
 }
 
 .btn-outline:hover {
-  border: 2px solid #FFA94D !important;
-  background-color: #FFA94D !important;
-  color: white !important;
-  transform: scale(1.05);
-
-  background-color: #FFA94D;
-  color: white !important;
-  transform: scale(1.05);
-  border: 2px solid #FFA94D;
-}
-.nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  padding: 8px 14px;
-  transition: color 0.3s ease;
-}
-
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  padding: 8px 14px;
-  transition: color 0.3s ease;
-}
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease; color: white;
-
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  padding: 8px 14px;
-  transition: all 0.3s ease; color: white;
-}
-
-.btn-outline {
-  border: 2px solid #FFA94D !important;
-  color: white !important;
-  background-color: transparent !important;
-
-  border: 2px solid #FFA94D;
-  border-radius: 6px;
-  background-color: transparent;
-  color: white;
-  transition: all 0.3s ease; color: white;
-}
-
-.btn-outline:hover {
-  border: 2px solid #FFA94D !important;
-  background-color: #FFA94D !important;
-  color: white !important;
-  transform: scale(1.05);
-
   background-color: #FFA94D;
   color: white !important;
   transform: scale(1.05);
@@ -153,7 +101,7 @@
   margin-top: 5px;
 }
 
-/* Contact block */
+/* Contact section */
 .nav-contact {
   display: flex;
   gap: 10px;
@@ -172,7 +120,7 @@
   white-space: nowrap;
 }
 
-/* Page spacing for scroll effect */
+/* Hero padding to allow scroll */
 .hero {
   padding-top: 70px;
   position: relative;
@@ -180,11 +128,12 @@
   z-index: 1;
 }
 
+/* Global transparent background safeguard */
 body, html {
   background-color: transparent;
 }
 
-/* Responsive Layout */
+/* Responsive design */
 @media screen and (max-width: 768px) {
   .navbar-top, .navbar-bottom {
     flex-direction: column;
