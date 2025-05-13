@@ -1,10 +1,10 @@
-/* navbar.css */
+/* Final navbar.css with transparent-to-solid scroll fix */
 #navbar {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 9999;
   transition: all 0.4s ease;
 }
 
@@ -26,11 +26,12 @@
   gap: 20px;
   flex-wrap: wrap;
   padding: 10px;
-  background-color: transparent;
+  background-color: transparent !important;
+  position: relative;
+  z-index: 1000;
   transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
-/* Scroll Behavior */
 #navbar.scrolled .navbar-top {
   display: none;
 }
@@ -40,7 +41,6 @@
   backdrop-filter: none;
 }
 
-/* Navigation links */
 .nav-links a {
   text-decoration: none;
   color: white;
@@ -63,7 +63,6 @@
   transform: scale(1.05);
 }
 
-/* Logo and branding */
 .nav-left {
   display: flex;
   align-items: center;
@@ -93,7 +92,6 @@
   margin-top: 5px;
 }
 
-/* Contact styling */
 .nav-contact {
   display: flex;
   gap: 10px;
@@ -112,14 +110,14 @@
   white-space: nowrap;
 }
 
-/* Important: Add spacing so scroll effect works */
+/* Ensures hero scroll works */
 .hero {
   padding-top: 140px;
   position: relative;
   z-index: 1;
 }
 
-/* Responsive Design */
+/* Responsive styles */
 @media screen and (max-width: 768px) {
   .navbar-top, .navbar-bottom {
     flex-direction: column;
