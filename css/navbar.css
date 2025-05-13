@@ -168,7 +168,7 @@ body, html {
   }
 }
 
-/* Keep email button solid, but add hover to phone */
+/* Keep email button solid, but enhance hover on phone */
 .nav-contact a[href^="tel:"] {
   display: inline-block;
   background-color: #F97316;
@@ -182,7 +182,7 @@ body, html {
 }
 
 .nav-contact a[href^="tel:"]:hover {
-  background-color: transparent;
+  background-color: #e26310;
   color: white;
   transform: scale(1.05);
 }
