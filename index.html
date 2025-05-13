@@ -31,6 +31,8 @@
     .then(res => res.text())
     .then(html => {
       document.getElementById('navbar-placeholder').innerHTML = html;
+
+      // Load navbar.js AFTER navbar is injected
       const script = document.createElement('script');
       script.src = '/js/navbar.js';
       document.body.appendChild(script);
