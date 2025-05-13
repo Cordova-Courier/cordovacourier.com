@@ -1,4 +1,33 @@
-import knowledge from '../data/knowledge.json'; // ✅ Adjust path if needed
+import knowledge from '../data/knowledge.json';
+
+async function handleTrackingRequest(question) {
+  const match = question.match(/(?:track(?:ing)?\\s*(?:number)?[:#]?)?\\s*(\\d{6,})/i);
+  const trackingNumber = match ? match[1] : null;
+
+  if (!trackingNumber) return null;
+
+  try {
+    const res = await fetch(`https://ai.cordovacourier.com/api/track?tn=${trackingNumber}`);
+    const data = await res.json();
+
+    if (data.error) {
+      return `🚫 Sorry, I couldn’t find tracking info for number **${trackingNumber}**.`;
+    }
+
+    return `📦 Tracking **${data.trackingNumber}**\n\n` +
+      `**Status:** ${data.status}\n` +
+      `**From:** ${data.origin}\n` +
+      `**To:** ${data.destination}\n` +
+      `**Collected from:** ${data.collectedFrom}\n` +
+      `**Delivered to:** ${data.proofOfDelivery.deliveredTo}\n` +
+      `**Pickup Time:** ${new Date(data.pickupTime).toLocaleString()}\n` +
+      `**Drop-off Time:** ${new Date(data.dropoffTime).toLocaleString()}\n\n` +
+      `🔗 [View full tracking & signature](https://ai.cordovacourier.com/tracking/?tn=${trackingNumber})`;
+  } catch (err) {
+    console.error('Track API error:', err);
+    return `⚠️ Something went wrong while looking up tracking number **${trackingNumber}**.`;
+  }
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,6 +40,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'No question provided.' });
   }
 
+  // 🧠 Step 1: Try tracking lookup first
+  const trackingReply = await handleTrackingRequest(question);
+  if (trackingReply) {
+    return res.status(200).json({ reply: trackingReply });
+  }
+
+  // 🧠 Step 2: Otherwise fall back to ChatGPT
   try {
     const openaiRes = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
