@@ -63,6 +63,7 @@
   background-color: #FFA94D;
   color: white !important;
   transform: scale(1.05);
+  border: 2px solid #FFA94D;
 }
 .nav-links a {
   text-decoration: none;
@@ -101,6 +102,7 @@
   background-color: #FFA94D;
   color: white !important;
   transform: scale(1.05);
+  border: 2px solid #FFA94D;
 }
 
 /* Branding elements */
