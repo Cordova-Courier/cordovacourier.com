@@ -1,4 +1,4 @@
-// /api/track.js — Vercel Serverless Function using OnTime360 official API (2-step)
+// /api/track.js — Vercel Serverless Function using OnTime360 official API with trackingNumber param
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -8,8 +8,8 @@ export default async function handler(req, res) {
   const BASE_URL = `https://secure.ontime360.com/sites/${COMPANY_ID}/api`;
 
   try {
-    // Step 1: Search orders by OrderNumber (aka tracking number)
-    const searchRes = await fetch(`${BASE_URL}/orders?orderNumber=${tn}`, {
+    // Step 1: Search orders by trackingNumber
+    const searchRes = await fetch(`${BASE_URL}/orders?trackingNumber=${tn}`, {
       headers: {
         'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
