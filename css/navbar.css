@@ -222,6 +222,23 @@ body, html {
 
   .navbar-bottom.open {
     display: flex;
+
+    @media screen and (max-width: 480px) {
+  .nav-contact {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 6px;
+    justify-content: space-between;
+  }
+
+  .nav-contact a,
+  .nav-contact span {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+}
+
   }
 }
 
