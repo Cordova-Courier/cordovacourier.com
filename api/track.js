@@ -1,4 +1,4 @@
-// /api/track.js — Enhanced with fallback status mapping for OnTime360 history
+// /api/track.js — Final fallback using StatusName, Note, or mapped StatusLevel
 export default async function handler(req, res) {
   const { tn } = req.query;
   if (!tn) return res.status(400).json({ error: 'Missing tracking number' });
@@ -60,7 +60,7 @@ export default async function handler(req, res) {
       vehicle: order.VehicleRequired?.Name || '',
       history: Array.isArray(historyData) ? historyData.map(h => ({
         time: h.Timestamp,
-        status: h.StatusName || statusMap[h.StatusLevel] || 'Unknown',
+        status: h.StatusName || h.Note || statusMap[h.StatusLevel] || 'Unknown',
         note: h.Note || ''
       })) : []
     };
