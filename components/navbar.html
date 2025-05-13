@@ -11,30 +11,20 @@
     }
 
     .navbar {
-      background-color: #156082;
-      color: white;
       position: fixed;
       width: 100%;
       top: 0;
       z-index: 999;
       transition: all 0.4s ease;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .navbar.scrolled {
-      background-color: #ffffff;
-      color: #156082;
+    .navbar.scrolled .navbar-bottom {
+      background-color: rgba(21, 96, 130, 0.9);
     }
 
-    .navbar.scrolled .nav-links a,
-    .navbar.scrolled .btn-outline,
-    .navbar.scrolled .nav-contact span,
-    .navbar.scrolled .nav-contact a {
-      color: #156082;
-      border-color: #156082;
-    }
-
-    .navbar-top, .navbar-bottom {
+    .navbar-top {
+      background-color: #156082;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -63,11 +53,6 @@
       color: #FFA94D;
     }
 
-    .nav-subtitle {
-      font-size: 1rem;
-      color: white;
-    }
-
     .nav-tagline {
       font-style: italic;
       font-weight: 600;
@@ -94,13 +79,15 @@
       white-space: nowrap;
     }
 
-    .nav-links {
+    .navbar-bottom {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
       width: 100%;
       padding: 10px 10px;
+      background-color: rgba(21, 96, 130, 0.75);
+      transition: background-color 0.3s ease;
     }
 
     .nav-links a {
@@ -147,11 +134,9 @@
         font-size: 0.95rem;
       }
 
-      .nav-links {
-        flex-direction: column;
+      .navbar-bottom {
         align-items: flex-start;
         gap: 12px;
-        width: 100%;
         padding-left: 0;
       }
 
