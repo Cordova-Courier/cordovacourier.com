@@ -1,10 +1,9 @@
-<!-- Add to navbar.html -->
-<header id="navbar" class="navbar">
+header id="navbar" class="navbar">
   <div class="navbar-top">
     <div class="nav-left">
       <img src="images/branding/cordova-navbar-logo.png" alt="Cordova Courier Logo" class="logo" />
       <div class="nav-title-group">
-        <div class="nav-title">Cordova Courier <span style="color:white" - Delivering Excellence Nationwide</span></div>
+        <div class="nav-title">Cordova Courier <span style="color:white">- Delivering Excellence Nationwide</span></div>
         <div class="nav-tagline">-<em>Because Every Mile Matters</em></div>
       </div>
     </div>
@@ -13,11 +12,8 @@
       <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a>
       <span>ENGLISH</span>
     </div>
-    <div class="hamburger" onclick="toggleMobileMenu()">
-      <span></span><span></span><span></span>
-    </div>
   </div>
-  <div class="navbar-bottom nav-links" id="mobileMenu">
+  <div class="navbar-bottom nav-links">
     <a href="#">Home</a>
     <a href="#">Request a Quote</a>
     <a href="#">Services</a>
@@ -28,10 +24,10 @@
     <a href="#" class="btn-outline">Customer Portal</a>
   </div>
 </header>
-
 <script>
-function toggleMobileMenu() {
-  const menu = document.getElementById('mobileMenu');
-  menu.classList.toggle('open');
-}
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
 </script>
+
