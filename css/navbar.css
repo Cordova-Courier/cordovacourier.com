@@ -110,13 +110,6 @@
   white-space: nowrap;
 }
 
-/* Ensure enough scroll distance below navbar */
-.hero {
-  padding-top: 140px;
-  position: relative;
-  z-index: 1;
-}
-
 /* Responsive behavior */
 @media screen and (max-width: 768px) {
   .navbar-top, .navbar-bottom {
