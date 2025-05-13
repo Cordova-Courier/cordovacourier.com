@@ -24,8 +24,17 @@
 </head>
 <body>
 
-
 <div id="navbar-placeholder"></div>
+    <script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    });
+</script>
 <!-- HERO SECTION -->
 <section class="hero">
 <video autoplay="" class="background-video" loop="" muted="" playsinline="">
