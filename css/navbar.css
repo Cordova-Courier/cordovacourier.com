@@ -239,6 +239,11 @@
 
 
 @media screen and (orientation: landscape) and (max-height: 480px) {
+  .hamburger {
+    display: flex !important;
+    margin: 6px auto;
+  }
+  
   .navbar-top {
     padding: 6px 10px;
     gap: 6px;
