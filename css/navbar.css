@@ -238,15 +238,31 @@
 
 
 
+
+
+
+/* Restored scroll behavior */
+.navbar-bottom {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+#navbar.scrolled .navbar-bottom {
+  background-color: #156082;
+}
+
+
 @media screen and (orientation: landscape) and (max-height: 480px) {
+  .navbar-top {
+    display: flex !important;
+    flex-direction: column;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
   .hamburger {
     display: flex !important;
     margin: 6px auto;
-  }
-  
-  .navbar-top {
-    padding: 6px 10px;
-    gap: 6px;
   }
 
   .nav-title {
@@ -266,10 +282,6 @@
   .nav-contact span {
     font-size: 0.75rem;
     padding: 6px 10px;
-  }
-
-  .hamburger {
-    margin: 4px auto;
   }
 
   .navbar-bottom.open {
@@ -295,15 +307,4 @@
     padding: 8px 12px;
     text-align: center;
   }
-}
-
-
-/* Restored scroll behavior */
-.navbar-bottom {
-  background-color: transparent;
-  transition: background-color 0.3s ease;
-}
-
-#navbar.scrolled .navbar-bottom {
-  background-color: #156082;
 }
