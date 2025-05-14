@@ -311,3 +311,65 @@
     margin: 6px auto;
   }
 }
+
+
+/* Final unified landscape rule */
+@media screen and (orientation: landscape) and (max-height: 480px) {
+  .navbar-top {
+    display: flex !important;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .hamburger {
+    display: flex !important;
+    margin: 6px auto;
+  }
+
+  .navbar-bottom {
+    display: none !important;
+    flex-direction: column;
+    background-color: #156082;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar-bottom.open {
+    display: flex !important;
+    align-items: flex-start;
+  }
+
+  .navbar-bottom a,
+  .btn-outline {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    margin: 4px 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+  .btn-outline {
+    text-align: center;
+  }
+
+  .nav-title {
+    font-size: 1rem;
+  }
+
+  .nav-tagline {
+    font-size: 0.75rem;
+  }
+
+  .nav-contact {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nav-contact a,
+  .nav-contact span {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+}
