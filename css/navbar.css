@@ -235,58 +235,5 @@
     transform: scale(1.05);
   }
 
-@media screen and (orientation: landscape) and (max-height: 480px) {
-  .navbar-top {
-    padding: 6px 10px;
-    gap: 6px;
-  }
-
-  .nav-title {
-    font-size: 1rem;
-  }
-
-  .nav-tagline {
-    font-size: 0.75rem;
-  }
-
-  .nav-contact {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .nav-contact a,
-  .nav-contact span {
-    font-size: 0.75rem;
-    padding: 6px 10px;
-  }
-
-  .hamburger {
-    margin: 4px auto;
-  }
-
-  .navbar-bottom.open {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #156082;
-    width: 100%;
-  }
-
-  .navbar-bottom a,
-  .btn-outline {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    margin: 4px 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-  }
-
-  .btn-outline {
-    width: 100%;
-    margin: 4px 0;
-    padding: 8px 12px;
-    text-align: center;
-  }
-}
 
 }
