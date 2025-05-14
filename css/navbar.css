@@ -1,5 +1,4 @@
-/* Final navbar.css with scroll transition and transparency fix */
-
+/* ===== Desktop Styles ===== */
 #navbar {
   width: 100%;
   position: fixed;
@@ -30,7 +29,7 @@
   background-color: transparent;
   position: relative;
   z-index: 1000;
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+  transition: background-color 0.4s ease;
 }
 
 #navbar.scrolled .navbar-top {
@@ -39,7 +38,6 @@
 
 #navbar.scrolled .navbar-bottom {
   background-color: #156082;
-  backdrop-filter: none;
 }
 
 .nav-links a {
@@ -48,6 +46,11 @@
   font-weight: 600;
   padding: 8px 14px;
   transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FFA94D;
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -60,8 +63,9 @@
 
 .btn-outline:hover {
   background-color: #FFA94D;
-  color: white;
+  color: white !important;
   transform: scale(1.05);
+  border: 2px solid #FFA94D;
 }
 
 .nav-left {
@@ -100,8 +104,8 @@
   flex-wrap: wrap;
 }
 
-.nav-contact span,
-.nav-contact a {
+.nav-contact a,
+.nav-contact span {
   background-color: #F97316;
   color: white;
   padding: 8px 14px;
@@ -111,39 +115,52 @@
   white-space: nowrap;
 }
 
-/* Proper scroll spacing: this is for .navbar-top only */
-.hero {
-  padding-top: 70px; /* height of navbar-top only */
-  position: relative;
-  background: transparent;
-  z-index: 1;
-}
-
-/* Global safeguard */
-body, html {
-  background-color: transparent;
-}
-
-/* Full mobile layout: contact row, then toggle menu button */
+/* ===== Mobile Styles ===== */
 @media screen and (max-width: 768px) {
   .navbar-top {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     padding: 10px;
   }
 
   .nav-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .nav-title-group {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .nav-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FFA94D;
+  }
+
+  .nav-tagline {
+    font-size: 0.85rem;
+    color: white;
   }
 
   .nav-contact {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    gap: 8px;
     justify-content: space-between;
+    gap: 8px;
     width: 100%;
     margin-top: 10px;
   }
@@ -186,19 +203,23 @@ body, html {
 
   .navbar-bottom.open {
     display: flex;
+    align-items: flex-start;
   }
 
   .navbar-bottom a {
     font-size: 1rem;
     padding: 10px 14px;
     margin: 4px 0;
-    text-align: center;
     width: 100%;
+    text-align: left;
+    box-sizing: border-box;
   }
 
   .btn-outline {
-    display: block;
-    margin: 6px auto;
-    width: 90%;
+    width: 100%;
+    margin: 6px 0;
+    text-align: left;
+    padding-left: 16px;
+    box-sizing: border-box;
   }
 }
