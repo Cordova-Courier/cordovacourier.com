@@ -1,22 +1,21 @@
 // Navbar scroll behavior + mobile toggle
 
-function setupNavbarScrollAndToggle() {
-  const navbar = document.getElementById("navbar");
-  if (!navbar) return requestAnimationFrame(setupNavbarScrollAndToggle);
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  const navbarTop = document.querySelector(".navbar-top");
-
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY > 40 && !navbar.classList.contains("scrolled")) {
-      navbar.classList.add("scrolled");
-      if (navbarTop) navbarTop.style.display = "none";
-    } else if (scrollY <= 40 && navbar.classList.contains("scrolled")) {
-      navbar.classList.remove("scrolled");
-      if (navbarTop) navbarTop.style.display = "flex";
+  if (scrollY > 40 && !navbar.classList.contains("scrolled")) {
+    navbar.classList.add("scrolled");
+    if (navbarTop && !mobileMenu.classList.contains("open")) {
+      navbarTop.style.display = "none";
     }
-  });
+  } else if (scrollY <= 40 && navbar.classList.contains("scrolled")) {
+    navbar.classList.remove("scrolled");
+    if (navbarTop) {
+      navbarTop.style.display = "flex";
+    }
+  }
+});
 }
 
 // Toggle mobile menu
