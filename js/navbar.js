@@ -9,11 +9,13 @@ function setupNavbarScrollAndToggle() {
 
     if (scrollY > 40 && !navbar.classList.contains("scrolled") && !isLandscape) {
       navbar.classList.add("scrolled");
+
       if (navbarTop && !mobileMenu.classList.contains("open")) {
         navbarTop.style.display = "none";
       }
     } else if ((scrollY <= 40 || isLandscape) && navbar.classList.contains("scrolled")) {
       navbar.classList.remove("scrolled");
+
       if (navbarTop) {
         navbarTop.style.display = "flex";
       }
@@ -32,10 +34,11 @@ function toggleMobileMenu() {
       navbarTop.style.display = "flex";
     } else if (window.scrollY > 40) {
       const isLandscape = window.matchMedia("(orientation: landscape)").matches;
-      if (!isLandscape) navbarTop.style.display = "none";
+      if (!isLandscape) {
+        navbarTop.style.display = "none";
+      }
     }
   }
 }
 
 requestAnimationFrame(setupNavbarScrollAndToggle);
-
