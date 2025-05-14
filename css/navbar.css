@@ -236,6 +236,8 @@
   }
 }
 
+
+
 @media screen and (orientation: landscape) and (max-height: 480px) {
   .hamburger {
     display: flex !important;
@@ -293,4 +295,3 @@
     padding: 8px 12px;
     text-align: center;
   }
-}
