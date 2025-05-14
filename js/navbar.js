@@ -1,4 +1,3 @@
-// Navbar scroll behavior + mobile toggle
 function setupNavbarScrollAndToggle() {
   const navbar = document.getElementById("navbar");
   const navbarTop = document.querySelector(".navbar-top");
@@ -6,14 +5,15 @@ function setupNavbarScrollAndToggle() {
 
   window.addEventListener("scroll", () => {
     const scrollY = window.scrollY;
+    const isLandscape = window.matchMedia("(orientation: landscape)").matches;
 
-    if (scrollY > 40 && !navbar.classList.contains("scrolled")) {
+    if (scrollY > 40 && !navbar.classList.contains("scrolled") && !isLandscape) {
       navbar.classList.add("scrolled");
 
       if (navbarTop && !mobileMenu.classList.contains("open")) {
         navbarTop.style.display = "none";
       }
-    } else if (scrollY <= 40 && navbar.classList.contains("scrolled")) {
+    } else if ((scrollY <= 40 || isLandscape) && navbar.classList.contains("scrolled")) {
       navbar.classList.remove("scrolled");
 
       if (navbarTop) {
@@ -33,9 +33,11 @@ function toggleMobileMenu() {
     if (menu.classList.contains("open")) {
       navbarTop.style.display = "flex";
     } else if (window.scrollY > 40) {
-      navbarTop.style.display = "none";
+      const isLandscape = window.matchMedia("(orientation: landscape)").matches;
+      if (!isLandscape) navbarTop.style.display = "none";
     }
   }
 }
 
 requestAnimationFrame(setupNavbarScrollAndToggle);
+
