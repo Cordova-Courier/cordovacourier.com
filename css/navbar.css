@@ -315,8 +315,13 @@
 
 /* Final unified landscape rule */
 @media screen and (orientation: landscape) and (max-height: 480px) {
+  body {
+    padding-top: 140px;
+  }
+
   .navbar-top {
     display: flex !important;
+    flex-direction: column;
     padding: 6px 10px;
     gap: 6px;
   }
@@ -327,49 +332,11 @@
   }
 
   .navbar-bottom {
-    display: none !important;
-    flex-direction: column;
-    background-color: transparent;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
+    transition: background-color 0.3s ease;
   }
 
-  .navbar-bottom.open {
-    display: flex !important;
-    align-items: flex-start;
-  }
-
-  .navbar-bottom a,
-  .btn-outline {
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    margin: 4px 0;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: left;
-  }
-
-  .btn-outline {
-    text-align: center;
-  }
-
-  .nav-title {
-    font-size: 1rem;
-  }
-
-  .nav-tagline {
-    font-size: 0.75rem;
-  }
-
-  .nav-contact {
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .nav-contact a,
-  .nav-contact span {
-    font-size: 0.75rem;
-    padding: 6px 10px;
+  #navbar.scrolled .navbar-bottom {
+    background-color: #156082;
   }
 }
+
