@@ -7,10 +7,12 @@ function setupNavbarScrollAndToggle() {
   const navbarTop = document.querySelector(".navbar-top");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 40 && !navbar.classList.contains("scrolled")) {
       navbar.classList.add("scrolled");
       if (navbarTop) navbarTop.style.display = "none";
-    } else {
+    } else if (scrollY <= 40 && navbar.classList.contains("scrolled")) {
       navbar.classList.remove("scrolled");
       if (navbarTop) navbarTop.style.display = "flex";
     }
