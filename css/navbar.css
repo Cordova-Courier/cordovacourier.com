@@ -296,19 +296,3 @@
     text-align: center;
   }
 }
-
-
-
-@media screen and (orientation: landscape) and (max-height: 480px) {
-  .navbar-top {
-    display: flex !important;
-    padding: 6px 10px;
-    gap: 6px;
-  }
-
-  .hamburger {
-    display: flex !important;
-    margin: 6px auto;
-  }
-}
-
