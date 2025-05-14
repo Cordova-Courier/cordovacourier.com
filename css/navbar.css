@@ -9,7 +9,7 @@
 }
 
 .navbar-top {
-  background-color: transparent;
+  background-color: #156082;
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
@@ -37,7 +37,7 @@
 }
 
 #navbar.scrolled .navbar-bottom {
-  background-color: transparent;
+  background-color: #156082;
 }
 
 .nav-links a {
@@ -197,7 +197,7 @@
     display: none;
     flex-direction: column;
     width: 100%;
-    background-color: transparent;
+    background-color: #156082;
     padding: 0 14px;
     box-sizing: border-box;
   }
@@ -275,7 +275,7 @@
   .navbar-bottom.open {
     margin-top: 10px;
     padding: 10px;
-    background-color: transparent;
+    background-color: #156082;
     width: 100%;
   }
 
@@ -309,34 +309,6 @@
   .hamburger {
     display: flex !important;
     margin: 6px auto;
-  }
-}
-
-
-/* Final unified landscape rule */
-@media screen and (orientation: landscape) and (max-height: 480px) {
-  body {
-    padding-top: 140px;
-  }
-
-  .navbar-top {
-    display: flex !important;
-    flex-direction: column;
-    padding: 6px 10px;
-    gap: 6px;
-  }
-
-  .hamburger {
-    display: flex !important;
-    margin: 6px auto;
-  }
-
-  .navbar-bottom {
-    transition: background-color 0.3s ease;
-  }
-
-  #navbar.scrolled .navbar-bottom {
-    background-color: #156082;
   }
 }
 
