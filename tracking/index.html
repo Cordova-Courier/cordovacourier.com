@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cordova Courier | Smart Tracking</title>
-  <link rel="stylesheet" href="/css/tracking-form.css" />
-  <link rel="stylesheet" href="/css/tracking-display.css" />
-  <link rel="stylesheet" href="/css/tracking-theme.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cordova Courier | Smart Tracking</title>
+<link href="/css/tracking-form.css" rel="stylesheet"/>
+<link href="/css/tracking-display.css" rel="stylesheet"/>
+<link href="/css/tracking-theme.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ParcelDelivery",
@@ -29,16 +30,15 @@
   </script>
 </head>
 <body>
-  <div class="overlay">
-    <h1 id="headline">Cordova Courier Smart Tracking</h1>
-    <div id="ai-entry-wrapper">
-      <input id="ai-input" type="text" placeholder="Enter Tracking Number or Ask a question" />
-    </div>
-  </div>
-  <div id="ai-response" class="tracking-container"></div>
-
-  <script src="/js/tracking.js"></script>
-  <script>
+<div class="overlay">
+<h1 id="headline">Cordova Courier Smart Tracking</h1>
+<div id="ai-entry-wrapper">
+<input id="ai-input" placeholder="Enter Tracking Number or Ask a question" type="text"/>
+</div>
+</div>
+<div class="tracking-container" id="ai-response"></div>
+<script src="/js/tracking.js"></script>
+<script>
     const aiInput = document.getElementById("ai-input");
     aiInput.addEventListener("input", () => {
       aiInput.setAttribute("placeholder", "");
@@ -58,7 +58,25 @@
       }
       type();
     }
-  </script>
+  
+
+let placeholders = [
+  "Enter Tracking Number",
+  "Ask: Where is my delivery?",
+  "Ask: What time will it arrive?",
+  "Ask: Was it signed for?",
+  "Ask: What vehicle was used?"
+];
+let currentIndex = 0;
+const input = document.getElementById("ai-input");
+
+function rotatePlaceholder() {
+  input.setAttribute("placeholder", placeholders[currentIndex]);
+  currentIndex = (currentIndex + 1) % placeholders.length;
+}
+setInterval(rotatePlaceholder, 3000);
+rotatePlaceholder();  // Initial call
+</script>
 </body>
 </html>
 
