@@ -108,13 +108,13 @@ async function processAIInput(input) {
   responseDiv.innerHTML = "<p><em>Processing your question...</em></p>";
 
   try {
-    const aiRes = await fetch("https://ai.cordovacourier.com/api/ask", {
+    const aiRes = await fetch("https://ai.cordovacourier.com/api/cordova-ai", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question: input, source: "tracking-page" })
     });
     const data = await aiRes.json();
-    responseDiv.innerHTML = "<p><strong>AI Response:</strong> " + data.answer + "</p>";
+    responseDiv.innerHTML = "<p><strong>AI Response:</strong> " + data.reply + "</p>";
   } catch (err) {
     responseDiv.innerHTML = "<p><strong>Error:</strong> Could not process request.</p>";
   }
