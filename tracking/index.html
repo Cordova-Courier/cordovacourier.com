@@ -22,6 +22,46 @@
 #toggle-details:hover {
   background: #e0e0e0;
 }
+
+#ai-response:empty {
+  display: none;
+}
+
+#ai-entry-wrapper {
+  background-color: rgba(0, 75, 110, 0.6);
+  padding: 18px;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  max-width: 600px;
+  margin: 30px auto;
+  transition: all 0.3s ease;
+}
+
+#ai-input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  outline: none;
+}
+
+#ai-input::placeholder {
+  color: #ffffffb0;
+}
+
+.tracking-container {
+  background: rgba(255, 255, 255, 0.97);
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 </style></head>
 <body>
 <video autoplay="" id="bg-video" loop="" muted="">
@@ -31,16 +71,11 @@
 <div class="overlay">
 <h1 id="headline">Cordova Courier Smart Tracking</h1>
 <form id="manual-form">
-<input id="manual-tn" placeholder="Enter tracking number" type="text"/>
-<button type="submit">Track</button>
+
+
 </form>
-<div id="ai-entry-wrapper"><input id="ai-input" placeholder="Enter Tracking Number or Ask a question" type="text"/></div></div>
-<div class="tracking-container" id="ai-response"></div><div class="tracking-container">
-<div id="details"></div>
-<div id="timeline"></div>
-<div id="signature-section"></div>
-<button id="download-pdf" style="display:none">📄 Download PDF</button>
-</div>
+<div id="ai-entry-wrapper"></div></div>
+<div class="tracking-container" id="ai-response"></div>
 <script>
     const phrases = [
       "Cordova Courier Smart Tracking",
