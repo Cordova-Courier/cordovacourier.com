@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+tracking<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -20,7 +20,7 @@
 <button type="submit">Track</button>
 </form>
 <div id="ai-entry-wrapper"><input id="ai-input" placeholder="Enter Tracking Number or Ask a question" type="text"/></div></div>
-<div class="tracking-container">
+<div class="tracking-container" id="ai-response"></div><div class="tracking-container">
 <div id="details"></div>
 <div id="timeline"></div>
 <div id="signature-section"></div>
@@ -97,14 +97,36 @@
     if (tn) fetchTracking(tn);
   </script>
 <script>
+async function processAIInput(input) {
+  const tnPattern = /^\d{6,}$/;
+  if (tnPattern.test(input)) {
+    fetchTracking(input);
+    return;
+  }
+
+  const responseDiv = document.getElementById('ai-response');
+  responseDiv.innerHTML = "<p><em>Processing your question...</em></p>";
+
+  try {
+    const aiRes = await fetch("https://ai.cordovacourier.com/api/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: input, source: "tracking-page" })
+    });
+    const data = await aiRes.json();
+    responseDiv.innerHTML = "<p><strong>AI Response:</strong> " + data.answer + "</p>";
+  } catch (err) {
+    responseDiv.innerHTML = "<p><strong>Error:</strong> Could not process request.</p>";
+  }
+}
+
 document.getElementById("ai-input").addEventListener("keypress", function(e) {
   if (e.key === "Enter") {
     const val = this.value.trim();
     if (val) {
-      fetchTracking(val);
+      processAIInput(val);
     }
   }
 });
 </script></body>
 </html>
-
