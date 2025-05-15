@@ -7,7 +7,22 @@
 <title>Cordova Courier Smart Tracking</title>
 <link href="/css/tracking.css" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<link href="/css/input-style.css" rel="stylesheet"/></head>
+<link href="/css/input-style.css" rel="stylesheet"/><style>
+.details-hidden {
+  display: none;
+}
+#toggle-details {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+#toggle-details:hover {
+  background: #e0e0e0;
+}
+</style></head>
 <body>
 <video autoplay="" id="bg-video" loop="" muted="">
 <source src="/CordovaCourierVanWithBella.mp4" type="video/mp4"/>
@@ -118,6 +133,61 @@ async function processAIInput(input) {
   } catch (err) {
     responseDiv.innerHTML = "<p><strong>Error:</strong> Could not process request.</p>";
   }
+}
+
+async function fetchTracking(tn) {
+  const res = await fetch(`/api/track?tn=${tn}`);
+  const data = await res.json();
+  const responseDiv = document.getElementById("ai-response");
+
+  const pickup = new Date(data.pickupTime).toLocaleString();
+  const dropoff = new Date(data.dropoffTime).toLocaleString();
+
+  responseDiv.innerHTML = `
+    <div class="summary">
+      <p>📦 Your package was <strong>${data.status.toLowerCase()}</strong> to <strong>${data.proofOfDelivery.deliveredTo}</strong> on <strong>${dropoff}</strong>.</p>
+      <p>It was picked up from <strong>${data.origin}</strong> and delivered to <strong>${data.destination}</strong> using a <strong>${data.vehicle}</strong>.</p>
+      <button id="toggle-details">🔎 Show More Delivery Details</button>
+    </div>
+    <div id="more-details" class="details-hidden">
+      <p><strong>Tracking #:</strong> ${data.trackingNumber}</p>
+      <p><strong>Pickup:</strong> ${pickup}</p>
+      <p><strong>Drop-off:</strong> ${dropoff}</p>
+      <p><strong>Vehicle:</strong> ${data.vehicle}</p>
+      <div><strong>Timeline:</strong><br>${data.history.map(h => `
+        <div>🕓 <em>${new Date(h.time).toLocaleString()}</em> — ${h.status}</div>`).join('')}
+      </div>
+      ${data.proofOfDelivery.signatureImage && !data.proofOfDelivery.signatureImage.includes("bnVsbA==") ?
+        `<h3>Recipient Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />` : ""}
+      <button id="download-pdf">📄 Download PDF</button>
+    </div>
+  `;
+
+  document.getElementById("toggle-details").onclick = () => {
+    const panel = document.getElementById("more-details");
+    panel.classList.toggle("details-hidden");
+  };
+
+  document.getElementById("download-pdf").onclick = () => {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.text("Cordova Courier - Proof of Delivery", 20, 20);
+    let y = 30;
+    [
+      `Tracking #: ${data.trackingNumber}`,
+      `Status: ${data.status}`,
+      `From: ${data.origin}`,
+      `To: ${data.destination}`,
+      `Pickup Time: ${pickup}`,
+      `Drop-off Time: ${dropoff}`,
+      `Delivered To: ${data.proofOfDelivery.deliveredTo}`,
+      `Vehicle: ${data.vehicle}`
+    ].forEach(line => { doc.text(line, 20, y); y += 8; });
+    if (data.proofOfDelivery.signatureImage && !data.proofOfDelivery.signatureImage.includes("bnVsbA==")) {
+      doc.addImage(data.proofOfDelivery.signatureImage, 'PNG', 20, y + 5, 60, 30);
+    }
+    doc.save(`Cordova-POD-${data.trackingNumber}.pdf`);
+  };
 }
 
 document.getElementById("ai-input").addEventListener("keypress", function(e) {
