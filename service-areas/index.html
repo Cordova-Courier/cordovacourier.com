@@ -6,8 +6,22 @@
   <title>Courier Service Areas | Cordova Courier</title>
   <meta name="description" content="Explore Cordova Courier's delivery areas across the USA, Canada, and Mexico. View services by state, city, and airport with same-day, freight, and medical delivery options.">
   <link rel="stylesheet" href="/css/master-service.css">
+  <link rel="stylesheet" href="/css/navbar.css">
 </head>
 <body>
+  <div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+
+      // Load navbar.js AFTER navbar is injected
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      document.body.appendChild(script);
+    });
+</script>
   <!-- Navbar placeholder -->
 <div id="navbar-placeholder"></div>
   
