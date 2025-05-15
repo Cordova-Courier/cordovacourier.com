@@ -1,78 +1,51 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cordova Courier Smart Tracking</title>
-  <link rel="stylesheet" href="/css/tracking.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cordova Courier Smart Tracking</title>
+<link href="/css/tracking.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="/css/input-style.css" rel="stylesheet"/></head>
 <body>
-  <video autoplay muted loop id="bg-video">
-    <source src="/CordovaCourierVanWithBella.mp4" type="video/mp4">
+<video autoplay="" id="bg-video" loop="" muted="">
+<source src="/CordovaCourierVanWithBella.mp4" type="video/mp4"/>
     Your browser does not support the video tag.
   </video>
-
-  <div class="overlay">
-    <h1 id="headline">Cordova Courier Smart Tracking</h1>
-  </div>
-
-  
-<form name="trForm" method="post" action="https://www.ontime360.com/tracking/trackingresults.aspx" id="trForm">
-  <div style="border: solid 1px #FFA94D; padding: 10px; background-color: #FFE5CC; font: 10pt Tahoma, sans-serif; border-radius: 8px; max-width: 640px; margin: 20px auto;">
-    <table>
-      <tr>
-        <td style="color: #333;">Tracking Number:</td>
-      </tr>
-      <tr>
-        <td>
-          <input name="TrackingNumber" type="text" maxlength="50" id="TrackingNumber" style="padding: 6px; border: 1px solid #CCC; border-radius: 4px;" />
-          &nbsp;
-          <input type="submit" name="btnSubmit" value="Submit" onclick="trForm.target='_blank';" id="btnSubmit" 
-                 style="background-color: #FF8800; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;" />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span style="font: 8pt Tahoma, sans-serif; color: #666;">Powered by 
-            <a style="text-decoration: none; color: #666;" target="_blank" href="https://www.ontime360.com">OnTime 360</a> Courier Software
-          </span>
-        </td>
-      </tr>
-    </table>
-    <input type="hidden" name="accid" id="accid" value="M3UXLvzAV1bGHUjZFkFdi42dqdx7YfvdCZg1OYCibTkO0WaiYQaxJg==" />
-  </div>
+<div class="overlay">
+<h1 id="headline">Cordova Courier Smart Tracking</h1>
+<form id="manual-form">
+<input id="manual-tn" placeholder="Enter tracking number" type="text"/>
+<button type="submit">Track</button>
 </form>
+<div id="ai-entry-wrapper"><input id="ai-input" placeholder="Enter Tracking Number or Ask a question" type="text"/></div></div>
 <div class="tracking-container">
-    <div id="details"></div>
-    <div id="timeline"></div>
-    <div id="signature-section"></div>
-    <button id="download-pdf" style="display:none">📄 Download PDF</button>
-  </div>
-
-  <!-- Cordova AI Chat Widget (identical to homepage) -->
-  <div id="cordova-chat-root"></div>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const tn = urlParams.get('tn');
-    window.cordovaChatConfig = {
-      source: "tracking",
-      trackingNumber: tn || ""
-    };
-  </script>
-  <script src="https://ai.cordovacourier.com/widget.js" defer></script>
-
-  <script>
+<div id="details"></div>
+<div id="timeline"></div>
+<div id="signature-section"></div>
+<button id="download-pdf" style="display:none">📄 Download PDF</button>
+</div>
+<script>
     const phrases = [
       "Cordova Courier Smart Tracking",
       "AI-Powered Delivery Status",
-      "Your Delivery, Backed by Cordova AI"
+      "Cordova Courier Smart Tracking – Enter Tracking Number"
     ];
     let idx = 0;
     setInterval(() => {
       document.getElementById('headline').textContent = phrases[idx % phrases.length];
       idx++;
     }, 3000);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    let tn = urlParams.get('tn');
+
+    document.getElementById("manual-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const manualTN = document.getElementById("manual-tn").value.trim();
+      if (manualTN) window.location.search = `?tn=${manualTN}`;
+    });
 
     async function fetchTracking(tn) {
       const res = await fetch(`/api/track?tn=${tn}`);
@@ -90,10 +63,10 @@
       document.getElementById("details").innerHTML = details;
 
       document.getElementById("timeline").innerHTML = data.history.map(h => `
-        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity || ''})</div>
+        <div><strong>${new Date(h.time).toLocaleString()}</strong> — ${h.status} (${h.activity})</div>
       `).join('');
 
-      if (data.proofOfDelivery.signatureImage && !data.proofOfDelivery.signatureImage.includes("bnVsbA==")) {
+      if (data.proofOfDelivery.signatureImage) {
         document.getElementById("signature-section").innerHTML = `
           <h3>Signature</h3><img src="${data.proofOfDelivery.signatureImage}" alt="Signature" class="signature-img" />`;
       }
@@ -119,10 +92,19 @@
           doc.addImage(data.proofOfDelivery.signatureImage, 'PNG', 20, y + 5, 60, 30);
         }
         doc.save(`Cordova-POD-${data.trackingNumber}.pdf`);
-      };
+      }
     }
-
     if (tn) fetchTracking(tn);
   </script>
-</body>
+<script>
+document.getElementById("ai-input").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    const val = this.value.trim();
+    if (val) {
+      fetchTracking(val);
+    }
+  }
+});
+</script></body>
 </html>
+
