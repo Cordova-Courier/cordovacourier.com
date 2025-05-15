@@ -6,7 +6,7 @@ async function processAIInput(input) {
   }
 
   const responseDiv = document.getElementById('ai-response');
-  responseDiv.innerHTML = "<p><em>Processing your question...</em></p>";
+  responseDiv.innerHTML = "<p><em>Thinking...</em></p>";
 
   try {
     const aiRes = await fetch("https://ai.cordovacourier.com/api/cordova-ai", {
@@ -15,9 +15,9 @@ async function processAIInput(input) {
       body: JSON.stringify({ question: input, source: "tracking-page" })
     });
     const data = await aiRes.json();
-    responseDiv.innerHTML = "<p><strong>AI Response:</strong> " + data.reply + "</p>";
+    responseDiv.innerHTML = `<div class="chat-bubble">🤖 ${data.reply}</div>`;
   } catch (err) {
-    responseDiv.innerHTML = "<p><strong>Error:</strong> Could not process request.</p>";
+    responseDiv.innerHTML = "<div class='chat-bubble error'>❌ Sorry, I couldn’t process that right now.</div>";
   }
 }
 
@@ -30,10 +30,12 @@ async function fetchTracking(tn) {
   const dropoff = new Date(data.dropoffTime).toLocaleString();
 
   responseDiv.innerHTML = `
-    <div class="summary">
-      <p>📦 Delivered to <strong>${data.proofOfDelivery.deliveredTo}</strong> on <strong>${dropoff}</strong>.</p>
-      <p>From <strong>${data.origin}</strong> to <strong>${data.destination}</strong> via <strong>${data.vehicle}</strong>.</p>
-      <button id="toggle-details">🔎 Show More</button>
+    <div class="chat-bubble">
+      👋 Hi there! We found tracking number <strong>${tn}</strong>.
+      <br/>It was delivered to <strong>${data.proofOfDelivery.deliveredTo}</strong> on <strong>${dropoff}</strong> in <strong>${data.destination}</strong>.
+      <br/>Your package traveled from <strong>${data.origin}</strong> using a <strong>${data.vehicle}</strong>.
+      <br/><br/>Need more details? Click below 👇
+      <br/><button id="toggle-details">🔎 Show More</button>
     </div>
     <div id="more-details" class="details-hidden">
       <p><strong>Tracking #:</strong> ${data.trackingNumber}</p>
