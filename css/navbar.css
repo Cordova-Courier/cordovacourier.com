@@ -177,23 +177,24 @@
   }
 
   .nav-contact {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 8px;
-    width: 100%;
-    margin-top: 10px;
-  }
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping */
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  margin-top: 10px;
+}
 
   .nav-contact a,
-  .nav-contact span {
-    flex: 1;
-    font-size: 0.8rem;
-    padding: 8px;
-    text-align: center;
-    white-space: nowrap;
-  }
+.nav-contact span {
+  flex: 1 1 auto;
+  min-width: 100px;
+  max-width: 48%;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  box-sizing: border-box;
+}
 
   .hamburger {
   flex-shrink: 0;
