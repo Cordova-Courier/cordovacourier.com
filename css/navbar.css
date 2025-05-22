@@ -178,22 +178,29 @@
 
   .nav-contact {
   display: flex;
-  flex-wrap: wrap; /* allow wrapping */
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 6px;
   width: 100%;
-  gap: 8px;
   margin-top: 10px;
 }
 
   .nav-contact a,
 .nav-contact span {
-  flex: 1 1 auto;
+  flex: 1 1 30%;
+  max-width: 32%;
   min-width: 100px;
-  max-width: 48%;
   text-align: center;
   font-size: 0.85rem;
   padding: 8px 10px;
+  white-space: nowrap;
   box-sizing: border-box;
+}
+
+  .nav-contact a[href^="mailto"] {
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
   .hamburger {
