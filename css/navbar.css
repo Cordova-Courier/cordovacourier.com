@@ -123,6 +123,15 @@
   white-space: nowrap;
 }
 
+.nav-contact a:hover,
+.nav-contact span:hover {
+  background-color: transparent;
+  color: #F97316;
+  border: 2px solid #F97316;
+  transform: scale(1.03);
+  transition: all 0.3s ease;
+}
+
 /* ===== Mobile Styles ===== */
 @media screen and (max-width: 768px) {
   .navbar-top {
