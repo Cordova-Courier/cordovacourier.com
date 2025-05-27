@@ -171,13 +171,16 @@
 }
 
 @media (max-width: 768px) {
-  /* Hide desktop nav and contact on mobile */
   .navbar-top,
   .navbar-bottom,
   .desktop-contact,
   .desktop-links {
     display: none !important;
   }
+  .mobile-navbar {
+    display: flex !important;
+  }
+}
 
   /* Show mobile navbar and hamburger */
   .mobile-navbar {
