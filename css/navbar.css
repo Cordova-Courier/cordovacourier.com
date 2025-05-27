@@ -78,6 +78,14 @@
   transform: translateY(-2px);
 }
 
+.navbar-bottom .btn-outline:hover,
+.nav-links .btn-outline:hover {
+  background-color: #FFA94D;
+  color: white !important;
+  transform: scale(1.05);
+  border: 2px solid #FFA94D;
+}
+
 .btn-outline {
   border: 2px solid #FFA94D;
   border-radius: 6px;
