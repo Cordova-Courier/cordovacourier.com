@@ -6,7 +6,7 @@
   left: 0;
   z-index: 9999;
   transition: all 0.4s ease;
-  pointer-events: none; /* Prevents accidental clicks when .navbar-top is hidden and .navbar-bottom is not fixed */
+  pointer-events: none;
 }
 
 .navbar-top {
@@ -19,7 +19,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   color: white;
   z-index: 998;
   opacity: 1;
@@ -36,7 +35,7 @@
   padding: 10px;
   background-color: transparent;
   width: 100%;
-  position: static; /* Not fixed by default */
+  position: static;
   transition: background-color 0.4s ease;
 }
 
@@ -46,7 +45,7 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: #156082; /* Or your preferred color */
+  background-color: #156082;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -61,7 +60,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #156082; /* Or your preferred solid color */
+  background-color: #156082;
   z-index: 10000;
 }
 
@@ -164,89 +163,99 @@
   transition: all 0.3s ease;
 }
 
-/* Hide mobile navbar and menu by default (desktop) */
-.mobile-navbar,
-.mobile-menu {
-  display: none;
-}
-
-@media (max-width: 768px) {
+/* Responsive Logic */
+@media (max-width: 1024px) {
   .navbar-top,
   .navbar-bottom,
   .desktop-contact,
   .desktop-links {
     display: none !important;
   }
-  .mobile-navbar {
+  .mobile-navbar,
+  .mobile-menu {
     display: flex !important;
   }
 }
 
-  /* Show mobile navbar and hamburger */
-  .mobile-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #156082;
-    padding: 14px 18px;
-    position: relative;
-    z-index: 2000;
-  }
-  .hamburger {
-    display: block;
-    background: none;
-    border: none;
-    font-size: 2.2rem;
-    color: white;
-    cursor: pointer;
-  }
-  .logo {
-    height: 44px;
-    width: auto;
-  }
+@media (min-width: 1025px) {
+  .mobile-navbar,
   .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: #156082;
-    width: 100vw;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    z-index: 1999;
-    padding: 30px 0 20px 0;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  }
-  .mobile-menu.open {
-    display: flex;
-  }
-  .mobile-menu a {
-    color: white;
-    text-decoration: none;
-    padding: 16px 0;
-    text-align: center;
-    font-size: 1.2rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .mobile-menu button.btn-outline {
-    margin: 14px auto 0 auto;
-    background: #ff6600;
-    color: white;
-    border-radius: 8px;
-    padding: 14px 32px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    border: none;
-    display: block;
-    width: 80%;
-    max-width: 320px;
-    text-align: center;
-  }
-  .mobile-menu .email-btn,
-  .mobile-menu .phone-btn {
-    background: #59A6D9;
-    color: white;
-    margin-top: 10px;
-    font-size: 1rem;
-    word-break: break-all;
+    display: none !important;
   }
 }
+
+/* Show mobile navbar and hamburger */
+.mobile-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #156082;
+  padding: 14px 18px;
+  position: relative;
+  z-index: 2000;
+}
+
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.logo {
+  height: 44px;
+  width: auto;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #156082;
+  width: 100vw;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 1999;
+  padding: 30px 0 20px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.mobile-menu button.btn-outline {
+  margin: 14px auto 0 auto;
+  background: #ff6600;
+  color: white;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  display: block;
+  width: 80%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.mobile-menu .email-btn,
+.mobile-menu .phone-btn {
+  background: #59A6D9;
+  color: white;
+  margin-top: 10px;
+  font-size: 1rem;
+  word-break: break-all;
+}
+
