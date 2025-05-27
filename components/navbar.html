@@ -3,19 +3,13 @@
   <div class="navbar-top">
     <div class="nav-left">
       <img src="images/branding/cordova-courier-navbar-logo3.png" alt="Cordova Courier Logo" class="logo" />
-  
     </div>
-    <div class="nav-contact">
+    <div class="nav-contact desktop-contact">
       <a href="tel:2098809624">(209) 880-9624</a>
       <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a>
     </div>
-    <div class="hamburger" onclick="toggleMobileMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
   </div>
-  <div class="navbar-bottom nav-links" id="mobileMenu">
+  <div class="navbar-bottom nav-links desktop-links">
     <a href="#">Home</a>
     <a href="#">Request a Quote</a>
     <a href="#">Services</a>
@@ -25,16 +19,26 @@
     <a href="#" class="btn-outline">Tracking</a>
     <a href="#" class="btn-outline">Customer Portal</a>
   </div>
+  <!-- Mobile Top Bar -->
+  <div class="mobile-navbar">
+    <img src="images/branding/cordova-courier-navbar-logo3.png" alt="Cordova Courier Logo" class="logo" />
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
+  </div>
+  <!-- Mobile Menu (hidden by default) -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="#">About Us</a>
+    <button class="btn-outline">Tracking</button>
+    <button class="btn-outline">Customer Portal</button>
+    <button class="btn-outline">Request a Quote</button>
+    <button class="btn-outline email-btn">dispatch@cordovacourier.com</button>
+    <button class="btn-outline phone-btn">(209) 880-9624</button>
+  </nav>
 </header>
 
-  <link rel="stylesheet" href="/css/navbar-mobile-button-align.css" />
-  <link rel="stylesheet" href="/css/navbar-landscape-fix.css" />
 <script>
   
-</script>
 
-  <link rel="stylesheet" href="/css/navbar-mobile-button-align.css" />
-  <link rel="stylesheet" href="/css/navbar-landscape-fix.css" />
-<script>
-  
 </script>
