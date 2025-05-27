@@ -17,12 +17,17 @@ function setupNavbarScrollAndToggle() {
 requestAnimationFrame(setupNavbarScrollAndToggle);
 
 // Mobile menu toggle logic
-document.addEventListener("DOMContentLoaded", function() {
+function setupMobileMenuToggle() {
   const hamburger = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('mobileMenu');
   if (hamburger && menu) {
     hamburger.addEventListener('click', function() {
       menu.classList.toggle('open');
     });
+  } else {
+    // Try again on the next animation frame if not found yet
+    requestAnimationFrame(setupMobileMenuToggle);
   }
-});
+}
+
+requestAnimationFrame(setupMobileMenuToggle);
