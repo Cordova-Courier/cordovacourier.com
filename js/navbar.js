@@ -1,32 +1,26 @@
-function setupNavbarScrollAndToggle() {
-  function innerSetupNavbarScrollAndToggle() {
-    const navbar = document.getElementById("navbar");
-    if (!navbar) return requestAnimationFrame(innerSetupNavbarScrollAndToggle);
+// navbar.js
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 40) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    });
-  }
-  innerSetupNavbarScrollAndToggle();
+function setupNavbarScrollAndToggle() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) return;
+
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 40);
+  });
 }
 
-requestAnimationFrame(setupNavbarScrollAndToggle);
-
-// Mobile menu toggle logic
 function setupMobileMenuToggle() {
   const hamburger = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('mobileMenu');
-  if (hamburger && menu) {
-    hamburger.addEventListener('click', function() {
-      menu.classList.toggle('open');
-    });
-  } else {
-    // Try again on the next animation frame if not found yet
-    requestAnimationFrame(setupMobileMenuToggle);
+  if (!hamburger || !menu) return;
+
+  hamburger.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+}
+
+// Don't invoke the functions here.
+// They will be called after the navbar is dynamically injected.
   }
 }
 
