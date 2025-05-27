@@ -12,16 +12,21 @@ function setupNavbarScrollAndToggle() {
 function setupMobileMenuToggle() {
   const hamburger = document.getElementById('hamburgerBtn');
   const menu = document.getElementById('mobileMenu');
+
   if (!hamburger || !menu) return;
 
+  // Toggle open/close on hamburger click
   hamburger.addEventListener('click', () => {
     menu.classList.toggle('open');
   });
+
+  // Automatically close the mobile menu when a link or button is clicked
+  const menuItems = menu.querySelectorAll('a, button');
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      menu.classList.remove('open');
+    });
+  });
 }
 
-// Don't invoke the functions here.
-// They will be called after the navbar is dynamically injected.
-  }
-}
-
-requestAnimationFrame(setupMobileMenuToggle);
+// Exported functions will be called after navbar is injected
