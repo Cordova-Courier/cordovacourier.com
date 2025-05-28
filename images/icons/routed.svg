@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Dotted path -->
+  <path d="M10 50 Q20 20, 32 40 T54 30" stroke="#156082" stroke-dasharray="4 4" stroke-width="2" fill="none" />
+
+  <!-- Location pin -->
+  <circle cx="10" cy="50" r="4" fill="#FFA94D" stroke="#d86e00" stroke-width="1.5"/>
+  
+  <!-- Clock -->
+  <circle cx="54" cy="30" r="6" fill="#FFA94D" stroke="#d86e00" stroke-width="1.5"/>
+  <line x1="54" y1="30" x2="54" y2="27" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <line x1="54" y1="30" x2="57" y2="30" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+</svg>
