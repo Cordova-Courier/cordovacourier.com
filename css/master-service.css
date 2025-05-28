@@ -14,8 +14,9 @@ body {
   background: #156082;
   color: white;
   text-align: center;
-  padding: 60px 20px;
+  padding: 120px 20px 60px; /* add top padding for fixed navbar */
 }
+
 
 .hero-section h1 {
   font-size: 3rem;
