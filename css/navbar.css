@@ -190,6 +190,7 @@
   align-items: center;
   background: #156082;
   padding: 14px 18px;
+  /* Removed position: relative */
   z-index: 2000;
 }
 
@@ -211,31 +212,27 @@
   display: flex;
   flex-direction: column;
   background: #156082;
-  width: 100%;
+  width: 100vw;
   position: fixed;
   top: 60px;
   left: 0;
   height: calc(100vh - 60px);
   overflow-y: auto;
-  overflow-x: hidden;
-  box-sizing: border-box;
   z-index: 1999;
-  padding: 0 0 60px 0;
+  padding: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-
-  scroll-padding-bottom: 60px;
 }
 
 .mobile-menu.open {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-  padding-top: 30px;
+  padding: 30px 0 20px 0;
 }
 
 .mobile-menu a {
