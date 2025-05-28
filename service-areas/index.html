@@ -16,14 +16,31 @@
     .then(html => {
       document.getElementById('navbar-placeholder').innerHTML = html;
 
-      // Load navbar.js AFTER navbar is injected
       const script = document.createElement('script');
       script.src = '/js/navbar.js';
+
+      script.onload = () => {
+        // 🔐 Verify DOM elements are there before running
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            // Try again on the next frame until everything is loaded
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+
+        checkAndRun();
+      };
+
       document.body.appendChild(script);
     });
 </script>
-  <!-- Navbar placeholder -->
-<div id="navbar-placeholder"></div>
   
   <header class="hero-section">
     <h1>Fast, Nationwide & Cross-Border Delivery Services</h1>
