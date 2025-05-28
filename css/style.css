@@ -207,7 +207,7 @@ html, body {
 }
 
 .about-card {
-  background-color:  #156082;
+  background-color:  #156082; /* medium dark shade of cyan */
   color: white;
   flex: 1 1 250px;
   max-width: 300px;
@@ -256,7 +256,7 @@ html, body {
 }
 
 .contact-card {
-  background-color: #003366; /* Deep Blue Card */
+  background-color:  #156082; /* medium dark shade of cyan */
   color: white;
   max-width: 600px;
   margin: 0 auto;
