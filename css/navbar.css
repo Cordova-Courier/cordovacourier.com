@@ -237,18 +237,19 @@
 }
 
 .mobile-menu button.btn-outline {
-  margin: 14px auto 0 auto;
+  margin: 10px auto;
   background: #ff6600;
   color: white;
   border-radius: 8px;
-  padding: 14px 32px;
-  font-weight: bold;
-  font-size: 1.1rem;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 1rem;
   border: none;
   display: block;
-  width: 80%;
+  width: 90%;
   max-width: 320px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .mobile-menu .email-btn,
