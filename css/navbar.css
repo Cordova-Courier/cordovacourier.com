@@ -184,14 +184,19 @@
 }
 
 /* Show mobile navbar and hamburger */
-.mobile-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  flex-direction: column;
   background: #156082;
-  padding: 14px 18px;
-  position: relative;
-  z-index: 2000;
+  width: 100vw;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  z-index: 1999;
+  height: 100vh;
+  padding: 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .hamburger {
