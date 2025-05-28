@@ -1,5 +1,4 @@
 // navbar.js
-
 function setupNavbarScrollAndToggle() {
   const navbar = document.getElementById("navbar");
   if (!navbar) return;
@@ -29,4 +28,5 @@ function setupMobileMenuToggle() {
   });
 }
 
-// Exported functions will be called after navbar is injected
+window.setupNavbarScrollAndToggle = setupNavbarScrollAndToggle;
+window.setupMobileMenuToggle = setupMobileMenuToggle;// Exported functions will be called after navbar is injected
