@@ -190,7 +190,6 @@
   align-items: center;
   background: #156082;
   padding: 14px 18px;
-  position: relative;
   z-index: 2000;
 }
 
@@ -209,23 +208,23 @@
 }
 
 .mobile-menu {
-  max-height: 0;
-  overflow: hidden;
+  display: none;
   flex-direction: column;
   background: #156082;
   width: 100vw;
-  position: absolute;
-  top: 60px;
+  position: fixed;
+  top: 60px; /* Adjust to your navbar height */
   left: 0;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
   z-index: 1999;
-  padding: 0 0 0 0;
+  padding: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .mobile-menu.open {
-  max-height: 600px;
+  display: flex;
   padding: 30px 0 20px 0;
-  overflow-y: auto;
 }
 
 .mobile-menu a {
