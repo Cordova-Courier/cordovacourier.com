@@ -103,8 +103,13 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 Cordova Courier. All rights reserved.</p>
-  </footer>
+  <div id="footer-placeholder"></div>
+<script>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 </body>
 </html>
