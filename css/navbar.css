@@ -226,13 +226,15 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+
+  scroll-padding-bottom: 60px;
 }
 
 .mobile-menu.open {
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-  padding: 30px 0 20px 0;
+  padding: 30px 0 60px 0;
 }
 
 .mobile-menu a {
