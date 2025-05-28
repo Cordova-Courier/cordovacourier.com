@@ -2,44 +2,47 @@
 <header id="navbar" class="navbar">
   <div class="navbar-top">
     <div class="nav-left">
-      <img src="images/branding/cordova-courier-navbar-logo3.png" alt="Cordova Courier Logo" class="logo" />
+      <a href="/">
+        <img src="images/branding/cordova-courier-navbar-logo3.png" alt="Cordova Courier Logo" class="logo" />
+      </a>
     </div>
     <div class="nav-contact desktop-contact">
       <a href="tel:2098809624">(209) 880-9624</a>
       <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a>
     </div>
   </div>
+
   <div class="navbar-bottom nav-links desktop-links">
-    <a href="#">Home</a>
-    <a href="#">Request a Quote</a>
-    <a href="#">Services</a>
-    <a href="#">Service Areas</a>
-    <a href="#">Contact</a>
-    <a href="#">About Us</a>
-    <a href="#" class="btn-outline">Tracking</a>
-    <a href="#" class="btn-outline">Customer Portal</a>
+    <a href="/">Home</a>
+    <a href="/quote/">Request a Quote</a>
+    <a href="/services/">Services</a>
+    <a href="/service-areas/">Service Areas</a>
+    <a href="/contact/">Contact</a>
+    <a href="/about/">About Us</a>
+    <a href="/tracking/" class="btn-outline">Tracking</a>
+    <a href="https://secure.ontime360.com/sites/CordovaCourierLLC/" class="btn-outline" target="_blank" rel="noopener">Customer Portal</a>
   </div>
+
   <!-- Mobile Top Bar -->
   <div class="mobile-navbar">
-    <img src="images/branding/cordova-courier-navbar-logo3.png" alt="Cordova Courier Logo" class="logo" />
+    <a href="/">
+      <img src="images/branding/cordova-courier-navbar-logo3.png" alt="Cordova Courier Logo" class="logo" />
+    </a>
     <button class="hamburger" id="hamburgerBtn" aria-label="Open menu">☰</button>
   </div>
+
   <!-- Mobile Menu (hidden by default) -->
   <nav class="mobile-menu" id="mobileMenu">
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">Services Areas</a>
-    <a href="#">Contact</a>
-    <a href="#">About Us</a>
-    <button class="btn-outline">Tracking</button>
-    <button class="btn-outline">Customer Portal</button>
-    <button class="btn-outline">Request a Quote</button>
-    <button class="btn-outline email-btn">dispatch@cordovacourier.com</button>
-    <button class="btn-outline phone-btn">(209) 880-9624</button>
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/service-areas/">Services Areas</a>
+    <a href="/contact/">Contact</a>
+    <a href="/about/">About Us</a>
+    <button class="btn-outline" onclick="location.href='/tracking/'">Tracking</button>
+    <button class="btn-outline" onclick="window.open('https://secure.ontime360.com/sites/CordovaCourierLLC/', '_blank')">Customer Portal</button>
+    <button class="btn-outline" onclick="location.href='/quote/'">Request a Quote</button>
+    <button class="btn-outline email-btn" onclick="location.href='mailto:dispatch@cordovacourier.com'">dispatch@cordovacourier.com</button>
+    <button class="btn-outline phone-btn" onclick="location.href='tel:2098809624'">(209) 880-9624</button>
   </nav>
 </header>
 
-<script>
-  
-
-</script>
