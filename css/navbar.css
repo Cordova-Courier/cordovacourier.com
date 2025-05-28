@@ -190,7 +190,7 @@
   align-items: center;
   background: #156082;
   padding: 14px 18px;
-  position: fixed;
+  position: absolute;
   z-index: 2000;
 }
 
