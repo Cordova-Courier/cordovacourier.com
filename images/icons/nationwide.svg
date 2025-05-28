@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Globe -->
+  <circle cx="32" cy="32" r="20" fill="#4DA7D1" stroke="#003366" stroke-width="2"/>
+  <path d="M32 12 A20 20 0 0 0 32 52" stroke="#003366" stroke-width="1"/>
+  <path d="M12 32 A20 20 0 0 1 52 32" stroke="#003366" stroke-width="1"/>
+  <path d="M24 32 A8 20 0 0 0 40 32 A8 20 0 0 0 24 32" stroke="#003366" stroke-width="1" fill="none"/>
+
+  <!-- Arrow -->
+  <path d="M14 50 Q36 38, 50 20" stroke="#FFA94D" stroke-width="4" fill="none" />
+  <polygon points="48,16 56,18 52,24" fill="#FFA94D"/>
+</svg>
