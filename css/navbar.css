@@ -190,6 +190,7 @@
   align-items: center;
   background: #156082;
   padding: 14px 18px;
+  /* Removed position: relative */
   z-index: 2000;
 }
 
@@ -213,7 +214,7 @@
   background: #156082;
   width: 100vw;
   position: fixed;
-  top: 60px; /* Adjust to your navbar height */
+  top: 60px;
   left: 0;
   height: calc(100vh - 60px);
   overflow-y: auto;
@@ -263,3 +264,4 @@
   line-height: 1.4;
   white-space: normal;
 }
+
