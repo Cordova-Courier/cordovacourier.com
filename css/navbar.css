@@ -219,7 +219,7 @@
   height: calc(100vh - 60px);
   overflow-y: auto;
   z-index: 1999;
-  padding: 60;
+  padding: 0 0 60px 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 
   visibility: hidden;
@@ -234,7 +234,7 @@
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-  padding: 30px;
+  padding-top: 30px;
 }
 
 .mobile-menu a {
@@ -273,4 +273,3 @@
   line-height: 1.4;
   white-space: normal;
 }
-
