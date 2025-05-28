@@ -209,7 +209,7 @@
 }
 
 .mobile-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   background: #156082;
   width: 100vw;
@@ -221,10 +221,17 @@
   z-index: 1999;
   padding: 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .mobile-menu.open {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
   padding: 30px 0 20px 0;
 }
 
