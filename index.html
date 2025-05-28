@@ -1,53 +1,249 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>United States Courier Services | Cordova Courier</title>
-  <meta name="description" content="Explore Cordova Courier’s same-day, freight, and medical delivery services across the United States. Browse by state or request a quote." />
-  <link rel="stylesheet" href="/css/master-service.css?v=1.0" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Cordova Courier - Courier &amp; Delivery Services Nationwide</title>
+<meta content="Cordova Courier provides fast, reliable, and secure courier and delivery services nationwide, specializing in same-day delivery, medical courier services, freight, and airport cargo recovery." name="description"/>
+<!-- Styles -->
+<link href="/css/style.css" rel="stylesheet"/>
+<link rel="stylesheet" href="/css/responsive.css" />
+<link rel="stylesheet" href="/css/navbar.css">
+<link rel="stylesheet" href="/css/footer.css">
+
+<!-- Favicon -->
+<link href="/images/branding/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/images/branding/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/images/branding/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<!-- Apple Touch Icon -->
+<link href="/images/branding/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<!-- Manifest for PWA support -->
+<link href="/site.webmanifest" rel="manifest"/>
+<!-- Mobile Theme Color -->
+<meta content="#ffffff" name="theme-color"/>
+<!-- Schema Loader -->
+<script defer="" src="/js/schema-loader.js"></script>
 </head>
 <body>
-  <div id="navbar-placeholder"></div>
-  <script defer>
-    fetch('/components/navbar.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('navbar-placeholder').innerHTML = html;
+
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+
+      script.onload = () => {
+        // 🔐 Verify DOM elements are there before running
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            // Try again on the next frame until everything is loaded
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+
+        checkAndRun();
+      };
+
+      document.body.appendChild(script);
+    });
+</script>
+<!-- HERO SECTION -->
+<section class="hero">
+<video autoplay="" class="background-video" loop="" muted="" playsinline="">
+<source src="CordovaCourierVanWithBella.mp4" type="video/mp4"/>
+    Your browser does not support HTML5 video.
+  </video>
+<div class="overlay"></div>
+
+  <!-- LOGO -->
+
+<!-- HERO CONTENT -->
+<div class="hero-content">
+<h1 id="changing-text">Cordova Courier – Delivering Excellence Nationwide</h1>
+<a class="hero-button" href="/quote/index.html" rel="noopener noreferrer" target="_blank">
+    Request a Quote
+  </a>
+<!-- Cordova AI Assistance Search Field -->
+<section class="ai-search-container">
+<div class="ai-search-box">
+<input id="aiSearchInput" onkeyup="if(event.key === 'Enter'){ askCordovaAI(); }" placeholder="Have a question? Ask Cordova AI Assistance" type="text"/>
+<button class="ai-submit" onclick="askCordovaAI()">Ask</button>
+</div>
+<!-- Suggested FAQs -->
+<div class="faq-buttons">
+<button onclick="askCordovaAI('Do you deliver to Tracy, CA?')">Deliver to Tracy?</button>
+<button onclick="askCordovaAI('Do you handle airport cargo?')">Airport Cargo?</button>
+<button onclick="askCordovaAI('Do you offer medical courier services?')">Medical Courier?</button>
+</div>
+</section>
+<section id="searchResults"></section>
+</div>
+<!-- 👇 SCROLL DOWN LINK SHOULD BE INSIDE HERO -->
+<a class="scroll-down" href="#services">↓</a>
+</section>
+<!-- QUICK ACTION BUTTONS SECTION -->
+<section class="quick-actions">
+<div class="button-container">
+<a class="quick-button" href="/tracking">📦 Track Shipment</a>
+<a class="quick-button" href="https://secure.ontime360.com/sites/CordovaCourierLLC/" rel="noopener noreferrer" target="_blank">
+  🔑 Customer Portal
+</a>
+<a class="quick-button" href="/quote/index.html" rel="noopener noreferrer" target="_blank">
+  📝 Request a Quote
+</a>
+</div>
+</section>
+<!-- OUR CORE SERVICES SECTION -->
+<section class="core-services" id="services">
+<h2>Our Core Services</h2>
+<div class="services-container">
+<div class="service-card">
+<h3>Same-Day Courier</h3>
+<p>Fast, reliable same-day delivery services for businesses and individuals across the region.</p>
+</div>
+<div class="service-card">
+<h3>Medical Courier</h3>
+<p>HIPAA-compliant medical courier services for labs, hospitals, clinics, and healthcare providers.</p>
+</div>
+<div class="service-card">
+<h3>Freight &amp; Bulk Delivery</h3>
+<p>Efficient freight and large shipment delivery with capacity for pallets, heavy items, and bulk orders.</p>
+</div>
+<div class="service-card">
+<h3>Airport Cargo Recovery</h3>
+<p>Professional pickup and delivery services from major airport cargo facilities like SFO, OAK, SMF, and SJC.</p>
+</div>
+<div class="service-card">
+<h3>Routed &amp; Scheduled Deliveries</h3>
+<p>Optimize your logistics with dependable time-definite routes and recurring delivery schedules tailored to your business needs.</p>
+</div>
+<div class="service-card">
+<h3>Last-Mile Delivery</h3>
+<p>Swift, secure, and efficient final-mile delviery tailored to meet your customers' expectations-on time, every time.</p>
+</div>
+<div class="service-card">
+<h3>Expedited Nationwide Delivery</h3>
+<p>Fast-track your shipments with our coast-to-cost delivery solutions-guaranteed spped, reliability, and 24/7 service across the U.S.</p>
+</div>
+</div>
+</section>
+<!-- ABOUT CORDOVA COURIER SECTION -->
+<section class="about-courier" id="about">
+<h2>About Cordova Courier</h2>
+<div class="about-content">
+<p>At Cordova Courier, we are building something different — a company built for its employees, not for shareholders. Our mission is rooted in service, trust, and a deep commitment to the people who power our success: our team.</p>
+<div class="about-cards">
+<div class="about-card">
+<h3>✅ Employee Ownership Mindset</h3>
+<p>Protecting our future, protecting our people. Cordova Courier is committed to staying employee-focused — not shareholder-driven.</p>
+</div>
+<div class="about-card">
+<h3>✅ World-Class Compensation and Tools</h3>
+<p>We empower employees with great pay, top-tier equipment, and the tools they need to succeed professionally and personally.</p>
+</div>
+<div class="about-card">
+<h3>✅ Financial Education</h3>
+<p>We teach wealth-building and financial literacy, giving employees the knowledge to achieve lifelong financial freedom.</p>
+</div>
+<div class="about-card">
+<h3>✅ Global Family</h3>
+<p>We are growing beyond borders — building a worldwide courier network dedicated to empowering workers everywhere we operate.</p>
+</div>
+<div class="about-card">
+<h3>✅ Zero Greed. Zero Exploitation. 100% Human Focus.</h3>
+<p>Our focus is, and will always be, humanity — not profit margins. Cordova Courier serves people, not greed.</p>
+</div>
+</div>
+<p style="font-style: italic; color: #003366; margin-top: 30px;">
+      "To deliver excellence in every mile while building a future where our employees prosper, our communities grow, and the spirit of service powers everything we do."
+    </p>
+</div>
+</section>
+<!-- CONTACT SECTION -->
+<section class="contact-courier" id="contact">
+<h2>Contact Cordova Courier</h2>
+<!-- Logo Above Card -->
+<div class="contact-logo">
+<img alt="Cordova Courier Logo" src="https://beta.cordovacourier.com/images/branding/cordova-logo.png"/>
+</div>
+<div class="contact-card">
+<div class="contact-details">
+<p>📞 <a href="tel:2098809264">(209) 880-9264</a></p>
+<p>📧 <a href="mailto:dispatch@cordovacourier.com">dispatch@cordovacourier.com</a></p>
+<p style="margin-top: 20px;">Available Nationwide 24/7 — Call or Email Anytime!</p>
+<a class="contact-button" href="/quote/index.html" rel="noopener noreferrer" target="_blank">
+  Request a Quote
+</a>
+</div>
+</div>
+</section>
+<!-- ROTATING TEXT SCRIPT -->
+<script>
+const texts = [
+  "Cordova Courier – Delivering Excellence Nationwide",
+  "Because Every Mile Matters...",
+  "Fast Nationwide Courier Solutions – 24/7"
+];
+let count = 0;
+const changingText = document.getElementById('changing-text');
+
+setInterval(() => {
+  changingText.style.opacity = 0;
+  setTimeout(() => {
+    count = (count + 1) % texts.length;
+    changingText.textContent = texts[count];
+    changingText.style.opacity = 1;
+  }, 500);
+}, 4000);
+</script>
+<!-- FORCE VIDEO PLAY SCRIPT -->
+<script>
+window.addEventListener('load', function() {
+  const video = document.querySelector('.background-video');
+  if (video) {
+    video.play().catch(error => {
+      console.log('Autoplay prevented:', error);
+    });
+  }
+});
+</script>
+<!-- FOOTER SECTION -->
+
+<script src="/js/cordova-ai-search.js"></script>
+<script>
+  if (!document.querySelector('#ai-service-schema')) {
+    fetch('/schema/service-areas.json')
+      .then(res => res.json())
+      .then(data => {
         const script = document.createElement('script');
-        script.src = '/js/navbar.js';
-        document.body.appendChild(script);
+        script.id = 'ai-service-schema';
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(data);
+        document.head.appendChild(script);
       });
-  </script>
+  }
+</script>
+<div id="mobileOverlay" class="mobile-overlay"></div>
+<div id="footer-placeholder"></div>
+<script>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 
-  <header class="hero-section">
-    <h1>Courier & Delivery Services Across the United States</h1>
-    <p>Fast, professional service in every U.S. state — from same-day documents to full freight solutions.</p>
-    <div class="cta-buttons">
-      <a href="#states" class="btn">Browse by State</a>
-      <a href="/quote" class="btn">Request a Quote</a>
-    </div>
-  </header>
-
-  <section id="states" class="grid-section">
-    <h2>Browse by State</h2>
-    <div class="state-grid">
-      <a href="/service-areas/usa/california">California</a>
-      <a href="/service-areas/usa/texas">Texas</a>
-      <a href="/service-areas/usa/florida">Florida</a>
-      <a href="/service-areas/usa/new-york">New York</a>
-      <!-- Add more as needed -->
-    </div>
-  </section>
-
-  <div id="footer-placeholder"></div>
-  <script defer>
-    fetch('/components/footer.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('footer-placeholder').innerHTML = html;
-      });
-  </script>
 </body>
 </html>
