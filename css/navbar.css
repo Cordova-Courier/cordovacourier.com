@@ -212,7 +212,6 @@
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
   flex-direction: column;
   background: #156082;
   width: 100vw;
