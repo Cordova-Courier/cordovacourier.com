@@ -190,7 +190,6 @@
   align-items: center;
   background: #156082;
   padding: 14px 18px;
-  /* Removed position: relative */
   z-index: 2000;
 }
 
@@ -212,14 +211,16 @@
   display: flex;
   flex-direction: column;
   background: #156082;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   top: 60px;
   left: 0;
   height: calc(100vh - 60px);
   overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
   z-index: 1999;
-  padding: 60;
+  padding: 0 0 60px 0;
   box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 
   visibility: hidden;
@@ -234,7 +235,7 @@
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
-  padding: 30px;
+  padding-top: 30px;
 }
 
 .mobile-menu a {
