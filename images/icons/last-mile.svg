@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Delivery path line -->
+  <path d="M8 56 L24 40 L40 48 L56 32" stroke="#156082" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+
+  <!-- House at end -->
+  <path d="M51 27 L57 33 L57 45 H45 V33 L51 27 Z" fill="#FFA94D" stroke="#d86e00" stroke-width="1.5"/>
+  <rect x="49" y="37" width="4" height="8" fill="#ffffff"/>
+
+  <!-- Package -->
+  <rect x="21" y="36" width="6" height="6" fill="#156082"/>
+</svg>
