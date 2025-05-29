@@ -15,7 +15,7 @@
     ,
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ai.cordovacourier.com"
+    "@id": "https://www.cordovacourier.com"
   },
   "description": "Cordova Courier provides nationwide courier, freight, medical, and airport cargo delivery services — available 24/7 with a 50-mile radius of every major U.S. city we serve.",
   "serviceOutput": "Fast, secure, same-day delivery for packages, freight, medical samples, and cargo from airport hubs.",
@@ -23,13 +23,17 @@
     {
       "@type": "WebPage",
       "name": "About Cordova Courier",
-      "url": "https://www.cordovacourier.com/about"
+      "url": "https://www.cordovacourier.com/about-us"
     },
     {
       "@type": "WebPage",
       "name": "Our Services",
       "url": "https://www.cordovacourier.com/services"
-    }
+    },
+    {
+      "@type": "WebPage",
+      "name": "Our Services Areas",
+      "url": "https://www.cordovacourier.com/service-areas"
   ],
   "hasCredential": [
     {
