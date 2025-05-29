@@ -8,7 +8,39 @@
   <link rel="stylesheet" href="/css/master-service.css?v=1.0" />
 </head>
 <body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
 
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+
+      script.onload = () => {
+        // 🔐 Verify DOM elements are there before running
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            // Try again on the next frame until everything is loaded
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+
+        checkAndRun();
+      };
+
+      document.body.appendChild(script);
+    });
+</script>
+  
 <div class="hero-section">
   <h1>California Courier & Delivery Services</h1>
   <p>Fast, professional same-day, freight, and medical delivery services throughout California. Serving cities like Los Angeles, San Diego, San Francisco, and more.</p>
