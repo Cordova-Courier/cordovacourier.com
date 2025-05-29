@@ -6,6 +6,9 @@
   <title>California Courier & Delivery Services | Cordova Courier</title>
   <meta name="description" content="Fast, professional same-day, freight, and medical delivery services throughout California. Serving cities like Los Angeles, San Diego, San Francisco, and more.">
   <link rel="stylesheet" href="/css/master-service.css?v=1.0" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/footer.css">
 </head>
 <body>
 <div id="navbar-placeholder"></div>
@@ -182,6 +185,16 @@
 <a href="/service-areas/airport/cma">CMA – CMA Airport</a>
   </div>
 </section>
-
+  
+</script>
+<div id="mobileOverlay" class="mobile-overlay"></div>
+<div id="footer-placeholder"></div>
+<script>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 </body>
 </html>
