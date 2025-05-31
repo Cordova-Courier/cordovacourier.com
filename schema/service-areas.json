@@ -12,42 +12,7 @@
     "founder": {
       "@type": "Person",
       "name": "Vincent Cordova"
-    ,
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.cordovacourier.com"
-  },
-  "description": "Cordova Courier provides nationwide courier, freight, medical, and airport cargo delivery services — available 24/7 with a 50-mile radius of every major U.S. city we serve.",
-  "serviceOutput": "Fast, secure, same-day delivery for packages, freight, medical samples, and cargo from airport hubs.",
-  "subjectOf": [
-    {
-      "@type": "WebPage",
-      "name": "About Cordova Courier",
-      "url": "https://www.cordovacourier.com/about-us"
     },
-    {
-      "@type": "WebPage",
-      "name": "Our Services",
-      "url": "https://www.cordovacourier.com/services"
-    },
-    {
-      "@type": "WebPage",
-      "name": "Our Services Areas",
-      "url": "https://www.cordovacourier.com/service-areas"
-  ],
-  "hasCredential": [
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "License",
-      "name": "TSA TWIC Card"
-    },
-    {
-      "@type": "EducationalOccupationalCredential",
-      "credentialCategory": "License",
-      "name": "USDOT Registered - MC & DOT Compliant"
-    }
-  ]
-},
     "foundingDate": "2020-01-01",
     "sameAs": [
       "https://www.facebook.com/profile.php?id=100076275864228",
@@ -72,6 +37,41 @@
       }
     }
   },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.cordovacourier.com"
+  },
+  "description": "Cordova Courier provides nationwide courier, freight, medical, and airport cargo delivery services — available 24/7 with a 50-mile radius of every major U.S. city we serve.",
+  "serviceOutput": "Fast, secure, same-day delivery for packages, freight, medical samples, and cargo from airport hubs.",
+  "subjectOf": [
+    {
+      "@type": "WebPage",
+      "name": "About Cordova Courier",
+      "url": "https://www.cordovacourier.com/about-us"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Our Services",
+      "url": "https://www.cordovacourier.com/services"
+    },
+    {
+      "@type": "WebPage",
+      "name": "Our Services Areas",
+      "url": "https://www.cordovacourier.com/service-areas"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "License",
+      "name": "TSA TWIC Card"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "License",
+      "name": "USDOT Registered - MC & DOT Compliant"
+    }
+  ],
   "audience": {
     "@type": "Audience",
     "audienceType": ["Businesses", "Medical Providers", "Freight Brokers", "Airline Cargo Teams"]
@@ -102,23 +102,23 @@
     "availableLanguage": ["English", "Spanish"],
     "serviceSmsNumber": "sms:+12098809624",
     "providesService": [
-  {
-    "@type": "ContactPoint",
-    "contactType": "Customer Support Email",
-    "email": "dispatch@cordovacourier.com"
+      {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support Email",
+        "email": "dispatch@cordovacourier.com"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Request a Quote",
+        "url": "https://www.cordovacourier.com/request-a-quote"
+      },
+      {
+        "@type": "WebApplication",
+        "name": "Track a Shipment",
+        "url": "https://www.cordovacourier.com/tracking"
+      }
+    ]
   },
-  {
-    "@type": "WebApplication",
-    "name": "Request a Quote",
-    "url": "https://www.cordovacourier.com/request-a-quote"
-  },
-  {
-    "@type": "WebApplication",
-    "name": "Track a Shipment",
-    "url": "https://www.cordovacourier.com/tracking"
-  }
-]
-},
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Courier Service Types",
@@ -155,23 +155,23 @@
           "description": "24/7 cargo pickup at major U.S. airports including SFO, LAX, SMF, SJC, PHX, and more."
         }
       },
-    {
-      "@type": "City",
-      "name": "Seattle",
-      "geo": {
-        "@type": "GeoCircle",
-        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.6062, "longitude": -122.3321 },
-        "geoRadius": 80467
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Portland",
-      "geo": {
-        "@type": "GeoCircle",
-        "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.5122, "longitude": -122.6587 },
-        "geoRadius": 80467
-      }
+      {
+        "@type": "City",
+        "name": "Seattle",
+        "geo": {
+          "@type": "GeoCircle",
+          "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 47.6062, "longitude": -122.3321 },
+          "geoRadius": 80467
+        }
+      },
+      {
+        "@type": "City",
+        "name": "Portland",
+        "geo": {
+          "@type": "GeoCircle",
+          "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.5122, "longitude": -122.6587 },
+          "geoRadius": 80467
+        }
     },
     {
       "@type": "City",
