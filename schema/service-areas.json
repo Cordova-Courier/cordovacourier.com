@@ -83,7 +83,7 @@
   },
   "availableChannel": {
     "@type": "ServiceChannel",
-    "serviceUrl": "https://ai.cordovacourier.com",
+    "serviceUrl": "https://www.cordovacourier.com",
     "servicePhone": {
       "@type": "ContactPoint",
       "telephone": "+1-209-880-9624",
@@ -115,7 +115,7 @@
   {
     "@type": "WebApplication",
     "name": "Track a Shipment",
-    "url": "https://ai.cordovacourier.com/tracking"
+    "url": "https://www.cordovacourier.com/tracking"
   }
 ]
 },
@@ -519,8 +519,6 @@
   },
   "areaServed": [
     { "@type": "Place", "name": "United States" },
-    { "@type": "Place", "name": "Canada" },
-    { "@type": "Place", "name": "Mexico" },
     {
       "@type": "City",
       "name": "Los Angeles",
