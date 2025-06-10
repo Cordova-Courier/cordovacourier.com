@@ -127,6 +127,13 @@ body {
   margin-top: 40px;
 }
 
+.breadcrumb-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;    /* Add space below the navbar */
+  margin-bottom: 0;
+}
+
 .breadcrumb {
   list-style: none;
   display: flex;
