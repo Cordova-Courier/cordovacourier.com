@@ -130,7 +130,7 @@ body {
 .breadcrumb-nav {
   display: flex;
   justify-content: center;
-  margin-top: 2em;    /* Add space below the navbar */
+  margin-top: 3em;    /* Add space below the navbar */
   margin-bottom: 0;
 }
 
