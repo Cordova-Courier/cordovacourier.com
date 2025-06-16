@@ -13,8 +13,8 @@ body {
 header.header {
   background: linear-gradient(90deg, #ff6600, #0033cc);
   color: white;
-  padding: 60px 20px;
   text-align: center;
+  padding: 120px 20px 60px; /* add top padding for fixed navbar */
 }
 
 header.header h1 {
