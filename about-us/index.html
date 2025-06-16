@@ -176,11 +176,15 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <p><strong>Cordova Courier Team</strong><br>
-    📞 (209) 880-9624<br>
-    📧 dispatch@cordovacourier.com<br>
-    🌐 <a href="https://www.cordovacourier.com">www.cordovacourier.com</a></p>
-  </footer>
+  </script>
+<div id="mobileOverlay" class="mobile-overlay"></div>
+<div id="footer-placeholder"></div>
+<script>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
 </body>
 </html>
