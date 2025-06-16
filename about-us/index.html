@@ -17,6 +17,38 @@
 <link href="/images/branding/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
 </head>
 <body>
+  <div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+
+      script.onload = () => {
+        // 🔐 Verify DOM elements are there before running
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            // Try again on the next frame until everything is loaded
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+
+        checkAndRun();
+      };
+
+      document.body.appendChild(script);
+    });
+</script>
   <header class="header">
     <h1>About Cordova Courier</h1>
     <p>Your Trusted, People-First Delivery Partner</p>
