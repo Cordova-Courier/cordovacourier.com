@@ -1,1 +1,202 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Colorado Courier & Delivery Services | Cordova Courier</title>
+  <meta name="description" content="Cordova Courier offers reliable courier, freight, and medical delivery services throughout Colorado. Serving major cities and surrounding areas within a 50-mile radius." />
+  <link rel="stylesheet" href="/css/master-service.css?v=1.0" />
+  <link rel="stylesheet" href="/css/navbar.css?v=1.0" />
+  <link rel="stylesheet" href="/css/footer.css?v=1.0" />
+  <link href="/images/branding/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/images/branding/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/images/branding/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/images/branding/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {{
+        "@type": "Question",
+        "name": "Do you offer same-day delivery in rural Colorado?",
+        "acceptedAnswer": {{
+          "@type": "Answer",
+          "text": "Yes, we serve many rural locations within a 50-mile radius of major cities across Colorado."
+        }}
+      }},
+      {{
+        "@type": "Question",
+        "name": "Are your drivers TSA certified for airport pickups?",
+        "acceptedAnswer": {{
+          "@type": "Answer",
+          "text": "Absolutely. All Cordova Courier drivers handling airport freight are TSA-certified for secure air cargo handling."
+        }}
+      }},
+      {{
+        "@type": "Question",
+        "name": "What types of items can you deliver?",
+        "acceptedAnswer": {{
+          "@type": "Answer",
+          "text": "We deliver everything from legal documents and medical supplies to pallets of freight and airport cargo."
+        }}
+      }}
+    ]
+  }}
+  </script>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      script.onload = () => {
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+        checkAndRun();
+      };
+      document.body.appendChild(script);
+    });
+</script>
+<div class="hero-section">
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/service-areas/">Service Areas</a></li>
+      <li><a href="/service-areas/north-america/usa">United States</a></li>
+      <li>Colorado</li>
+    </ul>
+  </nav>
+  <h1>Colorado Courier & Delivery Services</h1>
+  <p>Fast, reliable same-day, freight, and medical deliveries throughout Colorado.</p>
+  <div class="cta-buttons">
+    <a href="#coverage" class="btn">View Coverage</a>
+    <a href="/quote" class="btn">Request a Quote</a>
+  </div>
+</div>
+<section class="services-row">
+  <h2>Our Colorado Courier Services</h2>
+  <div class="icons">
+    <div><img src="/images/icons/same-day.svg" alt="Same-Day Delivery"><span>Same-Day</span></div>
+    <div><img src="/images/icons/medical.svg" alt="Medical Courier"><span>Medical</span></div>
+    <div><img src="/images/icons/freight.svg" alt="Freight Delivery"><span>Freight</span></div>
+    <div><img src="/images/icons/airport.svg" alt="Airport Pickup"><span>Airport</span></div>
+    <div><img src="/images/icons/routed.svg" alt="Routed Scheduled Delivery"><span>Routed & Scheduled</span></div>
+    <div><img src="/images/icons/last-mile.svg" alt="Last-Mile Delivery"><span>Last-Mile</span></div>
+    <div><img src="/images/icons/nationwide.svg" alt="Expedited Nationwide Delivery"><span>Expedited Nationwide</span></div>
+  </div>
+</section>
+<section id="coverage" class="grid-section">
+  <h2>Statewide Coverage in Colorado</h2>
+  <p style="max-width: 800px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+    Cordova Courier proudly serves all of Colorado's major cities and surrounding areas within a 50-mile radius. We also provide same-day delivery to and from Colorado airports, businesses, homes, and government offices.
+  </p>
+  <div class="state-grid">
+    <a href="#">Denver</a>
+    <a href="#">Colorado Springs</a>
+    <a href="#">Aurora</a>
+    <a href="#">Boulder</a>
+  </div>
+</section>
+<section id="airports" class="grid-section">
+  <h2>Colorado Airport Courier Services</h2>
+  <p style="max-width: 900px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+    Cordova Courier provides secure, TSA-certified pickup and delivery services from major airports across Colorado. Whether it's time-sensitive freight, medical shipments, or legal cargo, we ensure rapid transport and chain-of-custody tracking.
+  </p>
+  <div class="state-grid">
+    <a href="/service-areas/airport/den">DEN – Denver</a>
+    <a href="/service-areas/airport/cos">COS – Colorado Springs</a>
+    <a href="/service-areas/airport/gjt">GJT – Grand Junction</a>
+    <a href="/service-areas/airport/ase">ASE – Aspen</a>
+  </div>
+</section>
+<section id="faq" class="grid-section">
+  <h2>Colorado Courier Services – FAQs</h2>
+  <div class="state-grid">
+    <div>
+      <strong>Do you offer same-day delivery in rural Colorado?</strong><br />
+      Yes, we serve many rural locations within a 50-mile radius of major cities across Colorado.
+    </div>
+    <div>
+      <strong>Are your drivers TSA certified for airport pickups?</strong><br />
+      Absolutely. All Cordova Courier drivers handling airport freight are TSA-certified for secure air cargo handling.
+    </div>
+    <div>
+      <strong>What types of items can you deliver?</strong><br />
+      We deliver everything from legal documents and medical supplies to pallets of freight and airport cargo.
+    </div>
+  </div>
+</section>
+<section id="government-contracting" class="grid-section">
+  <h2>Government Contracting & Federal Courier Services in Colorado</h2>
+  <p style="max-width: 900px; margin: 0 auto 30px auto; font-size: 1.1rem;">
+    Cordova Courier is a verified federal contractor with active registrations in SAM.gov and SBA. We proudly support federal, state, and local agencies across Colorado with secure, compliant courier services — including urgent deliveries to government offices, courthouses, and military facilities.
+  </p>
+  <div class="state-grid">
+    <div><strong>UEI:</strong> PUUWGLPBLZU6</div>
+    <div><strong>CAGE Code:</strong> 9MNG2</div>
+    <div><strong>NAICS:</strong> 492110 – Courier and Express Delivery Services</div>
+    <div><strong>PSC:</strong> R602 – Courier/Messenger Support</div>
+    <div><strong>PSC:</strong> R706 – Logistics Support</div>
+  </div>
+  <p style="text-align: center; margin-top: 20px;">
+    <a href="/about-us/government-contractor" class="btn">Learn More</a>
+  </p>
+</section>
+<section id="reviews" class="grid-section">
+  <h2>What Our Customers Say</h2>
+  <div class="state-grid">
+    <div>
+      <strong>⭐ ⭐ ⭐ ⭐ ⭐</strong><br />
+      “Cordova Courier has been a lifesaver for our business in Denver. Highly recommended.”<br />
+      <em>– Local Business Owner, Denver, CO</em>
+    </div>
+    <div>
+      <strong>⭐ ⭐ ⭐ ⭐ ⭐</strong><br />
+      “Excellent communication and fast delivery across Colorado."<br />
+      <em>– Satisfied Customer</em>
+    </div>
+    <div>
+      <strong>⭐ ⭐ ⭐ ⭐ ⭐</strong><br />
+      “Reliable and professional courier service.”<br />
+      <em>– Logistics Coordinator</em>
+    </div>
+  </div>
+</section>
+<section id="trust-seals" class="grid-section">
+  <h2>Trusted Courier Partner</h2>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.bbb.org/us/ca/manteca/profile/couriers/cordova-courier-llc-1156-90089217/#sealclick" target="_blank" rel="nofollow">
+      <img
+        src="https://seal-necal.bbb.org/seals/blue-seal-200-42-bbb-90089217.png"
+        loading="lazy"
+        style="border: 0;"
+        alt="Cordova Courier LLC BBB Business Review" />
+    </a>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<script defer>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+</body>
+</html>
