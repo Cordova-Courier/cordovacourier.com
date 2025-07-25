@@ -83,7 +83,7 @@ TEMPLATE = Template("""<!DOCTYPE html>
     <ul class=\"breadcrumb\">
       <li><a href=\"/\">Home</a></li>
       <li><a href=\"/service-areas/\">Service Areas</a></li>
-      <li><a href=\"/service-areas/north-america/usa\">United States</a></li>
+      <li><a href=\"/service-areas/usa\">United States</a></li>
       <li>$state</li>
     </ul>
   </nav>
