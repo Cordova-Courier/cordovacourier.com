@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MRY Airport Courier Services | Cordova Courier</title>
+  <meta name="description" content="Cordova Courier provides TSA-certified cargo pickups and deliveries at MRY Airport in California." />
+  <link rel="stylesheet" href="/css/master-service.css?v=1.0" />
+  <link rel="stylesheet" href="/css/navbar.css?v=1.0" />
+  <link rel="stylesheet" href="/css/footer.css?v=1.0" />
+  <link href="/images/branding/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/images/branding/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/images/branding/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/images/branding/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <meta content="#ffffff" name="theme-color"/>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      script.onload = () => {
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+        checkAndRun();
+      };
+      document.body.appendChild(script);
+    });
+</script>
+<div class="hero-section">
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/service-areas/">Service Areas</a></li>
+      <li><a href="/service-areas/usa">United States</a></li>
+      <li><a href="/service-areas/usa/airports">Airports</a></li>
+      <li>MRY</li>
+    </ul>
+  </nav>
+  <h1>MRY Airport Courier Services</h1>
+  <p>Reliable same-day cargo and freight delivery at MRY airport in California.</p>
+  <div class="cta-buttons">
+    <a href="/quote" class="btn">Request a Quote</a>
+  </div>
+</div>
+<section class="services-row">
+  <h2>Our MRY Airport Solutions</h2>
+  <div class="icons">
+    <div><img src="/images/icons/same-day.svg" alt="Same-Day Delivery"><span>Same-Day</span></div>
+    <div><img src="/images/icons/medical.svg" alt="Medical Courier"><span>Medical</span></div>
+    <div><img src="/images/icons/freight.svg" alt="Freight Delivery"><span>Freight</span></div>
+    <div><img src="/images/icons/airport.svg" alt="Airport Pickup"><span>Airport</span></div>
+    <div><img src="/images/icons/routed.svg" alt="Routed Scheduled Delivery"><span>Routed & Scheduled</span></div>
+    <div><img src="/images/icons/last-mile.svg" alt="Last-Mile Delivery"><span>Last-Mile</span></div>
+    <div><img src="/images/icons/nationwide.svg" alt="Expedited Nationwide Delivery"><span>Expedited Nationwide</span></div>
+  </div>
+</section>
+<section id="reviews" class="grid-section">
+  <h2>Trusted at MRY Airport</h2>
+  <div class="state-grid">
+    <div>
+      <strong>⭐ ⭐ ⭐ ⭐ ⭐</strong><br />
+      “Cordova Courier handles our MRY freight quickly and securely.”<br />
+      <em>– Freight Coordinator</em>
+    </div>
+    <div>
+      <strong>⭐ ⭐ ⭐ ⭐ ⭐</strong><br />
+      “Great service for urgent deliveries to MRY airport.”<br />
+      <em>– Operations Manager</em>
+    </div>
+    <div>
+      <strong>⭐ ⭐ ⭐ ⭐ ⭐</strong><br />
+      “Reliable drivers for our airport pickups.”<br />
+      <em>– Logistics Team</em>
+    </div>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<script defer>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+</body>
+</html>

@@ -1,1 +1,102 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>California Airport Courier Services | Cordova Courier</title>
+  <meta name="description" content="Cordova Courier offers TSA-certified pickup and delivery services from airports across California." />
+  <link rel="stylesheet" href="/css/master-service.css?v=1.0" />
+  <link rel="stylesheet" href="/css/navbar.css?v=1.0" />
+  <link rel="stylesheet" href="/css/footer.css?v=1.0" />
+  <link href="/images/branding/favicon.ico" rel="icon" type="image/x-icon"/>
+  <link href="/images/branding/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="/images/branding/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="/images/branding/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="/site.webmanifest" rel="manifest"/>
+  <meta content="#ffffff" name="theme-color"/>
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('/components/navbar.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('navbar-placeholder').innerHTML = html;
+      const script = document.createElement('script');
+      script.src = '/js/navbar.js';
+      script.onload = () => {
+        const checkAndRun = () => {
+          const hamburger = document.getElementById('hamburgerBtn');
+          const menu = document.getElementById('mobileMenu');
+          const navbar = document.getElementById('navbar');
+          if (hamburger && menu && navbar && window.setupMobileMenuToggle && window.setupNavbarScrollAndToggle) {
+            window.setupNavbarScrollAndToggle();
+            window.setupMobileMenuToggle();
+          } else {
+            requestAnimationFrame(checkAndRun);
+          }
+        };
+        checkAndRun();
+      };
+      document.body.appendChild(script);
+    });
+</script>
+<div class="hero-section">
+  <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+    <ul class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/service-areas/">Service Areas</a></li>
+      <li><a href="/service-areas/usa">United States</a></li>
+      <li>Airports</li>
+    </ul>
+  </nav>
+  <h1>California Airport Courier Services</h1>
+  <p>Select your airport below for specialized courier solutions.</p>
+</div>
+<section class="grid-section">
+  <div class="state-grid">
+    <a href="/service-areas/usa/airports/apc">APC Airport</a>
+    <a href="/service-areas/usa/airports/bfl">BFL Airport</a>
+    <a href="/service-areas/usa/airports/bur">BUR Airport</a>
+    <a href="/service-areas/usa/airports/ccr">CCR Airport</a>
+    <a href="/service-areas/usa/airports/cld">CLD Airport</a>
+    <a href="/service-areas/usa/airports/cma">CMA Airport</a>
+    <a href="/service-areas/usa/airports/dvo">DVO Airport</a>
+    <a href="/service-areas/usa/airports/fat">FAT Airport</a>
+    <a href="/service-areas/usa/airports/hhr">HHR Airport</a>
+    <a href="/service-areas/usa/airports/hwd">HWD Airport</a>
+    <a href="/service-areas/usa/airports/lax">LAX Airport</a>
+    <a href="/service-areas/usa/airports/lgb">LGB Airport</a>
+    <a href="/service-areas/usa/airports/lvk">LVK Airport</a>
+    <a href="/service-areas/usa/airports/mod">MOD Airport</a>
+    <a href="/service-areas/usa/airports/mry">MRY Airport</a>
+    <a href="/service-areas/usa/airports/oak">OAK Airport</a>
+    <a href="/service-areas/usa/airports/ont">ONT Airport</a>
+    <a href="/service-areas/usa/airports/pao">PAO Airport</a>
+    <a href="/service-areas/usa/airports/rhv">RHV Airport</a>
+    <a href="/service-areas/usa/airports/sac">SAC Airport</a>
+    <a href="/service-areas/usa/airports/san">SAN Airport</a>
+    <a href="/service-areas/usa/airports/sbd">SBD Airport</a>
+    <a href="/service-areas/usa/airports/sck">SCK Airport</a>
+    <a href="/service-areas/usa/airports/see">SEE Airport</a>
+    <a href="/service-areas/usa/airports/sfo">SFO Airport</a>
+    <a href="/service-areas/usa/airports/sjc">SJC Airport</a>
+    <a href="/service-areas/usa/airports/smf">SMF Airport</a>
+    <a href="/service-areas/usa/airports/smo">SMO Airport</a>
+    <a href="/service-areas/usa/airports/sna">SNA Airport</a>
+    <a href="/service-areas/usa/airports/sql">SQL Airport</a>
+    <a href="/service-areas/usa/airports/sts">STS Airport</a>
+    <a href="/service-areas/usa/airports/toa">TOA Airport</a>
+    <a href="/service-areas/usa/airports/vny">VNY Airport</a>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<script defer>
+  fetch('/components/footer.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('footer-placeholder').innerHTML = html;
+    });
+</script>
+</body>
+</html>
