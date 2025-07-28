@@ -50,7 +50,7 @@ TEMPLATE = Template("""<!DOCTYPE html>
       <li><a href=\"/\">Home</a></li>
       <li><a href=\"/service-areas/\">Service Areas</a></li>
       <li><a href=\"/service-areas/usa\">United States</a></li>
-      <li><a href=\"/service-areas/usa/airports\">Airports</a></li>
+      <li><a href=\"/service-areas/usa/airport\">Airports</a></li>
       <li>$code</li>
     </ul>
   </nav>
@@ -111,7 +111,7 @@ def main():
        "SCK","SEE","SFO","SJC","SMF","SMO","SNA","SQL","STS","TOA","VNY"
     ]
     for code in airports:
-        dir_path = Path(f'service-areas/usa/airports/{code.lower()}')
+        dir_path = Path(f'service-areas/usa/airport/{code.lower()}')
         dir_path.mkdir(parents=True, exist_ok=True)
         with open(dir_path / 'index.html', 'w') as f:
             f.write(TEMPLATE.safe_substitute(code=code))
