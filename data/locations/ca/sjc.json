@@ -1,0 +1,48 @@
+{
+  "location": {
+    "city": "SJC Airport",
+    "state": "CA",
+    "serviceRadiusMiles": 50
+  },
+  "facts": [
+    {
+      "title": "Company Facts",
+      "items": [
+        "24/7 courier coverage at SJC and nearby facilities.",
+        "TSA-cleared drivers for secure cargo recovery.",
+        "Employee-first company focused on reliability, safety, and transparency."
+      ]
+    },
+    {
+      "title": "Core Services",
+      "items": [
+        "Same-day delivery for documents, parts, and pallets.",
+        "HIPAA-compliant medical courier for labs, clinics, and hospitals.",
+        "Routed & scheduled delivery programs for recurring stops.",
+        "Last\u2011mile delivery for retailers and e\u2011commerce.",
+        "Expedited statewide and nationwide freight."
+      ]
+    },
+    {
+      "title": "Fleet & Capabilities",
+      "items": [
+        "Sedans, cargo vans, high-roof sprinters, and box trucks.",
+        "Up to 3,300 lbs and ~540 cu ft per high\u2011roof van."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do you deliver outside SJC?",
+      "a": "Yes. We cover a ~50\u2011mile radius around SJC and can expedite statewide and nationwide deliveries as needed."
+    },
+    {
+      "q": "Do you handle airport cargo at SJC?",
+      "a": "Yes. Our TSA-cleared couriers pick up from airline cargo facilities at SJC and deliver directly to your dock or site."
+    },
+    {
+      "q": "What are your operating hours?",
+      "a": "We operate 24/7 including weekends and holidays."
+    }
+  ]
+}
