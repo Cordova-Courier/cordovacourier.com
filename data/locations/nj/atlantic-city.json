@@ -1,0 +1,129 @@
+{
+  "location": {
+    "city": "Atlantic City",
+    "state": "NJ",
+    "serviceRadiusMiles": 50
+  },
+  "facts": [
+    {
+      "title": "Company Facts",
+      "items": [
+        "24/7 local courier coverage across Atlantic City and the greater metro area.",
+        "Airport cargo recovery at local airports with TSA-cleared couriers.",
+        "Employee-first company focused on reliability, safety, and transparency."
+      ]
+    },
+    {
+      "title": "Core Services",
+      "items": [
+        "Same-day delivery for documents, parts, and pallets.",
+        "HIPAA-compliant medical courier for labs, clinics, and hospitals.",
+        "Routed & scheduled delivery programs for recurring stops.",
+        "Last\u2011mile delivery for retailers and e\u2011commerce.",
+        "Expedited statewide and nationwide freight."
+      ]
+    },
+    {
+      "title": "Fleet & Capabilities",
+      "items": [
+        "Sedans, cargo vans, high-roof sprinters, and box trucks.",
+        "Up to 3,300 lbs and ~540 cu ft per high\u2011roof van."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do you deliver outside Atlantic City?",
+      "a": "Yes. We cover a ~50\u2011mile radius around Atlantic City and can expedite statewide and nationwide deliveries as needed."
+    },
+    {
+      "q": "Do you handle airport cargo in New Jersey?",
+      "a": "Yes. Our TSA\u2011cleared couriers pick up from New Jersey airports and deliver directly to your dock or site."
+    },
+    {
+      "q": "What are your operating hours?",
+      "a": "We operate 24/7 including weekends and holidays."
+    },
+    {
+      "q": "How fast can you deliver from Atlantic City to nearby cities?",
+      "a": "Most deliveries from Atlantic City to neighboring areas arrive the same day thanks to our dedicated courier network."
+    }
+  ],
+  "hero": {
+    "h1": "Atlantic City, NJ Courier & Delivery Services",
+    "intro": "Fast same-day, freight, and medical deliveries across Atlantic City."
+  },
+  "fastFacts": [
+    {
+      "type": "short",
+      "title": "Service Radius",
+      "content": "50-mile coverage",
+      "seo": "Atlantic City courier delivery radius 50 miles"
+    },
+    {
+      "type": "short",
+      "title": "Availability",
+      "content": "24/7 dispatch",
+      "seo": "Atlantic City 24/7 courier service"
+    },
+    {
+      "type": "long",
+      "title": "Local Expertise",
+      "content": "Atlantic City couriers know the area, using optimal routes for fast <strong>same-day delivery</strong>.",
+      "seo": "Atlantic City same-day delivery courier"
+    },
+    {
+      "type": "long",
+      "title": "Business District",
+      "content": "Central Atlantic City districts enable quick pickups and drop-offs for offices and retail.",
+      "seo": "Atlantic City business courier services"
+    },
+    {
+      "type": "long",
+      "title": "Medical Logistics",
+      "content": "Hospitals and labs in Atlantic City rely on our <strong>medical courier</strong> team for urgent transport.",
+      "seo": "Atlantic City medical courier services"
+    },
+    {
+      "type": "long",
+      "title": "Freight Capacity",
+      "content": "From cargo vans to box trucks, we handle heavy freight in Atlantic City and beyond.",
+      "seo": "Atlantic City freight delivery"
+    }
+  ],
+  "pois": [
+    {
+      "name": "Atlantic City City Hall",
+      "category": "Government",
+      "description": "Regular route stop for document filings and legal <strong>courier service in Atlantic City</strong>."
+    },
+    {
+      "name": "Atlantic City Business District",
+      "category": "Business District",
+      "description": "Dense cluster of offices\u2014ideal for bulk <strong>same-day deliveries</strong> in Atlantic City."
+    },
+    {
+      "name": "Atlantic City Medical Center",
+      "category": "Hospital",
+      "description": "Key destination for <strong>medical courier</strong> runs serving Atlantic City healthcare providers."
+    }
+  ],
+  "coverage": {
+    "county": "Atlantic County",
+    "description": "Serving all neighborhoods in and around Atlantic City with <strong>same-day</strong> and <strong>freight courier</strong> options."
+  },
+  "testimonials": [
+    {
+      "quote": "\u201cCordova Courier keeps our Atlantic City operations moving.\u201d",
+      "author": "Local Business Owner"
+    },
+    {
+      "quote": "\u201cFast delivery across Atlantic City every time.\u201d",
+      "author": "Operations Manager"
+    },
+    {
+      "quote": "\u201cReliable Atlantic City courier service we trust for urgent shipments.\u201d",
+      "author": "Logistics Coordinator"
+    }
+  ]
+}
