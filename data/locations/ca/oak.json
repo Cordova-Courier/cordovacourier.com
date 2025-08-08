@@ -19,7 +19,7 @@
         "Same-day delivery for documents, parts, and pallets.",
         "HIPAA-compliant medical courier for labs, clinics, and hospitals.",
         "Routed & scheduled delivery programs for recurring stops.",
-        "Last\u2011mile delivery for retailers and e\u2011commerce.",
+        "Last‑mile delivery for retailers and e‑commerce.",
         "Expedited statewide and nationwide freight."
       ]
     },
@@ -27,14 +27,14 @@
       "title": "Fleet & Capabilities",
       "items": [
         "Sedans, cargo vans, high-roof sprinters, and box trucks.",
-        "Up to 3,300 lbs and ~540 cu ft per high\u2011roof van."
+        "Up to 3,300 lbs and ~540 cu ft per high‑roof van."
       ]
     }
   ],
   "faq": [
     {
       "q": "Do you deliver outside OAK?",
-      "a": "Yes. We cover a ~50\u2011mile radius around OAK and can expedite statewide and nationwide deliveries as needed."
+      "a": "Yes. We cover a ~50‑mile radius around OAK and can expedite statewide and nationwide deliveries as needed."
     },
     {
       "q": "Do you handle airport cargo at OAK?",
@@ -43,6 +43,87 @@
     {
       "q": "What are your operating hours?",
       "a": "We operate 24/7 including weekends and holidays."
+    },
+    {
+      "q": "How fast can you deliver from OAK Airport to nearby cities?",
+      "a": "Most deliveries from OAK Airport to neighboring areas arrive the same day thanks to our dedicated courier network."
+    }
+  ],
+  "hero": {
+    "h1": "OAK Airport, CA Courier & Delivery Services",
+    "intro": "Fast same-day, freight, and medical deliveries across OAK Airport."
+  },
+  "fastFacts": [
+    {
+      "type": "short",
+      "title": "Service Radius",
+      "content": "50-mile coverage",
+      "seo": "OAK Airport courier delivery radius 50 miles"
+    },
+    {
+      "type": "short",
+      "title": "Availability",
+      "content": "24/7 dispatch",
+      "seo": "OAK Airport 24/7 courier service"
+    },
+    {
+      "type": "long",
+      "title": "Local Expertise",
+      "content": "OAK Airport couriers know the area, using optimal routes for fast <strong>same-day delivery</strong>.",
+      "seo": "OAK Airport same-day delivery courier"
+    },
+    {
+      "type": "long",
+      "title": "Business District",
+      "content": "Central OAK Airport districts enable quick pickups and drop-offs for offices and retail.",
+      "seo": "OAK Airport business courier services"
+    },
+    {
+      "type": "long",
+      "title": "Medical Logistics",
+      "content": "Hospitals and labs in OAK Airport rely on our <strong>medical courier</strong> team for urgent transport.",
+      "seo": "OAK Airport medical courier services"
+    },
+    {
+      "type": "long",
+      "title": "Freight Capacity",
+      "content": "From cargo vans to box trucks, we handle heavy freight in OAK Airport and beyond.",
+      "seo": "OAK Airport freight delivery"
+    }
+  ],
+  "pois": [
+    {
+      "name": "OAK Airport City Hall",
+      "category": "Government",
+      "description": "Regular route stop for document filings and legal <strong>courier service in OAK Airport</strong>."
+    },
+    {
+      "name": "OAK Airport Business District",
+      "category": "Business District",
+      "description": "Dense cluster of offices—ideal for bulk <strong>same-day deliveries</strong> in OAK Airport."
+    },
+    {
+      "name": "OAK Airport Medical Center",
+      "category": "Hospital",
+      "description": "Key destination for <strong>medical courier</strong> runs serving OAK Airport healthcare providers."
+    }
+  ],
+  "coverage": {
+    "county": "OAK Airport County",
+    "description": "Serving all neighborhoods in and around OAK Airport with <strong>same-day</strong> and <strong>freight courier</strong> options."
+  },
+  "testimonials": [
+    {
+      "quote": "“Cordova Courier keeps our OAK Airport operations moving.”",
+      "author": "Local Business Owner"
+    },
+    {
+      "quote": "“Fast delivery across OAK Airport every time.”",
+      "author": "Operations Manager"
+    },
+    {
+      "quote": "“Reliable OAK Airport courier service we trust for urgent shipments.”",
+      "author": "Logistics Coordinator"
     }
   ]
 }
