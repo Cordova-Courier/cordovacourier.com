@@ -19,7 +19,7 @@
         "Same-day delivery for documents, parts, and pallets.",
         "HIPAA-compliant medical courier for labs, clinics, and hospitals.",
         "Routed & scheduled delivery programs for recurring stops.",
-        "Last\u2011mile delivery for retailers and e\u2011commerce.",
+        "Last‑mile delivery for retailers and e‑commerce.",
         "Expedited statewide and nationwide freight."
       ]
     },
@@ -27,22 +27,103 @@
       "title": "Fleet & Capabilities",
       "items": [
         "Sedans, cargo vans, high-roof sprinters, and box trucks.",
-        "Up to 3,300 lbs and ~540 cu ft per high\u2011roof van."
+        "Up to 3,300 lbs and ~540 cu ft per high‑roof van."
       ]
     }
   ],
   "faq": [
     {
       "q": "Do you deliver outside Fremont?",
-      "a": "Yes. We cover a ~50\u2011mile radius around Fremont and can expedite statewide and nationwide deliveries as needed."
+      "a": "Yes. We cover a ~50‑mile radius around Fremont and can expedite statewide and nationwide deliveries as needed."
     },
     {
       "q": "Do you handle airport cargo in California?",
-      "a": "Yes. Our TSA\u2011cleared couriers pick up from California airports and deliver directly to your dock or site."
+      "a": "Yes. Our TSA‑cleared couriers pick up from California airports and deliver directly to your dock or site."
     },
     {
       "q": "What are your operating hours?",
       "a": "We operate 24/7 including weekends and holidays."
+    },
+    {
+      "q": "How fast can you deliver from Fremont to nearby cities?",
+      "a": "Most deliveries from Fremont to neighboring areas arrive the same day thanks to our dedicated courier network."
+    }
+  ],
+  "hero": {
+    "h1": "Fremont, CA Courier & Delivery Services",
+    "intro": "Fast same-day, freight, and medical deliveries across Fremont."
+  },
+  "fastFacts": [
+    {
+      "type": "short",
+      "title": "Service Radius",
+      "content": "50-mile coverage",
+      "seo": "Fremont courier delivery radius 50 miles"
+    },
+    {
+      "type": "short",
+      "title": "Availability",
+      "content": "24/7 dispatch",
+      "seo": "Fremont 24/7 courier service"
+    },
+    {
+      "type": "long",
+      "title": "Local Expertise",
+      "content": "Fremont couriers know the area, using optimal routes for fast <strong>same-day delivery</strong>.",
+      "seo": "Fremont same-day delivery courier"
+    },
+    {
+      "type": "long",
+      "title": "Business District",
+      "content": "Central Fremont districts enable quick pickups and drop-offs for offices and retail.",
+      "seo": "Fremont business courier services"
+    },
+    {
+      "type": "long",
+      "title": "Medical Logistics",
+      "content": "Hospitals and labs in Fremont rely on our <strong>medical courier</strong> team for urgent transport.",
+      "seo": "Fremont medical courier services"
+    },
+    {
+      "type": "long",
+      "title": "Freight Capacity",
+      "content": "From cargo vans to box trucks, we handle heavy freight in Fremont and beyond.",
+      "seo": "Fremont freight delivery"
+    }
+  ],
+  "pois": [
+    {
+      "name": "Fremont City Hall",
+      "category": "Government",
+      "description": "Regular route stop for document filings and legal <strong>courier service in Fremont</strong>."
+    },
+    {
+      "name": "Fremont Business District",
+      "category": "Business District",
+      "description": "Dense cluster of offices—ideal for bulk <strong>same-day deliveries</strong> in Fremont."
+    },
+    {
+      "name": "Fremont Medical Center",
+      "category": "Hospital",
+      "description": "Key destination for <strong>medical courier</strong> runs serving Fremont healthcare providers."
+    }
+  ],
+  "coverage": {
+    "county": "Fremont County",
+    "description": "Serving all neighborhoods in and around Fremont with <strong>same-day</strong> and <strong>freight courier</strong> options."
+  },
+  "testimonials": [
+    {
+      "quote": "“Cordova Courier keeps our Fremont operations moving.”",
+      "author": "Local Business Owner"
+    },
+    {
+      "quote": "“Fast delivery across Fremont every time.”",
+      "author": "Operations Manager"
+    },
+    {
+      "quote": "“Reliable Fremont courier service we trust for urgent shipments.”",
+      "author": "Logistics Coordinator"
     }
   ]
 }

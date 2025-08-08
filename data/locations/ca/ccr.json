@@ -19,7 +19,7 @@
         "Same-day delivery for documents, parts, and pallets.",
         "HIPAA-compliant medical courier for labs, clinics, and hospitals.",
         "Routed & scheduled delivery programs for recurring stops.",
-        "Last\u2011mile delivery for retailers and e\u2011commerce.",
+        "Last‑mile delivery for retailers and e‑commerce.",
         "Expedited statewide and nationwide freight."
       ]
     },
@@ -27,14 +27,14 @@
       "title": "Fleet & Capabilities",
       "items": [
         "Sedans, cargo vans, high-roof sprinters, and box trucks.",
-        "Up to 3,300 lbs and ~540 cu ft per high\u2011roof van."
+        "Up to 3,300 lbs and ~540 cu ft per high‑roof van."
       ]
     }
   ],
   "faq": [
     {
       "q": "Do you deliver outside CCR?",
-      "a": "Yes. We cover a ~50\u2011mile radius around CCR and can expedite statewide and nationwide deliveries as needed."
+      "a": "Yes. We cover a ~50‑mile radius around CCR and can expedite statewide and nationwide deliveries as needed."
     },
     {
       "q": "Do you handle airport cargo at CCR?",
@@ -43,6 +43,87 @@
     {
       "q": "What are your operating hours?",
       "a": "We operate 24/7 including weekends and holidays."
+    },
+    {
+      "q": "How fast can you deliver from CCR Airport to nearby cities?",
+      "a": "Most deliveries from CCR Airport to neighboring areas arrive the same day thanks to our dedicated courier network."
+    }
+  ],
+  "hero": {
+    "h1": "CCR Airport, CA Courier & Delivery Services",
+    "intro": "Fast same-day, freight, and medical deliveries across CCR Airport."
+  },
+  "fastFacts": [
+    {
+      "type": "short",
+      "title": "Service Radius",
+      "content": "50-mile coverage",
+      "seo": "CCR Airport courier delivery radius 50 miles"
+    },
+    {
+      "type": "short",
+      "title": "Availability",
+      "content": "24/7 dispatch",
+      "seo": "CCR Airport 24/7 courier service"
+    },
+    {
+      "type": "long",
+      "title": "Local Expertise",
+      "content": "CCR Airport couriers know the area, using optimal routes for fast <strong>same-day delivery</strong>.",
+      "seo": "CCR Airport same-day delivery courier"
+    },
+    {
+      "type": "long",
+      "title": "Business District",
+      "content": "Central CCR Airport districts enable quick pickups and drop-offs for offices and retail.",
+      "seo": "CCR Airport business courier services"
+    },
+    {
+      "type": "long",
+      "title": "Medical Logistics",
+      "content": "Hospitals and labs in CCR Airport rely on our <strong>medical courier</strong> team for urgent transport.",
+      "seo": "CCR Airport medical courier services"
+    },
+    {
+      "type": "long",
+      "title": "Freight Capacity",
+      "content": "From cargo vans to box trucks, we handle heavy freight in CCR Airport and beyond.",
+      "seo": "CCR Airport freight delivery"
+    }
+  ],
+  "pois": [
+    {
+      "name": "CCR Airport City Hall",
+      "category": "Government",
+      "description": "Regular route stop for document filings and legal <strong>courier service in CCR Airport</strong>."
+    },
+    {
+      "name": "CCR Airport Business District",
+      "category": "Business District",
+      "description": "Dense cluster of offices—ideal for bulk <strong>same-day deliveries</strong> in CCR Airport."
+    },
+    {
+      "name": "CCR Airport Medical Center",
+      "category": "Hospital",
+      "description": "Key destination for <strong>medical courier</strong> runs serving CCR Airport healthcare providers."
+    }
+  ],
+  "coverage": {
+    "county": "CCR Airport County",
+    "description": "Serving all neighborhoods in and around CCR Airport with <strong>same-day</strong> and <strong>freight courier</strong> options."
+  },
+  "testimonials": [
+    {
+      "quote": "“Cordova Courier keeps our CCR Airport operations moving.”",
+      "author": "Local Business Owner"
+    },
+    {
+      "quote": "“Fast delivery across CCR Airport every time.”",
+      "author": "Operations Manager"
+    },
+    {
+      "quote": "“Reliable CCR Airport courier service we trust for urgent shipments.”",
+      "author": "Logistics Coordinator"
     }
   ]
 }
