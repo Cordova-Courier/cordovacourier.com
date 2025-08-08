@@ -1,4 +1,17 @@
-#fast-facts, #faq { max-width: 900px; margin: 40px auto; padding: 0 16px; }
+
+.facts-faq-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+#fast-facts, #faq {
+  flex: 1 1 400px;
+  padding: 0 16px;
+}
+
 #fast-facts h2, #faq h2 { color:#003366; text-align:center; margin: 0 0 18px; }
 
 .acc-item { border:1px solid #e6e6e6; border-radius:10px; margin:10px 0; overflow:hidden; background:#fff; }
