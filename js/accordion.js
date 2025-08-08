@@ -11,6 +11,13 @@
     const state = factsEl.dataset.state && factsEl.dataset.state.trim();
     if(!city || !state) return;
 
+    // Wrap the fast facts and FAQ sections so they can sit side by side
+    const wrapper = document.createElement('div');
+    wrapper.className = 'facts-faq-wrapper';
+    factsEl.parentNode.insertBefore(wrapper, factsEl);
+    wrapper.appendChild(factsEl);
+    wrapper.appendChild(faqEl);
+
     const slug = s => s.toLowerCase().replace(/\s+/g,'-');
 
     try {
